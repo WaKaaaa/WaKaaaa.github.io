@@ -1,0 +1,702 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lion/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lion/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/lion/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript 核心对象," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/lion/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="#javascript的核心对象：
+
+数组对象
+日期对象
+字符串对象
+数学对象##一：数组对象1.介绍：Array可以存储一系列的数据，JavaScript的数组可以存储 不同类型的数据,元素索引的范围是 0~length-1，length为数组的长度。2.创建数组：
+new Array();不带参数，返回空数组，length = 0。如： var arr = new Array();
+Array">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS Object">
+<meta property="og:url" content="https://WaKaaaa.github.io/blog/2016/09/26/object/index.html">
+<meta property="og:site_name" content="WaKaaaa猪的博客">
+<meta property="og:description" content="#javascript的核心对象：
+
+数组对象
+日期对象
+字符串对象
+数学对象##一：数组对象1.介绍：Array可以存储一系列的数据，JavaScript的数组可以存储 不同类型的数据,元素索引的范围是 0~length-1，length为数组的长度。2.创建数组：
+new Array();不带参数，返回空数组，length = 0。如： var arr = new Array();
+Array">
+<meta property="og:updated_time" content="2016-09-26T12:11:00.111Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS Object">
+<meta name="twitter:description" content="#javascript的核心对象：
+
+数组对象
+日期对象
+字符串对象
+数学对象##一：数组对象1.介绍：Array可以存储一系列的数据，JavaScript的数组可以存储 不同类型的数据,元素索引的范围是 0~length-1，length为数组的长度。2.创建数组：
+new Array();不带参数，返回空数组，length = 0。如： var arr = new Array();
+Array">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://WaKaaaa.github.io/blog/2016/09/26/object/"/>
+
+  <title> JS Object | WaKaaaa猪的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/lion/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">WaKaaaa猪的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/lion/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/lion/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/lion/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JS Object
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-09-26T16:00:12+08:00" content="2016-09-26">
+              2016-09-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/lion/2016/09/26/object/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://WaKaaaa.github.io/blog/lion/2016/09/26/object/" itemprop="commentsCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#javascript的核心对象：</p>
+<ul>
+<li>数组对象</li>
+<li>日期对象</li>
+<li>字符串对象</li>
+<li>数学对象<br>##一：数组对象<h3 id="1-介绍：Array可以存储一系列的数据，JavaScript的数组可以存储-不同类型的数据-元素索引的范围是-0-length-1，length为数组的长度。"><a href="#1-介绍：Array可以存储一系列的数据，JavaScript的数组可以存储-不同类型的数据-元素索引的范围是-0-length-1，length为数组的长度。" class="headerlink" title="1.介绍：Array可以存储一系列的数据，JavaScript的数组可以存储 不同类型的数据,元素索引的范围是 0~length-1，length为数组的长度。"></a>1.介绍：Array可以存储一系列的数据，JavaScript的数组可以存储 <code>不同类型的数据</code>,元素索引的范围是 0~length-1，length为数组的长度。</h3><h3 id="2-创建数组："><a href="#2-创建数组：" class="headerlink" title="2.创建数组："></a>2.创建数组：</h3></li>
+<li><code>new Array();</code>不带参数，返回空数组，length = 0。如： <code>var arr = new Array();</code></li>
+<li><code>Array(x);</code> x的取值可为任何数，返回大小是x的数组，length = x。如： <code>var arr = new Array(5);</code>表示此数组的长度是5</li>
+<li><code>new Array[x1,x2,x3...];</code>x1,x2,x3..指的是数组的元素，返回长度为参数个数的数组，length = 个数，如： <code>var arr = new Array[1,&#39;2&#39;,3,4,5,6.8,7];</code> 表示此数组的长度是6，数组中的参数类型可以不相同<h3 id="3-数组的方法及使用："><a href="#3-数组的方法及使用：" class="headerlink" title="3.数组的方法及使用："></a>3.数组的方法及使用：</h3></li>
+<li>concat()方法：连接两个或者更多的数组，并返回合并后的新数组<h6 id="用法：arrayObj-context-array-x-array-x…"><a href="#用法：arrayObj-context-array-x-array-x…" class="headerlink" title="用法：arrayObj.context(array x,array x….);"></a>用法：arrayObj.context(array x,array x….);</h6><h6 id="解释：arrayObj是自定义的一个数组，array-x是新添加的数组"><a href="#解释：arrayObj是自定义的一个数组，array-x是新添加的数组" class="headerlink" title="解释：arrayObj是自定义的一个数组，array x是新添加的数组"></a>解释：arrayObj是自定义的一个数组，array x是新添加的数组</h6><h6 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h6><h6 id="一个数组和其他元素相连"><a href="#一个数组和其他元素相连" class="headerlink" title="一个数组和其他元素相连"></a>一个数组和其他元素相连</h6><pre><code>&lt;script typt = &quot;text/javascript&quot;&gt;
+    var arr = [0,2,4];
+    document.write(arr.concat(4,7,8));
+&lt;/script&gt;
+</code></pre><h6 id="输出结果："><a href="#输出结果：" class="headerlink" title="输出结果："></a>输出结果：</h6><pre><code>0,2,4,4,7,8
+</code></pre><h6 id="可见concat-方法返回新数组，将元素添加到原来数组的末尾"><a href="#可见concat-方法返回新数组，将元素添加到原来数组的末尾" class="headerlink" title="可见concat()方法返回新数组，将元素添加到原来数组的末尾"></a>可见concat()方法返回新数组，将元素添加到原来数组的末尾</h6><h6 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h6><h6 id="两个数组相连"><a href="#两个数组相连" class="headerlink" title="两个数组相连"></a>两个数组相连</h6><pre><code>var arr1 = [1,2,3];
+var arr2 = [4,5,6];
+document.write(arr2.concat(arr1));
+</code></pre><h6 id="输出结果：-1"><a href="#输出结果：-1" class="headerlink" title="输出结果："></a>输出结果：</h6><pre><code>4,5,6,1,2,3
+</code></pre><h6 id="示例3："><a href="#示例3：" class="headerlink" title="示例3："></a>示例3：</h6><h6 id="三个数组相连"><a href="#三个数组相连" class="headerlink" title="三个数组相连"></a>三个数组相连</h6><pre><code>var arr1 = [1,2,3];
+var arr2 = [4,5,6];            
+var arr3 = [2,3,4];
+document.write(arr2.concat(arr1,arr3));
+</code></pre><h6 id="输出结果：-2"><a href="#输出结果：-2" class="headerlink" title="输出结果："></a>输出结果：</h6><pre><code>4,5,6,1,2,3,2,3,4
+</code></pre></li>
+<li>join()方法：把数组的所有元素放入一个字符串并返回此字符串，元素通过指定的分隔符进行分隔。即将数组转化为字符串，作用和toString()相同<h6 id="用法：arr-join-“”"><a href="#用法：arr-join-“”" class="headerlink" title="用法：arr.join(“”);"></a>用法：arr.join(“”);</h6><h6 id="解释：arr是任意数组"><a href="#解释：arr是任意数组" class="headerlink" title="解释：arr是任意数组"></a>解释：arr是任意数组</h6><h6 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h6><pre><code>&lt;script type = &quot;text/javascript&quot;&gt;
+var arr = [1,2,3,4];
+document.write(arr+&quot;&lt;/br&gt;&quot;);
+document.write(arr.join(&quot;,&quot;)+&quot;&lt;/br&gt;&quot;);
+document.write(arr.join(&quot; &quot;)+&quot;&lt;/br&gt;&quot;);
+document.write(arr.join(&quot;*&quot;)+&quot;&lt;/br&gt;&quot;);
+&lt;/script&gt;
+</code></pre><h6 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3,4
+1,2,3,4
+1 2 3 4
+1*2*3*4
+</code></pre>  ####### 由此可见，join()的真正用途是 <code>以某种符号分隔数组元素</code></li>
+<li>toString()方法：把数组转化为字符串并返回结果<h6 id="用法：arr-toString"><a href="#用法：arr-toString" class="headerlink" title="用法：arr.toString()"></a>用法：arr.toString()</h6><h6 id="返回值：转化后的字符串"><a href="#返回值：转化后的字符串" class="headerlink" title="返回值：转化后的字符串"></a>返回值：转化后的字符串</h6><h6 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h6><pre><code>var arr1 = [1,2,3]
+document.write(arr1.toString());
+</code></pre><h6 id="运行结果：-1"><a href="#运行结果：-1" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3
+</code></pre></li>
+<li>pop()方法：删除并返回数组的最后一个元素，数组长度-1，如果数组是空的，不改变数组，并返回undefined<h6 id="用法：arr-pop"><a href="#用法：arr-pop" class="headerlink" title="用法：arr.pop()"></a>用法：arr.pop()</h6><h6 id="返回值：arr的最后一个元素"><a href="#返回值：arr的最后一个元素" class="headerlink" title="返回值：arr的最后一个元素"></a>返回值：arr的最后一个元素</h6><h6 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h6><pre><code>var arr = [1,2,3,4];
+document.write(arr.pop());
+alert(arr);
+</code></pre><h6 id="运行结果：-2"><a href="#运行结果：-2" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>4
+1,2,3
+</code></pre><h6 id="注意！如果给pop-；赋一个参数，也只会pop出最后一个元素，任何参数都可以-比如arr这个数组，返回的也是4"><a href="#注意！如果给pop-；赋一个参数，也只会pop出最后一个元素，任何参数都可以-比如arr这个数组，返回的也是4" class="headerlink" title="注意！如果给pop()；赋一个参数，也只会pop出最后一个元素，任何参数都可以(比如arr这个数组，返回的也是4)"></a>注意！如果给pop()；赋一个参数，也只会pop出最后一个元素，任何参数都可以(比如arr这个数组，返回的也是4)</h6></li>
+<li>push()方法：向数组的末尾添加一个元素并返回数组的长度<h6 id="用法：arr-push-x-y-z…"><a href="#用法：arr-push-x-y-z…" class="headerlink" title="用法：arr.push(x,y,z…)"></a>用法：arr.push(x,y,z…)</h6><h6 id="返回值：新数组的长度"><a href="#返回值：新数组的长度" class="headerlink" title="返回值：新数组的长度"></a>返回值：新数组的长度</h6><h6 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h6><pre><code>var arr = [1,2,3,4];
+document.write(arr.push(1));
+alert(arr);
+</code></pre><h6 id="运行结果：-3"><a href="#运行结果：-3" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3,4,1
+5
+</code></pre><h6 id="如果添加的元素是arr，结果会是什么样的呢？"><a href="#如果添加的元素是arr，结果会是什么样的呢？" class="headerlink" title="如果添加的元素是arr，结果会是什么样的呢？"></a>如果添加的元素是arr，结果会是什么样的呢？</h6><pre><code>var arr = [1,2,3,4];
+document.write(arr.push(arr));
+alert(arr);
+</code></pre><h6 id="运行结果：-4"><a href="#运行结果：-4" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3,4，    （注意此处有个逗号）
+5
+</code></pre><h6 id="可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1"><a href="#可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1" class="headerlink" title="可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1"></a>可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1</h6><h6 id="也可以添加多个元素"><a href="#也可以添加多个元素" class="headerlink" title="也可以添加多个元素"></a>也可以添加多个元素</h6><pre><code>var arr = [1,2];
+document.write(arr.push(2,3,4,5,6));
+alert(arr);
+</code></pre><h6 id="运行结果：-5"><a href="#运行结果：-5" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,2,3,4,5,6
+7
+</code></pre><h6 id="既然concat-可以添加一个新的数组，push-是否可以添加新的数组呢？运行一段代码"><a href="#既然concat-可以添加一个新的数组，push-是否可以添加新的数组呢？运行一段代码" class="headerlink" title="既然concat()可以添加一个新的数组，push()是否可以添加新的数组呢？运行一段代码"></a>既然concat()可以添加一个新的数组，push()是否可以添加新的数组呢？运行一段代码</h6><pre><code>var arr = [1,2,3,4,5];
+var arr1 = [1,2,3,4]
+document.write(arr.push(arr1));
+alert(arr);
+</code></pre><h6 id="运行结果：-6"><a href="#运行结果：-6" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3,4,5,1,2,3,4
+5（注意这里）
+</code></pre><h6 id="从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度-1"><a href="#从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度-1" class="headerlink" title="从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度+1"></a>从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度+1</h6></li>
+<li><p>sort()方法对数组进行排序，默认是升序排序</p>
+<h6 id="输入任意多个数，使用数组对象进行升序排序"><a href="#输入任意多个数，使用数组对象进行升序排序" class="headerlink" title="输入任意多个数，使用数组对象进行升序排序"></a>输入任意多个数，使用数组对象进行升序排序</h6><h6 id="示例：-3"><a href="#示例：-3" class="headerlink" title="示例："></a>示例：</h6><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+var array = new Array();
+//调用初始化方法
+init();
+// 打印排序后的结果
+//所有单词代换：Ctrl+H，或者Ctrl+D选中下一个
+if (array.length == 0) {
+    document.write(&quot;数组中无合法数值&quot;+&quot;&lt;br/&gt;&quot;);
+    // document.write(&quot;输入的数字是：&quot;+array)
+}else {
+    document.write(&quot;排序前的结果为：&quot;+array+&quot;&lt;br/&gt;&quot;);
+    document.write(&quot;排序后的结果为：&quot;+array.sort(sortNumber));
+}
+
+// 比较函数：
+//     返回 -1，a在b 前边
+//     返回 0 ，位置不变
+//     返回 1 ，b 在a 前边
+// 如果是降序，-1和1相反即可
+//如果没有此函数，会按照ASCALL码的顺序对数组中的元素排序。
+//在此数字排序中是必须要添加的。
+function sortNumber(a,b){
+    if (a&lt;b) {
+        return -1;
+    }else if (a == b) {
+        return 0;
+    }else{
+        return 1;
+    }
+}
+function init(){
+    while (true){
+        var v = prompt(&quot;输入数字，end结束&quot;,&quot;&quot;);
+        if (v == &apos;end&apos;) {
+            break;
+        }
+        if (isNaN(v)) {
+            break;
+        }
+        //将输入的数字依次传入array数组中。
+        //每次传入的数字都是一个，会不断弹出对话框，遇到“end”之后停止弹出，并计算结果
+        array.push(parseFloat(v));
+    }
+}
+
+&lt;/script&gt;
+</code></pre></li>
+<li>reverse()：颠倒数组中的元素的顺序，该方法会改变原来的数组而不是创建新数组<h6 id="用法：arr-reverse"><a href="#用法：arr-reverse" class="headerlink" title="用法：arr.reverse()"></a>用法：arr.reverse()</h6><h6 id="示例：-4"><a href="#示例：-4" class="headerlink" title="示例："></a>示例：</h6><pre><code>var arr1 = [1,2,3]
+document.write(arr1.reverse());
+</code></pre><h6 id="运行结果：-7"><a href="#运行结果：-7" class="headerlink" title="运行结果："></a>运行结果：</h6>  3,2,1<h3 id="数组对象先讲这一些，以后可能还会补充"><a href="#数组对象先讲这一些，以后可能还会补充" class="headerlink" title="数组对象先讲这一些，以后可能还会补充"></a>数组对象先讲这一些，以后可能还会补充</h3><h3 id="下一节介绍字符串对象"><a href="#下一节介绍字符串对象" class="headerlink" title="下一节介绍字符串对象"></a>下一节介绍字符串对象</h3></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/lion/tags/javascript-核心对象/" rel="tag">#javascript 核心对象</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/lion/2016/09/22/first/" rel="next" title="JS random()函数">
+                <i class="fa fa-chevron-left"></i> JS random()函数
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/lion/images/avatar.gif"
+               alt="WaKaaaa猪" />
+          <p class="site-author-name" itemprop="name">WaKaaaa猪</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/lion/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/lion/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-介绍：Array可以存储一系列的数据，JavaScript的数组可以存储-不同类型的数据-元素索引的范围是-0-length-1，length为数组的长度。"><span class="nav-number">1.</span> <span class="nav-text">1.介绍：Array可以存储一系列的数据，JavaScript的数组可以存储 不同类型的数据,元素索引的范围是 0~length-1，length为数组的长度。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-创建数组："><span class="nav-number">2.</span> <span class="nav-text">2.创建数组：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-数组的方法及使用："><span class="nav-number">3.</span> <span class="nav-text">3.数组的方法及使用：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#用法：arrayObj-context-array-x-array-x…"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">用法：arrayObj.context(array x,array x….);</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#解释：arrayObj是自定义的一个数组，array-x是新添加的数组"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">解释：arrayObj是自定义的一个数组，array x是新添加的数组</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#示例1："><span class="nav-number">3.0.0.3.</span> <span class="nav-text">示例1：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#一个数组和其他元素相连"><span class="nav-number">3.0.0.4.</span> <span class="nav-text">一个数组和其他元素相连</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#输出结果："><span class="nav-number">3.0.0.5.</span> <span class="nav-text">输出结果：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#可见concat-方法返回新数组，将元素添加到原来数组的末尾"><span class="nav-number">3.0.0.6.</span> <span class="nav-text">可见concat()方法返回新数组，将元素添加到原来数组的末尾</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#示例2："><span class="nav-number">3.0.0.7.</span> <span class="nav-text">示例2：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#两个数组相连"><span class="nav-number">3.0.0.8.</span> <span class="nav-text">两个数组相连</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#输出结果：-1"><span class="nav-number">3.0.0.9.</span> <span class="nav-text">输出结果：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#示例3："><span class="nav-number">3.0.0.10.</span> <span class="nav-text">示例3：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#三个数组相连"><span class="nav-number">3.0.0.11.</span> <span class="nav-text">三个数组相连</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#输出结果：-2"><span class="nav-number">3.0.0.12.</span> <span class="nav-text">输出结果：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#用法：arr-join-“”"><span class="nav-number">3.0.0.13.</span> <span class="nav-text">用法：arr.join(“”);</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#解释：arr是任意数组"><span class="nav-number">3.0.0.14.</span> <span class="nav-text">解释：arr是任意数组</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#示例："><span class="nav-number">3.0.0.15.</span> <span class="nav-text">示例：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#运行结果："><span class="nav-number">3.0.0.16.</span> <span class="nav-text">运行结果：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#用法：arr-toString"><span class="nav-number">3.0.0.17.</span> <span class="nav-text">用法：arr.toString()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#返回值：转化后的字符串"><span class="nav-number">3.0.0.18.</span> <span class="nav-text">返回值：转化后的字符串</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#示例：-1"><span class="nav-number">3.0.0.19.</span> <span class="nav-text">示例：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#运行结果：-1"><span class="nav-number">3.0.0.20.</span> <span class="nav-text">运行结果：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#用法：arr-pop"><span class="nav-number">3.0.0.21.</span> <span class="nav-text">用法：arr.pop()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#返回值：arr的最后一个元素"><span class="nav-number">3.0.0.22.</span> <span class="nav-text">返回值：arr的最后一个元素</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#示例：-2"><span class="nav-number">3.0.0.23.</span> <span class="nav-text">示例：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#运行结果：-2"><span class="nav-number">3.0.0.24.</span> <span class="nav-text">运行结果：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#注意！如果给pop-；赋一个参数，也只会pop出最后一个元素，任何参数都可以-比如arr这个数组，返回的也是4"><span class="nav-number">3.0.0.25.</span> <span class="nav-text">注意！如果给pop()；赋一个参数，也只会pop出最后一个元素，任何参数都可以(比如arr这个数组，返回的也是4)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#用法：arr-push-x-y-z…"><span class="nav-number">3.0.0.26.</span> <span class="nav-text">用法：arr.push(x,y,z…)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#返回值：新数组的长度"><span class="nav-number">3.0.0.27.</span> <span class="nav-text">返回值：新数组的长度</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#示例"><span class="nav-number">3.0.0.28.</span> <span class="nav-text">示例:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#运行结果：-3"><span class="nav-number">3.0.0.29.</span> <span class="nav-text">运行结果：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如果添加的元素是arr，结果会是什么样的呢？"><span class="nav-number">3.0.0.30.</span> <span class="nav-text">如果添加的元素是arr，结果会是什么样的呢？</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#运行结果：-4"><span class="nav-number">3.0.0.31.</span> <span class="nav-text">运行结果：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1"><span class="nav-number">3.0.0.32.</span> <span class="nav-text">可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#也可以添加多个元素"><span class="nav-number">3.0.0.33.</span> <span class="nav-text">也可以添加多个元素</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#运行结果：-5"><span class="nav-number">3.0.0.34.</span> <span class="nav-text">运行结果：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#既然concat-可以添加一个新的数组，push-是否可以添加新的数组呢？运行一段代码"><span class="nav-number">3.0.0.35.</span> <span class="nav-text">既然concat()可以添加一个新的数组，push()是否可以添加新的数组呢？运行一段代码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#运行结果：-6"><span class="nav-number">3.0.0.36.</span> <span class="nav-text">运行结果：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度-1"><span class="nav-number">3.0.0.37.</span> <span class="nav-text">从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度+1</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#输入任意多个数，使用数组对象进行升序排序"><span class="nav-number">3.0.0.38.</span> <span class="nav-text">输入任意多个数，使用数组对象进行升序排序</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#示例：-3"><span class="nav-number">3.0.0.39.</span> <span class="nav-text">示例：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#用法：arr-reverse"><span class="nav-number">3.0.0.40.</span> <span class="nav-text">用法：arr.reverse()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#示例：-4"><span class="nav-number">3.0.0.41.</span> <span class="nav-text">示例：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#运行结果：-7"><span class="nav-number">3.0.0.42.</span> <span class="nav-text">运行结果：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组对象先讲这一些，以后可能还会补充"><span class="nav-number">4.</span> <span class="nav-text">数组对象先讲这一些，以后可能还会补充</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下一节介绍字符串对象"><span class="nav-number">5.</span> <span class="nav-text">下一节介绍字符串对象</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WaKaaaa猪</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lion/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lion/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lion/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lion/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lion/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lion/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/lion/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/lion/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/lion/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/lion/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/lion/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
