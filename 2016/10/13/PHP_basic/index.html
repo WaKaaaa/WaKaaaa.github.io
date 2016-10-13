@@ -1,0 +1,607 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PHP基本知识," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="PHP的基本知识学习总结 一：PHP概述PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以.php为后缀名，写动态网站，与数据库交互PHP运行环境：windows+apache+php+mysql      &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;    linux+apache+php+mysqlPHP文件构成：HTML div CSS P">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP basic">
+<meta property="og:url" content="https://WaKaaaa.github.io/2016/10/13/PHP_basic/index.html">
+<meta property="og:site_name" content="WaKaaaa猪的博客">
+<meta property="og:description" content="PHP的基本知识学习总结 一：PHP概述PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以.php为后缀名，写动态网站，与数据库交互PHP运行环境：windows+apache+php+mysql      &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;    linux+apache+php+mysqlPHP文件构成：HTML div CSS P">
+<meta property="og:updated_time" content="2016-10-13T03:37:24.934Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP basic">
+<meta name="twitter:description" content="PHP的基本知识学习总结 一：PHP概述PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以.php为后缀名，写动态网站，与数据库交互PHP运行环境：windows+apache+php+mysql      &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;    linux+apache+php+mysqlPHP文件构成：HTML div CSS P">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://WaKaaaa.github.io/2016/10/13/PHP_basic/"/>
+
+  <title> PHP basic | WaKaaaa猪的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">WaKaaaa猪的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP basic
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-10-13T09:37:02+08:00" content="2016-10-13">
+              2016-10-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/13/PHP_basic/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://WaKaaaa.github.io/2016/10/13/PHP_basic/" itemprop="commentsCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="PHP的基本知识学习总结"><a href="#PHP的基本知识学习总结" class="headerlink" title=" PHP的基本知识学习总结 "></a><center> PHP的基本知识学习总结 </center></h1><h2 id="一：PHP概述"><a href="#一：PHP概述" class="headerlink" title="一：PHP概述"></a>一：PHP概述</h2><h3 id="PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以-php为后缀名，写动态网站，与数据库交互"><a href="#PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以-php为后缀名，写动态网站，与数据库交互" class="headerlink" title="PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以.php为后缀名，写动态网站，与数据库交互"></a>PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以.php为后缀名，写动态网站，与数据库交互</h3><h3 id="PHP运行环境：windows-apache-php-mysql-emsp-emsp-emsp-emsp-emsp-emsp-emsp-linux-apache-php-mysql"><a href="#PHP运行环境：windows-apache-php-mysql-emsp-emsp-emsp-emsp-emsp-emsp-emsp-linux-apache-php-mysql" class="headerlink" title="PHP运行环境：windows+apache+php+mysql      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;    linux+apache+php+mysql"></a>PHP运行环境：windows+apache+php+mysql <br>     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;    linux+apache+php+mysql</h3><h3 id="PHP文件构成：HTML-div-CSS-PHP-JavaScript-jQuery-ajax等"><a href="#PHP文件构成：HTML-div-CSS-PHP-JavaScript-jQuery-ajax等" class="headerlink" title="PHP文件构成：HTML div CSS PHP JavaScript jQuery ajax等"></a>PHP文件构成：HTML div CSS PHP JavaScript jQuery ajax等</h3><h3 id="PHP工作原理：请求-gt-Apache-gt-执行PHP代码-gt-响应"><a href="#PHP工作原理：请求-gt-Apache-gt-执行PHP代码-gt-响应" class="headerlink" title="PHP工作原理：请求-&gt;Apache-&gt;执行PHP代码-&gt;响应"></a>PHP工作原理：请求-&gt;Apache-&gt;执行PHP代码-&gt;响应</h3><h2 id="二：PHP环境搭建"><a href="#二：PHP环境搭建" class="headerlink" title="二：PHP环境搭建"></a>二：PHP环境搭建</h2><h3 id="用appServ集成环境或者独立搭建"><a href="#用appServ集成环境或者独立搭建" class="headerlink" title="用appServ集成环境或者独立搭建"></a>用appServ集成环境或者独立搭建</h3><h1 id="三：php基础知识"><a href="#三：php基础知识" class="headerlink" title="三：php基础知识"></a>三：php基础知识</h1><h2 id="emsp-01-基本语法"><a href="#emsp-01-基本语法" class="headerlink" title="&emsp; 01.基本语法"></a>&emsp; 01.基本语法</h2><pre><code>&lt;?php 
+    ......
+ ?&gt;
+</code></pre><h2 id="emsp-02-输出的几种方式和比较"><a href="#emsp-02-输出的几种方式和比较" class="headerlink" title="&emsp; 02.输出的几种方式和比较"></a>&emsp; 02.输出的几种方式和比较</h2><ul>
+<li>&emsp; <code>echo</code>: 函数，无返回值（返回void），作用是打印字符串</li>
+<li>&emsp; <code>print</code>: 函数，返回整型，作用是打印字符串</li>
+<li>&emsp; <code>printf</code>: 函数，返回字符串的长度，作用是打印字符串</li>
+<li><p>&emsp; <code>sprintf</code>: 函数，返回字符串将字符串保存在内存中（不在浏览器下显示）<br>###</p>
+<p> &lt;?php </p>
+<pre><code>echo &quot;hello php1&quot;;
+echo &quot;&lt;/br&gt;&quot;;
+print(&quot;hello php2&quot;);
+echo &quot;&lt;/br&gt;&quot;;
+echo print(&quot;hello php3&lt;/br&gt;&quot;); // 这句话的作用是先将print里的字符串打印出来，再打印一个字符串，然后echo出print的类型，返回真，在浏览器中显示为1
+echo &quot;&lt;/br&gt;&quot;;
+printf(&quot;hello php4&lt;/br&gt;&quot;);
+echo printf(&quot;hello php5&lt;/br&gt;&quot;); //返回字符串的长度
+echo &quot;&lt;/br&gt;&quot;;
+sprintf(&quot;hello php6&lt;br&gt;&quot;); // 字符串保存在内存中，不在浏览器界面显示
+echo sprintf(&quot;hello php7&quot;); // 返回字符串
+</code></pre><p>  ?&gt;<br> 运行结果：<br> hello php1<br> hello php2<br> hello php3<br> 1<br> hello php4<br> hello php5<br> 15<br> hello php7</p>
+<h2 id="emsp-03-注释"><a href="#emsp-03-注释" class="headerlink" title="&emsp; 03.注释"></a>&emsp; 03.注释</h2><p> 单行//<br> 多行/**/<br> shell #</p>
+<h2 id="emsp-04-标识符"><a href="#emsp-04-标识符" class="headerlink" title="&emsp; 04.标识符"></a>&emsp; 04.标识符</h2><h3 id="emsp-标识符是变量的名称，关于标识符，PHP定义了一些简单的规则："><a href="#emsp-标识符是变量的名称，关于标识符，PHP定义了一些简单的规则：" class="headerlink" title="&emsp; 标识符是变量的名称，关于标识符，PHP定义了一些简单的规则："></a>&emsp; 标识符是变量的名称，关于标识符，PHP定义了一些简单的规则：</h3><h3 id="emsp-标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。"><a href="#emsp-标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。" class="headerlink" title="&emsp; 标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。"></a>&emsp; 标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。</h3><h3 id="emsp-标识符不能以数字开始。"><a href="#emsp-标识符不能以数字开始。" class="headerlink" title="&emsp; 标识符不能以数字开始。"></a>&emsp; 标识符不能以数字开始。</h3><h3 id="emsp-在PHP中，标识符是区分大小写的。"><a href="#emsp-在PHP中，标识符是区分大小写的。" class="headerlink" title="&emsp; 在PHP中，标识符是区分大小写的。"></a>&emsp; 在PHP中，标识符是区分大小写的。</h3><h3 id="emsp-一个变量名称可以与一个函数名称相同。"><a href="#emsp-一个变量名称可以与一个函数名称相同。" class="headerlink" title="&emsp; 一个变量名称可以与一个函数名称相同。"></a>&emsp; 一个变量名称可以与一个函数名称相同。</h3><h2 id="emsp-05-变量的数据类型"><a href="#emsp-05-变量的数据类型" class="headerlink" title="&emsp; 05.变量的数据类型"></a>&emsp; 05.变量的数据类型</h2><p> Integer(整数)、Float(浮点数，也叫Double,双精度)、String(字符串)、Boolean(布尔)、Array(数组)、Object(对象).</p>
+<blockquote>
+<p>在PHP中无论是double还是float，在浏览器中显示的都是“double”<br>###</p>
+<h2 id="emsp-06-类型转换"><a href="#emsp-06-类型转换" class="headerlink" title="&emsp; 06.类型转换"></a>&emsp; 06.类型转换</h2><p> //    数据类型的转换：分为显示转化和隐式转换<br> echo “数据类型的转换方式：(integer)\$num<br>“;    //反斜杠表示转义字符<br> echo “转化成整数和浮点数的时候如果以数字开头，首先将数字部分转化成整数，再舍去后边的字符串，如果字符串中含有小数点，会保留到小数点前一位<br>“;<br> $str5 = “2.559656894E2”;<br> echo “转义前的string类型：”.$str5.”<br>“;        //“.”小圆点表示字符串的连接<br> //    此种方式的转换都是显示转换，也叫强制类型转换<br> echo “转化成整数：”.(integer)$str5.”<br>“;<br> echo “转化成布尔类型：”.(boolean)$str5.”<br>“;    //    0，null和未被赋值的变量将会转换成false<br> echo “转化成浮点数：”.(float)$str5.”<br>“;    // 字符串的连接用“.”<br> echo “转化成数组：”.(array)$str5.”<br>“;</p>
+</blockquote>
+<p> //    隐式转换<br> $sum = 123;<br> $total = 23.4;<br> $sum = $total;<br> echo gettype($sum);    //此时返回的是浮点型，显示的是double，浏览器显示的浮点型就是double<br> echo “<br>“;</p>
+<p> //    settype()函数也可以设置类型，此时将原本的变量类型改变<br> $a = 1234;<br> settype($a, string);<br> echo gettype($a).”<br>“;    //    将此变量设置成string类型，gettype()获取变量的类型<br> echo “$a<br>“;    //    $a是字符串a</p>
+<p> //    intval()函数，此函数不会改变变量的类型（此处还是浮点数），但是会将变量的值按照整型输出（此处输出的是整型），与之相应的还有floatval()  strval()<br> $b = 456.345;<br> echo gettype($b).”<br>“;<br> echo intval($b).”<br>“;<br> echo gettype($b);<br> echo “<hr>“;</p>
+<p> 运行结果：<br> 数据类型的转换方式：(integer)$num<br> 转化成整数和浮点数的时候如果以数字开头，首先将数字部分转化成整数，再舍去后边的字符串，如果字符串中含有小数点，会保留到小数点前一位<br> 转义前的string类型：2.559656894E2<br> 转化成整数：2<br> 转化成布尔类型：1<br> 转化成浮点数：255.9656894<br> 转化成数组：Array<br> double<br> string<br> 1234<br> double<br> 456<br> double</p>
+<h2 id="emsp-07-检测变量"><a href="#emsp-07-检测变量" class="headerlink" title="&emsp; 07.检测变量"></a>&emsp; 07.检测变量</h2><p> 大部分的可变函数都是用来测试一个函数的类型的。PHP中有两个最常见的函数，分别是gettype()和settype()。<br> 这两个函数返回的string类型，也就是变量的类型字符串。<br> 用法：gettypt($变量)</p>
+<pre><code>settype($变量，要转换的数据类型)
+</code></pre><p> isset()用来判断一个变量是否存在，返回的是布尔值true或false<br> unset()用来销毁一个变量（如果变量存在则销毁，如果不存在此函数不发挥作用）</p>
+</li>
+</ul>
+<pre><code>empty()用来判断一个变量的值是否为空，如果为空则为true否则为false。
+换句话说，&quot;&quot;、0、&quot;0&quot;、NULL、FALSE、array()、var $var; 以及没有任何属性的对象都将被认为是空的
+
+PHP还提供了一些特定类型的测试函数。每一个函数都使用一个变量座位其参数，并且返回true或false。
+is_array()、is_double()、is_float()、is_real()、is_long()、is_int()、is_integer()、is_string()、is_object()、is_resource()、is_null()、is_numeric() 
+
+可以通过调用一个函数来实现转换变量数据类型的目的。
+intval()、floatval()、strval();
+注意：在浏览器中如果是真（true），返回1，如果是假（false），返回空（什么都不返回）
+</code></pre><h2 id="emsp-08-php常量"><a href="#emsp-08-php常量" class="headerlink" title="&emsp; 08.php常量"></a>&emsp; 08.php常量</h2><h3 id="常量一旦被定义之后，就不能再次更改。"><a href="#常量一旦被定义之后，就不能再次更改。" class="headerlink" title="常量一旦被定义之后，就不能再次更改。"></a>常量一旦被定义之后，就不能再次更改。</h3><h3 id="语法：define（“常量名”，常量值）"><a href="#语法：define（“常量名”，常量值）" class="headerlink" title="语法：define（“常量名”，常量值）"></a>语法：define（“常量名”，常量值）</h3><p>###&emsp;&emsp;&emsp; define(“TOTAL”,199);</p>
+<h3 id="除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo-命令。"><a href="#除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo-命令。" class="headerlink" title="除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo()命令。"></a>除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo()命令。</h3><h3 id="变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。"><a href="#变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。" class="headerlink" title="变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。"></a>变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。</h3><h2 id="emsp-09-php中单双引号的区别"><a href="#emsp-09-php中单双引号的区别" class="headerlink" title="&emsp; 09.php中单双引号的区别"></a>&emsp; 09.php中单双引号的区别</h2><h3 id="emsp-双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值"><a href="#emsp-双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值" class="headerlink" title="&emsp; 双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值"></a>&emsp; 双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值</h3><h3 id="emsp-双引号可以解析转义字符，如-n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）"><a href="#emsp-双引号可以解析转义字符，如-n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）" class="headerlink" title="&emsp; 双引号可以解析转义字符，如\n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）"></a>&emsp; 双引号可以解析转义字符，如\n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）</h3><h3 id="emsp-单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号"><a href="#emsp-单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号" class="headerlink" title="&emsp; 单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号"></a>&emsp; 单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号</h3>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP基本知识/" rel="tag">#PHP基本知识</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/26/js_array_object/" rel="next" title="JS Object">
+                <i class="fa fa-chevron-left"></i> JS Object
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="WaKaaaa猪" />
+          <p class="site-author-name" itemprop="name">WaKaaaa猪</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP的基本知识学习总结"><span class="nav-number">1.</span> <span class="nav-text"> PHP的基本知识学习总结 </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一：PHP概述"><span class="nav-number">1.1.</span> <span class="nav-text">一：PHP概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以-php为后缀名，写动态网站，与数据库交互"><span class="nav-number">1.1.1.</span> <span class="nav-text">PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以.php为后缀名，写动态网站，与数据库交互</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP运行环境：windows-apache-php-mysql-emsp-emsp-emsp-emsp-emsp-emsp-emsp-linux-apache-php-mysql"><span class="nav-number">1.1.2.</span> <span class="nav-text">PHP运行环境：windows+apache+php+mysql                 linux+apache+php+mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP文件构成：HTML-div-CSS-PHP-JavaScript-jQuery-ajax等"><span class="nav-number">1.1.3.</span> <span class="nav-text">PHP文件构成：HTML div CSS PHP JavaScript jQuery ajax等</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP工作原理：请求-gt-Apache-gt-执行PHP代码-gt-响应"><span class="nav-number">1.1.4.</span> <span class="nav-text">PHP工作原理：请求->Apache->执行PHP代码->响应</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二：PHP环境搭建"><span class="nav-number">1.2.</span> <span class="nav-text">二：PHP环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用appServ集成环境或者独立搭建"><span class="nav-number">1.2.1.</span> <span class="nav-text">用appServ集成环境或者独立搭建</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三：php基础知识"><span class="nav-number">2.</span> <span class="nav-text">三：php基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#emsp-01-基本语法"><span class="nav-number">2.1.</span> <span class="nav-text">  01.基本语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emsp-02-输出的几种方式和比较"><span class="nav-number">2.2.</span> <span class="nav-text">  02.输出的几种方式和比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emsp-03-注释"><span class="nav-number">2.3.</span> <span class="nav-text">  03.注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emsp-04-标识符"><span class="nav-number">2.4.</span> <span class="nav-text">  04.标识符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#emsp-标识符是变量的名称，关于标识符，PHP定义了一些简单的规则："><span class="nav-number">2.4.1.</span> <span class="nav-text">  标识符是变量的名称，关于标识符，PHP定义了一些简单的规则：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#emsp-标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。"><span class="nav-number">2.4.2.</span> <span class="nav-text">  标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#emsp-标识符不能以数字开始。"><span class="nav-number">2.4.3.</span> <span class="nav-text">  标识符不能以数字开始。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#emsp-在PHP中，标识符是区分大小写的。"><span class="nav-number">2.4.4.</span> <span class="nav-text">  在PHP中，标识符是区分大小写的。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#emsp-一个变量名称可以与一个函数名称相同。"><span class="nav-number">2.4.5.</span> <span class="nav-text">  一个变量名称可以与一个函数名称相同。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emsp-05-变量的数据类型"><span class="nav-number">2.5.</span> <span class="nav-text">  05.变量的数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emsp-06-类型转换"><span class="nav-number">2.6.</span> <span class="nav-text">  06.类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emsp-07-检测变量"><span class="nav-number">2.7.</span> <span class="nav-text">  07.检测变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emsp-08-php常量"><span class="nav-number">2.8.</span> <span class="nav-text">  08.php常量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常量一旦被定义之后，就不能再次更改。"><span class="nav-number">2.8.1.</span> <span class="nav-text">常量一旦被定义之后，就不能再次更改。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法：define（“常量名”，常量值）"><span class="nav-number">2.8.2.</span> <span class="nav-text">语法：define（“常量名”，常量值）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo-命令。"><span class="nav-number">2.8.3.</span> <span class="nav-text">除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo()命令。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。"><span class="nav-number">2.8.4.</span> <span class="nav-text">变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emsp-09-php中单双引号的区别"><span class="nav-number">2.9.</span> <span class="nav-text">  09.php中单双引号的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#emsp-双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值"><span class="nav-number">2.9.1.</span> <span class="nav-text">  双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#emsp-双引号可以解析转义字符，如-n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）"><span class="nav-number">2.9.2.</span> <span class="nav-text">  双引号可以解析转义字符，如\n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#emsp-单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号"><span class="nav-number">2.9.3.</span> <span class="nav-text">  单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WaKaaaa猪</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
