@@ -235,6 +235,153 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/17/PHP-math/" itemprop="url">
+                  PHP_math
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-10-17T19:54:02+08:00" content="2016-10-17">
+              2016-10-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/17/PHP-math/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://WaKaaaa.github.io/2016/10/17/PHP-math/" itemprop="commentsCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-数字相加"><a href="#1-数字相加" class="headerlink" title="1.数字相加"></a>1.数字相加</h1><h3 id="主要处理整型和浮点型，如果计算中包含数值和字符串，字符串会在完成计算之前转换为数值，而数值则会在与字符串连接之前转换为字符串。"><a href="#主要处理整型和浮点型，如果计算中包含数值和字符串，字符串会在完成计算之前转换为数值，而数值则会在与字符串连接之前转换为字符串。" class="headerlink" title="主要处理整型和浮点型，如果计算中包含数值和字符串，字符串会在完成计算之前转换为数值，而数值则会在与字符串连接之前转换为字符串。"></a>主要处理整型和浮点型，如果计算中包含数值和字符串，字符串会在完成计算之前转换为数值，而数值则会在与字符串连接之前转换为字符串。</h3><pre><code>$a = &apos;5&apos;; //完成计算之前转化为数字
+$b = $a+7;
+echo &quot;$b&quot;;
+结果：12
+
+$z = &apos;a&apos;;
+echo $z+7;    //因为字母没法办法转换成数字，所以输出7
+</code></pre><h3 id="PHP提供了大量函数来检查变量的数据类型"><a href="#PHP提供了大量函数来检查变量的数据类型" class="headerlink" title="PHP提供了大量函数来检查变量的数据类型"></a>PHP提供了大量函数来检查变量的数据类型</h3><blockquote>
+<p>is_numeric()检验是否为数字或者数字字符串，如果是返回1，如果不是，返回空</p>
+</blockquote>
+<pre><code>$a = &apos;5&apos;;    
+echo is_numeric($a);
+echo &quot;&lt;br&gt;&quot;;
+结果：1
+</code></pre><blockquote>
+<p>is_int()检测是否为整型,如果是返回1，如果不是，返回空</p>
+</blockquote>
+<pre><code>$e = 5;
+echo is_int($e);    //返回1
+</code></pre><blockquote>
+<p>is_float()检测是否为浮点型,如果是返回1，如果不是，返回空</p>
+</blockquote>
+<pre><code>$a = 6.1;
+$b = 6;
+echo is_float($a);    //返回1
+echo is_float($b);    //返回空
+</code></pre><h1 id="2-产生随机数"><a href="#2-产生随机数" class="headerlink" title="2.产生随机数"></a>2.产生随机数</h1><h3 id="rand-函数是libc-构建PHP所用编译器提供的基本库之一-中定义的随机函数的一个简单包装器。mt-rand-是一个很好的替代实现，提供了很多精心设计的特性，而且mt-rand-甚至比libc中的版本还要快"><a href="#rand-函数是libc-构建PHP所用编译器提供的基本库之一-中定义的随机函数的一个简单包装器。mt-rand-是一个很好的替代实现，提供了很多精心设计的特性，而且mt-rand-甚至比libc中的版本还要快" class="headerlink" title="rand()函数是libc(构建PHP所用编译器提供的基本库之一)中定义的随机函数的一个简单包装器。mt_rand()是一个很好的替代实现，提供了很多精心设计的特性，而且mt_rand()甚至比libc中的版本还要快"></a>rand()函数是libc(构建PHP所用编译器提供的基本库之一)中定义的随机函数的一个简单包装器。mt_rand()是一个很好的替代实现，提供了很多精心设计的特性，而且mt_rand()甚至比libc中的版本还要快</h3><pre><code>echo rand(1,100);    //产生随机数，第一个参数是最小值，第二个参数是最大值，自定义的，可改变可不写
+echo &quot;&lt;br&gt;&quot;;
+echo mt_rand(1,100);    //产生更好的随机数，速度比rand快
+
+echo getrandmax();    //获取rand的最大值 4132767
+echo &quot;&lt;br&gt;&quot;;
+echo mt_getrandmax();    //获取mt_rand的最大值 2147483647
+echo &quot;&lt;br&gt;&quot;;
+</code></pre><h1 id="3-格式化数据"><a href="#3-格式化数据" class="headerlink" title="3.格式化数据"></a>3.格式化数据</h1><h3 id="number-format-函数可以把整数和浮点数值转换为一种可读的字符串表示，格式化数字字符串，里边只能放浮点型"><a href="#number-format-函数可以把整数和浮点数值转换为一种可读的字符串表示，格式化数字字符串，里边只能放浮点型" class="headerlink" title="number_format()函数可以把整数和浮点数值转换为一种可读的字符串表示，格式化数字字符串，里边只能放浮点型"></a>number_format()函数可以把整数和浮点数值转换为一种可读的字符串表示，格式化数字字符串，里边只能放浮点型</h3><pre><code>//格式化字符串number_format
+$f = 123892.4567;
+echo number_format($f,3);        //第一位存放浮点数，第二位表示精确到小数点后n位
+echo &quot;&lt;br&gt;&quot;;
+echo number_format($f);    //只有浮点数默认会舍弃小数部分，整数部分按照外国人的习惯每三位用有个逗号隔开
+echo &quot;&lt;br&gt;&quot;;
+echo number_format($f,3,&apos;%&apos;,&quot;#&quot;);    //第三位将分隔符逗号改成%，第四位将小数点点号改为#号，一般情况下不用这两个
+echo &quot;&lt;br&gt;&quot;;
+结果：123,892.457   123,892   123#892%457
+</code></pre><h1 id="4-数学函数"><a href="#4-数学函数" class="headerlink" title="4.数学函数"></a>4.数学函数</h1><pre><code>echo abs(&apos;-6&apos;);        // abs() 绝对值
+echo round(&apos;1.631&apos;);    // round() 四舍五入
+echo floor(&apos;1.642&apos;);    // floor() 舍去法取整     
+</code></pre><h3 id="具体数学函数参照如下："><a href="#具体数学函数参照如下：" class="headerlink" title="具体数学函数参照如下："></a>具体数学函数参照如下：</h3><p>•abs — 绝对值<br>•acos — 反余弦 <br><br>•acosh — 反双曲余弦 <br><br>•asin — 反正弦 <br><br>•asinh — 反双曲正弦 <br><br>•atan2 — 两个参数的反正切 <br><br>•atan — 反正切 <br><br>•atanh — 反双曲正切 <br><br>•base_convert — 在任意进制之间转换数字 <br><br>•bindec — 二进制转换为十进制 <br><br>•ceil — 进一法取整 <br><br>•cos — 余弦 <br><br>•cosh — 双曲余弦 <br><br>•decbin — 十进制转换为二进制 <br><br>•dechex — 十进制转换为十六进制 <br><br>•decoct — 十进制转换为八进制 <br><br>•deg2rad — 将角度转换为弧度 <br><br>•exp — 计算 e 的指数 <br><br>•expm1 — 返回 exp(number) - 1，甚至当 number 的值接近零也能计算出准确结果 <br><br>•floor — 舍去法取整 <br><br>•fmod — 返回除法的浮点数余数 <br><br>•getrandmax — 显示随机数最大的可能值 <br><br>•hexdec — 十六进制转换为十进制 <br><br>•hypot — 计算一直角三角形的斜边长度 <br><br>•intdiv — 对除法结果取整 <br><br>•is_finite — 判断是否为有限值 <br><br>•is_infinite — 判断是否为无限值 <br><br>•is_nan — 判断是否为合法数值 <br><br>•lcg_value — 组合线性同余发生器 <br><br>•log10 — 以 10 为底的对数 <br><br>•log1p — 返回 log(1 + number)，甚至当 number 的值接近零也能计算出准确结果 <br><br>•log — 自然对数 <br><br>•max — 找出最大值 <br><br>•min — 找出最小值 <br><br>•mt_getrandmax — 显示随机数的最大可能值 <br><br>•mt_rand — 生成更好的随机数 <br><br>•mt_srand — 播下一个更好的随机数发生器种子 <br><br>•octdec — 八进制转换为十进制 <br><br>•pi — 得到圆周率值 <br><br>•pow — 指数表达式 <br><br>•rad2deg — 将弧度数转换为相应的角度数 <br><br>•rand — 产生一个随机整数 <br><br>•round — 对浮点数进行四舍五入 <br><br>•sin — 正弦 <br><br>•sinh — 双曲正弦 <br><br>•sqrt — 平方根 <br><br>•srand — 播下随机数发生器种子 <br><br>•tan — 正切 <br><br>•tanh — 双曲正切</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/13/PHP_basic/" itemprop="url">
                   PHP basic
                 </a>
@@ -992,7 +1139,7 @@ alert(parseInt(5/2));
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
@@ -1002,7 +1149,7 @@ alert(parseInt(5/2));
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">Tags</span>
               </a>
             </div>
