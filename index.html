@@ -235,6 +235,131 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/18/php-echo/" itemprop="url">
+                  php_echo
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-10-18T22:34:29+08:00" content="2016-10-18">
+              2016-10-18
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/18/php-echo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://WaKaaaa.github.io/2016/10/18/php-echo/" itemprop="commentsCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="php几种输出方式比较"><a href="#php几种输出方式比较" class="headerlink" title=" php几种输出方式比较"></a><center> php几种输出方式比较</center></h1><ul>
+<li>&emsp; <code>echo</code>: 函数，无返回值（返回void），作用是打印字符串，还可以打印函数的类型和数组类型</li>
+<li>&emsp; <code>print</code>: 函数，返回整型，作用是打印字符串</li>
+<li>&emsp; <code>printf</code>: 函数，返回字符串的长度，作用是打印字符串</li>
+<li>&emsp; <code>sprintf</code>: 函数，返回字符串将字符串保存在内存中（不在浏览器下显示）</li>
+<li><p>&emsp; <code>print_r</code>: 函数，用来打印数组中的所有元素<br>###</p>
+<p> &lt;?php </p>
+<pre><code>echo &quot;hello php1&quot;;
+echo &quot;&lt;/br&gt;&quot;;
+print(&quot;hello php2&quot;);
+echo &quot;&lt;/br&gt;&quot;;
+echo print(&quot;hello php3&lt;/br&gt;&quot;); // 这句话的作用是先将print里的字符串打印出来，再打印一个字符串，然后echo出print的类型，返回真，在浏览器中显示为1
+echo &quot;&lt;/br&gt;&quot;;
+printf(&quot;hello php4&lt;/br&gt;&quot;);
+echo printf(&quot;hello php5&lt;/br&gt;&quot;); //返回字符串的长度
+echo &quot;&lt;/br&gt;&quot;;
+sprintf(&quot;hello php6&lt;br&gt;&quot;); // 字符串保存在内存中，不在浏览器界面显示
+echo sprintf(&quot;hello php7&quot;); // 返回字符串
+echo&quot;&lt;br&gt;&quot;;
+
+$userAges = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
+echo $userAges; //返回$userAges的类型 array
+</code></pre><p>  ?&gt;<br> 运行结果：<br> hello php1<br> hello php2<br> hello php3<br> 1<br> hello php4<br> hello php5<br> 15<br> hello php7<br> array</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/18/php-array-2/" itemprop="url">
                   php_array(2)
                 </a>
@@ -1439,7 +1564,7 @@ alert(parseInt(5/2));
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
