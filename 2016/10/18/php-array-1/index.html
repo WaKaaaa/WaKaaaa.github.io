@@ -1,0 +1,617 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="WaKaaaaa" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="PHP数组1.数组命名规则开头是$，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素$1fu = array(&amp;apos;1&amp;apos;,&amp;apos;2&amp;apos;);    //不可以数字开头
+$fu_&amp;amp;hello = array(&amp;quot;hello&amp;quot;,&amp;quot;world&amp;quot;);    //含有特殊符号&amp;amp;
+$userName = arr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php_array(1)">
+<meta property="og:url" content="https://WaKaaaa.github.io/2016/10/18/php-array-1/index.html">
+<meta property="og:site_name" content="WaKaaaa猪的博客">
+<meta property="og:description" content="PHP数组1.数组命名规则开头是$，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素$1fu = array(&amp;apos;1&amp;apos;,&amp;apos;2&amp;apos;);    //不可以数字开头
+$fu_&amp;amp;hello = array(&amp;quot;hello&amp;quot;,&amp;quot;world&amp;quot;);    //含有特殊符号&amp;amp;
+$userName = arr">
+<meta property="og:updated_time" content="2016-10-18T13:12:51.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php_array(1)">
+<meta name="twitter:description" content="PHP数组1.数组命名规则开头是$，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素$1fu = array(&amp;apos;1&amp;apos;,&amp;apos;2&amp;apos;);    //不可以数字开头
+$fu_&amp;amp;hello = array(&amp;quot;hello&amp;quot;,&amp;quot;world&amp;quot;);    //含有特殊符号&amp;amp;
+$userName = arr">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://WaKaaaa.github.io/2016/10/18/php-array-1/"/>
+
+  <title> php_array(1) | WaKaaaa猪的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">WaKaaaa猪的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                php_array(1)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-10-18T18:56:16+08:00" content="2016-10-18">
+              2016-10-18
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/18/php-array-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://WaKaaaa.github.io/2016/10/18/php-array-1/" itemprop="commentsCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="PHP数组"><a href="#PHP数组" class="headerlink" title="PHP数组"></a><center>PHP数组<center></center></center></h1><h2 id="1-数组命名规则"><a href="#1-数组命名规则" class="headerlink" title="1.数组命名规则"></a>1.数组命名规则</h2><h3 id="开头是-，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素"><a href="#开头是-，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素" class="headerlink" title="开头是$，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素"></a>开头是$，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素</h3><pre><code>$1fu = array(&apos;1&apos;,&apos;2&apos;);    //不可以数字开头
+$fu_&amp;hello = array(&quot;hello&quot;,&quot;world&quot;);    //含有特殊符号&amp;
+$userName = array(&apos;张三&apos;,&apos;李四&apos;,&apos;王五&apos;,&apos;赵六&apos;,&apos;嘻嘻嘻&apos;,&apos;嘿嘿嘿&apos;); //正确的命名
+</code></pre><h3 id="注意：在一个程序中，标量变量和数组变量不能同名，例如已经存在-userName的变量，再创建-userName的数组，后者会覆盖前者"><a href="#注意：在一个程序中，标量变量和数组变量不能同名，例如已经存在-userName的变量，再创建-userName的数组，后者会覆盖前者" class="headerlink" title="注意：在一个程序中，标量变量和数组变量不能同名，例如已经存在$userName的变量，再创建$userName的数组，后者会覆盖前者"></a>注意：在一个程序中，标量变量和数组变量不能同名，例如已经存在$userName的变量，再创建$userName的数组，后者会覆盖前者</h3><h3 id="数组变量的名称是区分大小写的，-user和-User是不同的两个变量数组类名"><a href="#数组变量的名称是区分大小写的，-user和-User是不同的两个变量数组类名" class="headerlink" title="数组变量的名称是区分大小写的，$user和$User是不同的两个变量数组类名"></a>数组变量的名称是区分大小写的，$user和$User是不同的两个变量数组类名</h3><h3 id="PHP常量和变量都区分大小写"><a href="#PHP常量和变量都区分大小写" class="headerlink" title="PHP常量和变量都区分大小写"></a>PHP常量和变量都区分大小写</h3><pre><code>&lt;?php 
+    $a = &quot;hello&quot;;
+    $A = &quot;world&quot;;
+    echo $a.&quot;&lt;br&gt;&quot;;
+    echo $A.&quot;&lt;br&gt;&quot;;
+    // 结果是 hello world，变量区分大小写，否则后者会覆盖前者
+
+    define(&quot;c&quot;, 123);
+    define(&quot;C&quot;, 456);
+    echo c.&quot;&lt;br&gt;&quot;;
+    echo C;
+    // 都打印，常量也区分大小写
+
+ ?&gt;
+</code></pre><h3 id="PHP的类名和方法名甚至一些关键字都不区分大小写"><a href="#PHP的类名和方法名甚至一些关键字都不区分大小写" class="headerlink" title="PHP的类名和方法名甚至一些关键字都不区分大小写"></a>PHP的类名和方法名甚至一些关键字都不区分大小写</h3><h2 id="2-创建数组的几种方法"><a href="#2-创建数组的几种方法" class="headerlink" title="2.创建数组的几种方法"></a>2.创建数组的几种方法</h2><pre><code>// 创建数组的第一种方法：array函数创建
+ $userName = array(&apos;张三&apos;,&apos;李四&apos;,&apos;王五&apos;,&apos;赵六&apos;,&apos;嘻嘻嘻&apos;,&apos;嘿嘿嘿&apos;);
+ echo $userName.&quot;&lt;br&gt;&quot;;    // 用echo只能打印$userName的返回类型是array（数组）
+ print_r($userName);    // 用print_r可以将数组打印出来
+ echo &quot;&lt;br&gt;&quot;;
+ echo $userName[2].&quot;&lt;br&gt;&quot;;    //在使用数据时，可以直接取他的下标，从0开始（0到n-1）
+
+ // range自动创建一个数组，range(low,heigh)
+ $number = range(0,10);    //自动创建0到10的数组
+ print_r($number);
+ echo &quot;&lt;br&gt;&quot;;
+ $letter = range(a, z);    //创建a到z的数组
+ print_r($letter);
+ echo &quot;&lt;br&gt;&quot;;
+ $reset = range(z, a);    //创建a到z的逆序数组
+ print_r($reset);
+ echo &quot;&lt;br&gt;&quot;;
+
+ // 利用数组标识符[]声明数组
+ // 开发时不知数组的大小或者数组会改变，用此方法
+// 用此种方法创建数组要求同一数组名相同，也可以添加数组
+ $array[0] = &quot;hello&quot;;
+ $array[1] = &quot;world&quot;;
+ $array[2] = &quot;and&quot;;
+ $array[3] = &quot;php&quot;;
+ print_r($array);
+
+结果：Array
+Array ( [0] =&gt; 张三 [1] =&gt; 李四 [2] =&gt; 王五 [3] =&gt; 赵六 [4] =&gt; 嘻嘻嘻 [5] =&gt; 嘿嘿嘿 )
+王五
+Array ( [0] =&gt; 0 [1] =&gt; 1 [2] =&gt; 2 [3] =&gt; 3 [4] =&gt; 4 [5] =&gt; 5 [6] =&gt; 6 [7] =&gt; 7 [8] =&gt; 8 [9] =&gt; 9 [10] =&gt; 10 )
+Array ( [0] =&gt; a [1] =&gt; b [2] =&gt; c [3] =&gt; d [4] =&gt; e [5] =&gt; f [6] =&gt; g [7] =&gt; h [8] =&gt; i [9] =&gt; j [10] =&gt; k [11] =&gt; l [12] =&gt; m [13] =&gt; n [14] =&gt; o [15] =&gt; p [16] =&gt; q [17] =&gt; r [18] =&gt; s [19] =&gt; t [20] =&gt; u [21] =&gt; v [22] =&gt; w [23] =&gt; x [24] =&gt; y [25] =&gt; z )
+Array ( [0] =&gt; z [1] =&gt; y [2] =&gt; x [3] =&gt; w [4] =&gt; v [5] =&gt; u [6] =&gt; t [7] =&gt; s [8] =&gt; r [9] =&gt; q [10] =&gt; p [11] =&gt; o [12] =&gt; n [13] =&gt; m [14] =&gt; l [15] =&gt; k [16] =&gt; j [17] =&gt; i [18] =&gt; h [19] =&gt; g [20] =&gt; f [21] =&gt; e [22] =&gt; d [23] =&gt; c [24] =&gt; b [25] =&gt; a )
+Array ( [0] =&gt; hello [1] =&gt; world [2] =&gt; and [3] =&gt; php )
+</code></pre><p>###改变数组的某个值<br>    //将上面的代码修改一下：<br>     $userName[1] = “蓝瘦香菇”;    // 可以直接赋值<br>     print_r($userName).”<br>“;<br>    结果： Array ( [0] =&gt; 张三 [1] =&gt; 蓝瘦香菇 [2] =&gt; 王五 [3] =&gt; 赵六 [4] =&gt; 嘻嘻嘻 [5] =&gt; 嘿嘿嘿 )</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/17/PHP-math/" rel="next" title="PHP_math">
+                <i class="fa fa-chevron-left"></i> PHP_math
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/18/php-array-2/" rel="prev" title="php_array(2)">
+                php_array(2) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="WaKaaaa猪" />
+          <p class="site-author-name" itemprop="name">WaKaaaa猪</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP数组"><span class="nav-number">1.</span> <span class="nav-text">PHP数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组命名规则"><span class="nav-number">1.1.</span> <span class="nav-text">1.数组命名规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开头是-，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素"><span class="nav-number">1.1.1.</span> <span class="nav-text">开头是$，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意：在一个程序中，标量变量和数组变量不能同名，例如已经存在-userName的变量，再创建-userName的数组，后者会覆盖前者"><span class="nav-number">1.1.2.</span> <span class="nav-text">注意：在一个程序中，标量变量和数组变量不能同名，例如已经存在$userName的变量，再创建$userName的数组，后者会覆盖前者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组变量的名称是区分大小写的，-user和-User是不同的两个变量数组类名"><span class="nav-number">1.1.3.</span> <span class="nav-text">数组变量的名称是区分大小写的，$user和$User是不同的两个变量数组类名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP常量和变量都区分大小写"><span class="nav-number">1.1.4.</span> <span class="nav-text">PHP常量和变量都区分大小写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP的类名和方法名甚至一些关键字都不区分大小写"><span class="nav-number">1.1.5.</span> <span class="nav-text">PHP的类名和方法名甚至一些关键字都不区分大小写</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-创建数组的几种方法"><span class="nav-number">1.2.</span> <span class="nav-text">2.创建数组的几种方法</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WaKaaaa猪</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
