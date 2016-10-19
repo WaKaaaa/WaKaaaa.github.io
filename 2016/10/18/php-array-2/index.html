@@ -91,7 +91,7 @@ list 遍历数组
 each 遍历数组1.for循环遍历数组   // for循环访问数组   //    数组下标从0开始可用   for ($i=0; $i &amp;lt; count($userName); $i++) { # code...
 echo $i.&amp;quot;---&amp;quot;.$userName[$i].&amp;q">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php_array(2)">
+<meta property="og:title" content="php_array(遍历数组)">
 <meta property="og:url" content="https://WaKaaaa.github.io/2016/10/18/php-array-2/index.html">
 <meta property="og:site_name" content="WaKaaaa猪的博客">
 <meta property="og:description" content="遍历数组遍历数组的方式：
@@ -100,9 +100,9 @@ foreach 遍历数组
 list 遍历数组
 each 遍历数组1.for循环遍历数组   // for循环访问数组   //    数组下标从0开始可用   for ($i=0; $i &amp;lt; count($userName); $i++) { # code...
 echo $i.&amp;quot;---&amp;quot;.$userName[$i].&amp;q">
-<meta property="og:updated_time" content="2016-10-18T14:30:31.070Z">
+<meta property="og:updated_time" content="2016-10-19T03:00:05.676Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php_array(2)">
+<meta name="twitter:title" content="php_array(遍历数组)">
 <meta name="twitter:description" content="遍历数组遍历数组的方式：
 for 循环遍历数组
 foreach 遍历数组
@@ -131,7 +131,7 @@ echo $i.&amp;quot;---&amp;quot;.$userName[$i].&amp;q">
 
   <link rel="canonical" href="https://WaKaaaa.github.io/2016/10/18/php-array-2/"/>
 
-  <title> php_array(2) | WaKaaaa猪的博客 </title>
+  <title> php_array(遍历数组) | WaKaaaa猪的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -251,7 +251,7 @@ echo $i.&amp;quot;---&amp;quot;.$userName[$i].&amp;q">
             
             
               
-                php_array(2)
+                php_array(遍历数组)
               
             
           </h1>
@@ -346,7 +346,22 @@ foreach ($userName as $key =&gt; $value) { //此处的key和value可以替换成
     # code...
     echo $a[&apos;key&apos;].&quot;---&quot;.$a[&apos;value&apos;].&quot;&lt;br&gt;&quot;;
 }
-</code></pre><h4 id="！！的作用：将真实存在的数值转换成布尔值，在这里each-userAges-返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1"><a href="#！！的作用：将真实存在的数值转换成布尔值，在这里each-userAges-返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1" class="headerlink" title="！！的作用：将真实存在的数值转换成布尔值，在这里each($userAges)返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1"></a>！！的作用：将真实存在的数值转换成布尔值，在这里each($userAges)返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1</h4>
+</code></pre><h4 id="！！的作用：将真实存在的数值转换成布尔值，在这里each-userAges-返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1"><a href="#！！的作用：将真实存在的数值转换成布尔值，在这里each-userAges-返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1" class="headerlink" title="！！的作用：将真实存在的数值转换成布尔值，在这里each($userAges)返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1"></a>！！的作用：将真实存在的数值转换成布尔值，在这里each($userAges)返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1</h4><h2 id="4-list-遍历数组"><a href="#4-list-遍历数组" class="headerlink" title="4.list 遍历数组"></a>4.list 遍历数组</h2><pre><code>&lt;?php 
+    $userAges = array(&quot;张三&quot;,&quot;李四&quot;,&quot;王五&quot;);
+    // print_r($userAges);
+    // 把一个数组中的值赋给一个变量
+    list($a,$b) = $userAges;    //这里将数组userAges的第一个值赋给$a,第二个值赋给$b，其中$a,$b的值可以改编为任意的变量
+    echo $a.&quot;&lt;br&gt;&quot;;
+    echo $b.&quot;&lt;br&gt;&quot;;
+
+    // 注意：list只能识别下标是0,1,2等数字的数组，自定义的key不能识别的
+    // 如果一定要打印数组的键和值，就用each和list的组合
+    $userAge = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
+    list($c,$d) = each($userAge);    // each将张三，22取出来形成一个新的数组，0($c)表示key，也就是张三，1($d)表示value，也就是 22
+    echo $c;    // 打印张三
+    echo $d;    // 打印22
+ ?&gt;
+</code></pre>
       
     </div>
 
@@ -488,7 +503,7 @@ foreach ($userName as $key =&gt; $value) { //此处的key和value可以替换成
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#遍历数组"><span class="nav-number">1.</span> <span class="nav-text"> 遍历数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历数组的方式："><span class="nav-number">1.1.</span> <span class="nav-text">遍历数组的方式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-for循环遍历数组"><span class="nav-number">1.2.</span> <span class="nav-text">1.for循环遍历数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-foreach-遍历数组"><span class="nav-number">1.3.</span> <span class="nav-text">2.foreach 遍历数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-each-遍历数组"><span class="nav-number">1.4.</span> <span class="nav-text">3.each 遍历数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#each循环打印"><span class="nav-number">1.4.1.</span> <span class="nav-text">each循环打印</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#！！的作用：将真实存在的数值转换成布尔值，在这里each-userAges-返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">！！的作用：将真实存在的数值转换成布尔值，在这里each($userAges)返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#遍历数组"><span class="nav-number">1.</span> <span class="nav-text"> 遍历数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历数组的方式："><span class="nav-number">1.1.</span> <span class="nav-text">遍历数组的方式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-for循环遍历数组"><span class="nav-number">1.2.</span> <span class="nav-text">1.for循环遍历数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-foreach-遍历数组"><span class="nav-number">1.3.</span> <span class="nav-text">2.foreach 遍历数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-each-遍历数组"><span class="nav-number">1.4.</span> <span class="nav-text">3.each 遍历数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#each循环打印"><span class="nav-number">1.4.1.</span> <span class="nav-text">each循环打印</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#！！的作用：将真实存在的数值转换成布尔值，在这里each-userAges-返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">！！的作用：将真实存在的数值转换成布尔值，在这里each($userAges)返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-list-遍历数组"><span class="nav-number">1.5.</span> <span class="nav-text">4.list 遍历数组</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

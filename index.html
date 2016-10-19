@@ -361,7 +361,7 @@ echo $userAges; //返回$userAges的类型 array
               
                 
                 <a class="post-title-link" href="/2016/10/18/php-array-2/" itemprop="url">
-                  php_array(2)
+                  php_array(遍历数组)
                 </a>
               
             
@@ -459,7 +459,22 @@ foreach ($userName as $key =&gt; $value) { //此处的key和value可以替换成
     # code...
     echo $a[&apos;key&apos;].&quot;---&quot;.$a[&apos;value&apos;].&quot;&lt;br&gt;&quot;;
 }
-</code></pre><h4 id="！！的作用：将真实存在的数值转换成布尔值，在这里each-userAges-返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1"><a href="#！！的作用：将真实存在的数值转换成布尔值，在这里each-userAges-返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1" class="headerlink" title="！！的作用：将真实存在的数值转换成布尔值，在这里each($userAges)返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1"></a>！！的作用：将真实存在的数值转换成布尔值，在这里each($userAges)返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1</h4>
+</code></pre><h4 id="！！的作用：将真实存在的数值转换成布尔值，在这里each-userAges-返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1"><a href="#！！的作用：将真实存在的数值转换成布尔值，在这里each-userAges-返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1" class="headerlink" title="！！的作用：将真实存在的数值转换成布尔值，在这里each($userAges)返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1"></a>！！的作用：将真实存在的数值转换成布尔值，在这里each($userAges)返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1</h4><h2 id="4-list-遍历数组"><a href="#4-list-遍历数组" class="headerlink" title="4.list 遍历数组"></a>4.list 遍历数组</h2><pre><code>&lt;?php 
+    $userAges = array(&quot;张三&quot;,&quot;李四&quot;,&quot;王五&quot;);
+    // print_r($userAges);
+    // 把一个数组中的值赋给一个变量
+    list($a,$b) = $userAges;    //这里将数组userAges的第一个值赋给$a,第二个值赋给$b，其中$a,$b的值可以改编为任意的变量
+    echo $a.&quot;&lt;br&gt;&quot;;
+    echo $b.&quot;&lt;br&gt;&quot;;
+
+    // 注意：list只能识别下标是0,1,2等数字的数组，自定义的key不能识别的
+    // 如果一定要打印数组的键和值，就用each和list的组合
+    $userAge = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
+    list($c,$d) = each($userAge);    // each将张三，22取出来形成一个新的数组，0($c)表示key，也就是张三，1($d)表示value，也就是 22
+    echo $c;    // 打印张三
+    echo $d;    // 打印22
+ ?&gt;
+</code></pre>
           
         
       
