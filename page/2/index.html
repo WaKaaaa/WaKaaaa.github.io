@@ -172,7 +172,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -182,7 +182,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -235,6 +235,781 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/17/PHP-math/" itemprop="url">
+                  PHP_math
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-10-17T19:54:02+08:00" content="2016-10-17">
+              2016-10-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/17/PHP-math/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://WaKaaaa.github.io/2016/10/17/PHP-math/" itemprop="commentsCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-数字相加"><a href="#1-数字相加" class="headerlink" title="1.数字相加"></a>1.数字相加</h1><h3 id="主要处理整型和浮点型，如果计算中包含数值和字符串，字符串会在完成计算之前转换为数值，而数值则会在与字符串连接之前转换为字符串。"><a href="#主要处理整型和浮点型，如果计算中包含数值和字符串，字符串会在完成计算之前转换为数值，而数值则会在与字符串连接之前转换为字符串。" class="headerlink" title="主要处理整型和浮点型，如果计算中包含数值和字符串，字符串会在完成计算之前转换为数值，而数值则会在与字符串连接之前转换为字符串。"></a>主要处理整型和浮点型，如果计算中包含数值和字符串，字符串会在完成计算之前转换为数值，而数值则会在与字符串连接之前转换为字符串。</h3><pre><code>$a = &apos;5&apos;; //完成计算之前转化为数字
+$b = $a+7;
+echo &quot;$b&quot;;
+结果：12
+
+$z = &apos;a&apos;;
+echo $z+7;    //因为字母没法办法转换成数字，所以输出7
+</code></pre><h3 id="PHP提供了大量函数来检查变量的数据类型"><a href="#PHP提供了大量函数来检查变量的数据类型" class="headerlink" title="PHP提供了大量函数来检查变量的数据类型"></a>PHP提供了大量函数来检查变量的数据类型</h3><blockquote>
+<p>is_numeric()检验是否为数字或者数字字符串，如果是返回1，如果不是，返回空</p>
+</blockquote>
+<pre><code>$a = &apos;5&apos;;    
+echo is_numeric($a);
+echo &quot;&lt;br&gt;&quot;;
+结果：1
+</code></pre><blockquote>
+<p>is_int()检测是否为整型,如果是返回1，如果不是，返回空</p>
+</blockquote>
+<pre><code>$e = 5;
+echo is_int($e);    //返回1
+</code></pre><blockquote>
+<p>is_float()检测是否为浮点型,如果是返回1，如果不是，返回空</p>
+</blockquote>
+<pre><code>$a = 6.1;
+$b = 6;
+echo is_float($a);    //返回1
+echo is_float($b);    //返回空
+</code></pre><h1 id="2-产生随机数"><a href="#2-产生随机数" class="headerlink" title="2.产生随机数"></a>2.产生随机数</h1><h3 id="rand-函数是libc-构建PHP所用编译器提供的基本库之一-中定义的随机函数的一个简单包装器。mt-rand-是一个很好的替代实现，提供了很多精心设计的特性，而且mt-rand-甚至比libc中的版本还要快"><a href="#rand-函数是libc-构建PHP所用编译器提供的基本库之一-中定义的随机函数的一个简单包装器。mt-rand-是一个很好的替代实现，提供了很多精心设计的特性，而且mt-rand-甚至比libc中的版本还要快" class="headerlink" title="rand()函数是libc(构建PHP所用编译器提供的基本库之一)中定义的随机函数的一个简单包装器。mt_rand()是一个很好的替代实现，提供了很多精心设计的特性，而且mt_rand()甚至比libc中的版本还要快"></a>rand()函数是libc(构建PHP所用编译器提供的基本库之一)中定义的随机函数的一个简单包装器。mt_rand()是一个很好的替代实现，提供了很多精心设计的特性，而且mt_rand()甚至比libc中的版本还要快</h3><pre><code>echo rand(1,100);    //产生随机数，第一个参数是最小值，第二个参数是最大值，自定义的，可改变可不写
+echo &quot;&lt;br&gt;&quot;;
+echo mt_rand(1,100);    //产生更好的随机数，速度比rand快
+
+echo getrandmax();    //获取rand的最大值 4132767
+echo &quot;&lt;br&gt;&quot;;
+echo mt_getrandmax();    //获取mt_rand的最大值 2147483647
+echo &quot;&lt;br&gt;&quot;;
+</code></pre><h1 id="3-格式化数据"><a href="#3-格式化数据" class="headerlink" title="3.格式化数据"></a>3.格式化数据</h1><h3 id="number-format-函数可以把整数和浮点数值转换为一种可读的字符串表示，格式化数字字符串，里边只能放浮点型"><a href="#number-format-函数可以把整数和浮点数值转换为一种可读的字符串表示，格式化数字字符串，里边只能放浮点型" class="headerlink" title="number_format()函数可以把整数和浮点数值转换为一种可读的字符串表示，格式化数字字符串，里边只能放浮点型"></a>number_format()函数可以把整数和浮点数值转换为一种可读的字符串表示，格式化数字字符串，里边只能放浮点型</h3><pre><code>//格式化字符串number_format
+$f = 123892.4567;
+echo number_format($f,3);        //第一位存放浮点数，第二位表示精确到小数点后n位
+echo &quot;&lt;br&gt;&quot;;
+echo number_format($f);    //只有浮点数默认会舍弃小数部分，整数部分按照外国人的习惯每三位用有个逗号隔开
+echo &quot;&lt;br&gt;&quot;;
+echo number_format($f,3,&apos;%&apos;,&quot;#&quot;);    //第三位将分隔符逗号改成%，第四位将小数点点号改为#号，一般情况下不用这两个
+echo &quot;&lt;br&gt;&quot;;
+结果：123,892.457   123,892   123#892%457
+</code></pre><h1 id="4-数学函数"><a href="#4-数学函数" class="headerlink" title="4.数学函数"></a>4.数学函数</h1><pre><code>echo abs(&apos;-6&apos;);        // abs() 绝对值
+echo round(&apos;1.631&apos;);    // round() 四舍五入
+echo floor(&apos;1.642&apos;);    // floor() 舍去法取整     
+</code></pre><h3 id="具体数学函数参照如下："><a href="#具体数学函数参照如下：" class="headerlink" title="具体数学函数参照如下："></a>具体数学函数参照如下：</h3><p>•abs — 绝对值<br>•acos — 反余弦 <br><br>•acosh — 反双曲余弦 <br><br>•asin — 反正弦 <br><br>•asinh — 反双曲正弦 <br><br>•atan2 — 两个参数的反正切 <br><br>•atan — 反正切 <br><br>•atanh — 反双曲正切 <br><br>•base_convert — 在任意进制之间转换数字 <br><br>•bindec — 二进制转换为十进制 <br><br>•ceil — 进一法取整 <br><br>•cos — 余弦 <br><br>•cosh — 双曲余弦 <br><br>•decbin — 十进制转换为二进制 <br><br>•dechex — 十进制转换为十六进制 <br><br>•decoct — 十进制转换为八进制 <br><br>•deg2rad — 将角度转换为弧度 <br><br>•exp — 计算 e 的指数 <br><br>•expm1 — 返回 exp(number) - 1，甚至当 number 的值接近零也能计算出准确结果 <br><br>•floor — 舍去法取整 <br><br>•fmod — 返回除法的浮点数余数 <br><br>•getrandmax — 显示随机数最大的可能值 <br><br>•hexdec — 十六进制转换为十进制 <br><br>•hypot — 计算一直角三角形的斜边长度 <br><br>•intdiv — 对除法结果取整 <br><br>•is_finite — 判断是否为有限值 <br><br>•is_infinite — 判断是否为无限值 <br><br>•is_nan — 判断是否为合法数值 <br><br>•lcg_value — 组合线性同余发生器 <br><br>•log10 — 以 10 为底的对数 <br><br>•log1p — 返回 log(1 + number)，甚至当 number 的值接近零也能计算出准确结果 <br><br>•log — 自然对数 <br><br>•max — 找出最大值 <br><br>•min — 找出最小值 <br><br>•mt_getrandmax — 显示随机数的最大可能值 <br><br>•mt_rand — 生成更好的随机数 <br><br>•mt_srand — 播下一个更好的随机数发生器种子 <br><br>•octdec — 八进制转换为十进制 <br><br>•pi — 得到圆周率值 <br><br>•pow — 指数表达式 <br><br>•rad2deg — 将弧度数转换为相应的角度数 <br><br>•rand — 产生一个随机整数 <br><br>•round — 对浮点数进行四舍五入 <br><br>•sin — 正弦 <br><br>•sinh — 双曲正弦 <br><br>•sqrt — 平方根 <br><br>•srand — 播下随机数发生器种子 <br><br>•tan — 正切 <br><br>•tanh — 双曲正切</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/13/PHP_basic/" itemprop="url">
+                  PHP basic
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-10-13T09:37:02+08:00" content="2016-10-13">
+              2016-10-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/13/PHP_basic/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://WaKaaaa.github.io/2016/10/13/PHP_basic/" itemprop="commentsCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="PHP的基本知识学习总结"><a href="#PHP的基本知识学习总结" class="headerlink" title=" PHP的基本知识学习总结 "></a><center> PHP的基本知识学习总结 </center></h1><h2 id="一：PHP概述"><a href="#一：PHP概述" class="headerlink" title="一：PHP概述"></a>一：PHP概述</h2><h3 id="PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以-php为后缀名，写动态网站，与数据库交互"><a href="#PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以-php为后缀名，写动态网站，与数据库交互" class="headerlink" title="PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以.php为后缀名，写动态网站，与数据库交互"></a>PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以.php为后缀名，写动态网站，与数据库交互</h3><h3 id="PHP运行环境：windows-apache-php-mysql-emsp-emsp-emsp-emsp-emsp-emsp-emsp-linux-apache-php-mysql"><a href="#PHP运行环境：windows-apache-php-mysql-emsp-emsp-emsp-emsp-emsp-emsp-emsp-linux-apache-php-mysql" class="headerlink" title="PHP运行环境：windows+apache+php+mysql      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;    linux+apache+php+mysql"></a>PHP运行环境：windows+apache+php+mysql <br>     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;    linux+apache+php+mysql</h3><h3 id="PHP文件构成：HTML-div-CSS-PHP-JavaScript-jQuery-ajax等"><a href="#PHP文件构成：HTML-div-CSS-PHP-JavaScript-jQuery-ajax等" class="headerlink" title="PHP文件构成：HTML div CSS PHP JavaScript jQuery ajax等"></a>PHP文件构成：HTML div CSS PHP JavaScript jQuery ajax等</h3><h3 id="PHP工作原理：请求-gt-Apache-gt-执行PHP代码-gt-响应"><a href="#PHP工作原理：请求-gt-Apache-gt-执行PHP代码-gt-响应" class="headerlink" title="PHP工作原理：请求-&gt;Apache-&gt;执行PHP代码-&gt;响应"></a>PHP工作原理：请求-&gt;Apache-&gt;执行PHP代码-&gt;响应</h3><h2 id="二：PHP环境搭建"><a href="#二：PHP环境搭建" class="headerlink" title="二：PHP环境搭建"></a>二：PHP环境搭建</h2><h3 id="用appServ集成环境或者独立搭建"><a href="#用appServ集成环境或者独立搭建" class="headerlink" title="用appServ集成环境或者独立搭建"></a>用appServ集成环境或者独立搭建</h3><h1 id="三：php基础知识"><a href="#三：php基础知识" class="headerlink" title="三：php基础知识"></a>三：php基础知识</h1><h2 id="emsp-01-基本语法"><a href="#emsp-01-基本语法" class="headerlink" title="&emsp; 01.基本语法"></a>&emsp; 01.基本语法</h2><pre><code>&lt;?php 
+    ......
+ ?&gt;
+</code></pre><h2 id="emsp-02-输出的几种方式和比较"><a href="#emsp-02-输出的几种方式和比较" class="headerlink" title="&emsp; 02.输出的几种方式和比较"></a>&emsp; 02.输出的几种方式和比较</h2><ul>
+<li>&emsp; <code>echo</code>: 函数，无返回值（返回void），作用是打印字符串</li>
+<li>&emsp; <code>print</code>: 函数，返回整型，作用是打印字符串</li>
+<li>&emsp; <code>printf</code>: 函数，返回字符串的长度，作用是打印字符串</li>
+<li><p>&emsp; <code>sprintf</code>: 函数，返回字符串将字符串保存在内存中（不在浏览器下显示）<br>###</p>
+<p> &lt;?php </p>
+<pre><code>echo &quot;hello php1&quot;;
+echo &quot;&lt;/br&gt;&quot;;
+print(&quot;hello php2&quot;);
+echo &quot;&lt;/br&gt;&quot;;
+echo print(&quot;hello php3&lt;/br&gt;&quot;); // 这句话的作用是先将print里的字符串打印出来，再打印一个字符串，然后echo出print的类型，返回真，在浏览器中显示为1
+echo &quot;&lt;/br&gt;&quot;;
+printf(&quot;hello php4&lt;/br&gt;&quot;);
+echo printf(&quot;hello php5&lt;/br&gt;&quot;); //返回字符串的长度
+echo &quot;&lt;/br&gt;&quot;;
+sprintf(&quot;hello php6&lt;br&gt;&quot;); // 字符串保存在内存中，不在浏览器界面显示
+echo sprintf(&quot;hello php7&quot;); // 返回字符串
+</code></pre><p>  ?&gt;<br> 运行结果：<br> hello php1<br> hello php2<br> hello php3<br> 1<br> hello php4<br> hello php5<br> 15<br> hello php7</p>
+<h2 id="emsp-03-注释"><a href="#emsp-03-注释" class="headerlink" title="&emsp; 03.注释"></a>&emsp; 03.注释</h2><p> 单行//<br> 多行/**/<br> shell #</p>
+<h2 id="emsp-04-标识符"><a href="#emsp-04-标识符" class="headerlink" title="&emsp; 04.标识符"></a>&emsp; 04.标识符</h2><h3 id="emsp-标识符是变量的名称，关于标识符，PHP定义了一些简单的规则："><a href="#emsp-标识符是变量的名称，关于标识符，PHP定义了一些简单的规则：" class="headerlink" title="&emsp; 标识符是变量的名称，关于标识符，PHP定义了一些简单的规则："></a>&emsp; 标识符是变量的名称，关于标识符，PHP定义了一些简单的规则：</h3><h3 id="emsp-标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。"><a href="#emsp-标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。" class="headerlink" title="&emsp; 标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。"></a>&emsp; 标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。</h3><h3 id="emsp-标识符不能以数字开始。"><a href="#emsp-标识符不能以数字开始。" class="headerlink" title="&emsp; 标识符不能以数字开始。"></a>&emsp; 标识符不能以数字开始。</h3><h3 id="emsp-在PHP中，标识符是区分大小写的。"><a href="#emsp-在PHP中，标识符是区分大小写的。" class="headerlink" title="&emsp; 在PHP中，标识符是区分大小写的。"></a>&emsp; 在PHP中，标识符是区分大小写的。</h3><h3 id="emsp-一个变量名称可以与一个函数名称相同。"><a href="#emsp-一个变量名称可以与一个函数名称相同。" class="headerlink" title="&emsp; 一个变量名称可以与一个函数名称相同。"></a>&emsp; 一个变量名称可以与一个函数名称相同。</h3><h2 id="emsp-05-变量的数据类型"><a href="#emsp-05-变量的数据类型" class="headerlink" title="&emsp; 05.变量的数据类型"></a>&emsp; 05.变量的数据类型</h2><p> Integer(整数)、Float(浮点数，也叫Double,双精度)、String(字符串)、Boolean(布尔)、Array(数组)、Object(对象).</p>
+<blockquote>
+<p>在PHP中无论是double还是float，在浏览器中显示的都是“double”<br>###</p>
+<h2 id="emsp-06-类型转换"><a href="#emsp-06-类型转换" class="headerlink" title="&emsp; 06.类型转换"></a>&emsp; 06.类型转换</h2><p> //    数据类型的转换：分为显示转化和隐式转换<br> echo “数据类型的转换方式：(integer)\$num<br>“;    //反斜杠表示转义字符<br> echo “转化成整数和浮点数的时候如果以数字开头，首先将数字部分转化成整数，再舍去后边的字符串，如果字符串中含有小数点，会保留到小数点前一位<br>“;<br> $str5 = “2.559656894E2”;<br> echo “转义前的string类型：”.$str5.”<br>“;        //“.”小圆点表示字符串的连接<br> //    此种方式的转换都是显示转换，也叫强制类型转换<br> echo “转化成整数：”.(integer)$str5.”<br>“;<br> echo “转化成布尔类型：”.(boolean)$str5.”<br>“;    //    0，null和未被赋值的变量将会转换成false<br> echo “转化成浮点数：”.(float)$str5.”<br>“;    // 字符串的连接用“.”<br> echo “转化成数组：”.(array)$str5.”<br>“;</p>
+</blockquote>
+<p> //    隐式转换<br> $sum = 123;<br> $total = 23.4;<br> $sum = $total;<br> echo gettype($sum);    //此时返回的是浮点型，显示的是double，浏览器显示的浮点型就是double<br> echo “<br>“;</p>
+<p> //    settype()函数也可以设置类型，此时将原本的变量类型改变<br> $a = 1234;<br> settype($a, string);<br> echo gettype($a).”<br>“;    //    将此变量设置成string类型，gettype()获取变量的类型<br> echo “$a<br>“;    //    $a是字符串a</p>
+<p> //    intval()函数，此函数不会改变变量的类型（此处还是浮点数），但是会将变量的值按照整型输出（此处输出的是整型），与之相应的还有floatval()  strval()<br> $b = 456.345;<br> echo gettype($b).”<br>“;<br> echo intval($b).”<br>“;<br> echo gettype($b);<br> echo “<hr>“;</p>
+<p> 运行结果：<br> 数据类型的转换方式：(integer)$num<br> 转化成整数和浮点数的时候如果以数字开头，首先将数字部分转化成整数，再舍去后边的字符串，如果字符串中含有小数点，会保留到小数点前一位<br> 转义前的string类型：2.559656894E2<br> 转化成整数：2<br> 转化成布尔类型：1<br> 转化成浮点数：255.9656894<br> 转化成数组：Array<br> double<br> string<br> 1234<br> double<br> 456<br> double</p>
+<h2 id="emsp-07-检测变量"><a href="#emsp-07-检测变量" class="headerlink" title="&emsp; 07.检测变量"></a>&emsp; 07.检测变量</h2><p> 大部分的可变函数都是用来测试一个函数的类型的。PHP中有两个最常见的函数，分别是gettype()和settype()。<br> 这两个函数返回的string类型，也就是变量的类型字符串。<br> 用法：gettypt($变量)</p>
+<pre><code>settype($变量，要转换的数据类型)
+</code></pre><p> isset()用来判断一个变量是否存在，返回的是布尔值true或false<br> unset()用来销毁一个变量（如果变量存在则销毁，如果不存在此函数不发挥作用）</p>
+</li>
+</ul>
+<pre><code>empty()用来判断一个变量的值是否为空，如果为空则为true否则为false。
+换句话说，&quot;&quot;、0、&quot;0&quot;、NULL、FALSE、array()、var $var; 以及没有任何属性的对象都将被认为是空的
+
+PHP还提供了一些特定类型的测试函数。每一个函数都使用一个变量座位其参数，并且返回true或false。
+is_array()、is_double()、is_float()、is_real()、is_long()、is_int()、is_integer()、is_string()、is_object()、is_resource()、is_null()、is_numeric() 
+
+可以通过调用一个函数来实现转换变量数据类型的目的。
+intval()、floatval()、strval();
+注意：在浏览器中如果是真（true），返回1，如果是假（false），返回空（什么都不返回）
+</code></pre><h2 id="emsp-08-php常量"><a href="#emsp-08-php常量" class="headerlink" title="&emsp; 08.php常量"></a>&emsp; 08.php常量</h2><h3 id="常量一旦被定义之后，就不能再次更改。"><a href="#常量一旦被定义之后，就不能再次更改。" class="headerlink" title="常量一旦被定义之后，就不能再次更改。"></a>常量一旦被定义之后，就不能再次更改。</h3><h3 id="语法：define（“常量名”，常量值）"><a href="#语法：define（“常量名”，常量值）" class="headerlink" title="语法：define（“常量名”，常量值）"></a>语法：define（“常量名”，常量值）</h3><p>###&emsp;&emsp;&emsp; define(“TOTAL”,199);</p>
+<h3 id="除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo-命令。"><a href="#除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo-命令。" class="headerlink" title="除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo()命令。"></a>除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo()命令。</h3><h3 id="变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。"><a href="#变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。" class="headerlink" title="变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。"></a>变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。</h3><h2 id="emsp-09-php中单双引号的区别"><a href="#emsp-09-php中单双引号的区别" class="headerlink" title="&emsp; 09.php中单双引号的区别"></a>&emsp; 09.php中单双引号的区别</h2><h3 id="emsp-双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值"><a href="#emsp-双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值" class="headerlink" title="&emsp; 双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值"></a>&emsp; 双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值</h3><h3 id="emsp-双引号可以解析转义字符，如-n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）"><a href="#emsp-双引号可以解析转义字符，如-n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）" class="headerlink" title="&emsp; 双引号可以解析转义字符，如\n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）"></a>&emsp; 双引号可以解析转义字符，如\n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）</h3><h3 id="emsp-单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号"><a href="#emsp-单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号" class="headerlink" title="&emsp; 单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号"></a>&emsp; 单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号</h3>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/26/js_array_object/" itemprop="url">
+                  JS Object
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-09-26T16:00:12+08:00" content="2016-09-26">
+              2016-09-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/26/js_array_object/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://WaKaaaa.github.io/2016/09/26/js_array_object/" itemprop="commentsCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#javascript的核心对象：</p>
+<ul>
+<li>数组对象</li>
+<li>日期对象</li>
+<li>字符串对象</li>
+<li>数学对象<br>##一：数组对象<h3 id="1-介绍：Array可以存储一系列的数据，JavaScript的数组可以存储-不同类型的数据-元素索引的范围是-0-length-1，length为数组的长度。"><a href="#1-介绍：Array可以存储一系列的数据，JavaScript的数组可以存储-不同类型的数据-元素索引的范围是-0-length-1，length为数组的长度。" class="headerlink" title="1.介绍：Array可以存储一系列的数据，JavaScript的数组可以存储 不同类型的数据,元素索引的范围是 0~length-1，length为数组的长度。"></a>1.介绍：Array可以存储一系列的数据，JavaScript的数组可以存储 <code>不同类型的数据</code>,元素索引的范围是 0~length-1，length为数组的长度。</h3><h3 id="2-创建数组："><a href="#2-创建数组：" class="headerlink" title="2.创建数组："></a>2.创建数组：</h3></li>
+<li><code>new Array();</code>不带参数，返回空数组，length = 0。如： <code>var arr = new Array();</code></li>
+<li><code>Array(x);</code> x的取值可为任何数，返回大小是x的数组，length = x。如： <code>var arr = new Array(5);</code>表示此数组的长度是5</li>
+<li><code>new Array[x1,x2,x3...];</code>x1,x2,x3..指的是数组的元素，返回长度为参数个数的数组，length = 个数，如： <code>var arr = new Array[1,&#39;2&#39;,3,4,5,6.8,7];</code> 表示此数组的长度是6，数组中的参数类型可以不相同<h3 id="3-数组的方法及使用："><a href="#3-数组的方法及使用：" class="headerlink" title="3.数组的方法及使用："></a>3.数组的方法及使用：</h3></li>
+<li>concat()方法：连接两个或者更多的数组，并返回合并后的新数组<h6 id="用法：arrayObj-context-array-x-array-x…"><a href="#用法：arrayObj-context-array-x-array-x…" class="headerlink" title="用法：arrayObj.context(array x,array x….);"></a>用法：arrayObj.context(array x,array x….);</h6><h6 id="解释：arrayObj是自定义的一个数组，array-x是新添加的数组"><a href="#解释：arrayObj是自定义的一个数组，array-x是新添加的数组" class="headerlink" title="解释：arrayObj是自定义的一个数组，array x是新添加的数组"></a>解释：arrayObj是自定义的一个数组，array x是新添加的数组</h6><h6 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h6><h6 id="一个数组和其他元素相连"><a href="#一个数组和其他元素相连" class="headerlink" title="一个数组和其他元素相连"></a>一个数组和其他元素相连</h6><pre><code>&lt;script typt = &quot;text/javascript&quot;&gt;
+    var arr = [0,2,4];
+    document.write(arr.concat(4,7,8));
+&lt;/script&gt;
+</code></pre><h6 id="输出结果："><a href="#输出结果：" class="headerlink" title="输出结果："></a>输出结果：</h6><pre><code>0,2,4,4,7,8
+</code></pre><h6 id="可见concat-方法返回新数组，将元素添加到原来数组的末尾"><a href="#可见concat-方法返回新数组，将元素添加到原来数组的末尾" class="headerlink" title="可见concat()方法返回新数组，将元素添加到原来数组的末尾"></a>可见concat()方法返回新数组，将元素添加到原来数组的末尾</h6><h6 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h6><h6 id="两个数组相连"><a href="#两个数组相连" class="headerlink" title="两个数组相连"></a>两个数组相连</h6><pre><code>var arr1 = [1,2,3];
+var arr2 = [4,5,6];
+document.write(arr2.concat(arr1));
+</code></pre><h6 id="输出结果：-1"><a href="#输出结果：-1" class="headerlink" title="输出结果："></a>输出结果：</h6><pre><code>4,5,6,1,2,3
+</code></pre><h6 id="示例3："><a href="#示例3：" class="headerlink" title="示例3："></a>示例3：</h6><h6 id="三个数组相连"><a href="#三个数组相连" class="headerlink" title="三个数组相连"></a>三个数组相连</h6><pre><code>var arr1 = [1,2,3];
+var arr2 = [4,5,6];            
+var arr3 = [2,3,4];
+document.write(arr2.concat(arr1,arr3));
+</code></pre><h6 id="输出结果：-2"><a href="#输出结果：-2" class="headerlink" title="输出结果："></a>输出结果：</h6><pre><code>4,5,6,1,2,3,2,3,4
+</code></pre></li>
+<li>join()方法：把数组的所有元素放入一个字符串并返回此字符串，元素通过指定的分隔符进行分隔。即将数组转化为字符串，作用和toString()相同<h6 id="用法：arr-join-“”"><a href="#用法：arr-join-“”" class="headerlink" title="用法：arr.join(“”);"></a>用法：arr.join(“”);</h6><h6 id="解释：arr是任意数组"><a href="#解释：arr是任意数组" class="headerlink" title="解释：arr是任意数组"></a>解释：arr是任意数组</h6><h6 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h6><pre><code>&lt;script type = &quot;text/javascript&quot;&gt;
+var arr = [1,2,3,4];
+document.write(arr+&quot;&lt;/br&gt;&quot;);
+document.write(arr.join(&quot;,&quot;)+&quot;&lt;/br&gt;&quot;);
+document.write(arr.join(&quot; &quot;)+&quot;&lt;/br&gt;&quot;);
+document.write(arr.join(&quot;*&quot;)+&quot;&lt;/br&gt;&quot;);
+&lt;/script&gt;
+</code></pre><h6 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3,4
+1,2,3,4
+1 2 3 4
+1*2*3*4
+</code></pre>  ####### 由此可见，join()的真正用途是 <code>以某种符号分隔数组元素</code></li>
+<li>toString()方法：把数组转化为字符串并返回结果<h6 id="用法：arr-toString"><a href="#用法：arr-toString" class="headerlink" title="用法：arr.toString()"></a>用法：arr.toString()</h6><h6 id="返回值：转化后的字符串"><a href="#返回值：转化后的字符串" class="headerlink" title="返回值：转化后的字符串"></a>返回值：转化后的字符串</h6><h6 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h6><pre><code>var arr1 = [1,2,3]
+document.write(arr1.toString());
+</code></pre><h6 id="运行结果：-1"><a href="#运行结果：-1" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3
+</code></pre></li>
+<li>pop()方法：删除并返回数组的最后一个元素，数组长度-1，如果数组是空的，不改变数组，并返回undefined<h6 id="用法：arr-pop"><a href="#用法：arr-pop" class="headerlink" title="用法：arr.pop()"></a>用法：arr.pop()</h6><h6 id="返回值：arr的最后一个元素"><a href="#返回值：arr的最后一个元素" class="headerlink" title="返回值：arr的最后一个元素"></a>返回值：arr的最后一个元素</h6><h6 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h6><pre><code>var arr = [1,2,3,4];
+document.write(arr.pop());
+alert(arr);
+</code></pre><h6 id="运行结果：-2"><a href="#运行结果：-2" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>4
+1,2,3
+</code></pre><h6 id="注意！如果给pop-；赋一个参数，也只会pop出最后一个元素，任何参数都可以-比如arr这个数组，返回的也是4"><a href="#注意！如果给pop-；赋一个参数，也只会pop出最后一个元素，任何参数都可以-比如arr这个数组，返回的也是4" class="headerlink" title="注意！如果给pop()；赋一个参数，也只会pop出最后一个元素，任何参数都可以(比如arr这个数组，返回的也是4)"></a>注意！如果给pop()；赋一个参数，也只会pop出最后一个元素，任何参数都可以(比如arr这个数组，返回的也是4)</h6></li>
+<li>push()方法：向数组的末尾添加一个元素并返回数组的长度<h6 id="用法：arr-push-x-y-z…"><a href="#用法：arr-push-x-y-z…" class="headerlink" title="用法：arr.push(x,y,z…)"></a>用法：arr.push(x,y,z…)</h6><h6 id="返回值：新数组的长度"><a href="#返回值：新数组的长度" class="headerlink" title="返回值：新数组的长度"></a>返回值：新数组的长度</h6><h6 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h6><pre><code>var arr = [1,2,3,4];
+document.write(arr.push(1));
+alert(arr);
+</code></pre><h6 id="运行结果：-3"><a href="#运行结果：-3" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3,4,1
+5
+</code></pre><h6 id="如果添加的元素是arr，结果会是什么样的呢？"><a href="#如果添加的元素是arr，结果会是什么样的呢？" class="headerlink" title="如果添加的元素是arr，结果会是什么样的呢？"></a>如果添加的元素是arr，结果会是什么样的呢？</h6><pre><code>var arr = [1,2,3,4];
+document.write(arr.push(arr));
+alert(arr);
+</code></pre><h6 id="运行结果：-4"><a href="#运行结果：-4" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3,4，    （注意此处有个逗号）
+5
+</code></pre><h6 id="可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1"><a href="#可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1" class="headerlink" title="可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1"></a>可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1</h6><h6 id="也可以添加多个元素"><a href="#也可以添加多个元素" class="headerlink" title="也可以添加多个元素"></a>也可以添加多个元素</h6><pre><code>var arr = [1,2];
+document.write(arr.push(2,3,4,5,6));
+alert(arr);
+</code></pre><h6 id="运行结果：-5"><a href="#运行结果：-5" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,2,3,4,5,6
+7
+</code></pre><h6 id="既然concat-可以添加一个新的数组，push-是否可以添加新的数组呢？运行一段代码"><a href="#既然concat-可以添加一个新的数组，push-是否可以添加新的数组呢？运行一段代码" class="headerlink" title="既然concat()可以添加一个新的数组，push()是否可以添加新的数组呢？运行一段代码"></a>既然concat()可以添加一个新的数组，push()是否可以添加新的数组呢？运行一段代码</h6><pre><code>var arr = [1,2,3,4,5];
+var arr1 = [1,2,3,4]
+document.write(arr.push(arr1));
+alert(arr);
+</code></pre><h6 id="运行结果：-6"><a href="#运行结果：-6" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3,4,5,1,2,3,4
+5（注意这里）
+</code></pre><h6 id="从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度-1"><a href="#从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度-1" class="headerlink" title="从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度+1"></a>从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度+1</h6></li>
+<li><p>sort()方法对数组进行排序，默认是升序排序</p>
+<h6 id="输入任意多个数，使用数组对象进行升序排序"><a href="#输入任意多个数，使用数组对象进行升序排序" class="headerlink" title="输入任意多个数，使用数组对象进行升序排序"></a>输入任意多个数，使用数组对象进行升序排序</h6><h6 id="示例：-3"><a href="#示例：-3" class="headerlink" title="示例："></a>示例：</h6><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+var array = new Array();
+//调用初始化方法
+init();
+// 打印排序后的结果
+//所有单词代换：Ctrl+H，或者Ctrl+D选中下一个
+if (array.length == 0) {
+    document.write(&quot;数组中无合法数值&quot;+&quot;&lt;br/&gt;&quot;);
+    // document.write(&quot;输入的数字是：&quot;+array)
+}else {
+    document.write(&quot;排序前的结果为：&quot;+array+&quot;&lt;br/&gt;&quot;);
+    document.write(&quot;排序后的结果为：&quot;+array.sort(sortNumber));
+}
+
+// 比较函数：
+//     返回 -1，a在b 前边
+//     返回 0 ，位置不变
+//     返回 1 ，b 在a 前边
+// 如果是降序，-1和1相反即可
+//如果没有此函数，会按照ASCALL码的顺序对数组中的元素排序。
+//在此数字排序中是必须要添加的。
+function sortNumber(a,b){
+    if (a&lt;b) {
+        return -1;
+    }else if (a == b) {
+        return 0;
+    }else{
+        return 1;
+    }
+}
+function init(){
+    while (true){
+        var v = prompt(&quot;输入数字，end结束&quot;,&quot;&quot;);
+        if (v == &apos;end&apos;) {
+            break;
+        }
+        if (isNaN(v)) {
+            break;
+        }
+        //将输入的数字依次传入array数组中。
+        //每次传入的数字都是一个，会不断弹出对话框，遇到“end”之后停止弹出，并计算结果
+        array.push(parseFloat(v));
+    }
+}
+
+&lt;/script&gt;
+</code></pre></li>
+<li>reverse()：颠倒数组中的元素的顺序，该方法会改变原来的数组而不是创建新数组<h6 id="用法：arr-reverse"><a href="#用法：arr-reverse" class="headerlink" title="用法：arr.reverse()"></a>用法：arr.reverse()</h6><h6 id="示例：-4"><a href="#示例：-4" class="headerlink" title="示例："></a>示例：</h6><pre><code>var arr1 = [1,2,3]
+document.write(arr1.reverse());
+</code></pre><h6 id="运行结果：-7"><a href="#运行结果：-7" class="headerlink" title="运行结果："></a>运行结果：</h6>  3,2,1<h3 id="数组对象先讲这一些，以后可能还会补充"><a href="#数组对象先讲这一些，以后可能还会补充" class="headerlink" title="数组对象先讲这一些，以后可能还会补充"></a>数组对象先讲这一些，以后可能还会补充</h3><h3 id="下一节介绍字符串对象"><a href="#下一节介绍字符串对象" class="headerlink" title="下一节介绍字符串对象"></a>下一节介绍字符串对象</h3></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/22/js_random/" itemprop="url">
+                  JS random()函数
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-09-22T14:57:13+08:00" content="2016-09-22">
+              2016-09-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/22/js_random/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://WaKaaaa.github.io/2016/09/22/js_random/" itemprop="commentsCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="JavaScript的random-函数"><a href="#JavaScript的random-函数" class="headerlink" title="JavaScript的random()函数"></a>JavaScript的random()函数</h1><h2 id="函数语法：-Math-random"><a href="#函数语法：-Math-random" class="headerlink" title="函数语法： Math.random()"></a>函数语法： Math.random()</h2><h2 id="函数参数：没有参数"><a href="#函数参数：没有参数" class="headerlink" title="函数参数：没有参数"></a>函数参数：没有参数</h2><h2 id="函数返回值：-0-1-，即0到一之间的随机数，包括0但是不包括1"><a href="#函数返回值：-0-1-，即0到一之间的随机数，包括0但是不包括1" class="headerlink" title="函数返回值： [0,1)，即0到一之间的随机数，包括0但是不包括1"></a>函数返回值： [0,1)，即0到一之间的随机数，包括0但是不包括1</h2><h2 id="函数的用途：-生成0到1之间的随机数，主要用于随机验证码的生成"><a href="#函数的用途：-生成0到1之间的随机数，主要用于随机验证码的生成" class="headerlink" title="函数的用途： 生成0到1之间的随机数，主要用于随机验证码的生成"></a>函数的用途： 生成0到1之间的随机数，主要用于随机验证码的生成</h2><hr>
+<h2 id="简单的小例子："><a href="#简单的小例子：" class="headerlink" title="简单的小例子："></a>简单的小例子：</h2><pre><code>&lt;script type = &quot;text/javascript&quot;&gt;
+    alert(Math.random());
+&lt;/script&gt;
+</code></pre><h4 id="这是最简单的random-运用，弹出一个随机数的对话框"><a href="#这是最简单的random-运用，弹出一个随机数的对话框" class="headerlink" title="这是最简单的random()运用，弹出一个随机数的对话框"></a>这是最简单的random()运用，弹出一个随机数的对话框</h4><hr>
+<h2 id="random-返回的是浮点数，但是在很多时候我们期待保留小数点的后n位小数，做法是："><a href="#random-返回的是浮点数，但是在很多时候我们期待保留小数点的后n位小数，做法是：" class="headerlink" title="random()返回的是浮点数，但是在很多时候我们期待保留小数点的后n位小数，做法是："></a>random()返回的是浮点数，但是在很多时候我们期待保留小数点的后n位小数，做法是：</h2><h3 id="1：toFixed-方法"><a href="#1：toFixed-方法" class="headerlink" title="1：toFixed()方法"></a>1：toFixed()方法</h3><pre><code>&lt;script type = &quot;text/javascript&quot;&gt;
+var num = Math.random();
+var newNum = num.toFixed(2);
+alert(newNum);
+// toFixed保留小数点后的位数,此处是保留小数点后两位
+&lt;/script&gt;
+</code></pre><h3 id="2：parseInt-方法"><a href="#2：parseInt-方法" class="headerlink" title="2：parseInt()方法"></a>2：parseInt()方法</h3><pre><code>parseInt(num*100)/100
+</code></pre><hr>
+<h2 id="JS取整方法："><a href="#JS取整方法：" class="headerlink" title="JS取整方法："></a>JS取整方法：</h2><h3 id="1-parseInt-函数丢弃小数部分"><a href="#1-parseInt-函数丢弃小数部分" class="headerlink" title="1. parseInt()函数丢弃小数部分"></a>1. parseInt()函数丢弃小数部分</h3><pre><code>&lt;script type = &quot;text/javascript&gt;
+alert(parseInt(5/2));
+&lt;script/&gt;
+</code></pre><h4 id="此函数的返回结果是2，可见parseInt-函数直接将小数部分截去"><a href="#此函数的返回结果是2，可见parseInt-函数直接将小数部分截去" class="headerlink" title="此函数的返回结果是2，可见parseInt()函数直接将小数部分截去"></a>此函数的返回结果是2，可见parseInt()函数直接将小数部分截去</h4><h4 id="与之相对的是parseFloat-函数，可以将整数转换为浮点数"><a href="#与之相对的是parseFloat-函数，可以将整数转换为浮点数" class="headerlink" title="与之相对的是parseFloat()函数，可以将整数转换为浮点数"></a>与之相对的是parseFloat()函数，可以将整数转换为浮点数</h4><h3 id="2-Math-ceil-函数向上取整"><a href="#2-Math-ceil-函数向上取整" class="headerlink" title="2.Math.ceil()函数向上取整"></a>2.Math.ceil()函数向上取整</h3><pre><code>alert(Math.ceil(9/2));
+</code></pre><h4 id="此函数的返回值是5，即有小数的在小数部分-1"><a href="#此函数的返回值是5，即有小数的在小数部分-1" class="headerlink" title="此函数的返回值是5，即有小数的在小数部分+1"></a>此函数的返回值是5，即有小数的在小数部分+1</h4><h3 id="3-Math-floor-函数向下取整"><a href="#3-Math-floor-函数向下取整" class="headerlink" title="3.Math.floor()函数向下取整"></a>3.Math.floor()函数向下取整</h3><pre><code>alert(Math.floor(9/2));
+</code></pre><h4 id="此函数的返回值是4，与parseInt-类似"><a href="#此函数的返回值是4，与parseInt-类似" class="headerlink" title="此函数的返回值是4，与parseInt()类似"></a>此函数的返回值是4，与parseInt()类似</h4><h3 id="4-Math-round-函数四舍五入"><a href="#4-Math-round-函数四舍五入" class="headerlink" title="4.Math.round()函数四舍五入"></a>4.Math.round()函数四舍五入</h3><pre><code>alert(Math.floor(7/3));
+</code></pre><h4 id="此函数的返回值是2"><a href="#此函数的返回值是2" class="headerlink" title="此函数的返回值是2"></a>此函数的返回值是2</h4><h2 id="random-方法的小例子："><a href="#random-方法的小例子：" class="headerlink" title="random()方法的小例子："></a>random()方法的小例子：</h2><h3 id="1-猜数字游戏"><a href="#1-猜数字游戏" class="headerlink" title="1.猜数字游戏"></a>1.猜数字游戏</h3><h4 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h4><ul>
+<li>系统先随机产生一个数字</li>
+<li>用prompt()输入你猜的数字</li>
+<li>判断你输入的数字是否是数字类型，不是的话继续输入</li>
+<li>逻辑判断用if else 语句判断输入的数字大，小，还是正好</li>
+<li>alert()说明结果直至游戏结束</li>
+</ul>
+<hr>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;猜数字游戏&lt;/title&gt;
+    &lt;meta charset = &quot;utf-8&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script type = &quot;text/javascript&quot;&gt;
+    var RandomNum = parseInt(Math.random()*10);
+    function guess()
+    {
+        var num = prompt(&quot;enter a number&quot;,&quot;&quot;);
+        alert(RandomNum);
+        var result = num - RandomNum;
+        // alert(result);
+
+        if (isNaN(num)) {
+            alert(&quot;你输入的不是数字，请重新输入！&quot;);
+            guess();
+        }else if (result == 0) {
+            alert(&quot;猜对了！&quot;);
+        }else if (result&gt;0) {
+            alert(&quot;太大&quot;);
+            guess();
+        }else{
+            alert(&quot;太小&quot;);
+            guess();
+        }
+
+    }
+    &lt;/script&gt;
+
+    &lt;input type=&quot;button&quot; value = &quot;guess number&quot; onclick = &quot;guess();&quot;&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h3 id="统计共几次猜中的代码："><a href="#统计共几次猜中的代码：" class="headerlink" title="统计共几次猜中的代码："></a>统计共几次猜中的代码：</h3><pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;猜数字游戏&lt;/title&gt;
+    &lt;meta charset = &apos;utf-8&apos;&gt;
+    &lt;script type = &quot;text/javascript&quot;&gt;
+        function play(){
+            var time = 0;
+            var result;
+            var count = parseInt(Math.random()*10);
+            alert(count);
+
+        while(true){
+            time++;
+            var num = prompt(&quot;请输入0到10之间的整数&quot;,&quot;&quot;);
+            if(isNaN(num)){
+                alert(&quot;输入的不是数字！&quot;);
+                //不是数字，太大，太小都会继续循环，直到得出正确结果才跳出循环
+            }else{
+                result =count - num;
+
+                if (result == 0) {
+                    alert(&quot;猜对了，共&quot;+time+&quot;次&quot;);
+                    break;
+                }else if (result&gt;0) {
+                    alert(&quot;太小！&quot;);
+                }else{
+                    alert(&quot;太大！&quot;);
+                }
+        }
+    }
+}
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;input type=&quot;button&quot; value = &quot;猜数字&quot; onClick = &quot;play();&quot;&gt;
+&lt;/body&gt;
+</code></pre><p></p>
+<h4 id="解析：因为Matn-random-函数只能产生-0-1-之间的随机数，-10可以保证产生的数字在-0-10-之间。"><a href="#解析：因为Matn-random-函数只能产生-0-1-之间的随机数，-10可以保证产生的数字在-0-10-之间。" class="headerlink" title="解析：因为Matn.random()函数只能产生[0,1)之间的随机数，*10可以保证产生的数字在[0,10)之间。"></a>解析：因为Matn.random()函数只能产生[0,1)之间的随机数，*10可以保证产生的数字在[0,10)之间。</h4><h4 id="isNaN-num-来判断输入的类型是否是数字，如果是数字则返回false，如果不是数字类型则返回true"><a href="#isNaN-num-来判断输入的类型是否是数字，如果是数字则返回false，如果不是数字类型则返回true" class="headerlink" title="isNaN(num)来判断输入的类型是否是数字，如果是数字则返回false，如果不是数字类型则返回true"></a>isNaN(num)来判断输入的类型是否是数字，如果是数字则返回false，如果不是数字类型则返回true</h4><h4 id="button的onclick方法"><a href="#button的onclick方法" class="headerlink" title="button的onclick方法"></a>button的onclick方法</h4><h3 id="2-模仿微信红包游戏（输入总金额和份数，输出每一份的随机金额，最小金额为0-01）"><a href="#2-模仿微信红包游戏（输入总金额和份数，输出每一份的随机金额，最小金额为0-01）" class="headerlink" title="2.模仿微信红包游戏（输入总金额和份数，输出每一份的随机金额，最小金额为0.01）"></a>2.模仿微信红包游戏（输入总金额和份数，输出每一份的随机金额，最小金额为0.01）</h3><h4 id="思路：-1"><a href="#思路：-1" class="headerlink" title="思路："></a>思路：</h4><ul>
+<li>prompt()输入红包金额和红包个数</li>
+<li>由于random()函数正好可以产生0到1的随机数，那么可以用来计算百分比，即总金额*random可得第一次红包的额度</li>
+<li>由于红包是一个一个有先后顺序地被抢，所以可以定义一个left变量来存储每次剩下的红包金额</li>
+<li>定义一个数组存储每次的红包金额</li>
+<li>parseInt()每个红包精确到小数点后两位</li>
+</ul>
+<hr>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;随机红包&lt;/title&gt;
+    &lt;meta charset = &apos;utf-8&apos;&gt;
+    &lt;script type = &quot;text/javascript&quot;&gt;
+        var jine = prompt(&quot;请输入红包金额&quot;,&quot;&quot;);
+        var geshu = prompt(&quot;请输入红包个数&quot;,&quot;&quot;);
+        var left = jine;
+        var arr = new Array();
+
+        for(i = 0; i&lt;geshu-1;i++){
+            // 保证金额随机的方法是：用户金额范围在0.01~剩余平均数*2之间
+            arr[i] = parseInt((left*2/(geshu-i))*Math.random()*100)/100;
+            left -= arr[i];
+            document.write(arr[i]+&quot;&lt;br/&gt;&quot;);
+        }
+        document.write(parseInt(left*100)/100);
+
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;/html&gt;
+</code></pre><h4 id="解析：为使每个人的红包金额差别不是太大，每个红包的金额范围是-0-01-剩余红包金额-剩余个数-2"><a href="#解析：为使每个人的红包金额差别不是太大，每个红包的金额范围是-0-01-剩余红包金额-剩余个数-2" class="headerlink" title="解析：为使每个人的红包金额差别不是太大，每个红包的金额范围是[0.01~剩余红包金额/剩余个数*2]"></a>解析：为使每个人的红包金额差别不是太大，每个红包的金额范围是[0.01~剩余红包金额/剩余个数*2]</h4><h3 id="3-随机产生0-99之间的整数，并按降序进行排列"><a href="#3-随机产生0-99之间的整数，并按降序进行排列" class="headerlink" title="3.随机产生0~99之间的整数，并按降序进行排列"></a>3.随机产生0~99之间的整数，并按降序进行排列</h3><pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;随机产生数字并升序排列&lt;/title&gt;
+    &lt;meta charset = &quot;utf-8&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+      &lt;script type = &quot;text/javascript&quot;&gt;
+           var arr = new Array();
+           for(i=0;i&lt;5;i++){
+               arr[i] = parseInt(Math.random()*100);
+           }
+           document.write(&quot;排序前：&quot;+arr+&quot;&lt;/br&gt;&quot;);
+           document.write(&quot;排序后：&quot;+arr.sort(sortNum));
+
+           function sortNum (a,b){
+               if (a&gt;b) {
+                   return -1;
+               }else if(a&lt;b){
+                   return 1;
+               }else{
+                   return 0;
+               }
+           }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h4 id="解析：sort是对数组进行升序排序，属于Array对象的一个方法，定义function-sortNum函数的原因是sort-方法如果没有指定参数，对字符编码的顺序对数组中的元素进行排序。-定义函数之后可以转为对数字的排序。"><a href="#解析：sort是对数组进行升序排序，属于Array对象的一个方法，定义function-sortNum函数的原因是sort-方法如果没有指定参数，对字符编码的顺序对数组中的元素进行排序。-定义函数之后可以转为对数字的排序。" class="headerlink" title="解析：sort是对数组进行升序排序，属于Array对象的一个方法，定义function sortNum函数的原因是sort()方法如果没有指定参数，对字符编码的顺序对数组中的元素进行排序。 定义函数之后可以转为对数字的排序。"></a>解析：sort是对数组进行升序排序，属于Array对象的一个方法，定义function sortNum函数的原因是sort()方法如果没有指定参数，对字符编码的顺序对数组中的元素进行排序。 定义函数之后可以转为对数字的排序。</h4><ul>
+<li>若a小于b，返回1，在排序后的数组中a应该在b的后边</li>
+<li>a等于b，返回0，a,b的位置不变</li>
+<li>a大于b，返回-1，a在b的前边</li>
+<li>由此实现降序排列，升序排列只是返回-1和1的条件相互交换即可<h4 id="简便方法："><a href="#简便方法：" class="headerlink" title="简便方法："></a>简便方法：</h4>  function sortNum (a,b){<pre><code>          return b-a;
+}
+</code></pre><h4 id="注意：return-b-a-不是返回一个相减的值，JS规定，return-b-a-是比较a-b的值"><a href="#注意：return-b-a-不是返回一个相减的值，JS规定，return-b-a-是比较a-b的值" class="headerlink" title="注意：return b-a 不是返回一个相减的值，JS规定，return b-a 是比较a,b的值"></a>注意：return b-a 不是返回一个相减的值，JS规定，return b-a 是比较a,b的值</h4>###4.随机生成头像  <html><br>  <head><br>      <title>Math方法随机生成头像</title><br>      <meta charset="utf-8"><br>  </head><br>  <body><br>      <script type="text/javascript"><br>          var vNum = parseInt(Math.random()*10);<br>          // alert(vNum);<br>          var address = “<img src = \"image/"+vNum+".jpg\">“;<br>          document.write(address);<br>      </script><br>  </body><br>  </html></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/21/hello-world/" itemprop="url">
                   Hello World
                 </a>
@@ -248,7 +1023,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-09-21T22:33:52+08:00" content="2016-09-21">
               2016-09-21
             </time>
@@ -368,8 +1143,8 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -378,8 +1153,8 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -423,7 +1198,7 @@
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
