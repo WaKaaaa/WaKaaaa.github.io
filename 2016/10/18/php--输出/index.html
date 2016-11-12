@@ -84,19 +84,31 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="php几种输出方式比较
+&amp;emsp; echo: 函数，无返回值（返回void），作用是打印字符串，还可以打印函数的类型和数组类型
+&amp;emsp; print: 函数，返回整型，作用是打印字符串
+&amp;emsp; printf: 函数，返回字符串的长度，作用是打印字符串
+&amp;emsp; sprintf: 函数，返回字符串将字符串保存在内存中（不在浏览器下显示）
+&amp;emsp; print_r: 函数，用来">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://WaKaaaa.github.io/2016/09/21/hello-world/index.html">
+<meta property="og:title" content="php学习--echo print_r,printf,sprintf,print的比较">
+<meta property="og:url" content="https://WaKaaaa.github.io/2016/10/18/php--输出/index.html">
 <meta property="og:site_name" content="WaKaaaa猪的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-09-21T14:33:52.806Z">
+<meta property="og:description" content="php几种输出方式比较
+&amp;emsp; echo: 函数，无返回值（返回void），作用是打印字符串，还可以打印函数的类型和数组类型
+&amp;emsp; print: 函数，返回整型，作用是打印字符串
+&amp;emsp; printf: 函数，返回字符串的长度，作用是打印字符串
+&amp;emsp; sprintf: 函数，返回字符串将字符串保存在内存中（不在浏览器下显示）
+&amp;emsp; print_r: 函数，用来">
+<meta property="og:updated_time" content="2016-11-12T13:02:40.529Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="php学习--echo print_r,printf,sprintf,print的比较">
+<meta name="twitter:description" content="php几种输出方式比较
+&amp;emsp; echo: 函数，无返回值（返回void），作用是打印字符串，还可以打印函数的类型和数组类型
+&amp;emsp; print: 函数，返回整型，作用是打印字符串
+&amp;emsp; printf: 函数，返回字符串的长度，作用是打印字符串
+&amp;emsp; sprintf: 函数，返回字符串将字符串保存在内存中（不在浏览器下显示）
+&amp;emsp; print_r: 函数，用来">
 
 
 
@@ -117,9 +129,9 @@ Quick">
 
 
 
-  <link rel="canonical" href="https://WaKaaaa.github.io/2016/09/21/hello-world/"/>
+  <link rel="canonical" href="https://WaKaaaa.github.io/2016/10/18/php--输出/"/>
 
-  <title> Hello World | WaKaaaa猪的博客 </title>
+  <title> php学习--echo print_r,printf,sprintf,print的比较 | WaKaaaa猪的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -239,7 +251,7 @@ Quick">
             
             
               
-                Hello World
+                php学习--echo print_r,printf,sprintf,print的比较
               
             
           </h1>
@@ -251,8 +263,8 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posté le</span>
-            <time itemprop="dateCreated" datetime="2016-09-21T22:33:52+08:00" content="2016-09-21">
-              2016-09-21
+            <time itemprop="dateCreated" datetime="2016-10-18T22:34:29+08:00" content="2016-10-18">
+              2016-10-18
             </time>
           </span>
 
@@ -262,8 +274,8 @@ Quick">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/21/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://WaKaaaa.github.io/2016/09/21/hello-world/" itemprop="commentsCount">0</span> comments
+                <a href="/2016/10/18/php--输出/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://WaKaaaa.github.io/2016/10/18/php--输出/" itemprop="commentsCount">0</span> comments
                 </a>
               </span>
             
@@ -286,15 +298,31 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h1 id="php几种输出方式比较"><a href="#php几种输出方式比较" class="headerlink" title=" php几种输出方式比较"></a><center> php几种输出方式比较</center></h1><ul>
+<li>&emsp; <code>echo</code>: 函数，无返回值（返回void），作用是打印字符串，还可以打印函数的类型和数组类型</li>
+<li>&emsp; <code>print</code>: 函数，返回整型，作用是打印字符串</li>
+<li>&emsp; <code>printf</code>: 函数，返回字符串的长度，作用是打印字符串</li>
+<li>&emsp; <code>sprintf</code>: 函数，返回字符串将字符串保存在内存中（不在浏览器下显示）</li>
+<li><p>&emsp; <code>print_r</code>: 函数，用来打印数组中的所有元素<br>###</p>
+<p> &lt;?php </p>
+<pre><code>echo &quot;hello php1&quot;;
+echo &quot;&lt;/br&gt;&quot;;
+print(&quot;hello php2&quot;);
+echo &quot;&lt;/br&gt;&quot;;
+echo print(&quot;hello php3&lt;/br&gt;&quot;); // 这句话的作用是先将print里的字符串打印出来，再打印一个字符串，然后echo出print的类型，返回真，在浏览器中显示为1
+echo &quot;&lt;/br&gt;&quot;;
+printf(&quot;hello php4&lt;/br&gt;&quot;);
+echo printf(&quot;hello php5&lt;/br&gt;&quot;); //返回字符串的长度
+echo &quot;&lt;/br&gt;&quot;;
+sprintf(&quot;hello php6&lt;br&gt;&quot;); // 字符串保存在内存中，不在浏览器界面显示
+echo sprintf(&quot;hello php7&quot;); // 返回字符串
+echo&quot;&lt;br&gt;&quot;;
+
+$userAges = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
+echo $userAges; //返回$userAges的类型 array
+</code></pre><p>  ?&gt;<br> 运行结果：<br> hello php1<br> hello php2<br> hello php3<br> 1<br> hello php4<br> hello php5<br> 15<br> hello php7<br> array</p>
+</li>
+</ul>
 
       
     </div>
@@ -320,12 +348,16 @@ Quick">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/10/18/php--数组遍历/" rel="next" title="PHP学习--遍历数组">
+                <i class="fa fa-chevron-left"></i> PHP学习--遍历数组
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/22/js_random函数/" rel="prev" title="JavaScript学习--random()函数">
-                JavaScript学习--random()函数 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/10/19/php--数组二维/" rel="prev" title="php学习--二维数组（数组中的数组）">
+                php学习--二维数组（数组中的数组） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -433,7 +465,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#php几种输出方式比较"><span class="nav-number">1.</span> <span class="nav-text"> php几种输出方式比较</span></a></li></ol></div>
             
           </div>
         </section>

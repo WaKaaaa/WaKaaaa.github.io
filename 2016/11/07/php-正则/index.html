@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="WaKaaaaa" />
+  <meta name="keywords" content="PHP正则表达式 PHP_Perl," />
 
 
 
@@ -84,19 +84,40 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="php正则表达式&amp;lt;?php 
+// 如果整个规则模式匹配通过而被匹配的字符串里还有字符，也是可以匹配成功的
+
+// 只要模式规则全部通过，就可以匹配成功
+// 此实例中，只要有php三个字符相连出现，模式匹配就成功
+// 但是匹配和 == 是不相同的，匹配可以使三个字符对多个字符
+
+// $pattern = &amp;apos;/php/&amp;apos;;    // 规则模式
+// $subject">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://WaKaaaa.github.io/2016/09/21/hello-world/index.html">
+<meta property="og:title" content="php学习--正则表达式">
+<meta property="og:url" content="https://WaKaaaa.github.io/2016/11/07/php-正则/index.html">
 <meta property="og:site_name" content="WaKaaaa猪的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-09-21T14:33:52.806Z">
+<meta property="og:description" content="php正则表达式&amp;lt;?php 
+// 如果整个规则模式匹配通过而被匹配的字符串里还有字符，也是可以匹配成功的
+
+// 只要模式规则全部通过，就可以匹配成功
+// 此实例中，只要有php三个字符相连出现，模式匹配就成功
+// 但是匹配和 == 是不相同的，匹配可以使三个字符对多个字符
+
+// $pattern = &amp;apos;/php/&amp;apos;;    // 规则模式
+// $subject">
+<meta property="og:updated_time" content="2016-11-12T13:03:23.505Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="php学习--正则表达式">
+<meta name="twitter:description" content="php正则表达式&amp;lt;?php 
+// 如果整个规则模式匹配通过而被匹配的字符串里还有字符，也是可以匹配成功的
+
+// 只要模式规则全部通过，就可以匹配成功
+// 此实例中，只要有php三个字符相连出现，模式匹配就成功
+// 但是匹配和 == 是不相同的，匹配可以使三个字符对多个字符
+
+// $pattern = &amp;apos;/php/&amp;apos;;    // 规则模式
+// $subject">
 
 
 
@@ -117,9 +138,9 @@ Quick">
 
 
 
-  <link rel="canonical" href="https://WaKaaaa.github.io/2016/09/21/hello-world/"/>
+  <link rel="canonical" href="https://WaKaaaa.github.io/2016/11/07/php-正则/"/>
 
-  <title> Hello World | WaKaaaa猪的博客 </title>
+  <title> php学习--正则表达式 | WaKaaaa猪的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -239,7 +260,7 @@ Quick">
             
             
               
-                Hello World
+                php学习--正则表达式
               
             
           </h1>
@@ -251,8 +272,8 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posté le</span>
-            <time itemprop="dateCreated" datetime="2016-09-21T22:33:52+08:00" content="2016-09-21">
-              2016-09-21
+            <time itemprop="dateCreated" datetime="2016-11-07T22:20:36+08:00" content="2016-11-07">
+              2016-11-07
             </time>
           </span>
 
@@ -262,8 +283,8 @@ Quick">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/21/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://WaKaaaa.github.io/2016/09/21/hello-world/" itemprop="commentsCount">0</span> comments
+                <a href="/2016/11/07/php-正则/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://WaKaaaa.github.io/2016/11/07/php-正则/" itemprop="commentsCount">0</span> comments
                 </a>
               </span>
             
@@ -286,15 +307,57 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p></p><h1><center>php正则表达式</center></h1><br>&lt;?php <p></p>
+<pre><code>// 如果整个规则模式匹配通过而被匹配的字符串里还有字符，也是可以匹配成功的
+
+// 只要模式规则全部通过，就可以匹配成功
+// 此实例中，只要有php三个字符相连出现，模式匹配就成功
+// 但是匹配和 == 是不相同的，匹配可以使三个字符对多个字符
+
+// $pattern = &apos;/php/&apos;;    // 规则模式
+// $subject = &apos;gggphpqqq&apos;;    // 被匹配的字符串
+
+
+// 前导的概念：就是他前面的一个字符
+// + * ？ {} . $ ^ |
+
+
+// 1. h+ 表示至少包含一个前导字符，也就是h大于等于1个
+// $pattern = &apos;/ph+p/&apos;;    // 规则模式
+
+
+// 2. h*表示包含0到无数个前导字符，也就是h的个数可以为任意个
+// $pattern = &apos;/ph?p/&apos;;    // 规则模式
+
+// 3. h?表示包含0个或者1个前导字符，也就是h的个数等于0个或者1个
+
+
+// 4. h.表示前导字符可以为任意字符，一个.是一个字符，将.号代替一个字符
+// 5. .* 表示前导任意多个任意字符，0到无数个都可以
+// $pattern = &apos;/ph.p/&apos;;    // 规则模式
+// $subject = &apos;phjp&apos;;    // 被匹配的字符串（匹配）
+
+
+// 5. $号加在字符串的末尾，只要末尾的几个字符匹配即可
+
+// 6. 相对的是^，通常在字符串的开始，只要开始的几个字符匹配即可
+
+// 7. | 是条件选择符号，如果其中有一个符合就返回1
+// $pattern = &apos;/php|jsp|asp/&apos;;    // 规则模式
+// $subject = &apos;phpe&apos;;    // 被匹配的字符串(匹配)，如果是这三个字符串之外的就不符合
+
+// 8. h{3} 表示前导有三个，不能多也不能少
+// h{3,5} 表示前导有3个到5都可以，多了少了都不行
+// h{5,} 如果后边没有数字，就表示从5个到大于5个的人一多个前导字符
+$pattern = &apos;/ph{3}p/&apos;;    // 规则模式
+$subject = &apos;phhhpe&apos;;    // 被匹配的字符串
+
+if(preg_match($pattern, $subject)){
+    echo &quot;匹配&quot;;
+}else{
+    echo &quot;不匹配&quot;;
+}
+</code></pre><p> ?&gt;</p>
 
       
     </div>
@@ -315,18 +378,24 @@ Quick">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/PHP正则表达式-PHP-Perl/" rel="tag">#PHP正则表达式 PHP_Perl</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/10/23/laravel控制器/" rel="next" title="laravel学习--控制器">
+                <i class="fa fa-chevron-left"></i> laravel学习--控制器
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/22/js_random函数/" rel="prev" title="JavaScript学习--random()函数">
-                JavaScript学习--random()函数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -433,7 +502,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">php正则表达式</span></a></li></ol></div>
             
           </div>
         </section>
