@@ -192,6 +192,234 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-php-日期与时间2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/13/php-日期与时间2/" class="article-date">
+  	<time datetime="2016-11-13T13:10:01.000Z" itemprop="datePublished">2016-11-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/13/php-日期与时间2/">
+        php学习--日期与时间2
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="五：-time-返回当前的Unix时间戳，可以设置过去和未来的时间"><a href="#五：-time-返回当前的Unix时间戳，可以设置过去和未来的时间" class="headerlink" title="五： time()返回当前的Unix时间戳，可以设置过去和未来的时间"></a>五： time()返回当前的Unix时间戳，可以设置过去和未来的时间</h2><pre><code>echo time();
+</code></pre><h3 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h3><pre><code>1479028890
+</code></pre><h3 id="time-函数的作用非常大"><a href="#time-函数的作用非常大" class="headerlink" title="time()函数的作用非常大"></a>time()函数的作用非常大</h3><h2 id="六：mktime-返回指定日期的时间戳"><a href="#六：mktime-返回指定日期的时间戳" class="headerlink" title="六：mktime()返回指定日期的时间戳"></a>六：mktime()返回指定日期的时间戳</h2><h3 id="格式：mktime-时，分，秒，月，日，年"><a href="#格式：mktime-时，分，秒，月，日，年" class="headerlink" title="格式：mktime(时，分，秒，月，日，年);"></a>格式：mktime(时，分，秒，月，日，年);</h3><pre><code>$time = mktime(8,8,8,8,8,2008);
+echo date(&apos;Y-m-d H:i:s&apos;,$time);
+</code></pre><h3 id="结果：2008-08-08-08-08：08"><a href="#结果：2008-08-08-08-08：08" class="headerlink" title="结果：2008-08-08 08:08：08"></a>结果：2008-08-08 08:08：08</h3><h2 id="七：strtotime-将人们可读的日期转化为时间戳（和getdate-相反），用这个函数的频率高"><a href="#七：strtotime-将人们可读的日期转化为时间戳（和getdate-相反），用这个函数的频率高" class="headerlink" title="七：strtotime()将人们可读的日期转化为时间戳（和getdate()相反），用这个函数的频率高"></a>七：strtotime()将人们可读的日期转化为时间戳（和getdate()相反），用这个函数的频率高</h2><h3 id="用它可计算时间差"><a href="#用它可计算时间差" class="headerlink" title="用它可计算时间差"></a>用它可计算时间差</h3><pre><code>$time = strtotime(&apos;2016-11-13 20:20:20&apos;);
+$now = time();
+// echo time();
+
+// 计算时间差，返回的是秒
+echo $time-$now;
+</code></pre><h2 id="八：getlastmod-返回当前文件的最后修改时间的时间戳"><a href="#八：getlastmod-返回当前文件的最后修改时间的时间戳" class="headerlink" title="八：getlastmod()返回当前文件的最后修改时间的时间戳"></a>八：getlastmod()返回当前文件的最后修改时间的时间戳</h2><pre><code>echo getlastmod();    //返回时间戳
+echo date(&apos;Y-m-d H:i:s&apos;,getlastmod());    //转化为可读的时间
+</code></pre><h3 id="扩展：获取文件最后修改时间的另一个函数是：filemtime"><a href="#扩展：获取文件最后修改时间的另一个函数是：filemtime" class="headerlink" title="扩展：获取文件最后修改时间的另一个函数是：filemtime()"></a>扩展：获取文件最后修改时间的另一个函数是：filemtime()</h3><h2 id="九：localtime-取得本地时间数据，返回一个数组（此函数不常用，月份有问题）"><a href="#九：localtime-取得本地时间数据，返回一个数组（此函数不常用，月份有问题）" class="headerlink" title="九：localtime()取得本地时间数据，返回一个数组（此函数不常用，月份有问题）"></a>九：localtime()取得本地时间数据，返回一个数组（此函数不常用，月份有问题）</h2><pre><code>date_default_timezone_set(&apos;Asia/shanghai&apos;);
+print_r(localtime(time(),true));
+</code></pre><h3 id="结果：-1"><a href="#结果：-1" class="headerlink" title="结果："></a>结果：</h3><pre><code>Array
+(
+    [tm_sec] =&gt; 41
+    [tm_min] =&gt; 10
+    [tm_hour] =&gt; 20
+    [tm_mday] =&gt; 13
+    [tm_mon] =&gt; 10    //月份是从0开始的，也就是一月是0,11月是10（所以此函数不常用）
+    [tm_year] =&gt; 116
+    [tm_wday] =&gt; 0
+    [tm_yday] =&gt; 317    //已经过去的天数
+    [tm_isdst] =&gt; 0
+)
+</code></pre><h2 id="十-设置时区"><a href="#十-设置时区" class="headerlink" title="十:设置时区"></a>十:设置时区</h2><h3 id="时区的概念：全球有24个时区。在国际中，使用一个统一的时间，叫通用协调时间（UTC），它与格林威治标准时间（GMT）相同，采用的是0时区"><a href="#时区的概念：全球有24个时区。在国际中，使用一个统一的时间，叫通用协调时间（UTC），它与格林威治标准时间（GMT）相同，采用的是0时区" class="headerlink" title="时区的概念：全球有24个时区。在国际中，使用一个统一的时间，叫通用协调时间（UTC），它与格林威治标准时间（GMT）相同，采用的是0时区"></a>时区的概念：全球有24个时区。在国际中，使用一个统一的时间，叫通用协调时间（UTC），它与格林威治标准时间（GMT）相同，采用的是0时区</h3><h3 id="1-修改php-ini文件date-timezone"><a href="#1-修改php-ini文件date-timezone" class="headerlink" title="1.修改php.ini文件date.timezone="></a>1.修改php.ini文件date.timezone=</h3><pre><code>echo date_default_timezone_get();    //获取当前时区
+echo &quot;&lt;br&gt;&quot;;
+echo date(&apos;Y-m-d H:i:s&apos;);
+
+echo &quot;&lt;br&gt;&quot;;
+date_default_timezone_set(&apos;Asia/shanghai&apos;);        //设置时区为上海时区
+echo date(&apos;Y-m-d H:i:s&apos;);
+</code></pre><h3 id="结果：-2"><a href="#结果：-2" class="headerlink" title="结果："></a>结果：</h3><pre><code>Europe/Berlin
+2016-11-13 13:01:25
+2016-11-13 20:01:25
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/13/php-日期与时间2/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--日期与时间2">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-php-日期与时间" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/13/php-日期与时间/" class="article-date">
+  	<time datetime="2016-11-13T07:13:40.000Z" itemprop="datePublished">2016-11-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/13/php-日期与时间/">
+        php学习--日期与时间
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="应用场合：表单提交时间，用户登录时间，数据库中数据的更新和删除的时间等"><a href="#应用场合：表单提交时间，用户登录时间，数据库中数据的更新和删除的时间等" class="headerlink" title="应用场合：表单提交时间，用户登录时间，数据库中数据的更新和删除的时间等"></a>应用场合：表单提交时间，用户登录时间，数据库中数据的更新和删除的时间等</h3><h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="time-：获取当前时间戳（但是这个比较麻烦，参数含义不明确，一般不使用这个）"><a href="#time-：获取当前时间戳（但是这个比较麻烦，参数含义不明确，一般不使用这个）" class="headerlink" title="time()：获取当前时间戳（但是这个比较麻烦，参数含义不明确，一般不使用这个）"></a><code>time()</code>：获取当前时间戳（但是这个比较麻烦，参数含义不明确，一般不使用这个）</h3><h3 id="getdate-：将时间戳转化为人们可以看得懂的时间，数组形式"><a href="#getdate-：将时间戳转化为人们可以看得懂的时间，数组形式" class="headerlink" title="getdate()：将时间戳转化为人们可以看得懂的时间，数组形式"></a><code>getdate()</code>：将时间戳转化为人们可以看得懂的时间，<code>数组</code>形式</h3><h3 id="strtotime-将人们可读的日期转化为时间戳"><a href="#strtotime-将人们可读的日期转化为时间戳" class="headerlink" title="strtotime()将人们可读的日期转化为时间戳"></a><code>strtotime()</code>将人们可读的日期转化为时间戳</h3><h3 id="mktime-将时间转化成时间戳"><a href="#mktime-将时间转化成时间戳" class="headerlink" title="mktime()将时间转化成时间戳"></a><code>mktime()</code>将时间转化成时间戳</h3><h3 id="getlastmod-返回当前文件最后修改时间的时间戳"><a href="#getlastmod-返回当前文件最后修改时间的时间戳" class="headerlink" title="getlastmod()返回当前文件最后修改时间的时间戳"></a><code>getlastmod()</code>返回当前文件最后修改时间的时间戳</h3><h3 id="checkdate-：检验日期是否合法，boolean形式"><a href="#checkdate-：检验日期是否合法，boolean形式" class="headerlink" title="checkdate()：检验日期是否合法，boolean形式"></a><code>checkdate()</code>：检验日期是否合法，<code>boolean</code>形式</h3><h3 id="date-：格式化本地时间或者日期，可以打印当前时间，date-‘Y-m-d-h-i-sa’"><a href="#date-：格式化本地时间或者日期，可以打印当前时间，date-‘Y-m-d-h-i-sa’" class="headerlink" title="date()：格式化本地时间或者日期，可以打印当前时间，date(‘Y-m-d h:i:sa’)"></a><code>date()</code>：格式化本地时间或者日期，可以打印当前时间，date(‘Y-m-d h:i:sa’)</h3><h3 id="gettimeofday-获取当前时间，数组形式"><a href="#gettimeofday-获取当前时间，数组形式" class="headerlink" title="gettimeofday()获取当前时间，数组形式"></a><code>gettimeofday()</code>获取当前时间，<code>数组</code>形式</h3><h3 id="localtime-返回本地时间（不常用）"><a href="#localtime-返回本地时间（不常用）" class="headerlink" title="localtime()返回本地时间（不常用）"></a><code>localtime()</code>返回本地时间（不常用）</h3><h3 id="date-default-timezone-get-获取默认时区"><a href="#date-default-timezone-get-获取默认时区" class="headerlink" title="date_default_timezone_get()获取默认时区"></a><code>date_default_timezone_get()</code>获取默认时区</h3><h3 id="date-default-timezone-set-修改时区"><a href="#date-default-timezone-set-修改时区" class="headerlink" title="date_default_timezone_set()修改时区"></a><code>date_default_timezone_set()</code>修改时区</h3><h2 id="一：checkdate-函数检测日期是否合法，布尔型"><a href="#一：checkdate-函数检测日期是否合法，布尔型" class="headerlink" title="一：checkdate()函数检测日期是否合法，布尔型"></a>一：checkdate()函数检测日期是否合法，布尔型</h2><h2 id="二：date-格式化一个本地时间或日期"><a href="#二：date-格式化一个本地时间或日期" class="headerlink" title="二：date()格式化一个本地时间或日期"></a>二：date()格式化一个本地时间或日期</h2><h3 id="格式：string-date-string-format-int-timestamp"><a href="#格式：string-date-string-format-int-timestamp" class="headerlink" title="格式：string date ( string $format [, int $timestamp ] )"></a>格式：string date ( string $format [, int $timestamp ] )</h3><h3 id="date-的两个参数分别表示一个日期（必选）和一个时间戳（不写的话默认为Unix时间戳）。"><a href="#date-的两个参数分别表示一个日期（必选）和一个时间戳（不写的话默认为Unix时间戳）。" class="headerlink" title="date()的两个参数分别表示一个日期（必选）和一个时间戳（不写的话默认为Unix时间戳）。"></a>date()的两个参数分别表示一个日期（必选）和一个时间戳（不写的话默认为Unix时间戳）。</h3><h3 id="date-表示的年月日时分秒"><a href="#date-表示的年月日时分秒" class="headerlink" title="date()表示的年月日时分秒"></a>date()表示的年月日时分秒</h3><h3 id="规则："><a href="#规则：" class="headerlink" title="规则："></a>规则：</h3><pre><code>Y表示四位数的年份，y表示两位数的年份
+M表示英文的月份缩写，m表示阿拉伯数字的月份
+D表示英文的日缩写，d表示阿拉伯的日
+
+H表示24小时的小时，h表示12小时的计时法
+i表示分钟
+s表示秒
+
+a是小写的上午和下午
+
+date()的第一个参数可以放一些format目录里不存在的符号，他们不会被解析，看起来排版清晰
+</code></pre><h3 id="打印目前的时间"><a href="#打印目前的时间" class="headerlink" title="打印目前的时间"></a>打印目前的时间</h3><pre><code>echo date(&apos;Y-m-d h:i:sa&apos;);    //返回的是Unix时间戳的时间2016-11-13 08:34:23am，是东八区的时间，可能和实际时间不相同。
+</code></pre><h3 id="时间戳的概念：时间戳是文件属性中的创建，修改和访问时间。"><a href="#时间戳的概念：时间戳是文件属性中的创建，修改和访问时间。" class="headerlink" title="时间戳的概念：时间戳是文件属性中的创建，修改和访问时间。"></a>时间戳的概念：时间戳是文件属性中的创建，修改和访问时间。</h3><h3 id="原理：通过其他加密法将时间的数值转化为加密的数值，加密位数会发生改变安"><a href="#原理：通过其他加密法将时间的数值转化为加密的数值，加密位数会发生改变安" class="headerlink" title="原理：通过其他加密法将时间的数值转化为加密的数值，加密位数会发生改变安"></a>原理：通过其他加密法将时间的数值转化为加密的数值，加密位数会发生改变安</h3><h3 id="好处：防止数值窃取之后被非法利用，起到了加密的作用"><a href="#好处：防止数值窃取之后被非法利用，起到了加密的作用" class="headerlink" title="好处：防止数值窃取之后被非法利用，起到了加密的作用"></a>好处：防止数值窃取之后被非法利用，起到了加密的作用</h3><h3 id="Unix时间戳：从1970年一月一日零时零分零秒到当前时刻，他是一个时间差，与时区没有关系"><a href="#Unix时间戳：从1970年一月一日零时零分零秒到当前时刻，他是一个时间差，与时区没有关系" class="headerlink" title="Unix时间戳：从1970年一月一日零时零分零秒到当前时刻，他是一个时间差，与时区没有关系"></a>Unix时间戳：从1970年一月一日零时零分零秒到当前时刻，<code>他是一个时间差，与时区没有关系</code></h3><h2 id="三：gettimeofday-获取当前时间，返回一个关联数组，包含有系统调用返回的数据"><a href="#三：gettimeofday-获取当前时间，返回一个关联数组，包含有系统调用返回的数据" class="headerlink" title="三：gettimeofday()获取当前时间，返回一个关联数组，包含有系统调用返回的数据"></a>三：gettimeofday()获取当前时间，返回一个关联<code>数组</code>，包含有系统调用返回的数据</h2><p>###<br>    print_r(gettimeofday());    //数组类型的建议都用print_r()打印详细信息<br>    结果是：<br>    Array<br>    (<br>        [sec] =&gt; 1479027519<br>        [usec] =&gt; 540985<br>        [minuteswest] =&gt; -60<br>        [dsttime] =&gt; 0<br>    )<br>    “sec” - 自 Unix 纪元起的秒数<br>    ◦ “usec” - 微秒数<br>    ◦ “minuteswest” - 格林威治向西的分钟数<br>    ◦ “dsttime” - 夏令时修正的类型 </p>
+<h3 id="所以想打印单个的值可用-echo-settimeofday-sec"><a href="#所以想打印单个的值可用-echo-settimeofday-sec" class="headerlink" title="所以想打印单个的值可用 echo settimeofday[sec];"></a>所以想打印单个的值可用 echo settimeofday[sec];</h3><h3 id="settimeofday-可以传入一个真值1，返回一个浮点数而不是数组"><a href="#settimeofday-可以传入一个真值1，返回一个浮点数而不是数组" class="headerlink" title="settimeofday()可以传入一个真值1，返回一个浮点数而不是数组"></a>settimeofday()可以传入一个真值1，返回一个浮点数而不是数组</h3><pre><code>print_r(gettimeofday());
+echo gettimeofday(1);
+</code></pre><h3 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h3><pre><code>Array
+(
+    [sec] =&gt; 1479027864
+    [usec] =&gt; 778749
+    [minuteswest] =&gt; -60
+    [dsttime] =&gt; 0
+)
+1479027864.7789
+</code></pre><h3 id="浮点数和上边是相对应的，1479027864说白了是时间戳"><a href="#浮点数和上边是相对应的，1479027864说白了是时间戳" class="headerlink" title="浮点数和上边是相对应的，1479027864说白了是时间戳"></a>浮点数和上边是相对应的，1479027864说白了是<code>时间戳</code></h3><h3 id="扩展：-microtime-返回当前-Unix-时间戳和微秒数，也就是gettimeofday-的前两个"><a href="#扩展：-microtime-返回当前-Unix-时间戳和微秒数，也就是gettimeofday-的前两个" class="headerlink" title="扩展： microtime() 返回当前 Unix 时间戳和微秒数，也就是gettimeofday()的前两个"></a>扩展： <code>microtime()</code> 返回当前 Unix 时间戳和微秒数，也就是gettimeofday()的前两个</h3><h3 id="作用：计算脚本运行时间（指的是很小很小的时间的差）"><a href="#作用：计算脚本运行时间（指的是很小很小的时间的差）" class="headerlink" title="作用：计算脚本运行时间（指的是很小很小的时间的差）"></a>作用：计算脚本运行时间（指的是很小很小的时间的差）</h3><pre><code>function fn(){
+    list($a,$b) = explode(&apos; &apos;, microtime());    //以空格分割字符串，将分割后的字符串分别赋值给$a,$b
+    return $a+$b;
+}
+$start = fn();
+for ($i=0; $i&lt;100000000 ; $i++) {     //时间越大，运行时间越大
+    # code...
+}
+$end = fn();
+
+echo round($end - $start,4);
+</code></pre><h3 id="运行此脚本的时间是3-1149秒"><a href="#运行此脚本的时间是3-1149秒" class="headerlink" title="运行此脚本的时间是3.1149秒"></a>运行此脚本的时间是3.1149秒</h3><h2 id="四：getdate-函数接受一个时间戳，返回一个人们能看得懂的时间"><a href="#四：getdate-函数接受一个时间戳，返回一个人们能看得懂的时间" class="headerlink" title="四：getdate()函数接受一个时间戳，返回一个人们能看得懂的时间"></a>四：getdate()函数接受一个时间戳，返回一个人们能看得懂的时间</h2><h3 id="1-getdate-不接受时间戳参数时，返回当前时间的一个数组"><a href="#1-getdate-不接受时间戳参数时，返回当前时间的一个数组" class="headerlink" title="1. getdate()不接受时间戳参数时，返回当前时间的一个数组"></a>1. getdate()不接受时间戳参数时，返回当前时间的一个数组</h3><pre><code>print_r(getdate());
+</code></pre><h3 id="结果：-1"><a href="#结果：-1" class="headerlink" title="结果："></a>结果：</h3><pre><code>Array
+(
+    [seconds] =&gt; 39
+    [minutes] =&gt; 10
+    [hours] =&gt; 10
+    [mday] =&gt; 13
+    [wday] =&gt; 0
+    [mon] =&gt; 11
+    [year] =&gt; 2016
+    [yday] =&gt; 317
+    [weekday] =&gt; Sunday
+    [month] =&gt; November
+    [0] =&gt; 1479028239
+)
+</code></pre><h3 id="2-getdate-1479027864-接受一个时间戳，返回的是时间戳指示的时间的详细信息数组"><a href="#2-getdate-1479027864-接受一个时间戳，返回的是时间戳指示的时间的详细信息数组" class="headerlink" title="2. getdate(1479027864)接受一个时间戳，返回的是时间戳指示的时间的详细信息数组"></a>2. getdate(1479027864)接受一个时间戳，返回的是时间戳指示的时间的详细信息数组</h3><pre><code>print_r(getdate(1479027864));
+</code></pre><h3 id="结果：-2"><a href="#结果：-2" class="headerlink" title="结果："></a>结果：</h3><pre><code>Array
+(
+    [seconds] =&gt; 24
+    [minutes] =&gt; 4
+    [hours] =&gt; 10
+    [mday] =&gt; 13
+    [wday] =&gt; 0
+    [mon] =&gt; 11
+    [year] =&gt; 2016
+    [yday] =&gt; 317
+    [weekday] =&gt; Sunday
+    [month] =&gt; November
+    [0] =&gt; 1479027864
+)
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/13/php-日期与时间/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--日期与时间">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-php-正则" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1187,308 +1415,6 @@ echo floor(&apos;1.642&apos;);    // floor() 舍去法取整
 <div class="counter-tag counter">
     <span id="/2016/10/17/PHP--数学函数/" class="leancloud_visitors post-title-link"
           style="font-size: 12px" data-flag-title="PHP学习--数学函数">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-PHP--基础学习" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/13/PHP--基础学习/" class="article-date">
-  	<time datetime="2016-10-13T01:37:02.000Z" itemprop="datePublished">2016-10-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/13/PHP--基础学习/">
-        PHP basic
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="PHP的基本知识学习总结"><a href="#PHP的基本知识学习总结" class="headerlink" title=" PHP的基本知识学习总结 "></a><center> PHP的基本知识学习总结 </center></h1><h2 id="一：PHP概述"><a href="#一：PHP概述" class="headerlink" title="一：PHP概述"></a>一：PHP概述</h2><h3 id="PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以-php为后缀名，写动态网站，与数据库交互"><a href="#PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以-php为后缀名，写动态网站，与数据库交互" class="headerlink" title="PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以.php为后缀名，写动态网站，与数据库交互"></a>PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以.php为后缀名，写动态网站，与数据库交互</h3><h3 id="PHP运行环境：windows-apache-php-mysql-emsp-emsp-emsp-emsp-emsp-emsp-emsp-linux-apache-php-mysql"><a href="#PHP运行环境：windows-apache-php-mysql-emsp-emsp-emsp-emsp-emsp-emsp-emsp-linux-apache-php-mysql" class="headerlink" title="PHP运行环境：windows+apache+php+mysql      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;    linux+apache+php+mysql"></a>PHP运行环境：windows+apache+php+mysql <br>     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;    linux+apache+php+mysql</h3><h3 id="PHP文件构成：HTML-div-CSS-PHP-JavaScript-jQuery-ajax等"><a href="#PHP文件构成：HTML-div-CSS-PHP-JavaScript-jQuery-ajax等" class="headerlink" title="PHP文件构成：HTML div CSS PHP JavaScript jQuery ajax等"></a>PHP文件构成：HTML div CSS PHP JavaScript jQuery ajax等</h3><h3 id="PHP工作原理：请求-gt-Apache-gt-执行PHP代码-gt-响应"><a href="#PHP工作原理：请求-gt-Apache-gt-执行PHP代码-gt-响应" class="headerlink" title="PHP工作原理：请求-&gt;Apache-&gt;执行PHP代码-&gt;响应"></a>PHP工作原理：请求-&gt;Apache-&gt;执行PHP代码-&gt;响应</h3><h2 id="二：PHP环境搭建"><a href="#二：PHP环境搭建" class="headerlink" title="二：PHP环境搭建"></a>二：PHP环境搭建</h2><h3 id="用appServ集成环境或者独立搭建"><a href="#用appServ集成环境或者独立搭建" class="headerlink" title="用appServ集成环境或者独立搭建"></a>用appServ集成环境或者独立搭建</h3><h1 id="三：php基础知识"><a href="#三：php基础知识" class="headerlink" title="三：php基础知识"></a>三：php基础知识</h1><h2 id="emsp-01-基本语法"><a href="#emsp-01-基本语法" class="headerlink" title="&emsp; 01.基本语法"></a>&emsp; 01.基本语法</h2><pre><code>&lt;?php 
-    ......
- ?&gt;
-</code></pre><h2 id="emsp-02-输出的几种方式和比较"><a href="#emsp-02-输出的几种方式和比较" class="headerlink" title="&emsp; 02.输出的几种方式和比较"></a>&emsp; 02.输出的几种方式和比较</h2><ul>
-<li>&emsp; <code>echo</code>: 函数，无返回值（返回void），作用是打印字符串</li>
-<li>&emsp; <code>print</code>: 函数，返回整型，作用是打印字符串</li>
-<li>&emsp; <code>printf</code>: 函数，返回字符串的长度，作用是打印字符串</li>
-<li><p>&emsp; <code>sprintf</code>: 函数，返回字符串将字符串保存在内存中（不在浏览器下显示）<br>###</p>
-<p> &lt;?php </p>
-<pre><code>echo &quot;hello php1&quot;;
-echo &quot;&lt;/br&gt;&quot;;
-print(&quot;hello php2&quot;);
-echo &quot;&lt;/br&gt;&quot;;
-echo print(&quot;hello php3&lt;/br&gt;&quot;); // 这句话的作用是先将print里的字符串打印出来，再打印一个字符串，然后echo出print的类型，返回真，在浏览器中显示为1
-echo &quot;&lt;/br&gt;&quot;;
-printf(&quot;hello php4&lt;/br&gt;&quot;);
-echo printf(&quot;hello php5&lt;/br&gt;&quot;); //返回字符串的长度
-echo &quot;&lt;/br&gt;&quot;;
-sprintf(&quot;hello php6&lt;br&gt;&quot;); // 字符串保存在内存中，不在浏览器界面显示
-echo sprintf(&quot;hello php7&quot;); // 返回字符串
-</code></pre><p>  ?&gt;<br> 运行结果：<br> hello php1<br> hello php2<br> hello php3<br> 1<br> hello php4<br> hello php5<br> 15<br> hello php7</p>
-<h2 id="emsp-03-注释"><a href="#emsp-03-注释" class="headerlink" title="&emsp; 03.注释"></a>&emsp; 03.注释</h2><p> 单行//<br> 多行/**/<br> shell #</p>
-<h2 id="emsp-04-标识符"><a href="#emsp-04-标识符" class="headerlink" title="&emsp; 04.标识符"></a>&emsp; 04.标识符</h2><h3 id="emsp-标识符是变量的名称，关于标识符，PHP定义了一些简单的规则："><a href="#emsp-标识符是变量的名称，关于标识符，PHP定义了一些简单的规则：" class="headerlink" title="&emsp; 标识符是变量的名称，关于标识符，PHP定义了一些简单的规则："></a>&emsp; 标识符是变量的名称，关于标识符，PHP定义了一些简单的规则：</h3><h3 id="emsp-标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。"><a href="#emsp-标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。" class="headerlink" title="&emsp; 标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。"></a>&emsp; 标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。</h3><h3 id="emsp-标识符不能以数字开始。"><a href="#emsp-标识符不能以数字开始。" class="headerlink" title="&emsp; 标识符不能以数字开始。"></a>&emsp; 标识符不能以数字开始。</h3><h3 id="emsp-在PHP中，标识符是区分大小写的。"><a href="#emsp-在PHP中，标识符是区分大小写的。" class="headerlink" title="&emsp; 在PHP中，标识符是区分大小写的。"></a>&emsp; 在PHP中，标识符是区分大小写的。</h3><h3 id="emsp-一个变量名称可以与一个函数名称相同。"><a href="#emsp-一个变量名称可以与一个函数名称相同。" class="headerlink" title="&emsp; 一个变量名称可以与一个函数名称相同。"></a>&emsp; 一个变量名称可以与一个函数名称相同。</h3><h2 id="emsp-05-变量的数据类型"><a href="#emsp-05-变量的数据类型" class="headerlink" title="&emsp; 05.变量的数据类型"></a>&emsp; 05.变量的数据类型</h2><p> Integer(整数)、Float(浮点数，也叫Double,双精度)、String(字符串)、Boolean(布尔)、Array(数组)、Object(对象).</p>
-<blockquote>
-<p>在PHP中无论是double还是float，在浏览器中显示的都是“double”<br>###</p>
-<h2 id="emsp-06-类型转换"><a href="#emsp-06-类型转换" class="headerlink" title="&emsp; 06.类型转换"></a>&emsp; 06.类型转换</h2><p> //    数据类型的转换：分为显示转化和隐式转换<br> echo “数据类型的转换方式：(integer)\$num<br>“;    //反斜杠表示转义字符<br> echo “转化成整数和浮点数的时候如果以数字开头，首先将数字部分转化成整数，再舍去后边的字符串，如果字符串中含有小数点，会保留到小数点前一位<br>“;<br> $str5 = “2.559656894E2”;<br> echo “转义前的string类型：”.$str5.”<br>“;        //“.”小圆点表示字符串的连接<br> //    此种方式的转换都是显示转换，也叫强制类型转换<br> echo “转化成整数：”.(integer)$str5.”<br>“;<br> echo “转化成布尔类型：”.(boolean)$str5.”<br>“;    //    0，null和未被赋值的变量将会转换成false<br> echo “转化成浮点数：”.(float)$str5.”<br>“;    // 字符串的连接用“.”<br> echo “转化成数组：”.(array)$str5.”<br>“;</p>
-</blockquote>
-<p> //    隐式转换<br> $sum = 123;<br> $total = 23.4;<br> $sum = $total;<br> echo gettype($sum);    //此时返回的是浮点型，显示的是double，浏览器显示的浮点型就是double<br> echo “<br>“;</p>
-<p> //    settype()函数也可以设置类型，此时将原本的变量类型改变<br> $a = 1234;<br> settype($a, string);<br> echo gettype($a).”<br>“;    //    将此变量设置成string类型，gettype()获取变量的类型<br> echo “$a<br>“;    //    $a是字符串a</p>
-<p> //    intval()函数，此函数不会改变变量的类型（此处还是浮点数），但是会将变量的值按照整型输出（此处输出的是整型），与之相应的还有floatval()  strval()<br> $b = 456.345;<br> echo gettype($b).”<br>“;<br> echo intval($b).”<br>“;<br> echo gettype($b);<br> echo “<hr>“;</p>
-<p> 运行结果：<br> 数据类型的转换方式：(integer)$num<br> 转化成整数和浮点数的时候如果以数字开头，首先将数字部分转化成整数，再舍去后边的字符串，如果字符串中含有小数点，会保留到小数点前一位<br> 转义前的string类型：2.559656894E2<br> 转化成整数：2<br> 转化成布尔类型：1<br> 转化成浮点数：255.9656894<br> 转化成数组：Array<br> double<br> string<br> 1234<br> double<br> 456<br> double</p>
-<h2 id="emsp-07-检测变量"><a href="#emsp-07-检测变量" class="headerlink" title="&emsp; 07.检测变量"></a>&emsp; 07.检测变量</h2><p> 大部分的可变函数都是用来测试一个函数的类型的。PHP中有两个最常见的函数，分别是gettype()和settype()。<br> 这两个函数返回的string类型，也就是变量的类型字符串。<br> 用法：gettypt($变量)</p>
-<pre><code>settype($变量，要转换的数据类型)
-</code></pre><p> isset()用来判断一个变量是否存在，返回的是布尔值true或false<br> unset()用来销毁一个变量（如果变量存在则销毁，如果不存在此函数不发挥作用）</p>
-</li>
-</ul>
-<pre><code>empty()用来判断一个变量的值是否为空，如果为空则为true否则为false。
-换句话说，&quot;&quot;、0、&quot;0&quot;、NULL、FALSE、array()、var $var; 以及没有任何属性的对象都将被认为是空的
-
-PHP还提供了一些特定类型的测试函数。每一个函数都使用一个变量座位其参数，并且返回true或false。
-is_array()、is_double()、is_float()、is_real()、is_long()、is_int()、is_integer()、is_string()、is_object()、is_resource()、is_null()、is_numeric() 
-
-可以通过调用一个函数来实现转换变量数据类型的目的。
-intval()、floatval()、strval();
-注意：在浏览器中如果是真（true），返回1，如果是假（false），返回空（什么都不返回）
-</code></pre><h2 id="emsp-08-php常量"><a href="#emsp-08-php常量" class="headerlink" title="&emsp; 08.php常量"></a>&emsp; 08.php常量</h2><h3 id="常量一旦被定义之后，就不能再次更改。"><a href="#常量一旦被定义之后，就不能再次更改。" class="headerlink" title="常量一旦被定义之后，就不能再次更改。"></a>常量一旦被定义之后，就不能再次更改。</h3><h3 id="语法：define（“常量名”，常量值）"><a href="#语法：define（“常量名”，常量值）" class="headerlink" title="语法：define（“常量名”，常量值）"></a>语法：define（“常量名”，常量值）</h3><p>###&emsp;&emsp;&emsp; define(“TOTAL”,199);</p>
-<h3 id="除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo-命令。"><a href="#除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo-命令。" class="headerlink" title="除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo()命令。"></a>除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo()命令。</h3><h3 id="变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。"><a href="#变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。" class="headerlink" title="变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。"></a>变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。</h3><h2 id="emsp-09-php中单双引号的区别"><a href="#emsp-09-php中单双引号的区别" class="headerlink" title="&emsp; 09.php中单双引号的区别"></a>&emsp; 09.php中单双引号的区别</h2><h3 id="emsp-双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值"><a href="#emsp-双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值" class="headerlink" title="&emsp; 双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值"></a>&emsp; 双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值</h3><h3 id="emsp-双引号可以解析转义字符，如-n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）"><a href="#emsp-双引号可以解析转义字符，如-n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）" class="headerlink" title="&emsp; 双引号可以解析转义字符，如\n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）"></a>&emsp; 双引号可以解析转义字符，如\n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）</h3><h3 id="emsp-单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号"><a href="#emsp-单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号" class="headerlink" title="&emsp; 单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号"></a>&emsp; 单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP学习-基本知识/">PHP学习--基本知识</a></li></ul>
-	</div>
-
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/10/13/PHP--基础学习/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="PHP basic">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-js数组对象" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/09/26/js数组对象/" class="article-date">
-  	<time datetime="2016-09-26T08:00:12.000Z" itemprop="datePublished">2016-09-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/26/js数组对象/">
-        JavaScript学习--数组对象
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#javascript的核心对象：</p>
-<ul>
-<li>数组对象</li>
-<li>日期对象</li>
-<li>字符串对象</li>
-<li>数学对象<br>##一：数组对象<h3 id="1-介绍：Array可以存储一系列的数据，JavaScript的数组可以存储-不同类型的数据-元素索引的范围是-0-length-1，length为数组的长度。"><a href="#1-介绍：Array可以存储一系列的数据，JavaScript的数组可以存储-不同类型的数据-元素索引的范围是-0-length-1，length为数组的长度。" class="headerlink" title="1.介绍：Array可以存储一系列的数据，JavaScript的数组可以存储 不同类型的数据,元素索引的范围是 0~length-1，length为数组的长度。"></a>1.介绍：Array可以存储一系列的数据，JavaScript的数组可以存储 <code>不同类型的数据</code>,元素索引的范围是 0~length-1，length为数组的长度。</h3><h3 id="2-创建数组："><a href="#2-创建数组：" class="headerlink" title="2.创建数组："></a>2.创建数组：</h3></li>
-<li><code>new Array();</code>不带参数，返回空数组，length = 0。如： <code>var arr = new Array();</code></li>
-<li><code>Array(x);</code> x的取值可为任何数，返回大小是x的数组，length = x。如： <code>var arr = new Array(5);</code>表示此数组的长度是5</li>
-<li><code>new Array[x1,x2,x3...];</code>x1,x2,x3..指的是数组的元素，返回长度为参数个数的数组，length = 个数，如： <code>var arr = new Array[1,&#39;2&#39;,3,4,5,6.8,7];</code> 表示此数组的长度是6，数组中的参数类型可以不相同<h3 id="3-数组的方法及使用："><a href="#3-数组的方法及使用：" class="headerlink" title="3.数组的方法及使用："></a>3.数组的方法及使用：</h3></li>
-<li>concat()方法：连接两个或者更多的数组，并返回合并后的新数组<h6 id="用法：arrayObj-context-array-x-array-x…"><a href="#用法：arrayObj-context-array-x-array-x…" class="headerlink" title="用法：arrayObj.context(array x,array x….);"></a>用法：arrayObj.context(array x,array x….);</h6><h6 id="解释：arrayObj是自定义的一个数组，array-x是新添加的数组"><a href="#解释：arrayObj是自定义的一个数组，array-x是新添加的数组" class="headerlink" title="解释：arrayObj是自定义的一个数组，array x是新添加的数组"></a>解释：arrayObj是自定义的一个数组，array x是新添加的数组</h6><h6 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h6><h6 id="一个数组和其他元素相连"><a href="#一个数组和其他元素相连" class="headerlink" title="一个数组和其他元素相连"></a>一个数组和其他元素相连</h6><pre><code>&lt;script typt = &quot;text/javascript&quot;&gt;
-    var arr = [0,2,4];
-    document.write(arr.concat(4,7,8));
-&lt;/script&gt;
-</code></pre><h6 id="输出结果："><a href="#输出结果：" class="headerlink" title="输出结果："></a>输出结果：</h6><pre><code>0,2,4,4,7,8
-</code></pre><h6 id="可见concat-方法返回新数组，将元素添加到原来数组的末尾"><a href="#可见concat-方法返回新数组，将元素添加到原来数组的末尾" class="headerlink" title="可见concat()方法返回新数组，将元素添加到原来数组的末尾"></a>可见concat()方法返回新数组，将元素添加到原来数组的末尾</h6><h6 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h6><h6 id="两个数组相连"><a href="#两个数组相连" class="headerlink" title="两个数组相连"></a>两个数组相连</h6><pre><code>var arr1 = [1,2,3];
-var arr2 = [4,5,6];
-document.write(arr2.concat(arr1));
-</code></pre><h6 id="输出结果：-1"><a href="#输出结果：-1" class="headerlink" title="输出结果："></a>输出结果：</h6><pre><code>4,5,6,1,2,3
-</code></pre><h6 id="示例3："><a href="#示例3：" class="headerlink" title="示例3："></a>示例3：</h6><h6 id="三个数组相连"><a href="#三个数组相连" class="headerlink" title="三个数组相连"></a>三个数组相连</h6><pre><code>var arr1 = [1,2,3];
-var arr2 = [4,5,6];            
-var arr3 = [2,3,4];
-document.write(arr2.concat(arr1,arr3));
-</code></pre><h6 id="输出结果：-2"><a href="#输出结果：-2" class="headerlink" title="输出结果："></a>输出结果：</h6><pre><code>4,5,6,1,2,3,2,3,4
-</code></pre></li>
-<li>join()方法：把数组的所有元素放入一个字符串并返回此字符串，元素通过指定的分隔符进行分隔。即将数组转化为字符串，作用和toString()相同<h6 id="用法：arr-join-“”"><a href="#用法：arr-join-“”" class="headerlink" title="用法：arr.join(“”);"></a>用法：arr.join(“”);</h6><h6 id="解释：arr是任意数组"><a href="#解释：arr是任意数组" class="headerlink" title="解释：arr是任意数组"></a>解释：arr是任意数组</h6><h6 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h6><pre><code>&lt;script type = &quot;text/javascript&quot;&gt;
-var arr = [1,2,3,4];
-document.write(arr+&quot;&lt;/br&gt;&quot;);
-document.write(arr.join(&quot;,&quot;)+&quot;&lt;/br&gt;&quot;);
-document.write(arr.join(&quot; &quot;)+&quot;&lt;/br&gt;&quot;);
-document.write(arr.join(&quot;*&quot;)+&quot;&lt;/br&gt;&quot;);
-&lt;/script&gt;
-</code></pre><h6 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3,4
-1,2,3,4
-1 2 3 4
-1*2*3*4
-</code></pre>  ####### 由此可见，join()的真正用途是 <code>以某种符号分隔数组元素</code></li>
-<li>toString()方法：把数组转化为字符串并返回结果<h6 id="用法：arr-toString"><a href="#用法：arr-toString" class="headerlink" title="用法：arr.toString()"></a>用法：arr.toString()</h6><h6 id="返回值：转化后的字符串"><a href="#返回值：转化后的字符串" class="headerlink" title="返回值：转化后的字符串"></a>返回值：转化后的字符串</h6><h6 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h6><pre><code>var arr1 = [1,2,3]
-document.write(arr1.toString());
-</code></pre><h6 id="运行结果：-1"><a href="#运行结果：-1" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3
-</code></pre></li>
-<li>pop()方法：删除并返回数组的最后一个元素，数组长度-1，如果数组是空的，不改变数组，并返回undefined<h6 id="用法：arr-pop"><a href="#用法：arr-pop" class="headerlink" title="用法：arr.pop()"></a>用法：arr.pop()</h6><h6 id="返回值：arr的最后一个元素"><a href="#返回值：arr的最后一个元素" class="headerlink" title="返回值：arr的最后一个元素"></a>返回值：arr的最后一个元素</h6><h6 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h6><pre><code>var arr = [1,2,3,4];
-document.write(arr.pop());
-alert(arr);
-</code></pre><h6 id="运行结果：-2"><a href="#运行结果：-2" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>4
-1,2,3
-</code></pre><h6 id="注意！如果给pop-；赋一个参数，也只会pop出最后一个元素，任何参数都可以-比如arr这个数组，返回的也是4"><a href="#注意！如果给pop-；赋一个参数，也只会pop出最后一个元素，任何参数都可以-比如arr这个数组，返回的也是4" class="headerlink" title="注意！如果给pop()；赋一个参数，也只会pop出最后一个元素，任何参数都可以(比如arr这个数组，返回的也是4)"></a>注意！如果给pop()；赋一个参数，也只会pop出最后一个元素，任何参数都可以(比如arr这个数组，返回的也是4)</h6></li>
-<li>push()方法：向数组的末尾添加一个元素并返回数组的长度<h6 id="用法：arr-push-x-y-z…"><a href="#用法：arr-push-x-y-z…" class="headerlink" title="用法：arr.push(x,y,z…)"></a>用法：arr.push(x,y,z…)</h6><h6 id="返回值：新数组的长度"><a href="#返回值：新数组的长度" class="headerlink" title="返回值：新数组的长度"></a>返回值：新数组的长度</h6><h6 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h6><pre><code>var arr = [1,2,3,4];
-document.write(arr.push(1));
-alert(arr);
-</code></pre><h6 id="运行结果：-3"><a href="#运行结果：-3" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3,4,1
-5
-</code></pre><h6 id="如果添加的元素是arr，结果会是什么样的呢？"><a href="#如果添加的元素是arr，结果会是什么样的呢？" class="headerlink" title="如果添加的元素是arr，结果会是什么样的呢？"></a>如果添加的元素是arr，结果会是什么样的呢？</h6><pre><code>var arr = [1,2,3,4];
-document.write(arr.push(arr));
-alert(arr);
-</code></pre><h6 id="运行结果：-4"><a href="#运行结果：-4" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3,4，    （注意此处有个逗号）
-5
-</code></pre><h6 id="可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1"><a href="#可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1" class="headerlink" title="可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1"></a>可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1</h6><h6 id="也可以添加多个元素"><a href="#也可以添加多个元素" class="headerlink" title="也可以添加多个元素"></a>也可以添加多个元素</h6><pre><code>var arr = [1,2];
-document.write(arr.push(2,3,4,5,6));
-alert(arr);
-</code></pre><h6 id="运行结果：-5"><a href="#运行结果：-5" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,2,3,4,5,6
-7
-</code></pre><h6 id="既然concat-可以添加一个新的数组，push-是否可以添加新的数组呢？运行一段代码"><a href="#既然concat-可以添加一个新的数组，push-是否可以添加新的数组呢？运行一段代码" class="headerlink" title="既然concat()可以添加一个新的数组，push()是否可以添加新的数组呢？运行一段代码"></a>既然concat()可以添加一个新的数组，push()是否可以添加新的数组呢？运行一段代码</h6><pre><code>var arr = [1,2,3,4,5];
-var arr1 = [1,2,3,4]
-document.write(arr.push(arr1));
-alert(arr);
-</code></pre><h6 id="运行结果：-6"><a href="#运行结果：-6" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3,4,5,1,2,3,4
-5（注意这里）
-</code></pre><h6 id="从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度-1"><a href="#从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度-1" class="headerlink" title="从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度+1"></a>从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度+1</h6></li>
-<li><p>sort()方法对数组进行排序，默认是升序排序</p>
-<h6 id="输入任意多个数，使用数组对象进行升序排序"><a href="#输入任意多个数，使用数组对象进行升序排序" class="headerlink" title="输入任意多个数，使用数组对象进行升序排序"></a>输入任意多个数，使用数组对象进行升序排序</h6><h6 id="示例：-3"><a href="#示例：-3" class="headerlink" title="示例："></a>示例：</h6><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
-var array = new Array();
-//调用初始化方法
-init();
-// 打印排序后的结果
-//所有单词代换：Ctrl+H，或者Ctrl+D选中下一个
-if (array.length == 0) {
-    document.write(&quot;数组中无合法数值&quot;+&quot;&lt;br/&gt;&quot;);
-    // document.write(&quot;输入的数字是：&quot;+array)
-}else {
-    document.write(&quot;排序前的结果为：&quot;+array+&quot;&lt;br/&gt;&quot;);
-    document.write(&quot;排序后的结果为：&quot;+array.sort(sortNumber));
-}
-
-// 比较函数：
-//     返回 -1，a在b 前边
-//     返回 0 ，位置不变
-//     返回 1 ，b 在a 前边
-// 如果是降序，-1和1相反即可
-//如果没有此函数，会按照ASCALL码的顺序对数组中的元素排序。
-//在此数字排序中是必须要添加的。
-function sortNumber(a,b){
-    if (a&lt;b) {
-        return -1;
-    }else if (a == b) {
-        return 0;
-    }else{
-        return 1;
-    }
-}
-function init(){
-    while (true){
-        var v = prompt(&quot;输入数字，end结束&quot;,&quot;&quot;);
-        if (v == &apos;end&apos;) {
-            break;
-        }
-        if (isNaN(v)) {
-            break;
-        }
-        //将输入的数字依次传入array数组中。
-        //每次传入的数字都是一个，会不断弹出对话框，遇到“end”之后停止弹出，并计算结果
-        array.push(parseFloat(v));
-    }
-}
-
-&lt;/script&gt;
-</code></pre></li>
-<li>reverse()：颠倒数组中的元素的顺序，该方法会改变原来的数组而不是创建新数组<h6 id="用法：arr-reverse"><a href="#用法：arr-reverse" class="headerlink" title="用法：arr.reverse()"></a>用法：arr.reverse()</h6><h6 id="示例：-4"><a href="#示例：-4" class="headerlink" title="示例："></a>示例：</h6><pre><code>var arr1 = [1,2,3]
-document.write(arr1.reverse());
-</code></pre><h6 id="运行结果：-7"><a href="#运行结果：-7" class="headerlink" title="运行结果："></a>运行结果：</h6>  3,2,1</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript数组-js-array/">javascript数组 ,js array</a></li></ul>
-	</div>
-
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/09/26/js数组对象/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="JavaScript学习--数组对象">
          &nbsp;
         view
     </span>
