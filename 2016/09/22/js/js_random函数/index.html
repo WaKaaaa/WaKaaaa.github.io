@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript学习--random()函数 | WaKaaaa猪的博客</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JavaScript的random()函数函数语法： Math.random()函数参数：没有参数函数返回值： [0,1)，即0到一之间的随机数，包括0但是不包括1函数的用途： 生成0到1之间的随机数，主要用于随机验证码的生成
+简单的小例子：&amp;lt;script type = &amp;quot;text/javascript&amp;quot;&amp;gt;
+    alert(Math.random());
+&amp;lt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript学习--random()函数">
+<meta property="og:url" content="https://WaKaaaa.github.io/2016/09/22/js/js_random函数/index.html">
+<meta property="og:site_name" content="WaKaaaa猪的博客">
+<meta property="og:description" content="JavaScript的random()函数函数语法： Math.random()函数参数：没有参数函数返回值： [0,1)，即0到一之间的随机数，包括0但是不包括1函数的用途： 生成0到1之间的随机数，主要用于随机验证码的生成
+简单的小例子：&amp;lt;script type = &amp;quot;text/javascript&amp;quot;&amp;gt;
+    alert(Math.random());
+&amp;lt">
+<meta property="og:updated_time" content="2016-11-12T12:54:39.128Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript学习--random()函数">
+<meta name="twitter:description" content="JavaScript的random()函数函数语法： Math.random()函数参数：没有参数函数返回值： [0,1)，即0到一之间的随机数，包括0但是不包括1函数的用途： 生成0到1之间的随机数，主要用于随机验证码的生成
+简单的小例子：&amp;lt;script type = &amp;quot;text/javascript&amp;quot;&amp;gt;
+    alert(Math.random());
+&amp;lt">
+  
+    <link rel="alternative" href="/atom.xml" title="WaKaaaa猪的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+      <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("your_app_id", "your_app_key");</script>
+<script src="/js/Counter.js"></script>
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.duoziwang.com/uploads/c160416/1460N50534F-13150.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">WaKaaaa猪</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">没关系，虽然你资历平平，但如果你一直这么努力，最坏的结果，也不过是大器晚成。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">WaKaaaa猪</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.duoziwang.com/uploads/c160416/1460N50534F-13150.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">WaKaaaa猪</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-js/js_random函数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/22/js/js_random函数/" class="article-date">
+  	<time datetime="2016-09-22T06:57:13.000Z" itemprop="datePublished">2016-09-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript学习--random()函数
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript的random-函数/">JavaScript的random()函数</a></li></ul>
+	</div>
+
+        
+
+        
+          
+<div class="counter-tag counter">
+    <span id="/2016/09/22/js/js_random函数/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="JavaScript学习--random()函数">
+         &nbsp;
+        view
+    </span>
+</div>
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JavaScript的random-函数"><a href="#JavaScript的random-函数" class="headerlink" title="JavaScript的random()函数"></a>JavaScript的random()函数</h1><h2 id="函数语法：-Math-random"><a href="#函数语法：-Math-random" class="headerlink" title="函数语法： Math.random()"></a>函数语法： Math.random()</h2><h2 id="函数参数：没有参数"><a href="#函数参数：没有参数" class="headerlink" title="函数参数：没有参数"></a>函数参数：没有参数</h2><h2 id="函数返回值：-0-1-，即0到一之间的随机数，包括0但是不包括1"><a href="#函数返回值：-0-1-，即0到一之间的随机数，包括0但是不包括1" class="headerlink" title="函数返回值： [0,1)，即0到一之间的随机数，包括0但是不包括1"></a>函数返回值： [0,1)，即0到一之间的随机数，包括0但是不包括1</h2><h2 id="函数的用途：-生成0到1之间的随机数，主要用于随机验证码的生成"><a href="#函数的用途：-生成0到1之间的随机数，主要用于随机验证码的生成" class="headerlink" title="函数的用途： 生成0到1之间的随机数，主要用于随机验证码的生成"></a>函数的用途： 生成0到1之间的随机数，主要用于随机验证码的生成</h2><hr>
+<h2 id="简单的小例子："><a href="#简单的小例子：" class="headerlink" title="简单的小例子："></a>简单的小例子：</h2><pre><code>&lt;script type = &quot;text/javascript&quot;&gt;
+    alert(Math.random());
+&lt;/script&gt;
+</code></pre><h4 id="这是最简单的random-运用，弹出一个随机数的对话框"><a href="#这是最简单的random-运用，弹出一个随机数的对话框" class="headerlink" title="这是最简单的random()运用，弹出一个随机数的对话框"></a>这是最简单的random()运用，弹出一个随机数的对话框</h4><hr>
+<h2 id="random-返回的是浮点数，但是在很多时候我们期待保留小数点的后n位小数，做法是："><a href="#random-返回的是浮点数，但是在很多时候我们期待保留小数点的后n位小数，做法是：" class="headerlink" title="random()返回的是浮点数，但是在很多时候我们期待保留小数点的后n位小数，做法是："></a>random()返回的是浮点数，但是在很多时候我们期待保留小数点的后n位小数，做法是：</h2><h3 id="1：toFixed-方法"><a href="#1：toFixed-方法" class="headerlink" title="1：toFixed()方法"></a>1：toFixed()方法</h3><pre><code>&lt;script type = &quot;text/javascript&quot;&gt;
+var num = Math.random();
+var newNum = num.toFixed(2);
+alert(newNum);
+// toFixed保留小数点后的位数,此处是保留小数点后两位
+&lt;/script&gt;
+</code></pre><h3 id="2：parseInt-方法"><a href="#2：parseInt-方法" class="headerlink" title="2：parseInt()方法"></a>2：parseInt()方法</h3><pre><code>parseInt(num*100)/100
+</code></pre><hr>
+<h2 id="JS取整方法："><a href="#JS取整方法：" class="headerlink" title="JS取整方法："></a>JS取整方法：</h2><h3 id="1-parseInt-函数丢弃小数部分"><a href="#1-parseInt-函数丢弃小数部分" class="headerlink" title="1. parseInt()函数丢弃小数部分"></a>1. parseInt()函数丢弃小数部分</h3><pre><code>&lt;script type = &quot;text/javascript&gt;
+alert(parseInt(5/2));
+&lt;script/&gt;
+</code></pre><h4 id="此函数的返回结果是2，可见parseInt-函数直接将小数部分截去"><a href="#此函数的返回结果是2，可见parseInt-函数直接将小数部分截去" class="headerlink" title="此函数的返回结果是2，可见parseInt()函数直接将小数部分截去"></a>此函数的返回结果是2，可见parseInt()函数直接将小数部分截去</h4><h4 id="与之相对的是parseFloat-函数，可以将整数转换为浮点数"><a href="#与之相对的是parseFloat-函数，可以将整数转换为浮点数" class="headerlink" title="与之相对的是parseFloat()函数，可以将整数转换为浮点数"></a>与之相对的是parseFloat()函数，可以将整数转换为浮点数</h4><h3 id="2-Math-ceil-函数向上取整"><a href="#2-Math-ceil-函数向上取整" class="headerlink" title="2.Math.ceil()函数向上取整"></a>2.Math.ceil()函数向上取整</h3><pre><code>alert(Math.ceil(9/2));
+</code></pre><h4 id="此函数的返回值是5，即有小数的在小数部分-1"><a href="#此函数的返回值是5，即有小数的在小数部分-1" class="headerlink" title="此函数的返回值是5，即有小数的在小数部分+1"></a>此函数的返回值是5，即有小数的在小数部分+1</h4><h3 id="3-Math-floor-函数向下取整"><a href="#3-Math-floor-函数向下取整" class="headerlink" title="3.Math.floor()函数向下取整"></a>3.Math.floor()函数向下取整</h3><pre><code>alert(Math.floor(9/2));
+</code></pre><h4 id="此函数的返回值是4，与parseInt-类似"><a href="#此函数的返回值是4，与parseInt-类似" class="headerlink" title="此函数的返回值是4，与parseInt()类似"></a>此函数的返回值是4，与parseInt()类似</h4><h3 id="4-Math-round-函数四舍五入"><a href="#4-Math-round-函数四舍五入" class="headerlink" title="4.Math.round()函数四舍五入"></a>4.Math.round()函数四舍五入</h3><pre><code>alert(Math.floor(7/3));
+</code></pre><h4 id="此函数的返回值是2"><a href="#此函数的返回值是2" class="headerlink" title="此函数的返回值是2"></a>此函数的返回值是2</h4><h2 id="random-方法的小例子："><a href="#random-方法的小例子：" class="headerlink" title="random()方法的小例子："></a>random()方法的小例子：</h2><h3 id="1-猜数字游戏"><a href="#1-猜数字游戏" class="headerlink" title="1.猜数字游戏"></a>1.猜数字游戏</h3><h4 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h4><ul>
+<li>系统先随机产生一个数字</li>
+<li>用prompt()输入你猜的数字</li>
+<li>判断你输入的数字是否是数字类型，不是的话继续输入</li>
+<li>逻辑判断用if else 语句判断输入的数字大，小，还是正好</li>
+<li>alert()说明结果直至游戏结束</li>
+</ul>
+<hr>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;猜数字游戏&lt;/title&gt;
+    &lt;meta charset = &quot;utf-8&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script type = &quot;text/javascript&quot;&gt;
+    var RandomNum = parseInt(Math.random()*10);
+    function guess()
+    {
+        var num = prompt(&quot;enter a number&quot;,&quot;&quot;);
+        alert(RandomNum);
+        var result = num - RandomNum;
+        // alert(result);
+
+        if (isNaN(num)) {
+            alert(&quot;你输入的不是数字，请重新输入！&quot;);
+            guess();
+        }else if (result == 0) {
+            alert(&quot;猜对了！&quot;);
+        }else if (result&gt;0) {
+            alert(&quot;太大&quot;);
+            guess();
+        }else{
+            alert(&quot;太小&quot;);
+            guess();
+        }
+
+    }
+    &lt;/script&gt;
+
+    &lt;input type=&quot;button&quot; value = &quot;guess number&quot; onclick = &quot;guess();&quot;&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h3 id="统计共几次猜中的代码："><a href="#统计共几次猜中的代码：" class="headerlink" title="统计共几次猜中的代码："></a>统计共几次猜中的代码：</h3><pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;猜数字游戏&lt;/title&gt;
+    &lt;meta charset = &apos;utf-8&apos;&gt;
+    &lt;script type = &quot;text/javascript&quot;&gt;
+        function play(){
+            var time = 0;
+            var result;
+            var count = parseInt(Math.random()*10);
+            alert(count);
+
+        while(true){
+            time++;
+            var num = prompt(&quot;请输入0到10之间的整数&quot;,&quot;&quot;);
+            if(isNaN(num)){
+                alert(&quot;输入的不是数字！&quot;);
+                //不是数字，太大，太小都会继续循环，直到得出正确结果才跳出循环
+            }else{
+                result =count - num;
+
+                if (result == 0) {
+                    alert(&quot;猜对了，共&quot;+time+&quot;次&quot;);
+                    break;
+                }else if (result&gt;0) {
+                    alert(&quot;太小！&quot;);
+                }else{
+                    alert(&quot;太大！&quot;);
+                }
+        }
+    }
+}
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;input type=&quot;button&quot; value = &quot;猜数字&quot; onClick = &quot;play();&quot;&gt;
+&lt;/body&gt;
+</code></pre><p></p>
+<h4 id="解析：因为Matn-random-函数只能产生-0-1-之间的随机数，-10可以保证产生的数字在-0-10-之间。"><a href="#解析：因为Matn-random-函数只能产生-0-1-之间的随机数，-10可以保证产生的数字在-0-10-之间。" class="headerlink" title="解析：因为Matn.random()函数只能产生[0,1)之间的随机数，*10可以保证产生的数字在[0,10)之间。"></a>解析：因为Matn.random()函数只能产生[0,1)之间的随机数，*10可以保证产生的数字在[0,10)之间。</h4><h4 id="isNaN-num-来判断输入的类型是否是数字，如果是数字则返回false，如果不是数字类型则返回true"><a href="#isNaN-num-来判断输入的类型是否是数字，如果是数字则返回false，如果不是数字类型则返回true" class="headerlink" title="isNaN(num)来判断输入的类型是否是数字，如果是数字则返回false，如果不是数字类型则返回true"></a>isNaN(num)来判断输入的类型是否是数字，如果是数字则返回false，如果不是数字类型则返回true</h4><h4 id="button的onclick方法"><a href="#button的onclick方法" class="headerlink" title="button的onclick方法"></a>button的onclick方法</h4><h3 id="2-模仿微信红包游戏（输入总金额和份数，输出每一份的随机金额，最小金额为0-01）"><a href="#2-模仿微信红包游戏（输入总金额和份数，输出每一份的随机金额，最小金额为0-01）" class="headerlink" title="2.模仿微信红包游戏（输入总金额和份数，输出每一份的随机金额，最小金额为0.01）"></a>2.模仿微信红包游戏（输入总金额和份数，输出每一份的随机金额，最小金额为0.01）</h3><h4 id="思路：-1"><a href="#思路：-1" class="headerlink" title="思路："></a>思路：</h4><ul>
+<li>prompt()输入红包金额和红包个数</li>
+<li>由于random()函数正好可以产生0到1的随机数，那么可以用来计算百分比，即总金额*random可得第一次红包的额度</li>
+<li>由于红包是一个一个有先后顺序地被抢，所以可以定义一个left变量来存储每次剩下的红包金额</li>
+<li>定义一个数组存储每次的红包金额</li>
+<li>parseInt()每个红包精确到小数点后两位</li>
+</ul>
+<hr>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;随机红包&lt;/title&gt;
+    &lt;meta charset = &apos;utf-8&apos;&gt;
+    &lt;script type = &quot;text/javascript&quot;&gt;
+        var jine = prompt(&quot;请输入红包金额&quot;,&quot;&quot;);
+        var geshu = prompt(&quot;请输入红包个数&quot;,&quot;&quot;);
+        var left = jine;
+        var arr = new Array();
+
+        for(i = 0; i&lt;geshu-1;i++){
+            // 保证金额随机的方法是：用户金额范围在0.01~剩余平均数*2之间
+            arr[i] = parseInt((left*2/(geshu-i))*Math.random()*100)/100;
+            left -= arr[i];
+            document.write(arr[i]+&quot;&lt;br/&gt;&quot;);
+        }
+        document.write(parseInt(left*100)/100);
+
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;/html&gt;
+</code></pre><h4 id="解析：为使每个人的红包金额差别不是太大，每个红包的金额范围是-0-01-剩余红包金额-剩余个数-2"><a href="#解析：为使每个人的红包金额差别不是太大，每个红包的金额范围是-0-01-剩余红包金额-剩余个数-2" class="headerlink" title="解析：为使每个人的红包金额差别不是太大，每个红包的金额范围是[0.01~剩余红包金额/剩余个数*2]"></a>解析：为使每个人的红包金额差别不是太大，每个红包的金额范围是[0.01~剩余红包金额/剩余个数*2]</h4><h3 id="3-随机产生0-99之间的整数，并按降序进行排列"><a href="#3-随机产生0-99之间的整数，并按降序进行排列" class="headerlink" title="3.随机产生0~99之间的整数，并按降序进行排列"></a>3.随机产生0~99之间的整数，并按降序进行排列</h3><pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;随机产生数字并升序排列&lt;/title&gt;
+    &lt;meta charset = &quot;utf-8&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+      &lt;script type = &quot;text/javascript&quot;&gt;
+           var arr = new Array();
+           for(i=0;i&lt;5;i++){
+               arr[i] = parseInt(Math.random()*100);
+           }
+           document.write(&quot;排序前：&quot;+arr+&quot;&lt;/br&gt;&quot;);
+           document.write(&quot;排序后：&quot;+arr.sort(sortNum));
+
+           function sortNum (a,b){
+               if (a&gt;b) {
+                   return -1;
+               }else if(a&lt;b){
+                   return 1;
+               }else{
+                   return 0;
+               }
+           }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h4 id="解析：sort是对数组进行升序排序，属于Array对象的一个方法，定义function-sortNum函数的原因是sort-方法如果没有指定参数，对字符编码的顺序对数组中的元素进行排序。-定义函数之后可以转为对数字的排序。"><a href="#解析：sort是对数组进行升序排序，属于Array对象的一个方法，定义function-sortNum函数的原因是sort-方法如果没有指定参数，对字符编码的顺序对数组中的元素进行排序。-定义函数之后可以转为对数字的排序。" class="headerlink" title="解析：sort是对数组进行升序排序，属于Array对象的一个方法，定义function sortNum函数的原因是sort()方法如果没有指定参数，对字符编码的顺序对数组中的元素进行排序。 定义函数之后可以转为对数字的排序。"></a>解析：sort是对数组进行升序排序，属于Array对象的一个方法，定义function sortNum函数的原因是sort()方法如果没有指定参数，对字符编码的顺序对数组中的元素进行排序。 定义函数之后可以转为对数字的排序。</h4><ul>
+<li>若a小于b，返回1，在排序后的数组中a应该在b的后边</li>
+<li>a等于b，返回0，a,b的位置不变</li>
+<li>a大于b，返回-1，a在b的前边</li>
+<li>由此实现降序排列，升序排列只是返回-1和1的条件相互交换即可<h4 id="简便方法："><a href="#简便方法：" class="headerlink" title="简便方法："></a>简便方法：</h4>  function sortNum (a,b){<pre><code>          return b-a;
+}
+</code></pre><h4 id="注意：return-b-a-不是返回一个相减的值，JS规定，return-b-a-是比较a-b的值"><a href="#注意：return-b-a-不是返回一个相减的值，JS规定，return-b-a-是比较a-b的值" class="headerlink" title="注意：return b-a 不是返回一个相减的值，JS规定，return b-a 是比较a,b的值"></a>注意：return b-a 不是返回一个相减的值，JS规定，return b-a 是比较a,b的值</h4>###4.随机生成头像  <html><br>  <head><br>      <title>Math方法随机生成头像</title><br>      <meta charset="utf-8"><br>  </head><br>  <body><br>      <script type="text/javascript"><br>          var vNum = parseInt(Math.random()*10);<br>          // alert(vNum);<br>          var address = “<img src = \"image/"+vNum+".jpg\">“;<br>          document.write(address);<br>      </script><br>  </body><br>  </html></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/26/js/js数组对象/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          JavaScript学习--数组对象
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/21/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="js/js_random函数" data-title="JavaScript学习--random()函数" data-url="https://WaKaaaa.github.io/2016/09/22/js/js_random函数/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"your duoshuo id"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 WaKaaaa猪
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/winnerweb/hexo-Yilia-Smackdown" target="_blank">Yilia(Smackdown)</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
