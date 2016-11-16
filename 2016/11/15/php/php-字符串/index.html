@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>php学习--字符串基本操作 | WaKaaaa猪的博客</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="总结：1. trim()清除字符串左右两边的空格2. ltrim()清除左边的空格3. rtrim()清除右边的空格4. nl2br()在字符串所有新行之前插入HTML换行标记（）5. htmlspecialchars()将特殊的字符转化成HTML实体6. addslaashes()使用反斜杠引用字符串7. strtoupper()函数将字符串转换为大写8. strtolower()函数将字符串转">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php学习--字符串基本操作">
+<meta property="og:url" content="https://WaKaaaa.github.io/2016/11/15/php/php-字符串/index.html">
+<meta property="og:site_name" content="WaKaaaa猪的博客">
+<meta property="og:description" content="总结：1. trim()清除字符串左右两边的空格2. ltrim()清除左边的空格3. rtrim()清除右边的空格4. nl2br()在字符串所有新行之前插入HTML换行标记（）5. htmlspecialchars()将特殊的字符转化成HTML实体6. addslaashes()使用反斜杠引用字符串7. strtoupper()函数将字符串转换为大写8. strtolower()函数将字符串转">
+<meta property="og:updated_time" content="2016-11-15T11:43:05.612Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php学习--字符串基本操作">
+<meta name="twitter:description" content="总结：1. trim()清除字符串左右两边的空格2. ltrim()清除左边的空格3. rtrim()清除右边的空格4. nl2br()在字符串所有新行之前插入HTML换行标记（）5. htmlspecialchars()将特殊的字符转化成HTML实体6. addslaashes()使用反斜杠引用字符串7. strtoupper()函数将字符串转换为大写8. strtolower()函数将字符串转">
+  
+    <link rel="alternative" href="/atom.xml" title="WaKaaaa猪的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+      <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("your_app_id", "your_app_key");</script>
+<script src="/js/Counter.js"></script>
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.duoziwang.com/uploads/c160416/1460N50534F-13150.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">WaKaaaa猪</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">没关系，虽然你资历平平，但如果你一直这么努力，最坏的结果，也不过是大器晚成。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">WaKaaaa猪</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.duoziwang.com/uploads/c160416/1460N50534F-13150.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">WaKaaaa猪</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-php/php-字符串" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/15/php/php-字符串/" class="article-date">
+  	<time datetime="2016-11-15T11:18:06.000Z" itemprop="datePublished">2016-11-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      php学习--字符串基本操作
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+          
+<div class="counter-tag counter">
+    <span id="/2016/11/15/php/php-字符串/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--字符串基本操作">
+         &nbsp;
+        view
+    </span>
+</div>
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="1-trim-清除字符串左右两边的空格"><a href="#1-trim-清除字符串左右两边的空格" class="headerlink" title="1. trim()清除字符串左右两边的空格"></a>1. trim()清除字符串左右两边的空格</h3><h3 id="2-ltrim-清除左边的空格"><a href="#2-ltrim-清除左边的空格" class="headerlink" title="2. ltrim()清除左边的空格"></a>2. ltrim()清除左边的空格</h3><h3 id="3-rtrim-清除右边的空格"><a href="#3-rtrim-清除右边的空格" class="headerlink" title="3. rtrim()清除右边的空格"></a>3. rtrim()清除右边的空格</h3><h3 id="4-nl2br-在字符串所有新行之前插入HTML换行标记（）"><a href="#4-nl2br-在字符串所有新行之前插入HTML换行标记（）" class="headerlink" title="4. nl2br()在字符串所有新行之前插入HTML换行标记（）"></a>4. nl2br()在字符串所有新行之前插入HTML换行标记（<br>）</h3><h3 id="5-htmlspecialchars-将特殊的字符转化成HTML实体"><a href="#5-htmlspecialchars-将特殊的字符转化成HTML实体" class="headerlink" title="5. htmlspecialchars()将特殊的字符转化成HTML实体"></a>5. htmlspecialchars()将特殊的字符转化成HTML实体</h3><h3 id="6-addslaashes-使用反斜杠引用字符串"><a href="#6-addslaashes-使用反斜杠引用字符串" class="headerlink" title="6. addslaashes()使用反斜杠引用字符串"></a>6. addslaashes()使用反斜杠引用字符串</h3><h3 id="7-strtoupper-函数将字符串转换为大写"><a href="#7-strtoupper-函数将字符串转换为大写" class="headerlink" title="7. strtoupper()函数将字符串转换为大写"></a>7. strtoupper()函数将字符串转换为大写</h3><h3 id="8-strtolower-函数将字符串转换成小写"><a href="#8-strtolower-函数将字符串转换成小写" class="headerlink" title="8. strtolower()函数将字符串转换成小写"></a>8. strtolower()函数将字符串转换成小写</h3><h3 id="9-ucfirst-函数将第一个字母转换为大写"><a href="#9-ucfirst-函数将第一个字母转换为大写" class="headerlink" title="9. ucfirst()函数将第一个字母转换为大写"></a>9. ucfirst()函数将第一个字母转换为大写</h3><h3 id="10-ucwords-函数将每个单词第一个字母转换为大写"><a href="#10-ucwords-函数将每个单词第一个字母转换为大写" class="headerlink" title="10. ucwords()函数将每个单词第一个字母转换为大写"></a>10. ucwords()函数将每个单词第一个字母转换为大写</h3><h3 id="11-str-pad-使用另一个字符串填充字符串为指定长度"><a href="#11-str-pad-使用另一个字符串填充字符串为指定长度" class="headerlink" title="11. str_pad()使用另一个字符串填充字符串为指定长度"></a>11. str_pad()使用另一个字符串填充字符串为指定长度</h3><h2 id="一：trim-，ltrim-，rtrim"><a href="#一：trim-，ltrim-，rtrim" class="headerlink" title="一：trim()，ltrim()，rtrim()"></a>一：trim()，ltrim()，rtrim()</h2><pre><code>//  trim()清除字符串左右两边的空格
+$str = &apos;       jewel       &apos;;
+echo trim($str).&apos;&lt;br&gt;&apos;;
+// ltrim()清除左边的空格
+echo ltrim($str).&apos;&lt;br&gt;&apos;;
+// rtrim()清除右边的空格
+echo rtrim($str);
+</code></pre><h2 id="二：nl2br-在字符串所有新行之前插入HTML换行标记（）"><a href="#二：nl2br-在字符串所有新行之前插入HTML换行标记（）" class="headerlink" title="二：nl2br()在字符串所有新行之前插入HTML换行标记（）"></a>二：nl2br()在字符串所有新行之前插入HTML换行标记（<br>）</h2><h3 id="注意转义字符只能包裹在双引号里边，这一点非常重要"><a href="#注意转义字符只能包裹在双引号里边，这一点非常重要" class="headerlink" title="注意转义字符只能包裹在双引号里边，这一点非常重要"></a>注意<code>转义字符只能包裹在双引号里边</code>，这一点非常重要</h3><h3 id="转义字符包括：-t-n-r"><a href="#转义字符包括：-t-n-r" class="headerlink" title="转义字符包括：\t \n \r"></a>转义字符包括：\t \n \r</h3><pre><code>$str1 = &quot;I am Jewel\n hello world&quot;;
+echo nl2br($str1);
+// 打印出：I am Jewel&lt;br/&gt; hello world
+
+echo nl2br(&quot;foo isn&apos;t\n bar&quot;);
+
+$string = &quot;This\r\nis\n\ra\nstring\r&quot;;
+echo nl2br($string);
+</code></pre><h2 id="三：htmlspecialchars-将特殊的字符转化成HTML实体"><a href="#三：htmlspecialchars-将特殊的字符转化成HTML实体" class="headerlink" title="三：htmlspecialchars()将特殊的字符转化成HTML实体"></a>三：htmlspecialchars()将特殊的字符转化成HTML实体</h2><pre><code>$str2 = &apos;&lt;strong&gt;jewel&lt;/strong&gt;&apos;;
+echo htmlspecialchars($str2);
+// 
+// strip_tags从字符串中去掉HTML和PHP标记
+echo strip_tags($str2);
+</code></pre><h2 id="四：addslaashes-使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’-“-null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候"><a href="#四：addslaashes-使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’-“-null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候" class="headerlink" title="四：addslaashes()使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’ “ \ null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候"></a>四：addslaashes()使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’ “ \ null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候</h2><h3 id="对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（-）和NULL字符。"><a href="#对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（-）和NULL字符。" class="headerlink" title="对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（\）和NULL字符。"></a>对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（\）和NULL字符。</h3><h3 id="PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes-将它们重新格式化"><a href="#PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes-将它们重新格式化" class="headerlink" title="PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes()将它们重新格式化"></a>PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes()将它们重新格式化</h3><pre><code>$str3 = &apos;I am a good girl. &quot;this&quot; hello&apos;;
+echo addslashes($str3);
+</code></pre><h2 id="五"><a href="#五" class="headerlink" title="五:"></a>五:</h2><h3 id="strtoupper-函数将字符串转换为大写"><a href="#strtoupper-函数将字符串转换为大写" class="headerlink" title="strtoupper()函数将字符串转换为大写"></a>strtoupper()函数将字符串转换为大写</h3><h3 id="strtolower-函数将字符串转换成小写"><a href="#strtolower-函数将字符串转换成小写" class="headerlink" title="strtolower()函数将字符串转换成小写"></a>strtolower()函数将字符串转换成小写</h3><h3 id="ucfirst-函数将第一个字母转换为大写"><a href="#ucfirst-函数将第一个字母转换为大写" class="headerlink" title="ucfirst()函数将第一个字母转换为大写"></a>ucfirst()函数将第一个字母转换为大写</h3><h3 id="ucwords-函数将每个单词第一个字母转换为大写"><a href="#ucwords-函数将每个单词第一个字母转换为大写" class="headerlink" title="ucwords()函数将每个单词第一个字母转换为大写"></a>ucwords()函数将每个单词第一个字母转换为大写</h3><pre><code>echo strtoupper(&apos;hello wworld&apos;).&apos;&lt;br&gt;&apos;;
+echo strtolower(&apos;HELLO world&apos;);
+echo ucfirst(&apos;hello world&apos;);
+echo ucwords(&apos;hello world&apos;);
+</code></pre><h2 id="六-str-pad-使用另一个字符串填充字符串为指定长度"><a href="#六-str-pad-使用另一个字符串填充字符串为指定长度" class="headerlink" title="六: str_pad()使用另一个字符串填充字符串为指定长度"></a>六: str_pad()使用另一个字符串填充字符串为指定长度</h2><pre><code>// 第二个参数表示总共的位数
+echo str_pad(&quot;hello&quot;, 10).&apos;&lt;br&gt;&apos;;
+
+$input = &quot;Alien&quot;;
+echo str_pad($input, 10).&apos;&lt;br&gt;&apos;;                      // 输出 &quot;Alien     &quot;
+echo str_pad($input, 10, &quot;-=&quot;, STR_PAD_LEFT);  // 输出 &quot;-=-=-Alien&quot;
+echo str_pad($input, 10, &quot;_&quot;, STR_PAD_BOTH);   // 输出 &quot;__Alien___&quot;
+echo str_pad($input, 6 , &quot;___&quot;);               // 输出 &quot;Alien_&quot;
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/11/15/php/php-操作子字符串/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          php学习--操作子字符串
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/14/php/php-session/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">php学习--session</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="php/php-字符串" data-title="php学习--字符串基本操作" data-url="https://WaKaaaa.github.io/2016/11/15/php/php-字符串/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"your duoshuo id"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 WaKaaaa猪
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/winnerweb/hexo-Yilia-Smackdown" target="_blank">Yilia(Smackdown)</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>

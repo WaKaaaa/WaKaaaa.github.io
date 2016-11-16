@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>php学习--echo print_r,printf,sprintf,print的比较 | WaKaaaa猪的博客</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="php几种输出方式比较
+&amp;emsp; echo: 函数，无返回值（返回void），作用是打印字符串，还可以打印函数的类型和数组类型
+&amp;emsp; print: 函数，返回整型，作用是打印字符串
+&amp;emsp; printf: 函数，返回字符串的长度，作用是打印字符串
+&amp;emsp; sprintf: 函数，返回字符串将字符串保存在内存中（不在浏览器下显示）
+&amp;emsp; print_r: 函数，用来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php学习--echo print_r,printf,sprintf,print的比较">
+<meta property="og:url" content="https://WaKaaaa.github.io/2016/10/18/php/php--输出/index.html">
+<meta property="og:site_name" content="WaKaaaa猪的博客">
+<meta property="og:description" content="php几种输出方式比较
+&amp;emsp; echo: 函数，无返回值（返回void），作用是打印字符串，还可以打印函数的类型和数组类型
+&amp;emsp; print: 函数，返回整型，作用是打印字符串
+&amp;emsp; printf: 函数，返回字符串的长度，作用是打印字符串
+&amp;emsp; sprintf: 函数，返回字符串将字符串保存在内存中（不在浏览器下显示）
+&amp;emsp; print_r: 函数，用来">
+<meta property="og:updated_time" content="2016-11-12T13:02:40.529Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php学习--echo print_r,printf,sprintf,print的比较">
+<meta name="twitter:description" content="php几种输出方式比较
+&amp;emsp; echo: 函数，无返回值（返回void），作用是打印字符串，还可以打印函数的类型和数组类型
+&amp;emsp; print: 函数，返回整型，作用是打印字符串
+&amp;emsp; printf: 函数，返回字符串的长度，作用是打印字符串
+&amp;emsp; sprintf: 函数，返回字符串将字符串保存在内存中（不在浏览器下显示）
+&amp;emsp; print_r: 函数，用来">
+  
+    <link rel="alternative" href="/atom.xml" title="WaKaaaa猪的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+      <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("your_app_id", "your_app_key");</script>
+<script src="/js/Counter.js"></script>
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.duoziwang.com/uploads/c160416/1460N50534F-13150.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">WaKaaaa猪</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">没关系，虽然你资历平平，但如果你一直这么努力，最坏的结果，也不过是大器晚成。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">WaKaaaa猪</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.duoziwang.com/uploads/c160416/1460N50534F-13150.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">WaKaaaa猪</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-php/php--输出" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/18/php/php--输出/" class="article-date">
+  	<time datetime="2016-10-18T14:34:29.000Z" itemprop="datePublished">2016-10-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      php学习--echo print_r,printf,sprintf,print的比较
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+          
+<div class="counter-tag counter">
+    <span id="/2016/10/18/php/php--输出/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--echo print_r,printf,sprintf,print的比较">
+         &nbsp;
+        view
+    </span>
+</div>
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="php几种输出方式比较"><a href="#php几种输出方式比较" class="headerlink" title=" php几种输出方式比较"></a><center> php几种输出方式比较</center></h1><ul>
+<li>&emsp; <code>echo</code>: 函数，无返回值（返回void），作用是打印字符串，还可以打印函数的类型和数组类型</li>
+<li>&emsp; <code>print</code>: 函数，返回整型，作用是打印字符串</li>
+<li>&emsp; <code>printf</code>: 函数，返回字符串的长度，作用是打印字符串</li>
+<li>&emsp; <code>sprintf</code>: 函数，返回字符串将字符串保存在内存中（不在浏览器下显示）</li>
+<li><p>&emsp; <code>print_r</code>: 函数，用来打印数组中的所有元素<br>###</p>
+<p> &lt;?php </p>
+<pre><code>echo &quot;hello php1&quot;;
+echo &quot;&lt;/br&gt;&quot;;
+print(&quot;hello php2&quot;);
+echo &quot;&lt;/br&gt;&quot;;
+echo print(&quot;hello php3&lt;/br&gt;&quot;); // 这句话的作用是先将print里的字符串打印出来，再打印一个字符串，然后echo出print的类型，返回真，在浏览器中显示为1
+echo &quot;&lt;/br&gt;&quot;;
+printf(&quot;hello php4&lt;/br&gt;&quot;);
+echo printf(&quot;hello php5&lt;/br&gt;&quot;); //返回字符串的长度
+echo &quot;&lt;/br&gt;&quot;;
+sprintf(&quot;hello php6&lt;br&gt;&quot;); // 字符串保存在内存中，不在浏览器界面显示
+echo sprintf(&quot;hello php7&quot;); // 返回字符串
+echo&quot;&lt;br&gt;&quot;;
+
+$userAges = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
+echo $userAges; //返回$userAges的类型 array
+</code></pre><p>  ?&gt;<br> 运行结果：<br> hello php1<br> hello php2<br> hello php3<br> 1<br> hello php4<br> hello php5<br> 15<br> hello php7<br> array</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/10/19/php/php--数组二维/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          php学习--二维数组（数组中的数组）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/18/php/php--数组遍历/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PHP学习--遍历数组</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="php/php--输出" data-title="php学习--echo print_r,printf,sprintf,print的比较" data-url="https://WaKaaaa.github.io/2016/10/18/php/php--输出/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"your duoshuo id"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 WaKaaaa猪
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/winnerweb/hexo-Yilia-Smackdown" target="_blank">Yilia(Smackdown)</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
