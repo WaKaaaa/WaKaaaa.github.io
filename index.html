@@ -192,6 +192,268 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-php-mysql常用函数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/24/php-mysql常用函数/" class="article-date">
+  	<time datetime="2016-11-24T04:05:13.000Z" itemprop="datePublished">2016-11-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/24/php-mysql常用函数/">
+        php--mysql常用函数
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="ensp-1-mysql-fetch-array-从结果集中取得一行昨为关联数组，或数字数组，或两者都有"><a href="#ensp-1-mysql-fetch-array-从结果集中取得一行昨为关联数组，或数字数组，或两者都有" class="headerlink" title="&ensp; 1. mysql-fetch_array()从结果集中取得一行昨为关联数组，或数字数组，或两者都有"></a>&ensp; 1. mysql-fetch_array()从结果集中取得一行昨为关联数组，或数字数组，或两者都有</h3><h3 id="ensp-2-mysql-fetch-row-从结果集中取得一行作为枚举数组"><a href="#ensp-2-mysql-fetch-row-从结果集中取得一行作为枚举数组" class="headerlink" title="&ensp; 2. mysql_fetch_row()从结果集中取得一行作为枚举数组"></a>&ensp; 2. mysql_fetch_row()从结果集中取得一行作为枚举数组</h3><h3 id="ensp-3-mysql-fetch-assoc-函数以键的方式显示，已经废弃不用了"><a href="#ensp-3-mysql-fetch-assoc-函数以键的方式显示，已经废弃不用了" class="headerlink" title="&ensp; 3. mysql_fetch_assoc()函数以键的方式显示，已经废弃不用了"></a>&ensp; 3. mysql_fetch_assoc()函数以键的方式显示，已经废弃不用了</h3><h3 id="ensp-4-mysql-field-name-：-取得结果中指定字段的字段名"><a href="#ensp-4-mysql-field-name-：-取得结果中指定字段的字段名" class="headerlink" title="&ensp; 4. mysql_field_name()：  取得结果中指定字段的字段名"></a>&ensp; 4. mysql_field_name()：  取得结果中指定字段的字段名</h3><h3 id="ensp-5-mysql-num-rows-—-取得结果集中行的数目"><a href="#ensp-5-mysql-num-rows-—-取得结果集中行的数目" class="headerlink" title="&ensp; 5. mysql_num_rows — 取得结果集中行的数目"></a>&ensp; 5. mysql_num_rows — 取得结果集中行的数目</h3><h3 id="ensp-6-mysql-num-fields-—-取得结果集中字段的数目"><a href="#ensp-6-mysql-num-fields-—-取得结果集中字段的数目" class="headerlink" title="&ensp; 6. mysql_num_fields — 取得结果集中字段的数目"></a>&ensp; 6. mysql_num_fields — 取得结果集中字段的数目</h3><h2 id="详解："><a href="#详解：" class="headerlink" title="详解："></a>详解：</h2><h3 id="1-mysql-fetch-array-从结果集中取得一行昨为关联数组，或数字数组，或两者都有"><a href="#1-mysql-fetch-array-从结果集中取得一行昨为关联数组，或数字数组，或两者都有" class="headerlink" title="1. mysql-fetch_array()从结果集中取得一行昨为关联数组，或数字数组，或两者都有"></a>1. mysql-fetch_array()从结果集中取得一行昨为关联数组，或数字数组，或两者都有</h3><pre><code>$query = &apos;SELECT * FROM userdetail&apos;;
+$result = @mysql_query($query) or die(&apos;sql语句错误&apos;.mysql_error());
+
+print_r(mysql_fetch_array($result));
+</code></pre><h3 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h3><pre><code>Array
+(
+    [0] =&gt; 123
+    [username] =&gt; 123
+    [1] =&gt; 123456
+    [userpass] =&gt; 123456
+    [2] =&gt; 2016-11-23 21:15:14
+    [regtime] =&gt; 2016-11-23 21:15:14
+    [3] =&gt; 0
+    [role] =&gt; 0
+    [4] =&gt; 0
+    [lognum] =&gt; 0
+)
+</code></pre><h3 id="mysql-fetch-array-实际上是两个函数-mysql-fetch-row-和mysql-fetch-assoc-的集合，现在这个集合函数用的比较多"><a href="#mysql-fetch-array-实际上是两个函数-mysql-fetch-row-和mysql-fetch-assoc-的集合，现在这个集合函数用的比较多" class="headerlink" title="mysql_fetch_array()实际上是两个函数(mysql_fetch_row()和mysql_fetch_assoc())的集合，现在这个集合函数用的比较多"></a>mysql_fetch_array()实际上是两个函数(mysql_fetch_row()和mysql_fetch_assoc())的集合，现在这个集合函数用的比较多</h3><h3 id="2-mysql-fetch-row-从结果集中取得一行作为枚举数组"><a href="#2-mysql-fetch-row-从结果集中取得一行作为枚举数组" class="headerlink" title="2. mysql_fetch_row()从结果集中取得一行作为枚举数组"></a>2. mysql_fetch_row()从结果集中取得一行作为枚举数组</h3><pre><code>print_r(mysql_fetch_row($result));
+</code></pre><h3 id="3-mysql-fetch-assoc-函数以键的方式显示，已经废弃不用了"><a href="#3-mysql-fetch-assoc-函数以键的方式显示，已经废弃不用了" class="headerlink" title="3. mysql_fetch_assoc()函数以键的方式显示，已经废弃不用了"></a>3. mysql_fetch_assoc()函数以键的方式显示，已经废弃不用了</h3><pre><code>print_r(mysql_fetch_assoc($result));
+</code></pre><h3 id="4-mysql-field-name-：-取得结果中指定字段的字段名，第一个参数：资源句柄，第二个参数是列的下标，从0开始的"><a href="#4-mysql-field-name-：-取得结果中指定字段的字段名，第一个参数：资源句柄，第二个参数是列的下标，从0开始的" class="headerlink" title="4. mysql_field_name()：  取得结果中指定字段的字段名，第一个参数：资源句柄，第二个参数是列的下标，从0开始的"></a>4. mysql_field_name()：  取得结果中指定字段的字段名，第一个参数：资源句柄，第二个参数是列的下标，从0开始的</h3><pre><code>echo mysql_field_name($result, 0);        //username
+echo mysql_field_name($result, 1);        //userpass
+</code></pre><h3 id="5-mysql-num-rows-—-取得结果集中行的数目"><a href="#5-mysql-num-rows-—-取得结果集中行的数目" class="headerlink" title="5. mysql_num_rows — 取得结果集中行的数目"></a>5. mysql_num_rows — 取得结果集中行的数目</h3><pre><code>echo mysql_num_rows($result);    //共有6条数据
+</code></pre><h3 id="6-mysql-num-fields-—-取得结果集中字段的数目"><a href="#6-mysql-num-fields-—-取得结果集中字段的数目" class="headerlink" title="6. mysql_num_fields — 取得结果集中字段的数目"></a>6. mysql_num_fields — 取得结果集中字段的数目</h3><pre><code>// 结果集中列的数目
+echo mysql_num_fields($result);
+</code></pre><h3 id="7-取得所有的字段"><a href="#7-取得所有的字段" class="headerlink" title="7. 取得所有的字段"></a>7. 取得所有的字段</h3><pre><code>for($i=0; $i&lt;mysql_num_fields($result); $i++){
+    echo mysql_field_name($result, $i);
+    echo &quot; &quot;;
+}
+结果：username userpass regtime role lognum    
+</code></pre><h3 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h3><pre><code>mysql_get_client_info()： 取得 MySQL 客户端信息
+mysql_get_host_info()： 取得 MySQL 主机信息
+mysql_get_proto_info()： 取得 MySQL 协议信息
+mysql_get_server_info()： 取得 MySQL 服务器信息
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/24/php-mysql常用函数/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php--mysql常用函数">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-php/php-数据库增删查改" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/24/php/php-数据库增删查改/" class="article-date">
+  	<time datetime="2016-11-24T04:01:46.000Z" itemprop="datePublished">2016-11-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/24/php/php-数据库增删查改/">
+        php学习--数据库增删查改
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一：-新增数据"><a href="#一：-新增数据" class="headerlink" title="一： 新增数据"></a>一： 新增数据</h2><pre><code>// 注意：这里username是primary key，只能增加一次，所以重复操作会显示错误信息
+$query = &apos;INSERT INTO userdetail(username,userpass,regtime) VALUES(&quot;fas &quot;,123456,NOW())&apos;;
+@mysql_query($query) or die(&quot;新增数据错误&quot;.mysql_error());
+</code></pre><h2 id="二：-修改数据"><a href="#二：-修改数据" class="headerlink" title="二： 修改数据"></a>二： 修改数据</h2><pre><code>$query = &apos;UPDATE userdetail SET userpass = 897 WHERE username=&quot;张三&quot;&apos;;
+@mysql_query($query) or die(&quot;修改数据失败&quot;.mysql_error());
+</code></pre><h2 id="三：-删除数据"><a href="#三：-删除数据" class="headerlink" title="三： 删除数据"></a>三： 删除数据</h2><pre><code>$query = &apos;DELETE FROM userdetail WHERE username=&quot;张三&quot;&apos;;
+@mysql_query($query) or die(&quot;删除数据失败&quot;.mysql_error());
+</code></pre><h2 id="四：-显示数据"><a href="#四：-显示数据" class="headerlink" title="四： 显示数据"></a>四： 显示数据</h2><pre><code>$query = &quot;SELECT username, userpass FROM userdetail&quot;;
+$result = mysql_query($query) or die(&quot;sql语句有误&quot;.mysql_error());
+while(!!$row = mysql_fetch_array($result)){
+    echo $row[&apos;username&apos;].&quot;-----&quot;.$row[&quot;userpass&quot;];
+    echo &quot;&lt;br&gt;&quot;;
+}
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/24/php/php-数据库增删查改/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--数据库增删查改">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-php/php-php操作mysql" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/24/php/php-php操作mysql/" class="article-date">
+  	<time datetime="2016-11-24T03:53:51.000Z" itemprop="datePublished">2016-11-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/24/php/php-php操作mysql/">
+        php学习--php操作mysql
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第一步：-连接mysql服务器"><a href="#第一步：-连接mysql服务器" class="headerlink" title="第一步： 连接mysql服务器"></a>第一步： 连接mysql服务器</h2><h3 id="第一个参数是服务器地址，第二个参数是服务器的用户名，第三个参数是服务器密码"><a href="#第一个参数是服务器地址，第二个参数是服务器的用户名，第三个参数是服务器密码" class="headerlink" title="第一个参数是服务器地址，第二个参数是服务器的用户名，第三个参数是服务器密码"></a>第一个参数是服务器地址，第二个参数是服务器的用户名，第三个参数是服务器密码</h3><pre><code>header(&apos;content_type:text/html; charset = utf8&apos;);
+mysql_connect(&apos;localhost:3306 &apos;,&apos;root&apos;,&apos;root&apos;);
+// 加上@后就算有错误也不会报错，但是最好不要这样
+// @mysql_connect(&apos;localhost:3306 &apos;,&apos;root&apos;,&apos;root&apos;);
+</code></pre><h3 id="更好的连接数据库的方法：-在商业的代码中，一般将这三个参数设置为常量，这样不易修改，就会更加安全"><a href="#更好的连接数据库的方法：-在商业的代码中，一般将这三个参数设置为常量，这样不易修改，就会更加安全" class="headerlink" title="更好的连接数据库的方法： 在商业的代码中，一般将这三个参数设置为常量，这样不易修改，就会更加安全"></a>更好的连接数据库的方法： 在商业的代码中，一般将这三个参数设置为常量，这样不易修改，就会更加安全</h3><pre><code>define(&apos;DB_HOST&apos;, &apos;localhost&apos;);
+define(&apos;DB_USER&apos;, &apos;root&apos;);
+define(&apos;DB_PWD&apos;, &apos;root&apos;);
+define(&apos;DB_NAME&apos;, &apos;fu&apos;);
+$conn = @mysql_connect(DB_HOST,DB_USER,DB_PWD) or die(&apos;数据库连接失败，错误信息是：&apos;.mysql_error());
+</code></pre><h3 id="mysql-error返回上一个mysql操作产生的文本错误信息-如果不指定连接资源号，就使用上一个成功打开的连接从mysql服务器提取错误信息-这里就没有指定连接资源号"><a href="#mysql-error返回上一个mysql操作产生的文本错误信息-如果不指定连接资源号，就使用上一个成功打开的连接从mysql服务器提取错误信息-这里就没有指定连接资源号" class="headerlink" title="mysql_error返回上一个mysql操作产生的文本错误信息,如果不指定连接资源号，就使用上一个成功打开的连接从mysql服务器提取错误信息,这里就没有指定连接资源号"></a>mysql_error返回上一个mysql操作产生的文本错误信息,如果不指定连接资源号，就使用上一个成功打开的连接从mysql服务器提取错误信息,这里就没有指定连接资源号</h3><h3 id="die语法等同于exit"><a href="#die语法等同于exit" class="headerlink" title="die语法等同于exit()"></a>die语法等同于exit()</h3><h2 id="第二步：选择数据库"><a href="#第二步：选择数据库" class="headerlink" title="第二步：选择数据库"></a>第二步：选择数据库</h2><pre><code>// 设置字符集
+mysql_select_db(DB_NAME) or die(&quot;表错误，错误信息&quot;.mysql_error());
+mysql_query(&apos;SET NAMES UTF8&apos;) or die(&apos;字符集设置错误&apos;.mysql_error());
+</code></pre><h2 id="第三步：从这个数据库中选择一张数据表，然后将数据表的信息提取出来（获取记录集）"><a href="#第三步：从这个数据库中选择一张数据表，然后将数据表的信息提取出来（获取记录集）" class="headerlink" title="第三步：从这个数据库中选择一张数据表，然后将数据表的信息提取出来（获取记录集）"></a>第三步：从这个数据库中选择一张数据表，然后将数据表的信息提取出来（获取记录集）</h2><pre><code>// mysql_query()发送一条mysql查询，返回资源句柄
+$query = &apos;select * from userdetail&apos;;
+$result = mysql_query($query) or die(&quot;查询错误，错误信息&quot;.mysql_error());
+
+// 将记录集里的数据显示出来
+// mysql-fetch_array()从结果集中取得一行昨为关联数组，或数字数组，或两者都有
+// 以属性--值的方式打印
+print_r(mysql_fetch_array($result,MYSQL_ASSOC));
+// 以数字下标打印
+print_r(mysql_fetch_array($result,MYSQL_NUM));
+</code></pre><h2 id="第四步：-释放资源"><a href="#第四步：-释放资源" class="headerlink" title="第四步： 释放资源"></a>第四步： 释放资源</h2><pre><code>mysql_free_result($result);
+</code></pre><h2 id="第五步：-关闭数据库"><a href="#第五步：-关闭数据库" class="headerlink" title="第五步： 关闭数据库"></a>第五步： 关闭数据库</h2><pre><code>mysql_close($conn);
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/24/php/php-php操作mysql/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--php操作mysql">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-算法/java算法-分治法-合并排序" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -823,330 +1085,6 @@ echo &quot;&lt;script&gt;alert(&apos;文件上传成功&apos;); location.href = 
 <div class="counter-tag counter">
     <span id="/2016/11/19/算法/java算法-合并排序/" class="leancloud_visitors post-title-link"
           style="font-size: 12px" data-flag-title="java算法学习--分治法 合并排序">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-算法/java算法-棋盘覆盖" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/19/算法/java算法-棋盘覆盖/" class="article-date">
-  	<time datetime="2016-11-19T03:04:16.000Z" itemprop="datePublished">2016-11-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/19/算法/java算法-棋盘覆盖/">
-        java算法--棋盘覆盖
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="问题描述：在2-k-2-k的棋盘中有一个特殊的方格，用L型骨牌覆盖除了这个特殊方格之外的其他方格。要求骨牌不能重叠。"><a href="#问题描述：在2-k-2-k的棋盘中有一个特殊的方格，用L型骨牌覆盖除了这个特殊方格之外的其他方格。要求骨牌不能重叠。" class="headerlink" title="问题描述：在2^k * 2^k的棋盘中有一个特殊的方格，用L型骨牌覆盖除了这个特殊方格之外的其他方格。要求骨牌不能重叠。"></a>问题描述：在2^k * 2^k的棋盘中有一个特殊的方格，用L型骨牌覆盖除了这个特殊方格之外的其他方格。要求骨牌不能重叠。</h3><h3 id="用0代表特殊方格，相同的数字代表同一个骨牌，不同骨牌用不同数字表示"><a href="#用0代表特殊方格，相同的数字代表同一个骨牌，不同骨牌用不同数字表示" class="headerlink" title="用0代表特殊方格，相同的数字代表同一个骨牌，不同骨牌用不同数字表示"></a>用0代表特殊方格，相同的数字代表同一个骨牌，不同骨牌用不同数字表示</h3><h3 id="算法思路：采用分治法，先将棋盘分成四个小棋盘，那么特殊方格肯定在这四个小棋盘中的一个里边。将没有特殊方格的三个棋盘交界地方覆盖上一个骨牌，使这个骨牌成为特殊方格。再将小棋盘切成4个小小棋盘，寻找没有特殊方格的三个棋盘覆盖，最终全部覆盖完毕。"><a href="#算法思路：采用分治法，先将棋盘分成四个小棋盘，那么特殊方格肯定在这四个小棋盘中的一个里边。将没有特殊方格的三个棋盘交界地方覆盖上一个骨牌，使这个骨牌成为特殊方格。再将小棋盘切成4个小小棋盘，寻找没有特殊方格的三个棋盘覆盖，最终全部覆盖完毕。" class="headerlink" title="算法思路：采用分治法，先将棋盘分成四个小棋盘，那么特殊方格肯定在这四个小棋盘中的一个里边。将没有特殊方格的三个棋盘交界地方覆盖上一个骨牌，使这个骨牌成为特殊方格。再将小棋盘切成4个小小棋盘，寻找没有特殊方格的三个棋盘覆盖，最终全部覆盖完毕。"></a>算法思路：采用分治法，先将棋盘分成四个小棋盘，那么特殊方格肯定在这四个小棋盘中的一个里边。将没有特殊方格的三个棋盘交界地方覆盖上一个骨牌，使这个骨牌成为特殊方格。再将小棋盘切成4个小小棋盘，寻找没有特殊方格的三个棋盘覆盖，最终全部覆盖完毕。</h3><h3 id="具体的覆盖方法："><a href="#具体的覆盖方法：" class="headerlink" title="具体的覆盖方法："></a>具体的覆盖方法：</h3><h3 id="emsp-1-如果左上棋盘无特殊方格，将左上棋盘的右下角覆盖"><a href="#emsp-1-如果左上棋盘无特殊方格，将左上棋盘的右下角覆盖" class="headerlink" title="&emsp; 1. 如果左上棋盘无特殊方格，将左上棋盘的右下角覆盖"></a>&emsp; 1. 如果左上棋盘无特殊方格，将左上棋盘的右下角覆盖</h3><h3 id="emsp-2-如果左下棋盘无特殊方格，将左下棋盘的右上角覆盖"><a href="#emsp-2-如果左下棋盘无特殊方格，将左下棋盘的右上角覆盖" class="headerlink" title="&emsp; 2. 如果左下棋盘无特殊方格，将左下棋盘的右上角覆盖"></a>&emsp; 2. 如果左下棋盘无特殊方格，将左下棋盘的右上角覆盖</h3><h3 id="emsp-3-如果右上棋盘无特殊方格，将右上棋盘的左下角覆盖"><a href="#emsp-3-如果右上棋盘无特殊方格，将右上棋盘的左下角覆盖" class="headerlink" title="&emsp; 3. 如果右上棋盘无特殊方格，将右上棋盘的左下角覆盖"></a>&emsp; 3. 如果右上棋盘无特殊方格，将右上棋盘的左下角覆盖</h3><h3 id="emsp-4-如果右下棋盘无特殊方格，将右上棋盘的左下角覆盖"><a href="#emsp-4-如果右下棋盘无特殊方格，将右上棋盘的左下角覆盖" class="headerlink" title="&emsp; 4. 如果右下棋盘无特殊方格，将右上棋盘的左下角覆盖"></a>&emsp; 4. 如果右下棋盘无特殊方格，将右上棋盘的左下角覆盖</h3><h3 id="图解如下："><a href="#图解如下：" class="headerlink" title="图解如下："></a>图解如下：</h3><p><img src="image/chessBoard.jpg" alt="img"></p>
-<h3 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h3><pre><code>public class chessBoard {
-// 设置棋盘规格为8
-public static int size = 8;
-// 设置特殊方格的横坐标（从0开始）为4
-public static int dr = 4;
-// 设置特殊方格的纵坐标（从0开始）为3
-public static int dc = 3;
-// 骨牌，从1开始，相同的骨牌用相同的数字，不同的骨牌数字不同，递增。骨牌个数为（8*8-1）/3=21个
-public static int tile = 1;
-public static int[][] board;
-
-
-public static void chessBoard(int tr, int tc, int dr, int dc, int size) {
-    // 分别是：左上行号，左上列号，特殊方格行号，特殊方格列号，棋盘规格2^k
-    if (size == 1)    
-        return;
-    int t = tile++, // tile是全局变量，表示L型骨牌的编号
-    s = size / 2; // 将棋盘分成上左，上右，下左，下右四部分
-    // 判断特殊方格是否在左上角的小棋盘中
-    if (dr &lt; tr + s &amp;&amp; dc &lt; tc + s) {
-        // 特殊方格在此盘中，则再次调用自身函数缩小范围
-        chessBoard(tr, tc, dr, dc, s);
-    } else {
-        // 此盘中无特殊方格
-        // 用t号L型骨牌覆盖右下角
-        board[tr + s - 1][tc + s - 1] = t;    //这里是将t号骨牌覆盖到bord[3][3]的位置上（也就是右下角）
-        chessBoard(tr, tc, tr + s - 1, tc + s - 1, s);    //这里特殊方格变成了3,3，将(0,0,3,3,4)这个棋盘分割
-    }
-    // 右上角（同理）
-    if (dr &lt; tr + s &amp;&amp; dc &gt;= tc + s) {    //特殊方格在此盘
-        chessBoard(tr, tc + s, dr, dc, s);
-    } else {
-        board[tr + s - 1][tc + s] = t;
-        chessBoard(tr, tc + s, tr + s - 1, tc + s, s);
-    }
-    // 左下角
-    if (dr &gt;= tr + s &amp;&amp; dc &lt; tc + s) {
-        chessBoard(tr + s, tc, dr, dc, s);
-    } else {
-        board[tr + s][tc + s - 1] = t;
-        chessBoard(tr + s, tc, tr + s, tc + s - 1, s);
-    }
-    // 右下角
-    if (dr &gt;= tr + s &amp;&amp; dc &gt;= tc + s) {
-        chessBoard(tr + s, tc + s, dr, dc, s);
-    } else {
-        board[tr + s][tc + s] = t;
-        chessBoard(tr + s, tc + s, tr + s, tc + s, s);
-    }
-}
-
-public static void main(String[] args) {
-    // 初始化棋盘
-    board = new int[size][size];
-    // 调用方法
-    chessBoard(0, 0, dr, dc, size);
-    // 显示棋盘
-    for (int[] is : board) {
-        System.out.println();
-        for (int i : is) {
-            System.out.printf(&quot;%4d&quot;, i);
-         }
-     }
- }
-
-}
-</code></pre><h3 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h3><pre><code> 3   3   4   4   8   8   9   9
- 3   2   2   4   8   7   7   9
- 5   2   6   6  10  10   7  11
- 5   5   6   1   1  10  11  11
-13  13  14   0   1  18  19  19
-13  12  14  14  18  18  17  19
-15  12  12  16  20  17  17  21
-15  15  16  16  20  20  21  21
-</code></pre><h3 id="算法的时间复杂度："><a href="#算法的时间复杂度：" class="headerlink" title="算法的时间复杂度："></a>算法的时间复杂度：</h3><h3 id="设T-k-是算法chessBoard覆盖2-k-2-k棋盘所需要的时间，从算法的分割策略可知，T-k-满足："><a href="#设T-k-是算法chessBoard覆盖2-k-2-k棋盘所需要的时间，从算法的分割策略可知，T-k-满足：" class="headerlink" title="设T(k)是算法chessBoard覆盖2^k * 2^k棋盘所需要的时间，从算法的分割策略可知，T(k)满足："></a>设T(k)是算法chessBoard覆盖2^k * 2^k棋盘所需要的时间，从算法的分割策略可知，T(k)满足：</h3><h3 id="1-k-0-T-k-O-1"><a href="#1-k-0-T-k-O-1" class="headerlink" title="1. k=0, T(k) = O(1)"></a>1. k=0, T(k) = O(1)</h3><h3 id="2-k-gt-1-T-k-4T-k-1-O-1"><a href="#2-k-gt-1-T-k-4T-k-1-O-1" class="headerlink" title="2. k&gt;1, T(k) = 4T(k-1)+O(1)"></a>2. k&gt;1, T(k) = 4T(k-1)+O(1)</h3><h3 id="解得T-k-O-4-k"><a href="#解得T-k-O-4-k" class="headerlink" title="解得T(k) = O(4^k)"></a>解得T(k) = O(4^k)</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/19/算法/java算法-棋盘覆盖/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="java算法--棋盘覆盖">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-算法/java算法-排列问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/19/算法/java算法-排列问题/" class="article-date">
-  	<time datetime="2016-11-19T02:23:55.000Z" itemprop="datePublished">2016-11-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/19/算法/java算法-排列问题/">
-        java算法学习--排列问题
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>public class MyMath {
-    public static void perm(String[] list , int k,int m)
-    {
-        //k是第一个数字，m是最后一个数字
-        //输出list[k...m]的所有排列方式
-        if(k == m) {    
-            //只有一个元素.一到递归的出口就输出数组，此数组为全排列
-            for(int j=0; j&lt;= m ;j++) {
-                System.out.print(list[j]);
-            }
-            System.out.println();
-        }
-        else
-            //还有很多元素，递归产生排列
-        for(int i = k; i &lt;= m ; i++) {
-            //for循环将k~m中每个数放到k位置中去，
-            MyMath.swap(list, k, i);
-            //假设k位置确定，那么对k+1到m的数继续递归
-            perm(list, k+1, m); 
-            //换过去之后再还原
-            MyMath.swap(list, k, i);
-        }    
-    }
-
-    private static void swap(String[] str, int i, int first) {
-        //temp变量实现元素的交换。
-         String temp;
-         temp = str[first];
-         str[first] = str[i];
-         str[i] = temp;      
-    }
-
-    public static void main(String args[]){ 
-        //java中main()方法是Java应用程序的入口方法，JVM通过main方法找到需要启动的运行程序，
-        //输入数组
-         String[] str = {&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;};
-         //从第一个到最后一个全排列，变换数字可以任意截取其中一部分，比如perm(str,0,2)，
-         //只会对前三个数字进行全排列，其余类似
-         perm(str, 0, 5);
-         //输出list[0..2]的所有排列方式
-
-} 
-
-}
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/19/算法/java算法-排列问题/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="java算法学习--排列问题">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-算法/java算法-斐波那契数列" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/19/算法/java算法-斐波那契数列/" class="article-date">
-  	<time datetime="2016-11-19T02:18:37.000Z" itemprop="datePublished">2016-11-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/19/算法/java算法-斐波那契数列/">
-        java算法学习--斐波那契数列
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="斐波那契数列：1-1-2-3-5-8-11······"><a href="#斐波那契数列：1-1-2-3-5-8-11······" class="headerlink" title="斐波那契数列：1 1 2 3 5 8 11······"></a>斐波那契数列：1 1 2 3 5 8 11······</h3><h3 id="也就是从第二个开始，前两个数的和等于第三个数"><a href="#也就是从第二个开始，前两个数的和等于第三个数" class="headerlink" title="也就是从第二个开始，前两个数的和等于第三个数"></a>也就是从第二个开始，前两个数的和等于第三个数</h3><pre><code>public class Feonacci {
-    //计算第n个菲波那切数
-    public static int febonacci(int n)
-    {
-        if(n&lt;=1) return 1;
-        return febonacci(n-1)+febonacci(n-2);
-    }
-
-    public static void main(String[] args)
-    {
-        System.out.println(&quot;第五个斐波那契数是：&quot;+febonacci(5));
-    }
-}
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/19/算法/java算法-斐波那契数列/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="java算法学习--斐波那契数列">
          &nbsp;
         view
     </span>

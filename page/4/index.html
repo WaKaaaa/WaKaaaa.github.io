@@ -192,6 +192,351 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-php/php--数组1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/18/php/php--数组1/" class="article-date">
+  	<time datetime="2016-10-18T10:56:16.000Z" itemprop="datePublished">2016-10-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/18/php/php--数组1/">
+        php学习--数组1
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="PHP数组"><a href="#PHP数组" class="headerlink" title="PHP数组"></a><center>PHP数组<center></center></center></h1><h2 id="1-数组命名规则"><a href="#1-数组命名规则" class="headerlink" title="1.数组命名规则"></a>1.数组命名规则</h2><h3 id="开头是-，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素"><a href="#开头是-，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素" class="headerlink" title="开头是$，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素"></a>开头是$，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素</h3><pre><code>$1fu = array(&apos;1&apos;,&apos;2&apos;);    //不可以数字开头
+$fu_&amp;hello = array(&quot;hello&quot;,&quot;world&quot;);    //含有特殊符号&amp;
+$userName = array(&apos;张三&apos;,&apos;李四&apos;,&apos;王五&apos;,&apos;赵六&apos;,&apos;嘻嘻嘻&apos;,&apos;嘿嘿嘿&apos;); //正确的命名
+</code></pre><h3 id="注意：在一个程序中，标量变量和数组变量不能同名，例如已经存在-userName的变量，再创建-userName的数组，后者会覆盖前者"><a href="#注意：在一个程序中，标量变量和数组变量不能同名，例如已经存在-userName的变量，再创建-userName的数组，后者会覆盖前者" class="headerlink" title="注意：在一个程序中，标量变量和数组变量不能同名，例如已经存在$userName的变量，再创建$userName的数组，后者会覆盖前者"></a>注意：在一个程序中，标量变量和数组变量不能同名，例如已经存在$userName的变量，再创建$userName的数组，后者会覆盖前者</h3><h3 id="数组变量的名称是区分大小写的，-user和-User是不同的两个变量数组类名"><a href="#数组变量的名称是区分大小写的，-user和-User是不同的两个变量数组类名" class="headerlink" title="数组变量的名称是区分大小写的，$user和$User是不同的两个变量数组类名"></a>数组变量的名称是区分大小写的，$user和$User是不同的两个变量数组类名</h3><h3 id="PHP常量和变量都区分大小写"><a href="#PHP常量和变量都区分大小写" class="headerlink" title="PHP常量和变量都区分大小写"></a>PHP常量和变量都区分大小写</h3><pre><code>&lt;?php 
+    $a = &quot;hello&quot;;
+    $A = &quot;world&quot;;
+    echo $a.&quot;&lt;br&gt;&quot;;
+    echo $A.&quot;&lt;br&gt;&quot;;
+    // 结果是 hello world，变量区分大小写，否则后者会覆盖前者
+
+    define(&quot;c&quot;, 123);
+    define(&quot;C&quot;, 456);
+    echo c.&quot;&lt;br&gt;&quot;;
+    echo C;
+    // 都打印，常量也区分大小写
+
+ ?&gt;
+</code></pre><h3 id="PHP的类名和方法名甚至一些关键字都不区分大小写"><a href="#PHP的类名和方法名甚至一些关键字都不区分大小写" class="headerlink" title="PHP的类名和方法名甚至一些关键字都不区分大小写"></a>PHP的类名和方法名甚至一些关键字都不区分大小写</h3><h2 id="2-创建数组的几种方法"><a href="#2-创建数组的几种方法" class="headerlink" title="2.创建数组的几种方法"></a>2.创建数组的几种方法</h2><pre><code>// 创建数组的第一种方法：array函数创建
+ $userName = array(&apos;张三&apos;,&apos;李四&apos;,&apos;王五&apos;,&apos;赵六&apos;,&apos;嘻嘻嘻&apos;,&apos;嘿嘿嘿&apos;);
+ echo $userName.&quot;&lt;br&gt;&quot;;    // 用echo只能打印$userName的返回类型是array（数组）
+ print_r($userName);    // 用print_r可以将数组打印出来
+ echo &quot;&lt;br&gt;&quot;;
+ echo $userName[2].&quot;&lt;br&gt;&quot;;    //在使用数据时，可以直接取他的下标，从0开始（0到n-1）
+
+ // range自动创建一个数组，range(low,heigh)
+ $number = range(0,10);    //自动创建0到10的数组
+ print_r($number);
+ echo &quot;&lt;br&gt;&quot;;
+ $letter = range(a, z);    //创建a到z的数组
+ print_r($letter);
+ echo &quot;&lt;br&gt;&quot;;
+ $reset = range(z, a);    //创建a到z的逆序数组
+ print_r($reset);
+ echo &quot;&lt;br&gt;&quot;;
+
+ // 利用数组标识符[]声明数组
+ // 开发时不知数组的大小或者数组会改变，用此方法
+// 用此种方法创建数组要求同一数组名相同，也可以添加数组
+ $array[0] = &quot;hello&quot;;
+ $array[1] = &quot;world&quot;;
+ $array[2] = &quot;and&quot;;
+ $array[3] = &quot;php&quot;;
+ print_r($array);
+
+结果：Array
+Array ( [0] =&gt; 张三 [1] =&gt; 李四 [2] =&gt; 王五 [3] =&gt; 赵六 [4] =&gt; 嘻嘻嘻 [5] =&gt; 嘿嘿嘿 )
+王五
+Array ( [0] =&gt; 0 [1] =&gt; 1 [2] =&gt; 2 [3] =&gt; 3 [4] =&gt; 4 [5] =&gt; 5 [6] =&gt; 6 [7] =&gt; 7 [8] =&gt; 8 [9] =&gt; 9 [10] =&gt; 10 )
+Array ( [0] =&gt; a [1] =&gt; b [2] =&gt; c [3] =&gt; d [4] =&gt; e [5] =&gt; f [6] =&gt; g [7] =&gt; h [8] =&gt; i [9] =&gt; j [10] =&gt; k [11] =&gt; l [12] =&gt; m [13] =&gt; n [14] =&gt; o [15] =&gt; p [16] =&gt; q [17] =&gt; r [18] =&gt; s [19] =&gt; t [20] =&gt; u [21] =&gt; v [22] =&gt; w [23] =&gt; x [24] =&gt; y [25] =&gt; z )
+Array ( [0] =&gt; z [1] =&gt; y [2] =&gt; x [3] =&gt; w [4] =&gt; v [5] =&gt; u [6] =&gt; t [7] =&gt; s [8] =&gt; r [9] =&gt; q [10] =&gt; p [11] =&gt; o [12] =&gt; n [13] =&gt; m [14] =&gt; l [15] =&gt; k [16] =&gt; j [17] =&gt; i [18] =&gt; h [19] =&gt; g [20] =&gt; f [21] =&gt; e [22] =&gt; d [23] =&gt; c [24] =&gt; b [25] =&gt; a )
+Array ( [0] =&gt; hello [1] =&gt; world [2] =&gt; and [3] =&gt; php )
+</code></pre><p>###改变数组的某个值<br>    //将上面的代码修改一下：<br>     $userName[1] = “蓝瘦香菇”;    // 可以直接赋值<br>     print_r($userName).”<br>“;<br>    结果： Array ( [0] =&gt; 张三 [1] =&gt; 蓝瘦香菇 [2] =&gt; 王五 [3] =&gt; 赵六 [4] =&gt; 嘻嘻嘻 [5] =&gt; 嘿嘿嘿 )</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/10/18/php/php--数组1/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--数组1">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-php/PHP--数学函数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/17/php/PHP--数学函数/" class="article-date">
+  	<time datetime="2016-10-17T11:54:02.000Z" itemprop="datePublished">2016-10-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/17/php/PHP--数学函数/">
+        PHP学习--数学函数
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-数字相加"><a href="#1-数字相加" class="headerlink" title="1.数字相加"></a>1.数字相加</h1><h3 id="主要处理整型和浮点型，如果计算中包含数值和字符串，字符串会在完成计算之前转换为数值，而数值则会在与字符串连接之前转换为字符串。"><a href="#主要处理整型和浮点型，如果计算中包含数值和字符串，字符串会在完成计算之前转换为数值，而数值则会在与字符串连接之前转换为字符串。" class="headerlink" title="主要处理整型和浮点型，如果计算中包含数值和字符串，字符串会在完成计算之前转换为数值，而数值则会在与字符串连接之前转换为字符串。"></a>主要处理整型和浮点型，如果计算中包含数值和字符串，字符串会在完成计算之前转换为数值，而数值则会在与字符串连接之前转换为字符串。</h3><pre><code>$a = &apos;5&apos;; //完成计算之前转化为数字
+$b = $a+7;
+echo &quot;$b&quot;;
+结果：12
+
+$z = &apos;a&apos;;
+echo $z+7;    //因为字母没法办法转换成数字，所以输出7
+</code></pre><h3 id="PHP提供了大量函数来检查变量的数据类型"><a href="#PHP提供了大量函数来检查变量的数据类型" class="headerlink" title="PHP提供了大量函数来检查变量的数据类型"></a>PHP提供了大量函数来检查变量的数据类型</h3><blockquote>
+<p>is_numeric()检验是否为数字或者数字字符串，如果是返回1，如果不是，返回空</p>
+</blockquote>
+<pre><code>$a = &apos;5&apos;;    
+echo is_numeric($a);
+echo &quot;&lt;br&gt;&quot;;
+结果：1
+</code></pre><blockquote>
+<p>is_int()检测是否为整型,如果是返回1，如果不是，返回空</p>
+</blockquote>
+<pre><code>$e = 5;
+echo is_int($e);    //返回1
+</code></pre><blockquote>
+<p>is_float()检测是否为浮点型,如果是返回1，如果不是，返回空</p>
+</blockquote>
+<pre><code>$a = 6.1;
+$b = 6;
+echo is_float($a);    //返回1
+echo is_float($b);    //返回空
+</code></pre><h1 id="2-产生随机数"><a href="#2-产生随机数" class="headerlink" title="2.产生随机数"></a>2.产生随机数</h1><h3 id="rand-函数是libc-构建PHP所用编译器提供的基本库之一-中定义的随机函数的一个简单包装器。mt-rand-是一个很好的替代实现，提供了很多精心设计的特性，而且mt-rand-甚至比libc中的版本还要快"><a href="#rand-函数是libc-构建PHP所用编译器提供的基本库之一-中定义的随机函数的一个简单包装器。mt-rand-是一个很好的替代实现，提供了很多精心设计的特性，而且mt-rand-甚至比libc中的版本还要快" class="headerlink" title="rand()函数是libc(构建PHP所用编译器提供的基本库之一)中定义的随机函数的一个简单包装器。mt_rand()是一个很好的替代实现，提供了很多精心设计的特性，而且mt_rand()甚至比libc中的版本还要快"></a>rand()函数是libc(构建PHP所用编译器提供的基本库之一)中定义的随机函数的一个简单包装器。mt_rand()是一个很好的替代实现，提供了很多精心设计的特性，而且mt_rand()甚至比libc中的版本还要快</h3><pre><code>echo rand(1,100);    //产生随机数，第一个参数是最小值，第二个参数是最大值，自定义的，可改变可不写
+echo &quot;&lt;br&gt;&quot;;
+echo mt_rand(1,100);    //产生更好的随机数，速度比rand快
+
+echo getrandmax();    //获取rand的最大值 4132767
+echo &quot;&lt;br&gt;&quot;;
+echo mt_getrandmax();    //获取mt_rand的最大值 2147483647
+echo &quot;&lt;br&gt;&quot;;
+</code></pre><h1 id="3-格式化数据"><a href="#3-格式化数据" class="headerlink" title="3.格式化数据"></a>3.格式化数据</h1><h3 id="number-format-函数可以把整数和浮点数值转换为一种可读的字符串表示，格式化数字字符串，里边只能放浮点型"><a href="#number-format-函数可以把整数和浮点数值转换为一种可读的字符串表示，格式化数字字符串，里边只能放浮点型" class="headerlink" title="number_format()函数可以把整数和浮点数值转换为一种可读的字符串表示，格式化数字字符串，里边只能放浮点型"></a>number_format()函数可以把整数和浮点数值转换为一种可读的字符串表示，格式化数字字符串，里边只能放浮点型</h3><pre><code>//格式化字符串number_format
+$f = 123892.4567;
+echo number_format($f,3);        //第一位存放浮点数，第二位表示精确到小数点后n位
+echo &quot;&lt;br&gt;&quot;;
+echo number_format($f);    //只有浮点数默认会舍弃小数部分，整数部分按照外国人的习惯每三位用有个逗号隔开
+echo &quot;&lt;br&gt;&quot;;
+echo number_format($f,3,&apos;%&apos;,&quot;#&quot;);    //第三位将分隔符逗号改成%，第四位将小数点点号改为#号，一般情况下不用这两个
+echo &quot;&lt;br&gt;&quot;;
+结果：123,892.457   123,892   123#892%457
+</code></pre><h1 id="4-数学函数"><a href="#4-数学函数" class="headerlink" title="4.数学函数"></a>4.数学函数</h1><pre><code>echo abs(&apos;-6&apos;);        // abs() 绝对值
+echo round(&apos;1.631&apos;);    // round() 四舍五入
+echo floor(&apos;1.642&apos;);    // floor() 舍去法取整     
+</code></pre><h3 id="具体数学函数参照如下："><a href="#具体数学函数参照如下：" class="headerlink" title="具体数学函数参照如下："></a>具体数学函数参照如下：</h3><p>•abs — 绝对值<br>•acos — 反余弦 <br><br>•acosh — 反双曲余弦 <br><br>•asin — 反正弦 <br><br>•asinh — 反双曲正弦 <br><br>•atan2 — 两个参数的反正切 <br><br>•atan — 反正切 <br><br>•atanh — 反双曲正切 <br><br>•base_convert — 在任意进制之间转换数字 <br><br>•bindec — 二进制转换为十进制 <br><br>•ceil — 进一法取整 <br><br>•cos — 余弦 <br><br>•cosh — 双曲余弦 <br><br>•decbin — 十进制转换为二进制 <br><br>•dechex — 十进制转换为十六进制 <br><br>•decoct — 十进制转换为八进制 <br><br>•deg2rad — 将角度转换为弧度 <br><br>•exp — 计算 e 的指数 <br><br>•expm1 — 返回 exp(number) - 1，甚至当 number 的值接近零也能计算出准确结果 <br><br>•floor — 舍去法取整 <br><br>•fmod — 返回除法的浮点数余数 <br><br>•getrandmax — 显示随机数最大的可能值 <br><br>•hexdec — 十六进制转换为十进制 <br><br>•hypot — 计算一直角三角形的斜边长度 <br><br>•intdiv — 对除法结果取整 <br><br>•is_finite — 判断是否为有限值 <br><br>•is_infinite — 判断是否为无限值 <br><br>•is_nan — 判断是否为合法数值 <br><br>•lcg_value — 组合线性同余发生器 <br><br>•log10 — 以 10 为底的对数 <br><br>•log1p — 返回 log(1 + number)，甚至当 number 的值接近零也能计算出准确结果 <br><br>•log — 自然对数 <br><br>•max — 找出最大值 <br><br>•min — 找出最小值 <br><br>•mt_getrandmax — 显示随机数的最大可能值 <br><br>•mt_rand — 生成更好的随机数 <br><br>•mt_srand — 播下一个更好的随机数发生器种子 <br><br>•octdec — 八进制转换为十进制 <br><br>•pi — 得到圆周率值 <br><br>•pow — 指数表达式 <br><br>•rad2deg — 将弧度数转换为相应的角度数 <br><br>•rand — 产生一个随机整数 <br><br>•round — 对浮点数进行四舍五入 <br><br>•sin — 正弦 <br><br>•sinh — 双曲正弦 <br><br>•sqrt — 平方根 <br><br>•srand — 播下随机数发生器种子 <br><br>•tan — 正切 <br><br>•tanh — 双曲正切</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP数学函数/">PHP数学函数</a></li></ul>
+	</div>
+
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/10/17/php/PHP--数学函数/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="PHP学习--数学函数">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-php/PHP--基础学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/13/php/PHP--基础学习/" class="article-date">
+  	<time datetime="2016-10-13T01:37:02.000Z" itemprop="datePublished">2016-10-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/13/php/PHP--基础学习/">
+        PHP basic
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="PHP的基本知识学习总结"><a href="#PHP的基本知识学习总结" class="headerlink" title=" PHP的基本知识学习总结 "></a><center> PHP的基本知识学习总结 </center></h1><h2 id="一：PHP概述"><a href="#一：PHP概述" class="headerlink" title="一：PHP概述"></a>一：PHP概述</h2><h3 id="PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以-php为后缀名，写动态网站，与数据库交互"><a href="#PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以-php为后缀名，写动态网站，与数据库交互" class="headerlink" title="PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以.php为后缀名，写动态网站，与数据库交互"></a>PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以.php为后缀名，写动态网站，与数据库交互</h3><h3 id="PHP运行环境：windows-apache-php-mysql-emsp-emsp-emsp-emsp-emsp-emsp-emsp-linux-apache-php-mysql"><a href="#PHP运行环境：windows-apache-php-mysql-emsp-emsp-emsp-emsp-emsp-emsp-emsp-linux-apache-php-mysql" class="headerlink" title="PHP运行环境：windows+apache+php+mysql      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;    linux+apache+php+mysql"></a>PHP运行环境：windows+apache+php+mysql <br>     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;    linux+apache+php+mysql</h3><h3 id="PHP文件构成：HTML-div-CSS-PHP-JavaScript-jQuery-ajax等"><a href="#PHP文件构成：HTML-div-CSS-PHP-JavaScript-jQuery-ajax等" class="headerlink" title="PHP文件构成：HTML div CSS PHP JavaScript jQuery ajax等"></a>PHP文件构成：HTML div CSS PHP JavaScript jQuery ajax等</h3><h3 id="PHP工作原理：请求-gt-Apache-gt-执行PHP代码-gt-响应"><a href="#PHP工作原理：请求-gt-Apache-gt-执行PHP代码-gt-响应" class="headerlink" title="PHP工作原理：请求-&gt;Apache-&gt;执行PHP代码-&gt;响应"></a>PHP工作原理：请求-&gt;Apache-&gt;执行PHP代码-&gt;响应</h3><h2 id="二：PHP环境搭建"><a href="#二：PHP环境搭建" class="headerlink" title="二：PHP环境搭建"></a>二：PHP环境搭建</h2><h3 id="用appServ集成环境或者独立搭建"><a href="#用appServ集成环境或者独立搭建" class="headerlink" title="用appServ集成环境或者独立搭建"></a>用appServ集成环境或者独立搭建</h3><h1 id="三：php基础知识"><a href="#三：php基础知识" class="headerlink" title="三：php基础知识"></a>三：php基础知识</h1><h2 id="emsp-01-基本语法"><a href="#emsp-01-基本语法" class="headerlink" title="&emsp; 01.基本语法"></a>&emsp; 01.基本语法</h2><pre><code>&lt;?php 
+    ......
+ ?&gt;
+</code></pre><h2 id="emsp-02-输出的几种方式和比较"><a href="#emsp-02-输出的几种方式和比较" class="headerlink" title="&emsp; 02.输出的几种方式和比较"></a>&emsp; 02.输出的几种方式和比较</h2><ul>
+<li>&emsp; <code>echo</code>: 函数，无返回值（返回void），作用是打印字符串</li>
+<li>&emsp; <code>print</code>: 函数，返回整型，作用是打印字符串</li>
+<li>&emsp; <code>printf</code>: 函数，返回字符串的长度，作用是打印字符串</li>
+<li><p>&emsp; <code>sprintf</code>: 函数，返回字符串将字符串保存在内存中（不在浏览器下显示）<br>###</p>
+<p> &lt;?php </p>
+<pre><code>echo &quot;hello php1&quot;;
+echo &quot;&lt;/br&gt;&quot;;
+print(&quot;hello php2&quot;);
+echo &quot;&lt;/br&gt;&quot;;
+echo print(&quot;hello php3&lt;/br&gt;&quot;); // 这句话的作用是先将print里的字符串打印出来，再打印一个字符串，然后echo出print的类型，返回真，在浏览器中显示为1
+echo &quot;&lt;/br&gt;&quot;;
+printf(&quot;hello php4&lt;/br&gt;&quot;);
+echo printf(&quot;hello php5&lt;/br&gt;&quot;); //返回字符串的长度
+echo &quot;&lt;/br&gt;&quot;;
+sprintf(&quot;hello php6&lt;br&gt;&quot;); // 字符串保存在内存中，不在浏览器界面显示
+echo sprintf(&quot;hello php7&quot;); // 返回字符串
+</code></pre><p>  ?&gt;<br> 运行结果：<br> hello php1<br> hello php2<br> hello php3<br> 1<br> hello php4<br> hello php5<br> 15<br> hello php7</p>
+<h2 id="emsp-03-注释"><a href="#emsp-03-注释" class="headerlink" title="&emsp; 03.注释"></a>&emsp; 03.注释</h2><p> 单行//<br> 多行/**/<br> shell #</p>
+<h2 id="emsp-04-标识符"><a href="#emsp-04-标识符" class="headerlink" title="&emsp; 04.标识符"></a>&emsp; 04.标识符</h2><h3 id="emsp-标识符是变量的名称，关于标识符，PHP定义了一些简单的规则："><a href="#emsp-标识符是变量的名称，关于标识符，PHP定义了一些简单的规则：" class="headerlink" title="&emsp; 标识符是变量的名称，关于标识符，PHP定义了一些简单的规则："></a>&emsp; 标识符是变量的名称，关于标识符，PHP定义了一些简单的规则：</h3><h3 id="emsp-标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。"><a href="#emsp-标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。" class="headerlink" title="&emsp; 标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。"></a>&emsp; 标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。</h3><h3 id="emsp-标识符不能以数字开始。"><a href="#emsp-标识符不能以数字开始。" class="headerlink" title="&emsp; 标识符不能以数字开始。"></a>&emsp; 标识符不能以数字开始。</h3><h3 id="emsp-在PHP中，标识符是区分大小写的。"><a href="#emsp-在PHP中，标识符是区分大小写的。" class="headerlink" title="&emsp; 在PHP中，标识符是区分大小写的。"></a>&emsp; 在PHP中，标识符是区分大小写的。</h3><h3 id="emsp-一个变量名称可以与一个函数名称相同。"><a href="#emsp-一个变量名称可以与一个函数名称相同。" class="headerlink" title="&emsp; 一个变量名称可以与一个函数名称相同。"></a>&emsp; 一个变量名称可以与一个函数名称相同。</h3><h2 id="emsp-05-变量的数据类型"><a href="#emsp-05-变量的数据类型" class="headerlink" title="&emsp; 05.变量的数据类型"></a>&emsp; 05.变量的数据类型</h2><p> Integer(整数)、Float(浮点数，也叫Double,双精度)、String(字符串)、Boolean(布尔)、Array(数组)、Object(对象).</p>
+<blockquote>
+<p>在PHP中无论是double还是float，在浏览器中显示的都是“double”<br>###</p>
+<h2 id="emsp-06-类型转换"><a href="#emsp-06-类型转换" class="headerlink" title="&emsp; 06.类型转换"></a>&emsp; 06.类型转换</h2><p> //    数据类型的转换：分为显示转化和隐式转换<br> echo “数据类型的转换方式：(integer)\$num<br>“;    //反斜杠表示转义字符<br> echo “转化成整数和浮点数的时候如果以数字开头，首先将数字部分转化成整数，再舍去后边的字符串，如果字符串中含有小数点，会保留到小数点前一位<br>“;<br> $str5 = “2.559656894E2”;<br> echo “转义前的string类型：”.$str5.”<br>“;        //“.”小圆点表示字符串的连接<br> //    此种方式的转换都是显示转换，也叫强制类型转换<br> echo “转化成整数：”.(integer)$str5.”<br>“;<br> echo “转化成布尔类型：”.(boolean)$str5.”<br>“;    //    0，null和未被赋值的变量将会转换成false<br> echo “转化成浮点数：”.(float)$str5.”<br>“;    // 字符串的连接用“.”<br> echo “转化成数组：”.(array)$str5.”<br>“;</p>
+</blockquote>
+<p> //    隐式转换<br> $sum = 123;<br> $total = 23.4;<br> $sum = $total;<br> echo gettype($sum);    //此时返回的是浮点型，显示的是double，浏览器显示的浮点型就是double<br> echo “<br>“;</p>
+<p> //    settype()函数也可以设置类型，此时将原本的变量类型改变<br> $a = 1234;<br> settype($a, string);<br> echo gettype($a).”<br>“;    //    将此变量设置成string类型，gettype()获取变量的类型<br> echo “$a<br>“;    //    $a是字符串a</p>
+<p> //    intval()函数，此函数不会改变变量的类型（此处还是浮点数），但是会将变量的值按照整型输出（此处输出的是整型），与之相应的还有floatval()  strval()<br> $b = 456.345;<br> echo gettype($b).”<br>“;<br> echo intval($b).”<br>“;<br> echo gettype($b);<br> echo “<hr>“;</p>
+<p> 运行结果：<br> 数据类型的转换方式：(integer)$num<br> 转化成整数和浮点数的时候如果以数字开头，首先将数字部分转化成整数，再舍去后边的字符串，如果字符串中含有小数点，会保留到小数点前一位<br> 转义前的string类型：2.559656894E2<br> 转化成整数：2<br> 转化成布尔类型：1<br> 转化成浮点数：255.9656894<br> 转化成数组：Array<br> double<br> string<br> 1234<br> double<br> 456<br> double</p>
+<h2 id="emsp-07-检测变量"><a href="#emsp-07-检测变量" class="headerlink" title="&emsp; 07.检测变量"></a>&emsp; 07.检测变量</h2><p> 大部分的可变函数都是用来测试一个函数的类型的。PHP中有两个最常见的函数，分别是gettype()和settype()。<br> 这两个函数返回的string类型，也就是变量的类型字符串。<br> 用法：gettypt($变量)</p>
+<pre><code>settype($变量，要转换的数据类型)
+</code></pre><p> isset()用来判断一个变量是否存在，返回的是布尔值true或false<br> unset()用来销毁一个变量（如果变量存在则销毁，如果不存在此函数不发挥作用）</p>
+</li>
+</ul>
+<pre><code>empty()用来判断一个变量的值是否为空，如果为空则为true否则为false。
+换句话说，&quot;&quot;、0、&quot;0&quot;、NULL、FALSE、array()、var $var; 以及没有任何属性的对象都将被认为是空的
+
+PHP还提供了一些特定类型的测试函数。每一个函数都使用一个变量座位其参数，并且返回true或false。
+is_array()、is_double()、is_float()、is_real()、is_long()、is_int()、is_integer()、is_string()、is_object()、is_resource()、is_null()、is_numeric() 
+
+可以通过调用一个函数来实现转换变量数据类型的目的。
+intval()、floatval()、strval();
+注意：在浏览器中如果是真（true），返回1，如果是假（false），返回空（什么都不返回）
+</code></pre><h2 id="emsp-08-php常量"><a href="#emsp-08-php常量" class="headerlink" title="&emsp; 08.php常量"></a>&emsp; 08.php常量</h2><h3 id="常量一旦被定义之后，就不能再次更改。"><a href="#常量一旦被定义之后，就不能再次更改。" class="headerlink" title="常量一旦被定义之后，就不能再次更改。"></a>常量一旦被定义之后，就不能再次更改。</h3><h3 id="语法：define（“常量名”，常量值）"><a href="#语法：define（“常量名”，常量值）" class="headerlink" title="语法：define（“常量名”，常量值）"></a>语法：define（“常量名”，常量值）</h3><p>###&emsp;&emsp;&emsp; define(“TOTAL”,199);</p>
+<h3 id="除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo-命令。"><a href="#除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo-命令。" class="headerlink" title="除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo()命令。"></a>除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo()命令。</h3><h3 id="变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。"><a href="#变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。" class="headerlink" title="变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。"></a>变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。</h3><h2 id="emsp-09-php中单双引号的区别"><a href="#emsp-09-php中单双引号的区别" class="headerlink" title="&emsp; 09.php中单双引号的区别"></a>&emsp; 09.php中单双引号的区别</h2><h3 id="emsp-双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值"><a href="#emsp-双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值" class="headerlink" title="&emsp; 双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值"></a>&emsp; 双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值</h3><h3 id="emsp-双引号可以解析转义字符，如-n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）"><a href="#emsp-双引号可以解析转义字符，如-n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）" class="headerlink" title="&emsp; 双引号可以解析转义字符，如\n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）"></a>&emsp; 双引号可以解析转义字符，如\n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）</h3><h3 id="emsp-单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号"><a href="#emsp-单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号" class="headerlink" title="&emsp; 单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号"></a>&emsp; 单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号</h3>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP学习-基本知识/">PHP学习--基本知识</a></li></ul>
+	</div>
+
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/10/13/php/PHP--基础学习/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="PHP basic">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-js/js数组对象" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
