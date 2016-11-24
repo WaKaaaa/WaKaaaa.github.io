@@ -192,11 +192,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-php/php-简单的随机图像验证码" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-算法/java算法-分治法-合并排序" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/16/php/php-简单的随机图像验证码/" class="article-date">
-  	<time datetime="2016-11-16T12:36:43.000Z" itemprop="datePublished">2016-11-16</time>
+      <a href="/2016/11/23/算法/java算法-分治法-合并排序/" class="article-date">
+  	<time datetime="2016-11-23T07:55:09.000Z" itemprop="datePublished">2016-11-23</time>
 </a>
     </div>
   
@@ -209,8 +209,8 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/16/php/php-简单的随机图像验证码/">
-        php学习--简单的随机图像验证码
+      <a class="article-title" href="/2016/11/23/算法/java算法-分治法-合并排序/">
+        java算法学习--分治法--合并排序
         
       </a>
     </h1>
@@ -221,349 +221,67 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h2><pre><code>ini_set(&quot;error_reporting&quot;, &quot;E_ALL &amp; ~E_NOTICE&quot;);
-for ($i=0;$i&lt;4;$i++) {
-    $nmsg .= dechex(mt_rand(0,15));
+        <h3 id="基本思想：-将待排序的元素分成大致相同的两个子集合，分别对两个子集合进行排序，最终将排好序的子集合合并称为所要求得排好序的集合"><a href="#基本思想：-将待排序的元素分成大致相同的两个子集合，分别对两个子集合进行排序，最终将排好序的子集合合并称为所要求得排好序的集合" class="headerlink" title="基本思想： 将待排序的元素分成大致相同的两个子集合，分别对两个子集合进行排序，最终将排好序的子集合合并称为所要求得排好序的集合"></a>基本思想： 将待排序的元素分成大致相同的两个子集合，分别对两个子集合进行排序，最终将排好序的子集合合并称为所要求得排好序的集合</h3><h3 id="算法如下："><a href="#算法如下：" class="headerlink" title="算法如下："></a>算法如下：</h3><pre><code>public class Mergesort {
+// 合并算法
+public static void merge(int[] a, int low, int mid, int high) {// 对两组已经排序的数组进行合并，low是第一个元素的下标，high是最后一个元素的下标
+    int[] b = new int[high - low + 1]; // 临时数组，存储个数为high - low +
+                                        // 1个数据。这个存储的是排好序的元素
+    int s = low; // 这里s = 0
+    int t = mid + 1; // t = 4+1 = 5
+    int k = 0; // k是将要装入b[]中的元素
+    // 把较小的数先移到新数组
+    while (s &lt;= mid &amp;&amp; t &lt;= high) { // 直至前半部或后半部数据完全录入暂存
+        if (a[s] &lt;= a[t]) // 如果前半部的第一个数据数据小于后半部的第一个数据，前半部数据暂存如b[]中
+            b[k++] = a[s++]; // b[1] = a[1] = 34
+        else
+            // 否则前半部分的第一个数据大于后半部的第一个数据，后半部第一个数据数据暂存入b[]中，并下标自加
+            b[k++] = a[t++];
+    }
+    // 把左边剩余的数移入数组,也就是右边的已经比较完了
+    while (s &lt;= mid)
+        // 取元素放入b中
+        b[k++] = a[s++];
+    // 把右边剩余的数移入数组,right后边的数组已经比较完
+    while (t &lt;= high)
+        b[k++] = a[t++];
+    for (int i = 0; i &lt; b.length; i++) { // 将暂存的数据重新填充至array[low]--array[high]中
+        a[low + i] = b[i]; // 将b[]中的元素放入到a[]中
+    }
 }
 
-header(&apos;Content-Type: image/png&apos;);
-$im = imagecreatetruecolor(75,25);
-$blue = imagecolorallocate($im,0,102,255);
-$white = imagecolorallocate($im,255,255,255);
-imagefill($im,0,0,$blue);
-imagestring($im,5,20,5,$nmsg,$white);    //将四位验证码加入到图片中去
-imagepng($im);
-imagedestroy($im);
-</code></pre><h2 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h2><h3 id="思路：首先生成四位随机的数字字母，这里可以用十六进制数字表示，然后将这四位随机数放在我们已经写好的图片里即可"><a href="#思路：首先生成四位随机的数字字母，这里可以用十六进制数字表示，然后将这四位随机数放在我们已经写好的图片里即可" class="headerlink" title="思路：首先生成四位随机的数字字母，这里可以用十六进制数字表示，然后将这四位随机数放在我们已经写好的图片里即可"></a>思路：首先生成四位随机的数字字母，这里可以用十六进制数字表示，然后将这四位随机数放在我们已经写好的图片里即可</h3><h3 id="生成四位数字"><a href="#生成四位数字" class="headerlink" title="生成四位数字"></a>生成四位数字</h3><pre><code>for ($i=0;$i&lt;4;$i++) {
-    $nmsg .= dechex(mt_rand(0,15));
+// 分割算法
+public static void mergesort(int a[], int low, int high) {// 对数组进行递归排序
+    int mid;
+    if (low &lt; high) { // 至少有两个元素
+        mid = (low + high) / 2; // 取中间点
+        mergesort(a, low, mid); // 再对左边分割，直至只剩下一个元素
+        mergesort(a, mid + 1, high); // 再对右边分割，成为单个元素
+        // 已经分割完毕，此时是单个元素
+        merge(a, low, mid, high); // 调用 合并两个已经排好序的数组
+        System.out.println(&quot;low:&quot; + low);
+        System.out.println(&quot;high:&quot; + high);
+
+    }
 }
-// mt_rand(范围可选) 生成一个更好的随机数
-// dechex()将十进制的随机数转化成十六进制
-</code></pre><h3 id="在这里会产生一个报错：Notice-Undefined-variable-nmsg-in-D-xampp1-htdocs-PHP-Basic14-demo2-php-on-line-4，修改的方法："><a href="#在这里会产生一个报错：Notice-Undefined-variable-nmsg-in-D-xampp1-htdocs-PHP-Basic14-demo2-php-on-line-4，修改的方法：" class="headerlink" title="在这里会产生一个报错：Notice: Undefined variable: nmsg in D:\xampp1\htdocs\PHP\Basic14\demo2.php on line 4，修改的方法："></a>在这里会产生一个报错：<code>Notice: Undefined variable: nmsg in D:\xampp1\htdocs\PHP\Basic14\demo2.php on line 4</code>，修改的方法：</h3><h3 id="1-修改php-ini配置文件，将error-reporting-E-ALL修改为error-reporting-E-ALL-amp-E-NORICE-原理是减弱了PHP的敏感程度，再次遇到这种问题不会报错"><a href="#1-修改php-ini配置文件，将error-reporting-E-ALL修改为error-reporting-E-ALL-amp-E-NORICE-原理是减弱了PHP的敏感程度，再次遇到这种问题不会报错" class="headerlink" title="1. 修改php.ini配置文件，将error_reporting = E_ALL修改为error_reporting = E_ALL &amp;~E_NORICE,原理是减弱了PHP的敏感程度，再次遇到这种问题不会报错"></a>1. 修改php.ini配置文件，将<code>error_reporting = E_ALL</code>修改为<code>error_reporting = E_ALL &amp;~E_NORICE</code>,原理是减弱了PHP的敏感程度，再次遇到这种问题不会报错</h3><h3 id="2-在PHP头部加入代码：ini-set-quot-error-reporting-quot-quot-E-ALL-amp-E-NOTICE-quot-，也可以解决这类问题"><a href="#2-在PHP头部加入代码：ini-set-quot-error-reporting-quot-quot-E-ALL-amp-E-NOTICE-quot-，也可以解决这类问题" class="headerlink" title="2. 在PHP头部加入代码：ini_set(&quot;error_reporting&quot;, &quot;E_ALL &amp; ~E_NOTICE&quot;);，也可以解决这类问题"></a>2. 在PHP头部加入代码：<code>ini_set(&quot;error_reporting&quot;, &quot;E_ALL &amp; ~E_NOTICE&quot;);</code>，也可以解决这类问题</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
 
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/16/php/php-简单的随机图像验证码/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--简单的随机图像验证码">
-         &nbsp;
-        view
-    </span>
-</div>
+public static void main(String[] args) {
+    int[] a = { 4, 34, 2, 56, 5, 9, 6, 45, 8 };
+    System.out.println(&quot;排序前数组为：&quot;);
+    for (int i = 0; i &lt; a.length; i++) {
+        System.out.print(a[i] + &quot; &quot;);
+        // System.out.println();
 
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
+    }
+    mergesort(a, 0, a.length - 1);
+    // System.out.println(a.length); 10
 
-
-
-
-
-
-
-  
-    <article id="post-php/php-处理图像" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/16/php/php-处理图像/" class="article-date">
-  	<time datetime="2016-11-16T10:54:33.000Z" itemprop="datePublished">2016-11-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/16/php/php-处理图像/">
-        php学习--处理图像
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-为什么用PHP处理图像："><a href="#1-为什么用PHP处理图像：" class="headerlink" title="1. 为什么用PHP处理图像："></a>1. 为什么用PHP处理图像：</h2><h3 id="传统的web开发在页面中加入图片一般用HTML-的标记来实现，在PHP中为了提高页面的传输速率，便于对数据统计，有时采用GD2库或者jpgraph类库来绘制"><a href="#传统的web开发在页面中加入图片一般用HTML-的标记来实现，在PHP中为了提高页面的传输速率，便于对数据统计，有时采用GD2库或者jpgraph类库来绘制" class="headerlink" title="传统的web开发在页面中加入图片一般用HTML 的标记来实现，在PHP中为了提高页面的传输速率，便于对数据统计，有时采用GD2库或者jpgraph类库来绘制"></a>传统的web开发在页面中加入图片一般用HTML 的<img>标记来实现，在PHP中为了提高页面的传输速率，便于对数据统计，有时采用GD2库或者jpgraph类库来绘制</h3><h2 id="2-什么是GB2库"><a href="#2-什么是GB2库" class="headerlink" title="2. 什么是GB2库"></a>2. 什么是GB2库</h2><h3 id="gd2函数库是一个公开源码的用于创建图形图像的函数库，该函数库由C语言编写，可以在Perl，PHP等多种语言中调试运用。PHP使用GD2库可以制作统计图，为图片添加水印及动态图表等"><a href="#gd2函数库是一个公开源码的用于创建图形图像的函数库，该函数库由C语言编写，可以在Perl，PHP等多种语言中调试运用。PHP使用GD2库可以制作统计图，为图片添加水印及动态图表等" class="headerlink" title="gd2函数库是一个公开源码的用于创建图形图像的函数库，该函数库由C语言编写，可以在Perl，PHP等多种语言中调试运用。PHP使用GD2库可以制作统计图，为图片添加水印及动态图表等"></a>gd2函数库是一个公开源码的用于创建图形图像的函数库，该函数库由C语言编写，可以在Perl，PHP等多种语言中调试运用。PHP使用GD2库可以制作统计图，为图片添加水印及动态图表等</h3><h2 id="3-GD2创建画布的步骤"><a href="#3-GD2创建画布的步骤" class="headerlink" title="3. GD2创建画布的步骤"></a>3. GD2创建画布的步骤</h2><h3 id="开发人员可以在已有的图像上绘制，也可以在没有任何素材的基础上绘制，在这种没有素材的情况下首先要创建画布，之后的所有操作都将依照所创建的画布运行"><a href="#开发人员可以在已有的图像上绘制，也可以在没有任何素材的基础上绘制，在这种没有素材的情况下首先要创建画布，之后的所有操作都将依照所创建的画布运行" class="headerlink" title="开发人员可以在已有的图像上绘制，也可以在没有任何素材的基础上绘制，在这种没有素材的情况下首先要创建画布，之后的所有操作都将依照所创建的画布运行"></a>开发人员可以在已有的图像上绘制，也可以在没有任何素材的基础上绘制，在这种没有素材的情况下首先要创建画布，之后的所有操作都将依照所创建的画布运行</h3><h3 id="第一步：设置文件的MIME类型"><a href="#第一步：设置文件的MIME类型" class="headerlink" title="第一步：设置文件的MIME类型"></a>第一步：设置文件的MIME类型</h3><pre><code>header(&apos;Content-Type: image/png;&apos;);
-</code></pre><h3 id="一般生成的图像类型有-png-jpg-jpeg-gif-bmg"><a href="#一般生成的图像类型有-png-jpg-jpeg-gif-bmg" class="headerlink" title="一般生成的图像类型有 png  jpg(jpeg)  gif  bmg"></a>一般生成的图像类型有 png  jpg(jpeg)  gif  bmg</h3><h3 id="这句话的意思是输出网页的内容是png格式的图片"><a href="#这句话的意思是输出网页的内容是png格式的图片" class="headerlink" title="这句话的意思是输出网页的内容是png格式的图片"></a>这句话的意思是输出网页的内容是png格式的图片</h3><h3 id="注-1：在网页制作中，默认的输出格式是：text-html，所以一般的网页不需要写输出格式"><a href="#注-1：在网页制作中，默认的输出格式是：text-html，所以一般的网页不需要写输出格式" class="headerlink" title="注:1：在网页制作中，默认的输出格式是：text/html，所以一般的网页不需要写输出格式"></a>注:1：在网页制作中，默认的输出格式是：text/html，所以一般的网页不需要写输出格式</h3><h3 id="注意2：header之前不能有任何形式的输出，空格也不行"><a href="#注意2：header之前不能有任何形式的输出，空格也不行" class="headerlink" title="注意2：header之前不能有任何形式的输出，空格也不行"></a>注意2：header之前不能有任何形式的输出，空格也不行</h3><h3 id="第二步：imagecreatetruecolor-新建一个新真彩色图像，返回一个图像标识，大小为x-y的黑色图像"><a href="#第二步：imagecreatetruecolor-新建一个新真彩色图像，返回一个图像标识，大小为x-y的黑色图像" class="headerlink" title="第二步：imagecreatetruecolor()新建一个新真彩色图像，返回一个图像标识，大小为x*y的黑色图像"></a>第二步：imagecreatetruecolor()新建一个新真彩色图像，返回一个图像标识，大小为x*y的黑色图像</h3><pre><code>$im = imagecreatetruecolor(200, 200);    // 传入两个参数：宽和高，单位是像素
-</code></pre><h3 id="第三步：imagecolorallocate-建好的图像，红，绿，蓝-为一个图像分配颜色-（其中红绿蓝的颜色取值为0到255）"><a href="#第三步：imagecolorallocate-建好的图像，红，绿，蓝-为一个图像分配颜色-（其中红绿蓝的颜色取值为0到255）" class="headerlink" title="第三步：imagecolorallocate(建好的图像，红，绿，蓝)为一个图像分配颜色 （其中红绿蓝的颜色取值为0到255）"></a>第三步：imagecolorallocate(建好的图像，红，绿，蓝)为一个图像分配颜色 （其中红绿蓝的颜色取值为0到255）</h3><pre><code>$blue = imagecolorallocate($im,0,102,255);    //这里创建一个蓝色背景
-</code></pre><h3 id="imagefill-图像，横坐标，纵坐标，颜色-：区域填充"><a href="#imagefill-图像，横坐标，纵坐标，颜色-：区域填充" class="headerlink" title="imagefill(图像，横坐标，纵坐标，颜色) ：区域填充"></a>imagefill(图像，横坐标，纵坐标，颜色) ：区域填充</h3><pre><code>imagefill($im,0,0,$blue);
-</code></pre><h3 id="第四步：在蓝色的背景上输入一些线条，文字等"><a href="#第四步：在蓝色的背景上输入一些线条，文字等" class="headerlink" title="第四步：在蓝色的背景上输入一些线条，文字等"></a>第四步：在蓝色的背景上输入一些线条，文字等</h3><pre><code>$white = imagecolorallocate($im,255,255,255);
-//imageline -- 画一条线段
-//imageline(图像，起始横坐标，起始纵坐标，终止横坐标，终止纵坐标，颜色)
-imageline($im,0,0,200,200,$white);
-imageline($im,200,0,0,200,$white);
-//imagestring -- 水平地画一行字符串
-imagestring($im,5,80,20,&apos;Hello World&apos;,$white);
-</code></pre><h3 id="第五步：输出最终图形"><a href="#第五步：输出最终图形" class="headerlink" title="第五步：输出最终图形"></a>第五步：输出最终图形</h3><pre><code>imagepng($im);
-//这一步是必须的，很重要的，不写的话会出现错误
-// 以 PNG 格式将图像输出到浏览器或文件
-</code></pre><h3 id="第六步：将所有的资源全部清空"><a href="#第六步：将所有的资源全部清空" class="headerlink" title="第六步：将所有的资源全部清空"></a>第六步：将所有的资源全部清空</h3><pre><code>imagedestroy($im);    
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/16/php/php-处理图像/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--处理图像">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-php/php-操作中文字符串" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/16/php/php-操作中文字符串/" class="article-date">
-  	<time datetime="2016-11-16T07:43:13.000Z" itemprop="datePublished">2016-11-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/16/php/php-操作中文字符串/">
-        php学习--操作中文字符串
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="必须使用mb-的是mb-strlen-mb-strpos-mb-substr"><a href="#必须使用mb-的是mb-strlen-mb-strpos-mb-substr" class="headerlink" title="必须使用mb_的是mb_strlen(),mb_strpos(),mb_substr()"></a>必须使用mb_的是<code>mb_strlen()</code>,<code>mb_strpos()</code>,<code>mb_substr()</code></h3><h3 id="strlen-求字符串的长度"><a href="#strlen-求字符串的长度" class="headerlink" title="strlen()求字符串的长度"></a>strlen()求字符串的长度</h3><h3 id="mb-strlen-求中文字符串的长度，一个汉字代表一个字符"><a href="#mb-strlen-求中文字符串的长度，一个汉字代表一个字符" class="headerlink" title="mb_strlen()求中文字符串的长度，一个汉字代表一个字符"></a>mb_strlen()求中文字符串的长度，一个汉字代表一个字符</h3><h3 id="这里：gbk和Utf8都说变长编码"><a href="#这里：gbk和Utf8都说变长编码" class="headerlink" title="这里：gbk和Utf8都说变长编码"></a>这里：gbk和Utf8都说变长编码</h3><h3 id="对于utf8，一个汉字可能是2-3个字节，不一定就是3个字节"><a href="#对于utf8，一个汉字可能是2-3个字节，不一定就是3个字节" class="headerlink" title="对于utf8，一个汉字可能是2-3个字节，不一定就是3个字节"></a>对于utf8，一个汉字可能是2-3个字节，不一定就是3个字节</h3><h3 id="一般在gbk下是两个字节，在Utf8下是3个字节"><a href="#一般在gbk下是两个字节，在Utf8下是3个字节" class="headerlink" title="一般在gbk下是两个字节，在Utf8下是3个字节"></a>一般在gbk下是两个字节，在Utf8下是3个字节</h3><pre><code>$str1 = &apos;我叫jewel&apos;;
-echo strlen($str1).&apos;&lt;br&gt;&apos;;    //11，一个汉字代表三个字符
-echo mb_strlen($str1,&apos;utf8&apos;);    //7
-// utf8可以省略，那么为内部编码方式
-</code></pre><h3 id="strstr-求某字符串到结尾的字符，返回在这个字符首次出现的位置开始到结尾组成的字符串"><a href="#strstr-求某字符串到结尾的字符，返回在这个字符首次出现的位置开始到结尾组成的字符串" class="headerlink" title="strstr()求某字符串到结尾的字符，返回在这个字符首次出现的位置开始到结尾组成的字符串"></a>strstr()求某字符串到结尾的字符，返回在这个字符首次出现的位置开始到结尾组成的字符串</h3><h3 id="这个函数区分大小写，用stristr-不区分大小写"><a href="#这个函数区分大小写，用stristr-不区分大小写" class="headerlink" title="这个函数区分大小写，用stristr()不区分大小写"></a>这个函数区分大小写，用stristr()不区分大小写</h3><h3 id="这个中文英文影响不大"><a href="#这个中文英文影响不大" class="headerlink" title="这个中文英文影响不大"></a>这个中文英文影响不大</h3><pre><code>$str2 = &apos;he is a good boy&apos;;
-echo strstr($str2, &apos;i&apos;);    //is a good boy
-$str3 = &apos;我爱我的家乡&apos;;
-echo mb_strstr($str3, &apos;的&apos;);
-echo strstr($str3, &apos;我&apos;);
-</code></pre><h3 id="相对应的是strpos-，查找字符首次出现的位置"><a href="#相对应的是strpos-，查找字符首次出现的位置" class="headerlink" title="相对应的是strpos()，查找字符首次出现的位置"></a>相对应的是strpos()，查找字符首次出现的位置</h3><pre><code>$str4 = &apos;我爱我的家乡&apos;;
-echo strpos($str4, &apos;的&apos;);    //这种情况只能出现在3的倍数的字符串，比如‘爱’在第三位，‘的’在地9位，这时候就需要用mb_strpos()了
-echo mb_strpos($str4,&apos;爱&apos;);    //1
-echo mb_strpos($str4,&apos;的&apos;);    //3 这时候将一个汉字转化为一个字符了
-</code></pre><h3 id="substr-字符串，开始位置，子串长度（可选）"><a href="#substr-字符串，开始位置，子串长度（可选）" class="headerlink" title="substr(字符串，开始位置，子串长度（可选）)"></a>substr(字符串，开始位置，子串长度（可选）)</h3><pre><code>$str5 = &apos;我爱我的家乡&apos;;
-echo substr($str5, 1,2);    //乱码，无法取
-echo mb_substr($str5, 1,2);    //爱我
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/16/php/php-操作中文字符串/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--操作中文字符串">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-php/php-字符串比较" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/16/php/php-字符串比较/" class="article-date">
-  	<time datetime="2016-11-16T06:11:51.000Z" itemprop="datePublished">2016-11-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/16/php/php-字符串比较/">
-        php学习--字符串比较
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一：总结"><a href="#一：总结" class="headerlink" title="一：总结"></a>一：总结</h2><h3 id="1-strcmp-比较字符串的大小，区分大小写，对ascall码的比较"><a href="#1-strcmp-比较字符串的大小，区分大小写，对ascall码的比较" class="headerlink" title="1. strcmp()比较字符串的大小，区分大小写，对ascall码的比较"></a>1. strcmp()比较字符串的大小，<code>区分大小写</code>，对ascall码的比较</h3><h3 id="2-strcasecmp-比较字符串大小，不区分大小写，对ascall码的比较"><a href="#2-strcasecmp-比较字符串大小，不区分大小写，对ascall码的比较" class="headerlink" title="2. strcasecmp()比较字符串大小，不区分大小写，对ascall码的比较"></a>2. strcasecmp()比较字符串大小，<code>不区分大小写</code>，对ascall码的比较</h3><h3 id="3-strnatcmp-按照数字的顺序进行排序"><a href="#3-strnatcmp-按照数字的顺序进行排序" class="headerlink" title="3. strnatcmp()按照数字的顺序进行排序"></a>3. strnatcmp()按照数字的顺序进行排序</h3><h3 id="4-strnatcasecmp-不区分大小写的自然排序"><a href="#4-strnatcasecmp-不区分大小写的自然排序" class="headerlink" title="4. strnatcasecmp()不区分大小写的自然排序"></a>4. strnatcasecmp()不区分大小写的自然排序</h3><h3 id="5-strspn-计算字符串中全部字符都存在于指定字符集合中的第一段子串的长度"><a href="#5-strspn-计算字符串中全部字符都存在于指定字符集合中的第一段子串的长度" class="headerlink" title="5. strspn()计算字符串中全部字符都存在于指定字符集合中的第一段子串的长度"></a>5. strspn()计算字符串中全部字符都存在于指定字符集合中的第一段子串的长度</h3><h3 id="6-strlen-函数测试字符串的长度"><a href="#6-strlen-函数测试字符串的长度" class="headerlink" title="6. strlen()函数测试字符串的长度"></a>6. strlen()函数测试字符串的长度</h3><h3 id="7-substr-count-字符串，待检验的字符串-返回一个字符串在另一个字符串中出现的次数。"><a href="#7-substr-count-字符串，待检验的字符串-返回一个字符串在另一个字符串中出现的次数。" class="headerlink" title="7. substr_count(字符串，待检验的字符串)返回一个字符串在另一个字符串中出现的次数。"></a>7. substr_count(字符串，待检验的字符串)返回一个字符串在另一个字符串中出现的次数。</h3><h3 id="8-strstr-用于在一个较长的字符串专供查找匹配的字符串或字符"><a href="#8-strstr-用于在一个较长的字符串专供查找匹配的字符串或字符" class="headerlink" title="8. strstr()用于在一个较长的字符串专供查找匹配的字符串或字符"></a>8. strstr()用于在一个较长的字符串专供查找匹配的字符串或字符</h3><h3 id="9-stristr-是不区分大小写的"><a href="#9-stristr-是不区分大小写的" class="headerlink" title="9. stristr()是不区分大小写的"></a>9. stristr()是不区分大小写的</h3><h3 id="10-strpos-返回字符从大的字符串的第几个位置出现，从0开始"><a href="#10-strpos-返回字符从大的字符串的第几个位置出现，从0开始" class="headerlink" title="10. strpos()返回字符从大的字符串的第几个位置出现，从0开始"></a>10. strpos()返回字符从大的字符串的第几个位置出现，从0开始</h3><h3 id="11-strrpos-返回第一次出现字符的倒数第几个的位置"><a href="#11-strrpos-返回第一次出现字符的倒数第几个的位置" class="headerlink" title="11. strrpos()返回第一次出现字符的倒数第几个的位置"></a>11. strrpos()返回第一次出现字符的倒数第几个的位置</h3><h2 id="详解："><a href="#详解：" class="headerlink" title="详解："></a>详解：</h2><h3 id="1-strcmp-是对字符ASCALL码的比较，区分大小写"><a href="#1-strcmp-是对字符ASCALL码的比较，区分大小写" class="headerlink" title="1.strcmp()是对字符ASCALL码的比较，区分大小写"></a>1.strcmp()是对字符ASCALL码的比较，区分大小写</h3><h3 id="第一个字符小于第二个字符返回-1"><a href="#第一个字符小于第二个字符返回-1" class="headerlink" title="第一个字符小于第二个字符返回 -1"></a>第一个字符小于第二个字符返回 -1</h3><h3 id="第一个字符等于第二个字符返回-0"><a href="#第一个字符等于第二个字符返回-0" class="headerlink" title="第一个字符等于第二个字符返回 0"></a>第一个字符等于第二个字符返回 0</h3><h3 id="第一个字符大于第二个字符返回-1"><a href="#第一个字符大于第二个字符返回-1" class="headerlink" title="第一个字符大于第二个字符返回 1"></a>第一个字符大于第二个字符返回 1</h3><pre><code>echo strcmp(&apos;a&apos;, &apos;b&apos;);    //返回-1
-</code></pre><h3 id="2-strcasecmp-不区分大小写的比较，对ASCALL码比较"><a href="#2-strcasecmp-不区分大小写的比较，对ASCALL码比较" class="headerlink" title="2. strcasecmp()不区分大小写的比较，对ASCALL码比较"></a>2. strcasecmp()不区分大小写的比较，对ASCALL码比较</h3><pre><code>echo strcasecmp(&apos;a&apos;, &apos;A&apos;);    //不区分大小写，返回0
-echo strcmp(&apos;a&apos;, &apos;A&apos;);    //区分大小写，返回1
-</code></pre><h3 id="A的ascall码是65，a是97"><a href="#A的ascall码是65，a是97" class="headerlink" title="A的ascall码是65，a是97"></a>A的ascall码是65，a是97</h3><h3 id="3-strnatcmp-按照数字的顺序进行排序-1"><a href="#3-strnatcmp-按照数字的顺序进行排序-1" class="headerlink" title="3. strnatcmp()按照数字的顺序进行排序"></a>3. strnatcmp()按照数字的顺序进行排序</h3><h3 id="默认情况下是对ASCALL的排序，比如2和10比较时，2大于10"><a href="#默认情况下是对ASCALL的排序，比如2和10比较时，2大于10" class="headerlink" title="默认情况下是对ASCALL的排序，比如2和10比较时，2大于10"></a>默认情况下是对ASCALL的排序，比如2和10比较时，2大于10</h3><pre><code>echo strnatcmp(&apos;2&apos;, &apos;10&apos;);    //按照数字排序，返回-1
-echo strcmp(&apos;2&apos;, &apos;10&apos;);        //这个是按照ascall码排序，返回1
-</code></pre><h3 id="4-strnatcasecmp-是不区分大小写的自然排序"><a href="#4-strnatcasecmp-是不区分大小写的自然排序" class="headerlink" title="4. strnatcasecmp()是不区分大小写的自然排序"></a>4. strnatcasecmp()是不区分大小写的自然排序</h3><h3 id="5-strapn-待检查的字符串，检查字符列表，【待检查字符串开始的位置】，【待检查字符串检查的长度】"><a href="#5-strapn-待检查的字符串，检查字符列表，【待检查字符串开始的位置】，【待检查字符串检查的长度】" class="headerlink" title="5. strapn(待检查的字符串，检查字符列表，【待检查字符串开始的位置】，【待检查字符串检查的长度】)"></a>5. strapn(待检查的字符串，检查字符列表，【待检查字符串开始的位置】，【待检查字符串检查的长度】)</h3><h3 id="计算字符串中全部字符都存在于指定字符集合中的第一段子串的长度"><a href="#计算字符串中全部字符都存在于指定字符集合中的第一段子串的长度" class="headerlink" title="计算字符串中全部字符都存在于指定字符集合中的第一段子串的长度"></a>计算字符串中全部字符都存在于指定字符集合中的<code>第一段子串的长度</code></h3><h3 id="待检查的字符串：小字符串"><a href="#待检查的字符串：小字符串" class="headerlink" title="待检查的字符串：小字符串"></a>待检查的字符串：小字符串</h3><h3 id="检查字符串列表：大字符串，从这个里边搜索小串是否存在"><a href="#检查字符串列表：大字符串，从这个里边搜索小串是否存在" class="headerlink" title="检查字符串列表：大字符串，从这个里边搜索小串是否存在"></a>检查字符串列表：大字符串，从这个里边搜索小串是否存在</h3><h3 id="待检查字符串开始的位置，-待检查字符串检查的长度，-可选可不选"><a href="#待检查字符串开始的位置，-待检查字符串检查的长度，-可选可不选" class="headerlink" title="待检查字符串开始的位置， 待检查字符串检查的长度， 可选可不选"></a>待检查字符串开始的位置， 待检查字符串检查的长度， 可选可不选</h3><pre><code>echo strspn(&apos;boy&apos;,&apos;he is a good boy boy&apos;);    //返回3
-echo strspn(&apos;d&apos;,&apos;he is a good boy boy&apos;);    //返回1，第一段子串中有一个d
-echo strspn(&apos;yc60&apos;,&apos;yc60.com@gmail.com&apos;,1,2);    //从c6中检查出有两个字符符合，从第二个字符开始，查找两个长度的字符串，看看这一段有几个符合的字符
-</code></pre><h3 id="6-strlen-函数测试字符串的长度-1"><a href="#6-strlen-函数测试字符串的长度-1" class="headerlink" title="6. strlen()函数测试字符串的长度"></a>6. strlen()函数测试字符串的长度</h3><pre><code>echo strlen(&apos;hello world&apos;);    //11
-</code></pre><h3 id="7-substr-count-字符串，待检验的字符串-返回一个字符串在另一个字符串中出现的次数。-1"><a href="#7-substr-count-字符串，待检验的字符串-返回一个字符串在另一个字符串中出现的次数。-1" class="headerlink" title="7. substr_count(字符串，待检验的字符串)返回一个字符串在另一个字符串中出现的次数。"></a>7. substr_count(字符串，待检验的字符串)返回一个字符串在另一个字符串中出现的次数。</h3><pre><code>echo substr_count(&apos;hello world&apos;, &apos;o&apos;);    //o在字符串中出现两次
-echo substr_count(&apos;o&apos;,&apos;hello world&apos;);    //hello world在o中出现0次
-</code></pre><h2 id="查找和替换字符串"><a href="#查找和替换字符串" class="headerlink" title="查找和替换字符串"></a>查找和替换字符串</h2><h3 id="8-strstr-用于在一个较长的字符串专供查找匹配的字符串或字符，从第一次找到这个字符开始算起，返回的是从待检验的字符往后的子字符串，strchr-是他的别名"><a href="#8-strstr-用于在一个较长的字符串专供查找匹配的字符串或字符，从第一次找到这个字符开始算起，返回的是从待检验的字符往后的子字符串，strchr-是他的别名" class="headerlink" title="8. strstr()用于在一个较长的字符串专供查找匹配的字符串或字符，从第一次找到这个字符开始算起，返回的是从待检验的字符往后的子字符串，strchr()是他的别名"></a>8. strstr()用于在一个较长的字符串专供查找匹配的字符串或字符，从第一次找到这个字符开始算起，返回的是从待检验的字符往后的子字符串，strchr()是他的别名</h3><pre><code>echo strstr(&apos;hello world&apos;, &apos;o&apos;);    //o world
-echo strchr(&apos;hello world&apos;, &apos;o&apos;);    //o world
-</code></pre><h3 id="9-stristr-是不区分大小写的-1"><a href="#9-stristr-是不区分大小写的-1" class="headerlink" title="9. stristr()是不区分大小写的"></a>9. stristr()是不区分大小写的</h3><pre><code>echo strstr(&apos;hellO world&apos;, &apos;o&apos;);    //O world
-</code></pre><h3 id="10-strpos-返回字符从大的字符串的第几个位置出现，从0开始-1"><a href="#10-strpos-返回字符从大的字符串的第几个位置出现，从0开始-1" class="headerlink" title="10. strpos()返回字符从大的字符串的第几个位置出现，从0开始"></a>10. strpos()返回字符从大的字符串的第几个位置出现，从0开始</h3><pre><code>echo strpos(&apos;hello world&apos;, &apos;o&apos;);    //从第五个字符开始出现的，返回4
-</code></pre><h3 id="11-strrpos-返回第一次出现字符的倒数第几个的位置-1"><a href="#11-strrpos-返回第一次出现字符的倒数第几个的位置-1" class="headerlink" title="11. strrpos()返回第一次出现字符的倒数第几个的位置"></a>11. strrpos()返回第一次出现字符的倒数第几个的位置</h3><pre><code>echo strrpos(&apos;hello world&apos;, &apos;o&apos;);    //第一次出现o的时候位置的倒序，返回7
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/16/php/php-字符串比较/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--字符串比较">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-php/php-操作子字符串" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/15/php/php-操作子字符串/" class="article-date">
-  	<time datetime="2016-11-15T11:44:08.000Z" itemprop="datePublished">2016-11-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/15/php/php-操作子字符串/">
-        php学习--操作子字符串
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="1-explode-以某个字符分割字符串，返回字串组成的数组"><a href="#1-explode-以某个字符分割字符串，返回字串组成的数组" class="headerlink" title="1. explode()以某个字符分割字符串，返回字串组成的数组"></a>1. explode()以某个字符分割字符串，返回字串组成的数组</h3><h3 id="2-join-将数组中的元素合并成字符串"><a href="#2-join-将数组中的元素合并成字符串" class="headerlink" title="2. join()将数组中的元素合并成字符串"></a>2. join()将数组中的元素合并成字符串</h3><h3 id="3-strtok-标记分割字符串"><a href="#3-strtok-标记分割字符串" class="headerlink" title="3. strtok()标记分割字符串"></a>3. strtok()标记分割字符串</h3><h3 id="4-substr-函数返回字符串的子串，不适合汉字"><a href="#4-substr-函数返回字符串的子串，不适合汉字" class="headerlink" title="4. substr()函数返回字符串的子串，不适合汉字"></a>4. substr()函数返回字符串的子串，<code>不适合汉字</code></h3><h3 id="5-str-aplit-函数将字符串转化为数组，分解成一小段一小段的子字符串，不适合汉字"><a href="#5-str-aplit-函数将字符串转化为数组，分解成一小段一小段的子字符串，不适合汉字" class="headerlink" title="5. str_aplit()函数将字符串转化为数组，分解成一小段一小段的子字符串，不适合汉字"></a>5. str_aplit()函数将字符串转化为数组，分解成一小段一小段的子字符串，<code>不适合汉字</code></h3><h3 id="6-strrev-函数将字符串逆反过来，不适合汉字"><a href="#6-strrev-函数将字符串逆反过来，不适合汉字" class="headerlink" title="6. strrev()函数将字符串逆反过来，不适合汉字"></a>6. strrev()函数将字符串逆反过来，<code>不适合汉字</code></h3><h2 id="详解："><a href="#详解：" class="headerlink" title="详解："></a>详解：</h2><h3 id="1-explode-分割的符号，被分割的字符串-以某个字符分割字符串，返回字串组成的数组"><a href="#1-explode-分割的符号，被分割的字符串-以某个字符分割字符串，返回字串组成的数组" class="headerlink" title="1. explode(分割的符号，被分割的字符串) 以某个字符分割字符串，返回字串组成的数组"></a>1. explode(分割的符号，被分割的字符串) 以某个字符分割字符串，返回字串组成的数组</h3><pre><code>$str = &apos;123456789@qq.com&apos;;
-print_r(explode(&apos;@&apos;, $str));
-</code></pre><h3 id="2-join-合并的符号，被合并的数组-将数组中的元素合并成字符串"><a href="#2-join-合并的符号，被合并的数组-将数组中的元素合并成字符串" class="headerlink" title="2. join(合并的符号，被合并的数组) 将数组中的元素合并成字符串"></a>2. join(合并的符号，被合并的数组) 将数组中的元素合并成字符串</h3><pre><code>$str2 = array(&apos;hello&apos; ,&apos;world&apos;,&apos;!&apos;);
-echo join(&apos; &apos;,$str2);
-</code></pre><h3 id="3-implode-是join的别名，他俩是一样的作用"><a href="#3-implode-是join的别名，他俩是一样的作用" class="headerlink" title="3. implode()是join的别名，他俩是一样的作用"></a>3. implode()是join的别名，他俩是一样的作用</h3><h3 id="4-strtok-标记分割字符串，这个函数的好处是可以使用多个参数来分割字符串"><a href="#4-strtok-标记分割字符串，这个函数的好处是可以使用多个参数来分割字符串" class="headerlink" title="4. strtok()标记分割字符串，这个函数的好处是可以使用多个参数来分割字符串"></a>4. strtok()标记分割字符串，这个函数的好处是可以使用多个参数来分割字符串</h3><pre><code>// 注意：符号的顺序是无所谓的
-// 仅第一次调用strtok的时候使用string参数，后来每次调用 strtok都只使用分隔符号参数（这里指的是,#%），因为他会记住他在字符串中的位置。
-// 如果重新分割新的字符串，就需要再次调用string和strtok函数，来完成初始化工作
-$str3 = &apos;hello, he is %a good # boy&apos;;
-$tok = strtok($str3, &apos;,#&apos;);
-while ($tok) {
-    echo $tok.&apos;&lt;br&gt;&apos;;
-    $tok = strtok(&apos;#,%&apos;);
+    System.out.println(&quot;\n排序后数组为：&quot;);
+    for (int i = 0; i &lt; a.length; i++) {
+        System.out.print(a[i] + &quot; &quot;);
+    }
 }
-</code></pre><h3 id="5-substr-字符串，子字符串开始的下标，子字符串的长度-返回字符串的子串"><a href="#5-substr-字符串，子字符串开始的下标，子字符串的长度-返回字符串的子串" class="headerlink" title="5. substr(字符串，子字符串开始的下标，子字符串的长度) 返回字符串的子串"></a>5. substr(字符串，子字符串开始的下标，子字符串的长度) 返回字符串的子串</h3><pre><code>// 第一个参数是字符串，第二个参数是子字符串开始的下标（从0开始），第三个参数是子字符串的长度（可选），默认是到最后一个字符
-// 注意这个函数不可以分割中文，因为中文是两个字节，这个函数分割的是一个字节
-$str4 = &apos;hello he is a good boy&apos;;
-echo substr($str4, 2, 5);
-</code></pre><h3 id="6-str-aplit-字符串，子字符串的长度-将字符串转化为数组，分解成一小段一小段的子字符串"><a href="#6-str-aplit-字符串，子字符串的长度-将字符串转化为数组，分解成一小段一小段的子字符串" class="headerlink" title="6. str_aplit(字符串，子字符串的长度) 将字符串转化为数组，分解成一小段一小段的子字符串"></a>6. str_aplit(字符串，子字符串的长度) 将字符串转化为数组，分解成一小段一小段的子字符串</h3><pre><code>// 第一个参数是要分解的字符串，第二个参数是每一个字符串的长度（可选），默认是分割成单个的字符数组
-$str5 = &apos;hello he is a good boy&apos;;
-print_r(str_split($str5,2));
-</code></pre><h3 id="7-strrev-函数将字符串逆反过来"><a href="#7-strrev-函数将字符串逆反过来" class="headerlink" title="7. strrev()函数将字符串逆反过来"></a>7. strrev()函数将字符串逆反过来</h3><pre><code>$str6 = &apos;hello he is a good boy&apos;;
-echo strrev($str6);
+
+}
 </code></pre>
       
     </div>
@@ -576,8 +294,8 @@ echo strrev($str6);
       
         
 <div class="counter-tag counter">
-    <span id="/2016/11/15/php/php-操作子字符串/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--操作子字符串">
+    <span id="/2016/11/23/算法/java算法-分治法-合并排序/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="java算法学习--分治法--合并排序">
          &nbsp;
         view
     </span>
@@ -599,11 +317,11 @@ echo strrev($str6);
 
 
   
-    <article id="post-php/php-字符串" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-算法/java算法-分治法-二分搜索技术" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/15/php/php-字符串/" class="article-date">
-  	<time datetime="2016-11-15T11:18:06.000Z" itemprop="datePublished">2016-11-15</time>
+      <a href="/2016/11/23/算法/java算法-分治法-二分搜索技术/" class="article-date">
+  	<time datetime="2016-11-23T06:57:17.000Z" itemprop="datePublished">2016-11-23</time>
 </a>
     </div>
   
@@ -616,8 +334,8 @@ echo strrev($str6);
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/15/php/php-字符串/">
-        php学习--字符串基本操作
+      <a class="article-title" href="/2016/11/23/算法/java算法-分治法-二分搜索技术/">
+        java算法--分治法--二分搜索技术
         
       </a>
     </h1>
@@ -628,40 +346,107 @@ echo strrev($str6);
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="1-trim-清除字符串左右两边的空格"><a href="#1-trim-清除字符串左右两边的空格" class="headerlink" title="1. trim()清除字符串左右两边的空格"></a>1. trim()清除字符串左右两边的空格</h3><h3 id="2-ltrim-清除左边的空格"><a href="#2-ltrim-清除左边的空格" class="headerlink" title="2. ltrim()清除左边的空格"></a>2. ltrim()清除左边的空格</h3><h3 id="3-rtrim-清除右边的空格"><a href="#3-rtrim-清除右边的空格" class="headerlink" title="3. rtrim()清除右边的空格"></a>3. rtrim()清除右边的空格</h3><h3 id="4-nl2br-在字符串所有新行之前插入HTML换行标记（）"><a href="#4-nl2br-在字符串所有新行之前插入HTML换行标记（）" class="headerlink" title="4. nl2br()在字符串所有新行之前插入HTML换行标记（）"></a>4. nl2br()在字符串所有新行之前插入HTML换行标记（<br>）</h3><h3 id="5-htmlspecialchars-将特殊的字符转化成HTML实体"><a href="#5-htmlspecialchars-将特殊的字符转化成HTML实体" class="headerlink" title="5. htmlspecialchars()将特殊的字符转化成HTML实体"></a>5. htmlspecialchars()将特殊的字符转化成HTML实体</h3><h3 id="6-addslaashes-使用反斜杠引用字符串"><a href="#6-addslaashes-使用反斜杠引用字符串" class="headerlink" title="6. addslaashes()使用反斜杠引用字符串"></a>6. addslaashes()使用反斜杠引用字符串</h3><h3 id="7-strtoupper-函数将字符串转换为大写"><a href="#7-strtoupper-函数将字符串转换为大写" class="headerlink" title="7. strtoupper()函数将字符串转换为大写"></a>7. strtoupper()函数将字符串转换为大写</h3><h3 id="8-strtolower-函数将字符串转换成小写"><a href="#8-strtolower-函数将字符串转换成小写" class="headerlink" title="8. strtolower()函数将字符串转换成小写"></a>8. strtolower()函数将字符串转换成小写</h3><h3 id="9-ucfirst-函数将第一个字母转换为大写"><a href="#9-ucfirst-函数将第一个字母转换为大写" class="headerlink" title="9. ucfirst()函数将第一个字母转换为大写"></a>9. ucfirst()函数将第一个字母转换为大写</h3><h3 id="10-ucwords-函数将每个单词第一个字母转换为大写"><a href="#10-ucwords-函数将每个单词第一个字母转换为大写" class="headerlink" title="10. ucwords()函数将每个单词第一个字母转换为大写"></a>10. ucwords()函数将每个单词第一个字母转换为大写</h3><h3 id="11-str-pad-使用另一个字符串填充字符串为指定长度"><a href="#11-str-pad-使用另一个字符串填充字符串为指定长度" class="headerlink" title="11. str_pad()使用另一个字符串填充字符串为指定长度"></a>11. str_pad()使用另一个字符串填充字符串为指定长度</h3><h2 id="一：trim-，ltrim-，rtrim"><a href="#一：trim-，ltrim-，rtrim" class="headerlink" title="一：trim()，ltrim()，rtrim()"></a>一：trim()，ltrim()，rtrim()</h2><pre><code>//  trim()清除字符串左右两边的空格
-$str = &apos;       jewel       &apos;;
-echo trim($str).&apos;&lt;br&gt;&apos;;
-// ltrim()清除左边的空格
-echo ltrim($str).&apos;&lt;br&gt;&apos;;
-// rtrim()清除右边的空格
-echo rtrim($str);
-</code></pre><h2 id="二：nl2br-在字符串所有新行之前插入HTML换行标记（）"><a href="#二：nl2br-在字符串所有新行之前插入HTML换行标记（）" class="headerlink" title="二：nl2br()在字符串所有新行之前插入HTML换行标记（）"></a>二：nl2br()在字符串所有新行之前插入HTML换行标记（<br>）</h2><h3 id="注意转义字符只能包裹在双引号里边，这一点非常重要"><a href="#注意转义字符只能包裹在双引号里边，这一点非常重要" class="headerlink" title="注意转义字符只能包裹在双引号里边，这一点非常重要"></a>注意<code>转义字符只能包裹在双引号里边</code>，这一点非常重要</h3><h3 id="转义字符包括：-t-n-r"><a href="#转义字符包括：-t-n-r" class="headerlink" title="转义字符包括：\t \n \r"></a>转义字符包括：\t \n \r</h3><pre><code>$str1 = &quot;I am Jewel\n hello world&quot;;
-echo nl2br($str1);
-// 打印出：I am Jewel&lt;br/&gt; hello world
+        <h3 id="问题描述：给定已经排好序的n个元素a-0-n-1-，现在要在这n个元素中搜索一个指定的元素x"><a href="#问题描述：给定已经排好序的n个元素a-0-n-1-，现在要在这n个元素中搜索一个指定的元素x" class="headerlink" title="问题描述：给定已经排好序的n个元素a[0:n-1]，现在要在这n个元素中搜索一个指定的元素x"></a>问题描述：给定<code>已经排好序</code>的n个元素a[0:n-1]，现在要在这n个元素中搜索一个指定的元素x</h3><h3 id="问题思路："><a href="#问题思路：" class="headerlink" title="问题思路："></a>问题思路：</h3><h3 id="emsp-1-将n个元素分成个数大致相同的两半，取a-n-2-与x进行比较"><a href="#emsp-1-将n个元素分成个数大致相同的两半，取a-n-2-与x进行比较" class="headerlink" title="&emsp;  1. 将n个元素分成个数大致相同的两半，取a[n/2]与x进行比较"></a>&emsp;  1. 将n个元素分成个数大致相同的两半，取a[n/2]与x进行比较</h3><h3 id="emsp-2-如果x-a-n-2-，找到x，算法结束"><a href="#emsp-2-如果x-a-n-2-，找到x，算法结束" class="headerlink" title="&emsp;  2. 如果x = a[n/2]，找到x，算法结束"></a>&emsp;  2. 如果x = a[n/2]，找到x，算法结束</h3><h3 id="emsp-3-如果x-lt-a-n-2-，则在左边继续搜索x"><a href="#emsp-3-如果x-lt-a-n-2-，则在左边继续搜索x" class="headerlink" title="&emsp;  3. 如果x &lt; a[n/2]，则在左边继续搜索x"></a>&emsp;  3. 如果x &lt; a[n/2]，则在左边继续搜索x</h3><h3 id="emsp-4-如果x-gt-a-n-2-，则在右边继续搜索x"><a href="#emsp-4-如果x-gt-a-n-2-，则在右边继续搜索x" class="headerlink" title="&emsp;  4. 如果x &gt; a[n/2]，则在右边继续搜索x"></a>&emsp;  4. 如果x &gt; a[n/2]，则在右边继续搜索x</h3><h3 id="算法如下："><a href="#算法如下：" class="headerlink" title="算法如下："></a>算法如下：</h3><pre><code>public class binary {
+    public static int binarySearch(int[] a,int n,int x){  
+        //从第0个元素到最后一个
+        int left = 0;
+        int right = n;
+        //找到x所在的位置
+        while(left&lt;=right)
+        {
+            int middle = (left+right)/2;
+            if(x == a[middle]) return middle;
+            if(x&gt;a[middle]) left = middle+1;
+            else right = middle-1;
+        }
+        return -1;
+    }
+    public static void main(String[] args){  
+        // TODO Auto-generated method stub
+        //定义主函数和数组a，调用函数
+        //位数是从0开始的。
+        int[] a={1,2,3,5,7,9,13,18,24,35,63,89};  
+        System.out.println(&quot;13在第&quot;+binarySearch(a,11,13)+&quot;位&quot;);  
+        System.out.println(&quot;18在第&quot;+binarySearch(a,11,18)+&quot;位&quot;);
+        System.out.println(&quot;20在第&quot;+binarySearch(a,11,20)+&quot;位&quot;);
+    }
 
-echo nl2br(&quot;foo isn&apos;t\n bar&quot;);
+}
+结果：
+13在第6位
+18在第7位
+20在第-1位
+</code></pre><h3 id="算法的时间复杂度是：O-logn"><a href="#算法的时间复杂度是：O-logn" class="headerlink" title="算法的时间复杂度是：O(logn)"></a>算法的时间复杂度是：O(logn)</h3>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
 
-$string = &quot;This\r\nis\n\ra\nstring\r&quot;;
-echo nl2br($string);
-</code></pre><h2 id="三：htmlspecialchars-将特殊的字符转化成HTML实体"><a href="#三：htmlspecialchars-将特殊的字符转化成HTML实体" class="headerlink" title="三：htmlspecialchars()将特殊的字符转化成HTML实体"></a>三：htmlspecialchars()将特殊的字符转化成HTML实体</h2><pre><code>$str2 = &apos;&lt;strong&gt;jewel&lt;/strong&gt;&apos;;
-echo htmlspecialchars($str2);
-// 
-// strip_tags从字符串中去掉HTML和PHP标记
-echo strip_tags($str2);
-</code></pre><h2 id="四：addslaashes-使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’-“-null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候"><a href="#四：addslaashes-使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’-“-null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候" class="headerlink" title="四：addslaashes()使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’ “ \ null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候"></a>四：addslaashes()使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’ “ \ null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候</h2><h3 id="对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（-）和NULL字符。"><a href="#对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（-）和NULL字符。" class="headerlink" title="对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（\）和NULL字符。"></a>对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（\）和NULL字符。</h3><h3 id="PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes-将它们重新格式化"><a href="#PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes-将它们重新格式化" class="headerlink" title="PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes()将它们重新格式化"></a>PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes()将它们重新格式化</h3><pre><code>$str3 = &apos;I am a good girl. &quot;this&quot; hello&apos;;
-echo addslashes($str3);
-</code></pre><h2 id="五"><a href="#五" class="headerlink" title="五:"></a>五:</h2><h3 id="strtoupper-函数将字符串转换为大写"><a href="#strtoupper-函数将字符串转换为大写" class="headerlink" title="strtoupper()函数将字符串转换为大写"></a>strtoupper()函数将字符串转换为大写</h3><h3 id="strtolower-函数将字符串转换成小写"><a href="#strtolower-函数将字符串转换成小写" class="headerlink" title="strtolower()函数将字符串转换成小写"></a>strtolower()函数将字符串转换成小写</h3><h3 id="ucfirst-函数将第一个字母转换为大写"><a href="#ucfirst-函数将第一个字母转换为大写" class="headerlink" title="ucfirst()函数将第一个字母转换为大写"></a>ucfirst()函数将第一个字母转换为大写</h3><h3 id="ucwords-函数将每个单词第一个字母转换为大写"><a href="#ucwords-函数将每个单词第一个字母转换为大写" class="headerlink" title="ucwords()函数将每个单词第一个字母转换为大写"></a>ucwords()函数将每个单词第一个字母转换为大写</h3><pre><code>echo strtoupper(&apos;hello wworld&apos;).&apos;&lt;br&gt;&apos;;
-echo strtolower(&apos;HELLO world&apos;);
-echo ucfirst(&apos;hello world&apos;);
-echo ucwords(&apos;hello world&apos;);
-</code></pre><h2 id="六-str-pad-使用另一个字符串填充字符串为指定长度"><a href="#六-str-pad-使用另一个字符串填充字符串为指定长度" class="headerlink" title="六: str_pad()使用另一个字符串填充字符串为指定长度"></a>六: str_pad()使用另一个字符串填充字符串为指定长度</h2><pre><code>// 第二个参数表示总共的位数
-echo str_pad(&quot;hello&quot;, 10).&apos;&lt;br&gt;&apos;;
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/23/算法/java算法-分治法-二分搜索技术/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="java算法--分治法--二分搜索技术">
+         &nbsp;
+        view
+    </span>
+</div>
 
-$input = &quot;Alien&quot;;
-echo str_pad($input, 10).&apos;&lt;br&gt;&apos;;                      // 输出 &quot;Alien     &quot;
-echo str_pad($input, 10, &quot;-=&quot;, STR_PAD_LEFT);  // 输出 &quot;-=-=-Alien&quot;
-echo str_pad($input, 10, &quot;_&quot;, STR_PAD_BOTH);   // 输出 &quot;__Alien___&quot;
-echo str_pad($input, 6 , &quot;___&quot;);               // 输出 &quot;Alien_&quot;
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-算法/java算法-递归与分治策略" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/23/算法/java算法-递归与分治策略/" class="article-date">
+  	<time datetime="2016-11-23T06:48:57.000Z" itemprop="datePublished">2016-11-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/23/算法/java算法-递归与分治策略/">
+        java算法学习--递归与分治策略
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题相互独立且与原问题规模相同。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。"><a href="#1-分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题相互独立且与原问题规模相同。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。" class="headerlink" title="1. 分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题相互独立且与原问题规模相同。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。"></a>1. 分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题<code>相互独立</code>且<code>与原问题规模相同</code>。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。</h3><h3 id="由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。"><a href="#由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。" class="headerlink" title="由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。"></a>由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。</h3><h3 id="在用分治法设计算法时，最好使子问题的规模大致相同，即将一个问题分成大小相等的k个子问题的处理方法是行之有效的。一般设计出的算法是递归算法"><a href="#在用分治法设计算法时，最好使子问题的规模大致相同，即将一个问题分成大小相等的k个子问题的处理方法是行之有效的。一般设计出的算法是递归算法" class="headerlink" title="在用分治法设计算法时，最好使子问题的规模大致相同，即将一个问题分成大小相等的k个子问题的处理方法是行之有效的。一般设计出的算法是递归算法"></a>在用分治法设计算法时，最好<code>使子问题的规模大致相同</code>，即将一个问题分成大小相等的k个子问题的处理方法是行之有效的。一般设计出的算法是递归算法</h3><h3 id="3-递归的概念：直接或者间接地调用自身的算法称为递归算法。"><a href="#3-递归的概念：直接或者间接地调用自身的算法称为递归算法。" class="headerlink" title="3.递归的概念：直接或者间接地调用自身的算法称为递归算法。"></a>3.递归的概念：直接或者间接地调用自身的算法称为递归算法。</h3><h3 id="4-递归函数：用函数自身给出定义的函数称为递归函数。如阶乘函数，斐波那契数列，排列问题，整数划分问题，汉诺塔问题"><a href="#4-递归函数：用函数自身给出定义的函数称为递归函数。如阶乘函数，斐波那契数列，排列问题，整数划分问题，汉诺塔问题" class="headerlink" title="4.递归函数：用函数自身给出定义的函数称为递归函数。如阶乘函数，斐波那契数列，排列问题，整数划分问题，汉诺塔问题"></a>4.递归函数：用函数自身给出定义的函数称为递归函数。如阶乘函数，斐波那契数列，排列问题，整数划分问题，汉诺塔问题</h3><h3 id="算法的设计模式如下："><a href="#算法的设计模式如下：" class="headerlink" title="算法的设计模式如下："></a>算法的设计模式如下：</h3><pre><code>public class Divide_aand_conquer（P） {
+    if(|p| &lt;= n0) adhoc(p);         // |p|表示问题P的规模，n0是一个阈值，表示当P的规模小于N0的时候，就可以很容易得求出，就不必再进行分解了.adhoc(p)是该分治法中的基本子算法，用于直接求解小规模的问题P
+    divide P into smallers subinstances P1,P2,P3...Pk;
+    for(i=1; i&lt;=k; i++){
+        yi = divide-and-conquer(Pi);
+    return merge(y1,y2,y3....yk);    //分治法中的合并子算法，将P的子问题P1，P2...的解y1,y2,y3...合并成P的解
+    }
 </code></pre>
       
     </div>
@@ -674,8 +459,8 @@ echo str_pad($input, 6 , &quot;___&quot;);               // 输出 &quot;Alien_&
       
         
 <div class="counter-tag counter">
-    <span id="/2016/11/15/php/php-字符串/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--字符串基本操作">
+    <span id="/2016/11/23/算法/java算法-递归与分治策略/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="java算法学习--递归与分治策略">
          &nbsp;
         view
     </span>
@@ -697,11 +482,11 @@ echo str_pad($input, 6 , &quot;___&quot;);               // 输出 &quot;Alien_&
 
 
   
-    <article id="post-php/php-session" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-php/php-上传文件" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/14/php/php-session/" class="article-date">
-  	<time datetime="2016-11-14T07:05:52.000Z" itemprop="datePublished">2016-11-14</time>
+      <a href="/2016/11/22/php/php-上传文件/" class="article-date">
+  	<time datetime="2016-11-22T12:22:48.000Z" itemprop="datePublished">2016-11-22</time>
 </a>
     </div>
   
@@ -714,8 +499,8 @@ echo str_pad($input, 6 , &quot;___&quot;);               // 输出 &quot;Alien_&
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/14/php/php-session/">
-        php学习--session
+      <a class="article-title" href="/2016/11/22/php/php-上传文件/">
+        php学习--上传文件
         
       </a>
     </h1>
@@ -726,177 +511,70 @@ echo str_pad($input, 6 , &quot;___&quot;);               // 输出 &quot;Alien_&
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一：会话"><a href="#一：会话" class="headerlink" title="一：会话"></a>一：会话</h2><h3 id="会话是指用户访问web站点上的时期内存储的用户操作的一些动作。PHP提供了管理会话的机制，可以追踪到用户在这一时期的动作，显示用户喜欢什么，需要什么。"><a href="#会话是指用户访问web站点上的时期内存储的用户操作的一些动作。PHP提供了管理会话的机制，可以追踪到用户在这一时期的动作，显示用户喜欢什么，需要什么。" class="headerlink" title="会话是指用户访问web站点上的时期内存储的用户操作的一些动作。PHP提供了管理会话的机制，可以追踪到用户在这一时期的动作，显示用户喜欢什么，需要什么。"></a>会话是指用户<code>访问web站点上的时期内</code>存储的用户操作的一些动作。PHP提供了管理会话的机制，可以追踪到用户在这一时期的动作，显示用户喜欢什么，需要什么。</h3><h3 id="会话与cookie类似，但是功能更加强大，可以管理大量数据，而且可以将信息保存在服务器端，安全，存储长度也没有限制"><a href="#会话与cookie类似，但是功能更加强大，可以管理大量数据，而且可以将信息保存在服务器端，安全，存储长度也没有限制" class="headerlink" title="会话与cookie类似，但是功能更加强大，可以管理大量数据，而且可以将信息保存在服务器端，安全，存储长度也没有限制"></a>会话与cookie类似，但是功能更加强大，可以管理大量数据，而且可以将信息保存在服务器端，安全，存储长度也没有限制</h3><h2 id="二：session的概念"><a href="#二：session的概念" class="headerlink" title="二：session的概念"></a>二：session的概念</h2><h3 id="session生命周期：从用户访问页面开始到断开与网络连接为止，用户每一次连接，PHP都会自动生成一个唯一的sessionID来标识当前用户，从而与其他用户进行区分。session会话时，sessionID分别保存在客户端和服务器端两个位置。"><a href="#session生命周期：从用户访问页面开始到断开与网络连接为止，用户每一次连接，PHP都会自动生成一个唯一的sessionID来标识当前用户，从而与其他用户进行区分。session会话时，sessionID分别保存在客户端和服务器端两个位置。" class="headerlink" title="session生命周期：从用户访问页面开始到断开与网络连接为止，用户每一次连接，PHP都会自动生成一个唯一的sessionID来标识当前用户，从而与其他用户进行区分。session会话时，sessionID分别保存在客户端和服务器端两个位置。"></a>session生命周期：从用户访问页面开始到断开与网络连接为止，用户每一次连接，PHP都会自动生成一个唯一的sessionID来标识当前用户，从而与其他用户进行区分。session会话时，sessionID分别保存在客户端和服务器端两个位置。</h3><h3 id="在客户端，使用临时的cookie保存在浏览器的指定目录中，称为session-cookie"><a href="#在客户端，使用临时的cookie保存在浏览器的指定目录中，称为session-cookie" class="headerlink" title="在客户端，使用临时的cookie保存在浏览器的指定目录中，称为session cookie"></a>在客户端，使用临时的cookie保存在浏览器的指定目录中，称为session cookie</h3><h3 id="在服务器端，以文本文件的形式保存在指定的session目录中"><a href="#在服务器端，以文本文件的形式保存在指定的session目录中" class="headerlink" title="在服务器端，以文本文件的形式保存在指定的session目录中"></a>在服务器端，以文本文件的形式保存在指定的session目录中</h3><h3 id="网页是无状态的连接程序，无法记录用户的状态信息，所以用session记录用户的有关信息。"><a href="#网页是无状态的连接程序，无法记录用户的状态信息，所以用session记录用户的有关信息。" class="headerlink" title="网页是无状态的连接程序，无法记录用户的状态信息，所以用session记录用户的有关信息。"></a>网页是无状态的连接程序，无法记录用户的状态信息，所以用session记录用户的有关信息。</h3><h2 id="三：启动session"><a href="#三：启动session" class="headerlink" title="三：启动session"></a>三：启动session</h2><h3 id="1-session-start-函数启动session，在使用session-start-之前浏览器不能有任何输出。"><a href="#1-session-start-函数启动session，在使用session-start-之前浏览器不能有任何输出。" class="headerlink" title="1.session_start()函数启动session，在使用session_start()之前浏览器不能有任何输出。"></a>1.session_start()函数启动session，在使用session_start()之前浏览器<code>不能有任何输出</code>。</h3><h3 id="2-session-register-函数为会话登录一个变量来隐含的启动会话。设置php-ini文件里的register-globals-设为On"><a href="#2-session-register-函数为会话登录一个变量来隐含的启动会话。设置php-ini文件里的register-globals-设为On" class="headerlink" title="2.session_register()函数为会话登录一个变量来隐含的启动会话。设置php.ini文件里的register_globals 设为On"></a>2.session_register()函数为会话登录一个变量来隐含的启动会话。设置php.ini文件里的register_globals 设为On</h3><h3 id="四：使用session"><a href="#四：使用session" class="headerlink" title="四：使用session"></a>四：使用session</h3><h3 id="session有一个功能是保存当前用户的特定数据和相关信息，包括字符串，数组，对象等。使用超级全局变量-SESSION-将各种类型的数据添加到session中。"><a href="#session有一个功能是保存当前用户的特定数据和相关信息，包括字符串，数组，对象等。使用超级全局变量-SESSION-将各种类型的数据添加到session中。" class="headerlink" title="session有一个功能是保存当前用户的特定数据和相关信息，包括字符串，数组，对象等。使用超级全局变量$_SESSION[]将各种类型的数据添加到session中。"></a>session有一个功能是保存当前用户的特定数据和相关信息，包括字符串，数组，对象等。使用超级全局变量$_SESSION[]将各种类型的数据添加到session中。</h3><pre><code>session_start();
-$_SESSION[&apos;name&apos;] = &apos;jewel&apos;;    //创建一个session
-</code></pre><h2 id="五：删除session"><a href="#五：删除session" class="headerlink" title="五：删除session"></a>五：删除session</h2><h3 id="1-unset-删除单个会话"><a href="#1-unset-删除单个会话" class="headerlink" title="1.unset()删除单个会话"></a>1.unset()删除单个会话</h3><pre><code>unset($_SESSION[&apos;name&apos;]);
-</code></pre><h3 id="注意：在使用unset-时，-SESSION-‘name’-里的元素（这个里边是name）不能省略，也就是不能一次注销整个数组，这样会禁止整个会话的功能。unset-SESSION-会将超级全局变量-SESSION销毁，而且不能恢复，用户不可以再次注册-SESSION变量"><a href="#注意：在使用unset-时，-SESSION-‘name’-里的元素（这个里边是name）不能省略，也就是不能一次注销整个数组，这样会禁止整个会话的功能。unset-SESSION-会将超级全局变量-SESSION销毁，而且不能恢复，用户不可以再次注册-SESSION变量" class="headerlink" title="注意：在使用unset()时，$_SESSION[‘name’]里的元素（这个里边是name）不能省略，也就是不能一次注销整个数组，这样会禁止整个会话的功能。unset($_SESSION)会将超级全局变量$_SESSION销毁，而且不能恢复，用户不可以再次注册$_SESSION变量"></a>注意：在使用unset()时，$_SESSION[‘name’]里的元素（这个里边是name）不能省略，也就是不能一次注销整个数组，<code>这样会禁止整个会话的功能</code>。unset($_SESSION)会将超级全局变量$_SESSION销毁，而且不能恢复，用户不可以再次注册$_SESSION变量</h3><h3 id="2-将空值赋给-SESSION来删除所有会话"><a href="#2-将空值赋给-SESSION来删除所有会话" class="headerlink" title="2.将空值赋给$_SESSION来删除所有会话"></a>2.将空值赋给$_SESSION来删除所有会话</h3><pre><code>$_SESSION = array();
-</code></pre><h3 id="3-session-destory-结束当前会话"><a href="#3-session-destory-结束当前会话" class="headerlink" title="3.session_destory()结束当前会话"></a>3.session_destory()结束当前会话</h3><h3 id="session-destory-函数清除结束当前的会话，并清除会话中的所有资源，彻底销毁session"><a href="#session-destory-函数清除结束当前的会话，并清除会话中的所有资源，彻底销毁session" class="headerlink" title="session_destory()函数清除结束当前的会话，并清除会话中的所有资源，彻底销毁session"></a>session_destory()函数清除结束当前的会话，并清除会话中的所有资源，彻底销毁session</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/14/php/php-session/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--session">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-php/php-cookie" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/14/php/php-cookie/" class="article-date">
-  	<time datetime="2016-11-14T05:59:56.000Z" itemprop="datePublished">2016-11-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/14/php/php-cookie/">
-        php学习--cookie
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一：cookie的概念"><a href="#一：cookie的概念" class="headerlink" title="一：cookie的概念"></a>一：cookie的概念</h2><h3 id="cookie是在http协议下（http是一种无状态的协议，每次请求的处理都与之前或者之后的请求无关），将服务器传递给浏览器少量的数据保存到用户浏览器的一种方式。通过这种方式，即使在浏览器被关闭和连接中断的情况下，用户仍然可以维护状态数据"><a href="#cookie是在http协议下（http是一种无状态的协议，每次请求的处理都与之前或者之后的请求无关），将服务器传递给浏览器少量的数据保存到用户浏览器的一种方式。通过这种方式，即使在浏览器被关闭和连接中断的情况下，用户仍然可以维护状态数据" class="headerlink" title="cookie是在http协议下（http是一种无状态的协议，每次请求的处理都与之前或者之后的请求无关），将服务器传递给浏览器少量的数据保存到用户浏览器的一种方式。通过这种方式，即使在浏览器被关闭和连接中断的情况下，用户仍然可以维护状态数据"></a>cookie是在http协议下（http是一种无状态的协议，每次请求的处理都与之前或者之后的请求无关），将服务器传递给浏览器少量的数据保存到用户浏览器的一种方式。通过这种方式，即使在浏览器被关闭和连接中断的情况下，用户仍然可以维护状态数据</h3><h3 id="通俗的将，cookie是保存在你的客户机上的一个小文件，它是经过加密的文件，保存着你的登录信息等"><a href="#通俗的将，cookie是保存在你的客户机上的一个小文件，它是经过加密的文件，保存着你的登录信息等" class="headerlink" title="通俗的将，cookie是保存在你的客户机上的一个小文件，它是经过加密的文件，保存着你的登录信息等"></a>通俗的将，cookie是保存在你的客户机上的一个小文件，它是经过加密的文件，保存着你的登录信息等</h3><h2 id="二：cookie作用域"><a href="#二：cookie作用域" class="headerlink" title="二：cookie作用域"></a>二：cookie作用域</h2><h3 id="1-记录访客的某些信息，如登录的用户名，访问网站的次数等"><a href="#1-记录访客的某些信息，如登录的用户名，访问网站的次数等" class="headerlink" title="1.记录访客的某些信息，如登录的用户名，访问网站的次数等"></a>1.记录访客的某些信息，如登录的用户名，访问网站的次数等</h3><h3 id="2-在页面之间传递变量。浏览器不会保存当前页面的任何变量信息，当浏览器被关闭之后，页面上的变量信息就会随之消失。这时候就可以把变量以cookie的形式保存下来，然后在下一页通过读取该cookie来获取变量的值"><a href="#2-在页面之间传递变量。浏览器不会保存当前页面的任何变量信息，当浏览器被关闭之后，页面上的变量信息就会随之消失。这时候就可以把变量以cookie的形式保存下来，然后在下一页通过读取该cookie来获取变量的值" class="headerlink" title="2.在页面之间传递变量。浏览器不会保存当前页面的任何变量信息，当浏览器被关闭之后，页面上的变量信息就会随之消失。这时候就可以把变量以cookie的形式保存下来，然后在下一页通过读取该cookie来获取变量的值"></a>2.在页面之间传递变量。浏览器不会保存当前页面的任何变量信息，当浏览器被关闭之后，页面上的变量信息就会随之消失。这时候就可以把变量以cookie的形式保存下来，然后在下一页通过读取该cookie来获取变量的值</h3><h3 id="3-将查看的Internet页存储在cookies临时文件夹内，能提高以后的访问速度"><a href="#3-将查看的Internet页存储在cookies临时文件夹内，能提高以后的访问速度" class="headerlink" title="3.将查看的Internet页存储在cookies临时文件夹内，能提高以后的访问速度"></a>3.将查看的Internet页存储在cookies临时文件夹内，能提高以后的访问速度</h3><h2 id="三：setcookie-创建cookie"><a href="#三：setcookie-创建cookie" class="headerlink" title="三：setcookie()创建cookie"></a>三：setcookie()创建cookie</h2><pre><code>setcookie(&apos;name&apos;,&apos;jewel&apos;);    //至少传递一个参数&apos;name&apos;，这里有两个参数，&apos;name&apos;和name对应的值jewel
-</code></pre><h3 id="创建一个包含过期时间的cookie（当前时间戳加上一个时间-，以秒为单位）"><a href="#创建一个包含过期时间的cookie（当前时间戳加上一个时间-，以秒为单位）" class="headerlink" title="创建一个包含过期时间的cookie（当前时间戳加上一个时间 ，以秒为单位）"></a>创建一个包含过期时间的cookie（当前时间戳加上一个时间 ，以秒为单位）</h3><pre><code>setcookie(&apos;name&apos;,&apos;jewel&apos;,time()+(10));    //这里设置cookie的过期时间为创建该cookie文件之后的10秒钟
-</code></pre><h3 id="cookie过期时间：如果不设置的话，浏览器关闭之后会自动删除这个cookie文件，如果设置了过期时间，在这个时间之内就算是重启计算机也不会删除该文件。不设置过期时间的cookie的生命周期为浏览器的会话时间，成为会话cookie，一般不保存在硬盘中，而是在内存中。设置了"><a href="#cookie过期时间：如果不设置的话，浏览器关闭之后会自动删除这个cookie文件，如果设置了过期时间，在这个时间之内就算是重启计算机也不会删除该文件。不设置过期时间的cookie的生命周期为浏览器的会话时间，成为会话cookie，一般不保存在硬盘中，而是在内存中。设置了" class="headerlink" title="cookie过期时间：如果不设置的话，浏览器关闭之后会自动删除这个cookie文件，如果设置了过期时间，在这个时间之内就算是重启计算机也不会删除该文件。不设置过期时间的cookie的生命周期为浏览器的会话时间，成为会话cookie，一般不保存在硬盘中，而是在内存中。设置了"></a>cookie过期时间：如果不设置的话，浏览器关闭之后会自动删除这个cookie文件，如果设置了过期时间，在这个时间之内就算是重启计算机也不会删除该文件。不设置过期时间的cookie的生命周期为浏览器的会话时间，成为会话cookie，一般不保存在硬盘中，而是在内存中。设置了</h3><h2 id="四：超级全局变量-COOKIE-读取浏览器端的cookie值"><a href="#四：超级全局变量-COOKIE-读取浏览器端的cookie值" class="headerlink" title="四：超级全局变量$_COOKIE[]读取浏览器端的cookie值"></a>四：超级全局变量<code>$_COOKIE[]</code>读取浏览器端的cookie值</h2><h2 id="五；isset-函数检测cookie是否存在"><a href="#五；isset-函数检测cookie是否存在" class="headerlink" title="五；isset()函数检测cookie是否存在"></a>五；isset()函数检测cookie是否存在</h2><h2 id="六：删除cookie"><a href="#六：删除cookie" class="headerlink" title="六：删除cookie"></a>六：删除cookie</h2><h3 id="1-setcookie-函数删除cookie，只需将第二个参数设为空，第三个参数设为当前时间之前的时间，如现在的前一秒"><a href="#1-setcookie-函数删除cookie，只需将第二个参数设为空，第三个参数设为当前时间之前的时间，如现在的前一秒" class="headerlink" title="1.setcookie()函数删除cookie，只需将第二个参数设为空，第三个参数设为当前时间之前的时间，如现在的前一秒"></a>1.setcookie()函数删除cookie，只需将第二个参数设为空，第三个参数设为当前时间之前的时间，如现在的前一秒</h3><pre><code>setcookie(&apos;name&apos;,&apos;&apos;,time()-1);    //得到过去的时间，删除cookie
-</code></pre><h3 id="2-用浏览器手动删除"><a href="#2-用浏览器手动删除" class="headerlink" title="2.用浏览器手动删除"></a>2.用浏览器手动删除</h3><h2 id="七：注意事项"><a href="#七：注意事项" class="headerlink" title="七：注意事项"></a>七：注意事项</h2><h3 id="1-在应用setcookie-函数创建cookie之前，不能有任何的HTML输出，即使是空格，空行也不行。因为cookie是经由服务器的程序通过http请求和响应发送到浏览器的，是http头标的组成部分，而头标必须在页面的其他内容发送之前发送"><a href="#1-在应用setcookie-函数创建cookie之前，不能有任何的HTML输出，即使是空格，空行也不行。因为cookie是经由服务器的程序通过http请求和响应发送到浏览器的，是http头标的组成部分，而头标必须在页面的其他内容发送之前发送" class="headerlink" title="1.在应用setcookie()函数创建cookie之前，不能有任何的HTML输出，即使是空格，空行也不行。因为cookie是经由服务器的程序通过http请求和响应发送到浏览器的，是http头标的组成部分，而头标必须在页面的其他内容发送之前发送"></a>1.在应用setcookie()函数创建cookie之前，不能有任何的HTML输出，即使是空格，空行也不行。因为cookie是经由服务器的程序通过http请求和响应发送到浏览器的，是http<code>头标</code>的组成部分，而头标必须在页面的其他内容发送之前发送</h3><h3 id="2-不要用cookie保存数据集或者其他大量的数据，也不是所有浏览器都支持cookie，也不要保存很隐私的数据。"><a href="#2-不要用cookie保存数据集或者其他大量的数据，也不是所有浏览器都支持cookie，也不要保存很隐私的数据。" class="headerlink" title="2.不要用cookie保存数据集或者其他大量的数据，也不是所有浏览器都支持cookie，也不要保存很隐私的数据。"></a>2.不要用cookie保存数据集或者其他大量的数据，也不是所有浏览器都支持cookie，也不要保存很隐私的数据。</h3><h3 id="3-cookie的值改变之后要刷新两遍才能显示新内容，也可以说他慢半拍。因为setcookie-函数执行之后，会向客户端发送一个cookie，如果不刷新或者浏览下一个页面，客户端不能将cookie送回"><a href="#3-cookie的值改变之后要刷新两遍才能显示新内容，也可以说他慢半拍。因为setcookie-函数执行之后，会向客户端发送一个cookie，如果不刷新或者浏览下一个页面，客户端不能将cookie送回" class="headerlink" title="3.cookie的值改变之后要刷新两遍才能显示新内容，也可以说他慢半拍。因为setcookie()函数执行之后，会向客户端发送一个cookie，如果不刷新或者浏览下一个页面，客户端不能将cookie送回"></a>3.cookie的值改变之后要刷新两遍才能显示新内容，也可以说他慢半拍。因为setcookie()函数执行之后，会向客户端发送一个cookie，如果不刷新或者浏览下一个页面，客户端不能将cookie送回</h3><h3 id="4-一个浏览器创建的cookie为30个，每个小于4kb，每个web站点的cookie个数最多20个"><a href="#4-一个浏览器创建的cookie为30个，每个小于4kb，每个web站点的cookie个数最多20个" class="headerlink" title="4.一个浏览器创建的cookie为30个，每个小于4kb，每个web站点的cookie个数最多20个"></a>4.一个浏览器创建的cookie为30个，每个小于4kb，每个web站点的cookie个数最多20个</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/14/php/php-cookie/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--cookie">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-php/php-日期与时间2" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/13/php/php-日期与时间2/" class="article-date">
-  	<time datetime="2016-11-13T13:10:01.000Z" itemprop="datePublished">2016-11-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/13/php/php-日期与时间2/">
-        php学习--日期与时间2
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="五：-time-返回当前的Unix时间戳，可以设置过去和未来的时间"><a href="#五：-time-返回当前的Unix时间戳，可以设置过去和未来的时间" class="headerlink" title="五： time()返回当前的Unix时间戳，可以设置过去和未来的时间"></a>五： time()返回当前的Unix时间戳，可以设置过去和未来的时间</h2><pre><code>echo time();
-</code></pre><h3 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h3><pre><code>1479028890
-</code></pre><h3 id="time-函数的作用非常大"><a href="#time-函数的作用非常大" class="headerlink" title="time()函数的作用非常大"></a>time()函数的作用非常大</h3><h2 id="六：mktime-返回指定日期的时间戳"><a href="#六：mktime-返回指定日期的时间戳" class="headerlink" title="六：mktime()返回指定日期的时间戳"></a>六：mktime()返回指定日期的时间戳</h2><h3 id="格式：mktime-时，分，秒，月，日，年"><a href="#格式：mktime-时，分，秒，月，日，年" class="headerlink" title="格式：mktime(时，分，秒，月，日，年);"></a>格式：mktime(时，分，秒，月，日，年);</h3><pre><code>$time = mktime(8,8,8,8,8,2008);
-echo date(&apos;Y-m-d H:i:s&apos;,$time);
-</code></pre><h3 id="结果：2008-08-08-08-08：08"><a href="#结果：2008-08-08-08-08：08" class="headerlink" title="结果：2008-08-08 08:08：08"></a>结果：2008-08-08 08:08：08</h3><h2 id="七：strtotime-将人们可读的日期转化为时间戳（和getdate-相反），用这个函数的频率高"><a href="#七：strtotime-将人们可读的日期转化为时间戳（和getdate-相反），用这个函数的频率高" class="headerlink" title="七：strtotime()将人们可读的日期转化为时间戳（和getdate()相反），用这个函数的频率高"></a>七：strtotime()将人们可读的日期转化为时间戳（和getdate()相反），用这个函数的频率高</h2><h3 id="用它可计算时间差"><a href="#用它可计算时间差" class="headerlink" title="用它可计算时间差"></a>用它可计算时间差</h3><pre><code>$time = strtotime(&apos;2016-11-13 20:20:20&apos;);
-$now = time();
-// echo time();
-
-// 计算时间差，返回的是秒
-echo $time-$now;
-</code></pre><h2 id="八：getlastmod-返回当前文件的最后修改时间的时间戳"><a href="#八：getlastmod-返回当前文件的最后修改时间的时间戳" class="headerlink" title="八：getlastmod()返回当前文件的最后修改时间的时间戳"></a>八：getlastmod()返回当前文件的最后修改时间的时间戳</h2><pre><code>echo getlastmod();    //返回时间戳
-echo date(&apos;Y-m-d H:i:s&apos;,getlastmod());    //转化为可读的时间
-</code></pre><h3 id="扩展：获取文件最后修改时间的另一个函数是：filemtime"><a href="#扩展：获取文件最后修改时间的另一个函数是：filemtime" class="headerlink" title="扩展：获取文件最后修改时间的另一个函数是：filemtime()"></a>扩展：获取文件最后修改时间的另一个函数是：filemtime()</h3><h2 id="九：localtime-取得本地时间数据，返回一个数组（此函数不常用，月份有问题）"><a href="#九：localtime-取得本地时间数据，返回一个数组（此函数不常用，月份有问题）" class="headerlink" title="九：localtime()取得本地时间数据，返回一个数组（此函数不常用，月份有问题）"></a>九：localtime()取得本地时间数据，返回一个数组（此函数不常用，月份有问题）</h2><pre><code>date_default_timezone_set(&apos;Asia/shanghai&apos;);
-print_r(localtime(time(),true));
-</code></pre><h3 id="结果：-1"><a href="#结果：-1" class="headerlink" title="结果："></a>结果：</h3><pre><code>Array
+        <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="1-enctype-“multipart-form-data”-这句话写在form元素中，是固定写法，没有的话将无法上传文件"><a href="#1-enctype-“multipart-form-data”-这句话写在form元素中，是固定写法，没有的话将无法上传文件" class="headerlink" title="1. enctype = “multipart/form-data” 这句话写在form元素中，是固定写法，没有的话将无法上传文件"></a>1. enctype = “multipart/form-data” 这句话写在form元素中，是固定写法，没有的话将无法上传文件</h3><h3 id="2-FILES-接受上传的文件，返回一个数组"><a href="#2-FILES-接受上传的文件，返回一个数组" class="headerlink" title="2. $_FILES 接受上传的文件，返回一个数组"></a>2. $_FILES 接受上传的文件，返回一个数组</h3><h3 id="3-FILE是魔法常量，将绝对地址打印出来"><a href="#3-FILE是魔法常量，将绝对地址打印出来" class="headerlink" title="3. FILE是魔法常量，将绝对地址打印出来"></a>3. <strong>FILE</strong>是魔法常量，将绝对地址打印出来</h3><h3 id="4-dirname-FILE-将文件名的上一级路径打印出来（也就是不打印文件名）"><a href="#4-dirname-FILE-将文件名的上一级路径打印出来（也就是不打印文件名）" class="headerlink" title="4. dirname(FILE)将文件名的上一级路径打印出来（也就是不打印文件名）"></a>4. dirname(<strong>FILE</strong>)将文件名的上一级路径打印出来（也就是不打印文件名）</h3><h3 id="5-is-dir判断给定的目录是否存在"><a href="#5-is-dir判断给定的目录是否存在" class="headerlink" title="5. // is_dir判断给定的目录是否存在"></a>5. // is_dir判断给定的目录是否存在</h3><h3 id="6-mkdir-name-0777-自动创建一个目录"><a href="#6-mkdir-name-0777-自动创建一个目录" class="headerlink" title="6. mkdir(name,0777)自动创建一个目录"></a>6. mkdir(name,0777)自动创建一个目录</h3><h3 id="7-is-uploaded-file-判断文件是否通过http-post-上传的"><a href="#7-is-uploaded-file-判断文件是否通过http-post-上传的" class="headerlink" title="7. is_uploaded_file()判断文件是否通过http post 上传的"></a>7. is_uploaded_file()判断文件是否通过http post 上传的</h3><h3 id="8-move-uploaded-file-文件临时路径，新路径-将上传的文件移动到新位置"><a href="#8-move-uploaded-file-文件临时路径，新路径-将上传的文件移动到新位置" class="headerlink" title="8. move_uploaded_file(文件临时路径，新路径)将上传的文件移动到新位置"></a>8. move_uploaded_file(文件临时路径，新路径)将上传的文件移动到新位置</h3><h2 id="详解："><a href="#详解：" class="headerlink" title="详解："></a>详解：</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><h3 id="basic1-php"><a href="#basic1-php" class="headerlink" title="basic1.php"></a><code>basic1.php</code></h3><pre><code>&lt;form action=&quot;basic2.php&quot; method = &quot;post&quot; enctype = &quot;multipart/form-data&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name = &quot;MAX_FILE_SIZE&quot; value = &quot;1000000&quot;/&gt;
+    ......    
+&lt;/form&gt;
+</code></pre><h3 id="enctype-“multipart-form-data”-这句话写在form元素中，是固定写法，没有的话将无法上传文件"><a href="#enctype-“multipart-form-data”-这句话写在form元素中，是固定写法，没有的话将无法上传文件" class="headerlink" title="enctype = “multipart/form-data” 这句话写在form元素中，是固定写法，没有的话将无法上传文件"></a>enctype = “multipart/form-data” 这句话写在form元素中，是固定写法，没有的话将无法上传文件</h3><h3 id="隐藏域定义了一个问价件大小的限制，必须放在上传域之前，对浏览器的建议，不能超过PHP-ini中的值"><a href="#隐藏域定义了一个问价件大小的限制，必须放在上传域之前，对浏览器的建议，不能超过PHP-ini中的值" class="headerlink" title="隐藏域定义了一个问价件大小的限制，必须放在上传域之前，对浏览器的建议，不能超过PHP_ini中的值"></a>隐藏域定义了一个问价件大小的限制，必须放在上传域之前，对浏览器的建议，不能超过PHP_ini中的值</h3><h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><h3 id="basic2-php"><a href="#basic2-php" class="headerlink" title="basic2.php"></a><code>basic2.php</code></h3><pre><code>print_r($_FILES);
+</code></pre><h3 id="这个函数接受到一个上传的文件，返回内容如下："><a href="#这个函数接受到一个上传的文件，返回内容如下：" class="headerlink" title="这个函数接受到一个上传的文件，返回内容如下："></a>这个函数接受到一个上传的文件，返回内容如下：</h3><pre><code>Array
 (
-    [tm_sec] =&gt; 41
-    [tm_min] =&gt; 10
-    [tm_hour] =&gt; 20
-    [tm_mday] =&gt; 13
-    [tm_mon] =&gt; 10    //月份是从0开始的，也就是一月是0,11月是10（所以此函数不常用）
-    [tm_year] =&gt; 116
-    [tm_wday] =&gt; 0
-    [tm_yday] =&gt; 317    //已经过去的天数
-    [tm_isdst] =&gt; 0
-)
-</code></pre><h2 id="十-设置时区"><a href="#十-设置时区" class="headerlink" title="十:设置时区"></a>十:设置时区</h2><h3 id="时区的概念：全球有24个时区。在国际中，使用一个统一的时间，叫通用协调时间（UTC），它与格林威治标准时间（GMT）相同，采用的是0时区"><a href="#时区的概念：全球有24个时区。在国际中，使用一个统一的时间，叫通用协调时间（UTC），它与格林威治标准时间（GMT）相同，采用的是0时区" class="headerlink" title="时区的概念：全球有24个时区。在国际中，使用一个统一的时间，叫通用协调时间（UTC），它与格林威治标准时间（GMT）相同，采用的是0时区"></a>时区的概念：全球有24个时区。在国际中，使用一个统一的时间，叫通用协调时间（UTC），它与格林威治标准时间（GMT）相同，采用的是0时区</h3><h3 id="1-修改php-ini文件date-timezone"><a href="#1-修改php-ini文件date-timezone" class="headerlink" title="1.修改php.ini文件date.timezone="></a>1.修改php.ini文件date.timezone=</h3><pre><code>echo date_default_timezone_get();    //获取当前时区
-echo &quot;&lt;br&gt;&quot;;
-echo date(&apos;Y-m-d H:i:s&apos;);
+    [userfile] =&gt; Array
+        (
+            [name] =&gt; 4.jpg          //上传文件的文件名
+            [type] =&gt; image/jpeg        //文件类型
+            [tmp_name] =&gt;D:\xampp1\tmp\php26AB.tmp             
+                                        //上传的文件临时的存放位置
+            [error] =&gt; 0                //2是文件超出了HTML设置的大小，
+                                       4是空文件 
+                                        3是上传了一半 
+                                       1是超过了配置文件的大小
+            [size] =&gt; 7960            //上传文件的大小
+ )
+</code></pre><h3 id="3-限制上传文件的格式为png-jpeg-gif"><a href="#3-限制上传文件的格式为png-jpeg-gif" class="headerlink" title="3. 限制上传文件的格式为png,jpeg,gif"></a>3. 限制上传文件的格式为png,jpeg,gif</h3><pre><code>$Max = array(&apos;image/png&apos;,&apos;image/jpeg&apos;,&apos;image/gif&apos;);
+if (is_array($Max)) {
+    if(!in_array($_FILES[&apos;userfile&apos;][&apos;type&apos;], $Max)){
+        echo &quot;&lt;script&gt; alert(&apos;只允许上传jpg，png格式的文件！&apos;); history.back();&lt;/script&gt;&quot;;
+    }
+}
+</code></pre><h3 id="4-上传错误的提示信息"><a href="#4-上传错误的提示信息" class="headerlink" title="4. 上传错误的提示信息"></a>4. 上传错误的提示信息</h3><pre><code>if($_FILES[&apos;userfile&apos;][&apos;error&apos;] &gt; 0){
+    switch ($_FILES[&apos;userfile&apos;][&apos;error&apos;]) {
+        case 1: echo &quot;&lt;script&gt;alert(&apos;上传文件超过约定值&apos;); history.back();&lt;/script&gt;&quot;;
+            break;
+        case 2: echo &quot;&lt;script&gt;alert(&apos;上传文件超过约定值&apos;); history.back();&lt;/script&gt;&quot;;
+            break;
+        case 3: echo &quot;&lt;script&gt;alert(&apos;文件未全部上传&apos;); history.back();&lt;/script&gt;&quot;;
+            break;
+        case 4: echo &quot;&lt;script&gt;alert(&apos;请选择上传的文件&apos;); history.back();&lt;/script&gt;&quot;;
+            break;
 
-echo &quot;&lt;br&gt;&quot;;
-date_default_timezone_set(&apos;Asia/shanghai&apos;);        //设置时区为上海时区
-echo date(&apos;Y-m-d H:i:s&apos;);
-</code></pre><h3 id="结果：-2"><a href="#结果：-2" class="headerlink" title="结果："></a>结果：</h3><pre><code>Europe/Berlin
-2016-11-13 13:01:25
-2016-11-13 20:01:25
+        default: echo &quot;&lt;script&gt;alert(&apos;未知错误，请重新上传&apos;); histor.back();&lt;/script&gt;&quot;;
+            break;
+    }
+    exit;
+}
+</code></pre><h3 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h3><pre><code>if (is_uploaded_file($_FILES[&apos;userfile&apos;][&apos;tmp_name&apos;])) {
+    // 如果文件已经上传了，就在这移动
+    // 第一个参数，临时文件的地址
+    // 第二个参数，要移动的地址
+    if(!move_uploaded_file($_FILES[&apos;userfile&apos;][&apos;tmp_name&apos;], URL.&quot;/&quot;.$_FILES[&apos;userfile&apos;][&apos;name&apos;])){
+        echo &quot;&lt;script&gt;alert(&apos;移动失败&apos;); history.back();&lt;/script&gt;&quot;;
+        exit;
+    }
+}else{
+    echo &quot;&lt;script&gt;alert(&apos;临时文件夹找不到文件&apos;); history.back();&lt;/script&gt;&quot;;
+    exit;
+}
+
+
+// 如果全部通过就上传成功了
+// 将文件交给一个上传地址
+echo &quot;&lt;script&gt;alert(&apos;文件上传成功&apos;); location.href = &apos;basic3.php?url = &quot;.$_FILES[&apos;userfile&apos;][&apos;name&apos;].&quot;&apos;;&lt;/script&gt;&quot;;
+</code></pre><h3 id="basic3-php"><a href="#basic3-php" class="headerlink" title="basic3.php"></a><code>basic3.php</code></h3><pre><code>&lt;?php 
+    ini_set(&quot;error_reporting&quot;, &quot;E_ALL  &amp; ~E_NOTICE&quot;);    //阻止undefiend出现
+
+    $url = $_GET[&apos;url&apos;];
+    echo &apos;&lt;img src = &quot;url.&quot;/&quot;.&apos;.$url.&apos;&quot;/&gt;&apos;;
+ ?&gt;
 </code></pre>
       
     </div>
@@ -909,8 +587,8 @@ echo date(&apos;Y-m-d H:i:s&apos;);
       
         
 <div class="counter-tag counter">
-    <span id="/2016/11/13/php/php-日期与时间2/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--日期与时间2">
+    <span id="/2016/11/22/php/php-上传文件/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--上传文件">
          &nbsp;
         view
     </span>
@@ -932,11 +610,11 @@ echo date(&apos;Y-m-d H:i:s&apos;);
 
 
   
-    <article id="post-php/php-日期与时间" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-算法/java算法-最长公共子序列" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/13/php/php-日期与时间/" class="article-date">
-  	<time datetime="2016-11-13T07:13:40.000Z" itemprop="datePublished">2016-11-13</time>
+      <a href="/2016/11/19/算法/java算法-最长公共子序列/" class="article-date">
+  	<time datetime="2016-11-19T12:29:58.000Z" itemprop="datePublished">2016-11-19</time>
 </a>
     </div>
   
@@ -949,8 +627,8 @@ echo date(&apos;Y-m-d H:i:s&apos;);
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/13/php/php-日期与时间/">
-        php学习--日期与时间
+      <a class="article-title" href="/2016/11/19/算法/java算法-最长公共子序列/">
+        java算法学习--最长公共子序列
         
       </a>
     </h1>
@@ -961,70 +639,176 @@ echo date(&apos;Y-m-d H:i:s&apos;);
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="应用场合：表单提交时间，用户登录时间，数据库中数据的更新和删除的时间等"><a href="#应用场合：表单提交时间，用户登录时间，数据库中数据的更新和删除的时间等" class="headerlink" title="应用场合：表单提交时间，用户登录时间，数据库中数据的更新和删除的时间等"></a>应用场合：表单提交时间，用户登录时间，数据库中数据的更新和删除的时间等</h3><h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="time-：获取当前时间戳（但是这个比较麻烦，参数含义不明确，一般不使用这个）"><a href="#time-：获取当前时间戳（但是这个比较麻烦，参数含义不明确，一般不使用这个）" class="headerlink" title="time()：获取当前时间戳（但是这个比较麻烦，参数含义不明确，一般不使用这个）"></a><code>time()</code>：获取当前时间戳（但是这个比较麻烦，参数含义不明确，一般不使用这个）</h3><h3 id="getdate-：将时间戳转化为人们可以看得懂的时间，数组形式"><a href="#getdate-：将时间戳转化为人们可以看得懂的时间，数组形式" class="headerlink" title="getdate()：将时间戳转化为人们可以看得懂的时间，数组形式"></a><code>getdate()</code>：将时间戳转化为人们可以看得懂的时间，<code>数组</code>形式</h3><h3 id="strtotime-将人们可读的日期转化为时间戳"><a href="#strtotime-将人们可读的日期转化为时间戳" class="headerlink" title="strtotime()将人们可读的日期转化为时间戳"></a><code>strtotime()</code>将人们可读的日期转化为时间戳</h3><h3 id="mktime-将时间转化成时间戳"><a href="#mktime-将时间转化成时间戳" class="headerlink" title="mktime()将时间转化成时间戳"></a><code>mktime()</code>将时间转化成时间戳</h3><h3 id="getlastmod-返回当前文件最后修改时间的时间戳"><a href="#getlastmod-返回当前文件最后修改时间的时间戳" class="headerlink" title="getlastmod()返回当前文件最后修改时间的时间戳"></a><code>getlastmod()</code>返回当前文件最后修改时间的时间戳</h3><h3 id="checkdate-：检验日期是否合法，boolean形式"><a href="#checkdate-：检验日期是否合法，boolean形式" class="headerlink" title="checkdate()：检验日期是否合法，boolean形式"></a><code>checkdate()</code>：检验日期是否合法，<code>boolean</code>形式</h3><h3 id="date-：格式化本地时间或者日期，可以打印当前时间，date-‘Y-m-d-h-i-sa’"><a href="#date-：格式化本地时间或者日期，可以打印当前时间，date-‘Y-m-d-h-i-sa’" class="headerlink" title="date()：格式化本地时间或者日期，可以打印当前时间，date(‘Y-m-d h:i:sa’)"></a><code>date()</code>：格式化本地时间或者日期，可以打印当前时间，date(‘Y-m-d h:i:sa’)</h3><h3 id="gettimeofday-获取当前时间，数组形式"><a href="#gettimeofday-获取当前时间，数组形式" class="headerlink" title="gettimeofday()获取当前时间，数组形式"></a><code>gettimeofday()</code>获取当前时间，<code>数组</code>形式</h3><h3 id="localtime-返回本地时间（不常用）"><a href="#localtime-返回本地时间（不常用）" class="headerlink" title="localtime()返回本地时间（不常用）"></a><code>localtime()</code>返回本地时间（不常用）</h3><h3 id="date-default-timezone-get-获取默认时区"><a href="#date-default-timezone-get-获取默认时区" class="headerlink" title="date_default_timezone_get()获取默认时区"></a><code>date_default_timezone_get()</code>获取默认时区</h3><h3 id="date-default-timezone-set-修改时区"><a href="#date-default-timezone-set-修改时区" class="headerlink" title="date_default_timezone_set()修改时区"></a><code>date_default_timezone_set()</code>修改时区</h3><h2 id="一：checkdate-函数检测日期是否合法，布尔型"><a href="#一：checkdate-函数检测日期是否合法，布尔型" class="headerlink" title="一：checkdate()函数检测日期是否合法，布尔型"></a>一：checkdate()函数检测日期是否合法，布尔型</h2><h2 id="二：date-格式化一个本地时间或日期"><a href="#二：date-格式化一个本地时间或日期" class="headerlink" title="二：date()格式化一个本地时间或日期"></a>二：date()格式化一个本地时间或日期</h2><h3 id="格式：string-date-string-format-int-timestamp"><a href="#格式：string-date-string-format-int-timestamp" class="headerlink" title="格式：string date ( string $format [, int $timestamp ] )"></a>格式：string date ( string $format [, int $timestamp ] )</h3><h3 id="date-的两个参数分别表示一个日期（必选）和一个时间戳（不写的话默认为Unix时间戳）。"><a href="#date-的两个参数分别表示一个日期（必选）和一个时间戳（不写的话默认为Unix时间戳）。" class="headerlink" title="date()的两个参数分别表示一个日期（必选）和一个时间戳（不写的话默认为Unix时间戳）。"></a>date()的两个参数分别表示一个日期（必选）和一个时间戳（不写的话默认为Unix时间戳）。</h3><h3 id="date-表示的年月日时分秒"><a href="#date-表示的年月日时分秒" class="headerlink" title="date()表示的年月日时分秒"></a>date()表示的年月日时分秒</h3><h3 id="规则："><a href="#规则：" class="headerlink" title="规则："></a>规则：</h3><pre><code>Y表示四位数的年份，y表示两位数的年份
-M表示英文的月份缩写，m表示阿拉伯数字的月份
-D表示英文的日缩写，d表示阿拉伯的日
+        <h3 id="1-公共子序列：给定两个序列X和Y，如果另一个序列Z既是X的子序列，又是Y的子序列，那么就称Z是X，Y的公共子序列"><a href="#1-公共子序列：给定两个序列X和Y，如果另一个序列Z既是X的子序列，又是Y的子序列，那么就称Z是X，Y的公共子序列" class="headerlink" title="1. 公共子序列：给定两个序列X和Y，如果另一个序列Z既是X的子序列，又是Y的子序列，那么就称Z是X，Y的公共子序列"></a>1. 公共子序列：给定两个序列X和Y，如果另一个序列Z既是X的子序列，又是Y的子序列，那么就称Z是X，Y的公共子序列</h3><h3 id="2-子序列：在给定的一个序列-X-删除掉若干个元素之后组成的序列-Z-是序列-X-的子序列。这个子序列是严格按照原来X序列下标递增的序列。简单的例子：Z-B-C-D-B-是序列X-A-B-C-B-D-A-B-的子序列，递增下标序列是-2-3-5-7"><a href="#2-子序列：在给定的一个序列-X-删除掉若干个元素之后组成的序列-Z-是序列-X-的子序列。这个子序列是严格按照原来X序列下标递增的序列。简单的例子：Z-B-C-D-B-是序列X-A-B-C-B-D-A-B-的子序列，递增下标序列是-2-3-5-7" class="headerlink" title="2. 子序列：在给定的一个序列 X 删除掉若干个元素之后组成的序列 Z 是序列 X 的子序列。这个子序列是严格按照原来X序列下标递增的序列。简单的例子：Z = {B,C,D,B}是序列X = {A,B,C,B,D,A,B}的子序列，递增下标序列是{2,3,5,7}"></a>2. 子序列：在给定的一个序列 X 删除掉若干个元素之后组成的序列 Z 是序列 X 的子序列。这个子序列是严格按照原来X序列下标递增的序列。简单的例子：Z = {B,C,D,B}是序列X = {A,B,C,B,D,A,B}的子序列，递增下标序列是{2,3,5,7}</h3><h3 id="3-最长公共子序列：两个序列中最长的子序列。"><a href="#3-最长公共子序列：两个序列中最长的子序列。" class="headerlink" title="3. 最长公共子序列：两个序列中最长的子序列。"></a>3. 最长公共子序列：两个序列中最长的子序列。</h3><h3 id="4-最长公共子序列有最优子结构性质"><a href="#4-最长公共子序列有最优子结构性质" class="headerlink" title="4. 最长公共子序列有最优子结构性质"></a>4. 最长公共子序列有最优子结构性质</h3>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
 
-H表示24小时的小时，h表示12小时的计时法
-i表示分钟
-s表示秒
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/19/算法/java算法-最长公共子序列/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="java算法学习--最长公共子序列">
+         &nbsp;
+        view
+    </span>
+</div>
 
-a是小写的上午和下午
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
 
-date()的第一个参数可以放一些format目录里不存在的符号，他们不会被解析，看起来排版清晰
-</code></pre><h3 id="打印目前的时间"><a href="#打印目前的时间" class="headerlink" title="打印目前的时间"></a>打印目前的时间</h3><pre><code>echo date(&apos;Y-m-d h:i:sa&apos;);    //返回的是Unix时间戳的时间2016-11-13 08:34:23am，是东八区的时间，可能和实际时间不相同。
-</code></pre><h3 id="时间戳的概念：时间戳是文件属性中的创建，修改和访问时间。"><a href="#时间戳的概念：时间戳是文件属性中的创建，修改和访问时间。" class="headerlink" title="时间戳的概念：时间戳是文件属性中的创建，修改和访问时间。"></a>时间戳的概念：时间戳是文件属性中的创建，修改和访问时间。</h3><h3 id="原理：通过其他加密法将时间的数值转化为加密的数值，加密位数会发生改变安"><a href="#原理：通过其他加密法将时间的数值转化为加密的数值，加密位数会发生改变安" class="headerlink" title="原理：通过其他加密法将时间的数值转化为加密的数值，加密位数会发生改变安"></a>原理：通过其他加密法将时间的数值转化为加密的数值，加密位数会发生改变安</h3><h3 id="好处：防止数值窃取之后被非法利用，起到了加密的作用"><a href="#好处：防止数值窃取之后被非法利用，起到了加密的作用" class="headerlink" title="好处：防止数值窃取之后被非法利用，起到了加密的作用"></a>好处：防止数值窃取之后被非法利用，起到了加密的作用</h3><h3 id="Unix时间戳：从1970年一月一日零时零分零秒到当前时刻，他是一个时间差，与时区没有关系"><a href="#Unix时间戳：从1970年一月一日零时零分零秒到当前时刻，他是一个时间差，与时区没有关系" class="headerlink" title="Unix时间戳：从1970年一月一日零时零分零秒到当前时刻，他是一个时间差，与时区没有关系"></a>Unix时间戳：从1970年一月一日零时零分零秒到当前时刻，<code>他是一个时间差，与时区没有关系</code></h3><h2 id="三：gettimeofday-获取当前时间，返回一个关联数组，包含有系统调用返回的数据"><a href="#三：gettimeofday-获取当前时间，返回一个关联数组，包含有系统调用返回的数据" class="headerlink" title="三：gettimeofday()获取当前时间，返回一个关联数组，包含有系统调用返回的数据"></a>三：gettimeofday()获取当前时间，返回一个关联<code>数组</code>，包含有系统调用返回的数据</h2><p>###<br>    print_r(gettimeofday());    //数组类型的建议都用print_r()打印详细信息<br>    结果是：<br>    Array<br>    (<br>        [sec] =&gt; 1479027519<br>        [usec] =&gt; 540985<br>        [minuteswest] =&gt; -60<br>        [dsttime] =&gt; 0<br>    )<br>    “sec” - 自 Unix 纪元起的秒数<br>    ◦ “usec” - 微秒数<br>    ◦ “minuteswest” - 格林威治向西的分钟数<br>    ◦ “dsttime” - 夏令时修正的类型 </p>
-<h3 id="所以想打印单个的值可用-echo-settimeofday-sec"><a href="#所以想打印单个的值可用-echo-settimeofday-sec" class="headerlink" title="所以想打印单个的值可用 echo settimeofday[sec];"></a>所以想打印单个的值可用 echo settimeofday[sec];</h3><h3 id="settimeofday-可以传入一个真值1，返回一个浮点数而不是数组"><a href="#settimeofday-可以传入一个真值1，返回一个浮点数而不是数组" class="headerlink" title="settimeofday()可以传入一个真值1，返回一个浮点数而不是数组"></a>settimeofday()可以传入一个真值1，返回一个浮点数而不是数组</h3><pre><code>print_r(gettimeofday());
-echo gettimeofday(1);
-</code></pre><h3 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h3><pre><code>Array
-(
-    [sec] =&gt; 1479027864
-    [usec] =&gt; 778749
-    [minuteswest] =&gt; -60
-    [dsttime] =&gt; 0
-)
-1479027864.7789
-</code></pre><h3 id="浮点数和上边是相对应的，1479027864说白了是时间戳"><a href="#浮点数和上边是相对应的，1479027864说白了是时间戳" class="headerlink" title="浮点数和上边是相对应的，1479027864说白了是时间戳"></a>浮点数和上边是相对应的，1479027864说白了是<code>时间戳</code></h3><h3 id="扩展：-microtime-返回当前-Unix-时间戳和微秒数，也就是gettimeofday-的前两个"><a href="#扩展：-microtime-返回当前-Unix-时间戳和微秒数，也就是gettimeofday-的前两个" class="headerlink" title="扩展： microtime() 返回当前 Unix 时间戳和微秒数，也就是gettimeofday()的前两个"></a>扩展： <code>microtime()</code> 返回当前 Unix 时间戳和微秒数，也就是gettimeofday()的前两个</h3><h3 id="作用：计算脚本运行时间（指的是很小很小的时间的差）"><a href="#作用：计算脚本运行时间（指的是很小很小的时间的差）" class="headerlink" title="作用：计算脚本运行时间（指的是很小很小的时间的差）"></a>作用：计算脚本运行时间（指的是很小很小的时间的差）</h3><pre><code>function fn(){
-    list($a,$b) = explode(&apos; &apos;, microtime());    //以空格分割字符串，将分割后的字符串分别赋值给$a,$b
-    return $a+$b;
+
+
+
+
+
+
+  
+    <article id="post-算法/java算法-动态规划法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/19/算法/java算法-动态规划法/" class="article-date">
+  	<time datetime="2016-11-19T08:02:52.000Z" itemprop="datePublished">2016-11-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/19/算法/java算法-动态规划法/">
+        java算法学习--动态规划法
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-动态规划法与分治法类似，基本思想也是将待求解的问题分解成若干个子问题，先求解子问题，然后从子问题中找到原问题的解。"><a href="#1-动态规划法与分治法类似，基本思想也是将待求解的问题分解成若干个子问题，先求解子问题，然后从子问题中找到原问题的解。" class="headerlink" title="1. 动态规划法与分治法类似，基本思想也是将待求解的问题分解成若干个子问题，先求解子问题，然后从子问题中找到原问题的解。"></a>1. 动态规划法与分治法类似，基本思想也是将待求解的问题分解成若干个子问题，先求解子问题，然后从子问题中找到原问题的解。</h3><h3 id="2-不同之处：适用于动态规划求解的问题，经过分解之后得到的子问题往往是不相互独立的。"><a href="#2-不同之处：适用于动态规划求解的问题，经过分解之后得到的子问题往往是不相互独立的。" class="headerlink" title="2. 不同之处：适用于动态规划求解的问题，经过分解之后得到的子问题往往是不相互独立的。"></a>2. 不同之处：适用于动态规划求解的问题，经过分解之后得到的子问题往往是<code>不相互独立</code>的。</h3><h3 id="3-如果能够保存已经解决的子问题的答案，在需要的时候再找出已经得到的答案，就可以避免大量重复的计算，从而得到多项式时间算法。"><a href="#3-如果能够保存已经解决的子问题的答案，在需要的时候再找出已经得到的答案，就可以避免大量重复的计算，从而得到多项式时间算法。" class="headerlink" title="3. 如果能够保存已经解决的子问题的答案，在需要的时候再找出已经得到的答案，就可以避免大量重复的计算，从而得到多项式时间算法。"></a>3. 如果能够保存已经解决的子问题的答案，在需要的时候再找出已经得到的答案，就可以避免大量重复的计算，从而得到多项式时间算法。</h3><h3 id="4-基本思想：为了达到这个目的，可以用一个表记录所有已经解决的子问题的答案-不管是否能用得到，只要他被计算过，就将他填入表中，这就是动态规划的基本思想。"><a href="#4-基本思想：为了达到这个目的，可以用一个表记录所有已经解决的子问题的答案-不管是否能用得到，只要他被计算过，就将他填入表中，这就是动态规划的基本思想。" class="headerlink" title="4. 基本思想：为了达到这个目的，可以用一个表记录所有已经解决的子问题的答案.不管是否能用得到，只要他被计算过，就将他填入表中，这就是动态规划的基本思想。"></a>4. 基本思想：为了达到这个目的，可以<code>用一个表</code>记录所有已经解决的子问题的答案.不管是否能用得到，只要他被计算过，就将他填入表中，这就是动态规划的基本思想。</h3><h3 id="5-设计动态规划算法的步骤："><a href="#5-设计动态规划算法的步骤：" class="headerlink" title="5. 设计动态规划算法的步骤："></a>5. 设计动态规划算法的步骤：</h3><h3 id="emsp-1-找出最优解的性质，并刻画其结构特性"><a href="#emsp-1-找出最优解的性质，并刻画其结构特性" class="headerlink" title="&emsp; 1. 找出最优解的性质，并刻画其结构特性"></a>&emsp; 1. 找出最优解的性质，并刻画其结构特性</h3><h3 id="emsp-2-递归的定义最优解"><a href="#emsp-2-递归的定义最优解" class="headerlink" title="&emsp; 2. 递归的定义最优解"></a>&emsp; 2. 递归的定义最优解</h3><h3 id="emsp-3-以自底向上的方式计算出最优解"><a href="#emsp-3-以自底向上的方式计算出最优解" class="headerlink" title="&emsp; 3. 以自底向上的方式计算出最优解"></a>&emsp; 3. 以自底向上的方式计算出最优解</h3><h3 id="emsp-4-根据计算最优时得到的信息，构造最优解"><a href="#emsp-4-根据计算最优时得到的信息，构造最优解" class="headerlink" title="&emsp; 4. 根据计算最优时得到的信息，构造最优解"></a>&emsp; 4. 根据计算最优时得到的信息，构造最优解</h3>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/19/算法/java算法-动态规划法/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="java算法学习--动态规划法">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-算法/java算法-合并排序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/19/算法/java算法-合并排序/" class="article-date">
+  	<time datetime="2016-11-19T05:41:15.000Z" itemprop="datePublished">2016-11-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/19/算法/java算法-合并排序/">
+        java算法学习--分治法 合并排序
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="合并排序：用分治策略实现对n个元素进行排序的算法。"><a href="#合并排序：用分治策略实现对n个元素进行排序的算法。" class="headerlink" title="合并排序：用分治策略实现对n个元素进行排序的算法。"></a>合并排序：用分治策略实现对n个元素进行排序的算法。</h3><h3 id="基本思想：将待排序列元素分成大小大致相同的两个子序列，分别对两个子序列进行排序，最终将排好序的子集合合并成为所要求的排好序的集合。"><a href="#基本思想：将待排序列元素分成大小大致相同的两个子序列，分别对两个子序列进行排序，最终将排好序的子集合合并成为所要求的排好序的集合。" class="headerlink" title="基本思想：将待排序列元素分成大小大致相同的两个子序列，分别对两个子序列进行排序，最终将排好序的子集合合并成为所要求的排好序的集合。"></a>基本思想：将待排序列元素分成大小大致相同的两个子序列，分别对两个子序列进行排序，最终将排好序的子集合合并成为所要求的排好序的集合。</h3><pre><code>public class Mergesort {
+
+    public static void merge(int[]a,int low,int mid,int high){//对两组已经排序的数组进行合并
+        int[]b=new int[high-low+1]; //临时数组，存储个数为high - low + 1个数据       
+        int s=low;
+        int t=mid+1;
+        int k=0;
+        while(s&lt;=mid&amp;&amp;t&lt;=high){   //直至前半部或后半部数据完全录入暂存
+            if(a[s]&lt;=a[t])        //如果前半部的数据小于后半部的，前半部数据暂存
+                b[k++]=a[s++];
+            else                   //否则后半部数据暂存，并下标自加                
+                b[k++]=a[t++];
+        }
+        while(s&lt;=mid)
+            b[k++]=a[s++];
+        while(t&lt;=high)
+            b[k++]=a[t++];
+        for(int i=0;i&lt;b.length;i++){     //将暂存的数据重新填充至array[low]--array[high]中
+            a[low+i]=b[i];
+        }
+    }
+    public static void mergesort(int a[],int low,int high){//对数组进行递归排序        
+        int mid;
+        if(low&lt;high){
+            mid=(low+high)/2;
+            mergesort(a,low,mid);
+            mergesort(a,mid+1,high);
+            merge(a,low,mid,high);
+        }
+    }
+    public static void main(String[]args){
+        int[]a={4,34,2,56,5,9,6,45,8,3};
+        System.out.println(&quot;排序前数组为：&quot;);
+        for(int i=0;i&lt;a.length;i++){
+            System.out.print(a[i]+&quot; &quot;); }
+        mergesort(a,0,a.length-1);
+        System.out.println(&quot;\n排序后数组为：&quot;);
+        for(int i=0;i&lt;a.length;i++){
+            System.out.print(a[i]+&quot; &quot;);}    
+    }
+
 }
-$start = fn();
-for ($i=0; $i&lt;100000000 ; $i++) {     //时间越大，运行时间越大
-    # code...
-}
-$end = fn();
-
-echo round($end - $start,4);
-</code></pre><h3 id="运行此脚本的时间是3-1149秒"><a href="#运行此脚本的时间是3-1149秒" class="headerlink" title="运行此脚本的时间是3.1149秒"></a>运行此脚本的时间是3.1149秒</h3><h2 id="四：getdate-函数接受一个时间戳，返回一个人们能看得懂的时间"><a href="#四：getdate-函数接受一个时间戳，返回一个人们能看得懂的时间" class="headerlink" title="四：getdate()函数接受一个时间戳，返回一个人们能看得懂的时间"></a>四：getdate()函数接受一个时间戳，返回一个人们能看得懂的时间</h2><h3 id="1-getdate-不接受时间戳参数时，返回当前时间的一个数组"><a href="#1-getdate-不接受时间戳参数时，返回当前时间的一个数组" class="headerlink" title="1. getdate()不接受时间戳参数时，返回当前时间的一个数组"></a>1. getdate()不接受时间戳参数时，返回当前时间的一个数组</h3><pre><code>print_r(getdate());
-</code></pre><h3 id="结果：-1"><a href="#结果：-1" class="headerlink" title="结果："></a>结果：</h3><pre><code>Array
-(
-    [seconds] =&gt; 39
-    [minutes] =&gt; 10
-    [hours] =&gt; 10
-    [mday] =&gt; 13
-    [wday] =&gt; 0
-    [mon] =&gt; 11
-    [year] =&gt; 2016
-    [yday] =&gt; 317
-    [weekday] =&gt; Sunday
-    [month] =&gt; November
-    [0] =&gt; 1479028239
-)
-</code></pre><h3 id="2-getdate-1479027864-接受一个时间戳，返回的是时间戳指示的时间的详细信息数组"><a href="#2-getdate-1479027864-接受一个时间戳，返回的是时间戳指示的时间的详细信息数组" class="headerlink" title="2. getdate(1479027864)接受一个时间戳，返回的是时间戳指示的时间的详细信息数组"></a>2. getdate(1479027864)接受一个时间戳，返回的是时间戳指示的时间的详细信息数组</h3><pre><code>print_r(getdate(1479027864));
-</code></pre><h3 id="结果：-2"><a href="#结果：-2" class="headerlink" title="结果："></a>结果：</h3><pre><code>Array
-(
-    [seconds] =&gt; 24
-    [minutes] =&gt; 4
-    [hours] =&gt; 10
-    [mday] =&gt; 13
-    [wday] =&gt; 0
-    [mon] =&gt; 11
-    [year] =&gt; 2016
-    [yday] =&gt; 317
-    [weekday] =&gt; Sunday
-    [month] =&gt; November
-    [0] =&gt; 1479027864
-)
 </code></pre>
       
     </div>
@@ -1037,8 +821,332 @@ echo round($end - $start,4);
       
         
 <div class="counter-tag counter">
-    <span id="/2016/11/13/php/php-日期与时间/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--日期与时间">
+    <span id="/2016/11/19/算法/java算法-合并排序/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="java算法学习--分治法 合并排序">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-算法/java算法-棋盘覆盖" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/19/算法/java算法-棋盘覆盖/" class="article-date">
+  	<time datetime="2016-11-19T03:04:16.000Z" itemprop="datePublished">2016-11-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/19/算法/java算法-棋盘覆盖/">
+        java算法--棋盘覆盖
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="问题描述：在2-k-2-k的棋盘中有一个特殊的方格，用L型骨牌覆盖除了这个特殊方格之外的其他方格。要求骨牌不能重叠。"><a href="#问题描述：在2-k-2-k的棋盘中有一个特殊的方格，用L型骨牌覆盖除了这个特殊方格之外的其他方格。要求骨牌不能重叠。" class="headerlink" title="问题描述：在2^k * 2^k的棋盘中有一个特殊的方格，用L型骨牌覆盖除了这个特殊方格之外的其他方格。要求骨牌不能重叠。"></a>问题描述：在2^k * 2^k的棋盘中有一个特殊的方格，用L型骨牌覆盖除了这个特殊方格之外的其他方格。要求骨牌不能重叠。</h3><h3 id="用0代表特殊方格，相同的数字代表同一个骨牌，不同骨牌用不同数字表示"><a href="#用0代表特殊方格，相同的数字代表同一个骨牌，不同骨牌用不同数字表示" class="headerlink" title="用0代表特殊方格，相同的数字代表同一个骨牌，不同骨牌用不同数字表示"></a>用0代表特殊方格，相同的数字代表同一个骨牌，不同骨牌用不同数字表示</h3><h3 id="算法思路：采用分治法，先将棋盘分成四个小棋盘，那么特殊方格肯定在这四个小棋盘中的一个里边。将没有特殊方格的三个棋盘交界地方覆盖上一个骨牌，使这个骨牌成为特殊方格。再将小棋盘切成4个小小棋盘，寻找没有特殊方格的三个棋盘覆盖，最终全部覆盖完毕。"><a href="#算法思路：采用分治法，先将棋盘分成四个小棋盘，那么特殊方格肯定在这四个小棋盘中的一个里边。将没有特殊方格的三个棋盘交界地方覆盖上一个骨牌，使这个骨牌成为特殊方格。再将小棋盘切成4个小小棋盘，寻找没有特殊方格的三个棋盘覆盖，最终全部覆盖完毕。" class="headerlink" title="算法思路：采用分治法，先将棋盘分成四个小棋盘，那么特殊方格肯定在这四个小棋盘中的一个里边。将没有特殊方格的三个棋盘交界地方覆盖上一个骨牌，使这个骨牌成为特殊方格。再将小棋盘切成4个小小棋盘，寻找没有特殊方格的三个棋盘覆盖，最终全部覆盖完毕。"></a>算法思路：采用分治法，先将棋盘分成四个小棋盘，那么特殊方格肯定在这四个小棋盘中的一个里边。将没有特殊方格的三个棋盘交界地方覆盖上一个骨牌，使这个骨牌成为特殊方格。再将小棋盘切成4个小小棋盘，寻找没有特殊方格的三个棋盘覆盖，最终全部覆盖完毕。</h3><h3 id="具体的覆盖方法："><a href="#具体的覆盖方法：" class="headerlink" title="具体的覆盖方法："></a>具体的覆盖方法：</h3><h3 id="emsp-1-如果左上棋盘无特殊方格，将左上棋盘的右下角覆盖"><a href="#emsp-1-如果左上棋盘无特殊方格，将左上棋盘的右下角覆盖" class="headerlink" title="&emsp; 1. 如果左上棋盘无特殊方格，将左上棋盘的右下角覆盖"></a>&emsp; 1. 如果左上棋盘无特殊方格，将左上棋盘的右下角覆盖</h3><h3 id="emsp-2-如果左下棋盘无特殊方格，将左下棋盘的右上角覆盖"><a href="#emsp-2-如果左下棋盘无特殊方格，将左下棋盘的右上角覆盖" class="headerlink" title="&emsp; 2. 如果左下棋盘无特殊方格，将左下棋盘的右上角覆盖"></a>&emsp; 2. 如果左下棋盘无特殊方格，将左下棋盘的右上角覆盖</h3><h3 id="emsp-3-如果右上棋盘无特殊方格，将右上棋盘的左下角覆盖"><a href="#emsp-3-如果右上棋盘无特殊方格，将右上棋盘的左下角覆盖" class="headerlink" title="&emsp; 3. 如果右上棋盘无特殊方格，将右上棋盘的左下角覆盖"></a>&emsp; 3. 如果右上棋盘无特殊方格，将右上棋盘的左下角覆盖</h3><h3 id="emsp-4-如果右下棋盘无特殊方格，将右上棋盘的左下角覆盖"><a href="#emsp-4-如果右下棋盘无特殊方格，将右上棋盘的左下角覆盖" class="headerlink" title="&emsp; 4. 如果右下棋盘无特殊方格，将右上棋盘的左下角覆盖"></a>&emsp; 4. 如果右下棋盘无特殊方格，将右上棋盘的左下角覆盖</h3><h3 id="图解如下："><a href="#图解如下：" class="headerlink" title="图解如下："></a>图解如下：</h3><p><img src="image/chessBoard.jpg" alt="img"></p>
+<h3 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h3><pre><code>public class chessBoard {
+// 设置棋盘规格为8
+public static int size = 8;
+// 设置特殊方格的横坐标（从0开始）为4
+public static int dr = 4;
+// 设置特殊方格的纵坐标（从0开始）为3
+public static int dc = 3;
+// 骨牌，从1开始，相同的骨牌用相同的数字，不同的骨牌数字不同，递增。骨牌个数为（8*8-1）/3=21个
+public static int tile = 1;
+public static int[][] board;
+
+
+public static void chessBoard(int tr, int tc, int dr, int dc, int size) {
+    // 分别是：左上行号，左上列号，特殊方格行号，特殊方格列号，棋盘规格2^k
+    if (size == 1)    
+        return;
+    int t = tile++, // tile是全局变量，表示L型骨牌的编号
+    s = size / 2; // 将棋盘分成上左，上右，下左，下右四部分
+    // 判断特殊方格是否在左上角的小棋盘中
+    if (dr &lt; tr + s &amp;&amp; dc &lt; tc + s) {
+        // 特殊方格在此盘中，则再次调用自身函数缩小范围
+        chessBoard(tr, tc, dr, dc, s);
+    } else {
+        // 此盘中无特殊方格
+        // 用t号L型骨牌覆盖右下角
+        board[tr + s - 1][tc + s - 1] = t;    //这里是将t号骨牌覆盖到bord[3][3]的位置上（也就是右下角）
+        chessBoard(tr, tc, tr + s - 1, tc + s - 1, s);    //这里特殊方格变成了3,3，将(0,0,3,3,4)这个棋盘分割
+    }
+    // 右上角（同理）
+    if (dr &lt; tr + s &amp;&amp; dc &gt;= tc + s) {    //特殊方格在此盘
+        chessBoard(tr, tc + s, dr, dc, s);
+    } else {
+        board[tr + s - 1][tc + s] = t;
+        chessBoard(tr, tc + s, tr + s - 1, tc + s, s);
+    }
+    // 左下角
+    if (dr &gt;= tr + s &amp;&amp; dc &lt; tc + s) {
+        chessBoard(tr + s, tc, dr, dc, s);
+    } else {
+        board[tr + s][tc + s - 1] = t;
+        chessBoard(tr + s, tc, tr + s, tc + s - 1, s);
+    }
+    // 右下角
+    if (dr &gt;= tr + s &amp;&amp; dc &gt;= tc + s) {
+        chessBoard(tr + s, tc + s, dr, dc, s);
+    } else {
+        board[tr + s][tc + s] = t;
+        chessBoard(tr + s, tc + s, tr + s, tc + s, s);
+    }
+}
+
+public static void main(String[] args) {
+    // 初始化棋盘
+    board = new int[size][size];
+    // 调用方法
+    chessBoard(0, 0, dr, dc, size);
+    // 显示棋盘
+    for (int[] is : board) {
+        System.out.println();
+        for (int i : is) {
+            System.out.printf(&quot;%4d&quot;, i);
+         }
+     }
+ }
+
+}
+</code></pre><h3 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h3><pre><code> 3   3   4   4   8   8   9   9
+ 3   2   2   4   8   7   7   9
+ 5   2   6   6  10  10   7  11
+ 5   5   6   1   1  10  11  11
+13  13  14   0   1  18  19  19
+13  12  14  14  18  18  17  19
+15  12  12  16  20  17  17  21
+15  15  16  16  20  20  21  21
+</code></pre><h3 id="算法的时间复杂度："><a href="#算法的时间复杂度：" class="headerlink" title="算法的时间复杂度："></a>算法的时间复杂度：</h3><h3 id="设T-k-是算法chessBoard覆盖2-k-2-k棋盘所需要的时间，从算法的分割策略可知，T-k-满足："><a href="#设T-k-是算法chessBoard覆盖2-k-2-k棋盘所需要的时间，从算法的分割策略可知，T-k-满足：" class="headerlink" title="设T(k)是算法chessBoard覆盖2^k * 2^k棋盘所需要的时间，从算法的分割策略可知，T(k)满足："></a>设T(k)是算法chessBoard覆盖2^k * 2^k棋盘所需要的时间，从算法的分割策略可知，T(k)满足：</h3><h3 id="1-k-0-T-k-O-1"><a href="#1-k-0-T-k-O-1" class="headerlink" title="1. k=0, T(k) = O(1)"></a>1. k=0, T(k) = O(1)</h3><h3 id="2-k-gt-1-T-k-4T-k-1-O-1"><a href="#2-k-gt-1-T-k-4T-k-1-O-1" class="headerlink" title="2. k&gt;1, T(k) = 4T(k-1)+O(1)"></a>2. k&gt;1, T(k) = 4T(k-1)+O(1)</h3><h3 id="解得T-k-O-4-k"><a href="#解得T-k-O-4-k" class="headerlink" title="解得T(k) = O(4^k)"></a>解得T(k) = O(4^k)</h3>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/19/算法/java算法-棋盘覆盖/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="java算法--棋盘覆盖">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-算法/java算法-排列问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/19/算法/java算法-排列问题/" class="article-date">
+  	<time datetime="2016-11-19T02:23:55.000Z" itemprop="datePublished">2016-11-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/19/算法/java算法-排列问题/">
+        java算法学习--排列问题
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>public class MyMath {
+    public static void perm(String[] list , int k,int m)
+    {
+        //k是第一个数字，m是最后一个数字
+        //输出list[k...m]的所有排列方式
+        if(k == m) {    
+            //只有一个元素.一到递归的出口就输出数组，此数组为全排列
+            for(int j=0; j&lt;= m ;j++) {
+                System.out.print(list[j]);
+            }
+            System.out.println();
+        }
+        else
+            //还有很多元素，递归产生排列
+        for(int i = k; i &lt;= m ; i++) {
+            //for循环将k~m中每个数放到k位置中去，
+            MyMath.swap(list, k, i);
+            //假设k位置确定，那么对k+1到m的数继续递归
+            perm(list, k+1, m); 
+            //换过去之后再还原
+            MyMath.swap(list, k, i);
+        }    
+    }
+
+    private static void swap(String[] str, int i, int first) {
+        //temp变量实现元素的交换。
+         String temp;
+         temp = str[first];
+         str[first] = str[i];
+         str[i] = temp;      
+    }
+
+    public static void main(String args[]){ 
+        //java中main()方法是Java应用程序的入口方法，JVM通过main方法找到需要启动的运行程序，
+        //输入数组
+         String[] str = {&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;};
+         //从第一个到最后一个全排列，变换数字可以任意截取其中一部分，比如perm(str,0,2)，
+         //只会对前三个数字进行全排列，其余类似
+         perm(str, 0, 5);
+         //输出list[0..2]的所有排列方式
+
+} 
+
+}
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/19/算法/java算法-排列问题/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="java算法学习--排列问题">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-算法/java算法-斐波那契数列" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/19/算法/java算法-斐波那契数列/" class="article-date">
+  	<time datetime="2016-11-19T02:18:37.000Z" itemprop="datePublished">2016-11-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/19/算法/java算法-斐波那契数列/">
+        java算法学习--斐波那契数列
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="斐波那契数列：1-1-2-3-5-8-11······"><a href="#斐波那契数列：1-1-2-3-5-8-11······" class="headerlink" title="斐波那契数列：1 1 2 3 5 8 11······"></a>斐波那契数列：1 1 2 3 5 8 11······</h3><h3 id="也就是从第二个开始，前两个数的和等于第三个数"><a href="#也就是从第二个开始，前两个数的和等于第三个数" class="headerlink" title="也就是从第二个开始，前两个数的和等于第三个数"></a>也就是从第二个开始，前两个数的和等于第三个数</h3><pre><code>public class Feonacci {
+    //计算第n个菲波那切数
+    public static int febonacci(int n)
+    {
+        if(n&lt;=1) return 1;
+        return febonacci(n-1)+febonacci(n-2);
+    }
+
+    public static void main(String[] args)
+    {
+        System.out.println(&quot;第五个斐波那契数是：&quot;+febonacci(5));
+    }
+}
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/19/算法/java算法-斐波那契数列/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="java算法学习--斐波那契数列">
          &nbsp;
         view
     </span>
@@ -1062,7 +1170,7 @@ echo round($end - $start,4);
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>

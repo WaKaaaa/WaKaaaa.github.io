@@ -3,40 +3,28 @@
 <head>
   <meta charset="utf-8">
   
-  <title>php学习--简单的随机图像验证码 | WaKaaaa猪的博客</title>
+  <title>java算法学习--分治法--合并排序 | WaKaaaa猪的博客</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="完整代码：ini_set(&amp;quot;error_reporting&amp;quot;, &amp;quot;E_ALL &amp;amp; ~E_NOTICE&amp;quot;);
-for ($i=0;$i&amp;lt;4;$i++) {
-    $nmsg .= dechex(mt_rand(0,15));
-}
-
-header(&amp;apos;Content-Type: image/png&amp;apos;);
-$im = imagec">
+  <meta name="description" content="基本思想： 将待排序的元素分成大致相同的两个子集合，分别对两个子集合进行排序，最终将排好序的子集合合并称为所要求得排好序的集合算法如下：public class Mergesort {
+// 合并算法
+public static void merge(int[] a, int low, int mid, int high) {// 对两组已经排序的数组进行合并，low是第一个元素的下标，high是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php学习--简单的随机图像验证码">
-<meta property="og:url" content="https://WaKaaaa.github.io/2016/11/16/php/php-简单的随机图像验证码/index.html">
+<meta property="og:title" content="java算法学习--分治法--合并排序">
+<meta property="og:url" content="https://WaKaaaa.github.io/2016/11/23/算法/java算法-分治法-合并排序/index.html">
 <meta property="og:site_name" content="WaKaaaa猪的博客">
-<meta property="og:description" content="完整代码：ini_set(&amp;quot;error_reporting&amp;quot;, &amp;quot;E_ALL &amp;amp; ~E_NOTICE&amp;quot;);
-for ($i=0;$i&amp;lt;4;$i++) {
-    $nmsg .= dechex(mt_rand(0,15));
-}
-
-header(&amp;apos;Content-Type: image/png&amp;apos;);
-$im = imagec">
-<meta property="og:updated_time" content="2016-11-16T12:48:50.622Z">
+<meta property="og:description" content="基本思想： 将待排序的元素分成大致相同的两个子集合，分别对两个子集合进行排序，最终将排好序的子集合合并称为所要求得排好序的集合算法如下：public class Mergesort {
+// 合并算法
+public static void merge(int[] a, int low, int mid, int high) {// 对两组已经排序的数组进行合并，low是第一个元素的下标，high是">
+<meta property="og:updated_time" content="2016-11-24T01:25:40.709Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php学习--简单的随机图像验证码">
-<meta name="twitter:description" content="完整代码：ini_set(&amp;quot;error_reporting&amp;quot;, &amp;quot;E_ALL &amp;amp; ~E_NOTICE&amp;quot;);
-for ($i=0;$i&amp;lt;4;$i++) {
-    $nmsg .= dechex(mt_rand(0,15));
-}
-
-header(&amp;apos;Content-Type: image/png&amp;apos;);
-$im = imagec">
+<meta name="twitter:title" content="java算法学习--分治法--合并排序">
+<meta name="twitter:description" content="基本思想： 将待排序的元素分成大致相同的两个子集合，分别对两个子集合进行排序，最终将排好序的子集合合并称为所要求得排好序的集合算法如下：public class Mergesort {
+// 合并算法
+public static void merge(int[] a, int low, int mid, int high) {// 对两组已经排序的数组进行合并，low是第一个元素的下标，high是">
   
     <link rel="alternative" href="/atom.xml" title="WaKaaaa猪的博客" type="application/atom+xml">
   
@@ -212,11 +200,11 @@ $im = imagec">
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-php/php-简单的随机图像验证码" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-算法/java算法-分治法-合并排序" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/16/php/php-简单的随机图像验证码/" class="article-date">
-  	<time datetime="2016-11-16T12:36:43.000Z" itemprop="datePublished">2016-11-16</time>
+      <a href="/2016/11/23/算法/java算法-分治法-合并排序/" class="article-date">
+  	<time datetime="2016-11-23T07:55:09.000Z" itemprop="datePublished">2016-11-23</time>
 </a>
     </div>
   
@@ -229,7 +217,7 @@ $im = imagec">
         
   
     <h1 class="article-title" itemprop="name">
-      php学习--简单的随机图像验证码
+      java算法学习--分治法--合并排序
       
     </h1>
   
@@ -243,8 +231,8 @@ $im = imagec">
         
           
 <div class="counter-tag counter">
-    <span id="/2016/11/16/php/php-简单的随机图像验证码/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--简单的随机图像验证码">
+    <span id="/2016/11/23/算法/java算法-分治法-合并排序/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="java算法学习--分治法--合并排序">
          &nbsp;
         view
     </span>
@@ -257,25 +245,68 @@ $im = imagec">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h2><pre><code>ini_set(&quot;error_reporting&quot;, &quot;E_ALL &amp; ~E_NOTICE&quot;);
-for ($i=0;$i&lt;4;$i++) {
-    $nmsg .= dechex(mt_rand(0,15));
+        <h3 id="基本思想：-将待排序的元素分成大致相同的两个子集合，分别对两个子集合进行排序，最终将排好序的子集合合并称为所要求得排好序的集合"><a href="#基本思想：-将待排序的元素分成大致相同的两个子集合，分别对两个子集合进行排序，最终将排好序的子集合合并称为所要求得排好序的集合" class="headerlink" title="基本思想： 将待排序的元素分成大致相同的两个子集合，分别对两个子集合进行排序，最终将排好序的子集合合并称为所要求得排好序的集合"></a>基本思想： 将待排序的元素分成大致相同的两个子集合，分别对两个子集合进行排序，最终将排好序的子集合合并称为所要求得排好序的集合</h3><h3 id="算法如下："><a href="#算法如下：" class="headerlink" title="算法如下："></a>算法如下：</h3><pre><code>public class Mergesort {
+// 合并算法
+public static void merge(int[] a, int low, int mid, int high) {// 对两组已经排序的数组进行合并，low是第一个元素的下标，high是最后一个元素的下标
+    int[] b = new int[high - low + 1]; // 临时数组，存储个数为high - low +
+                                        // 1个数据。这个存储的是排好序的元素
+    int s = low; // 这里s = 0
+    int t = mid + 1; // t = 4+1 = 5
+    int k = 0; // k是将要装入b[]中的元素
+    // 把较小的数先移到新数组
+    while (s &lt;= mid &amp;&amp; t &lt;= high) { // 直至前半部或后半部数据完全录入暂存
+        if (a[s] &lt;= a[t]) // 如果前半部的第一个数据数据小于后半部的第一个数据，前半部数据暂存如b[]中
+            b[k++] = a[s++]; // b[1] = a[1] = 34
+        else
+            // 否则前半部分的第一个数据大于后半部的第一个数据，后半部第一个数据数据暂存入b[]中，并下标自加
+            b[k++] = a[t++];
+    }
+    // 把左边剩余的数移入数组,也就是右边的已经比较完了
+    while (s &lt;= mid)
+        // 取元素放入b中
+        b[k++] = a[s++];
+    // 把右边剩余的数移入数组,right后边的数组已经比较完
+    while (t &lt;= high)
+        b[k++] = a[t++];
+    for (int i = 0; i &lt; b.length; i++) { // 将暂存的数据重新填充至array[low]--array[high]中
+        a[low + i] = b[i]; // 将b[]中的元素放入到a[]中
+    }
 }
 
-header(&apos;Content-Type: image/png&apos;);
-$im = imagecreatetruecolor(75,25);
-$blue = imagecolorallocate($im,0,102,255);
-$white = imagecolorallocate($im,255,255,255);
-imagefill($im,0,0,$blue);
-imagestring($im,5,20,5,$nmsg,$white);    //将四位验证码加入到图片中去
-imagepng($im);
-imagedestroy($im);
-</code></pre><h2 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h2><h3 id="思路：首先生成四位随机的数字字母，这里可以用十六进制数字表示，然后将这四位随机数放在我们已经写好的图片里即可"><a href="#思路：首先生成四位随机的数字字母，这里可以用十六进制数字表示，然后将这四位随机数放在我们已经写好的图片里即可" class="headerlink" title="思路：首先生成四位随机的数字字母，这里可以用十六进制数字表示，然后将这四位随机数放在我们已经写好的图片里即可"></a>思路：首先生成四位随机的数字字母，这里可以用十六进制数字表示，然后将这四位随机数放在我们已经写好的图片里即可</h3><h3 id="生成四位数字"><a href="#生成四位数字" class="headerlink" title="生成四位数字"></a>生成四位数字</h3><pre><code>for ($i=0;$i&lt;4;$i++) {
-    $nmsg .= dechex(mt_rand(0,15));
+// 分割算法
+public static void mergesort(int a[], int low, int high) {// 对数组进行递归排序
+    int mid;
+    if (low &lt; high) { // 至少有两个元素
+        mid = (low + high) / 2; // 取中间点
+        mergesort(a, low, mid); // 再对左边分割，直至只剩下一个元素
+        mergesort(a, mid + 1, high); // 再对右边分割，成为单个元素
+        // 已经分割完毕，此时是单个元素
+        merge(a, low, mid, high); // 调用 合并两个已经排好序的数组
+        System.out.println(&quot;low:&quot; + low);
+        System.out.println(&quot;high:&quot; + high);
+
+    }
 }
-// mt_rand(范围可选) 生成一个更好的随机数
-// dechex()将十进制的随机数转化成十六进制
-</code></pre><h3 id="在这里会产生一个报错：Notice-Undefined-variable-nmsg-in-D-xampp1-htdocs-PHP-Basic14-demo2-php-on-line-4，修改的方法："><a href="#在这里会产生一个报错：Notice-Undefined-variable-nmsg-in-D-xampp1-htdocs-PHP-Basic14-demo2-php-on-line-4，修改的方法：" class="headerlink" title="在这里会产生一个报错：Notice: Undefined variable: nmsg in D:\xampp1\htdocs\PHP\Basic14\demo2.php on line 4，修改的方法："></a>在这里会产生一个报错：<code>Notice: Undefined variable: nmsg in D:\xampp1\htdocs\PHP\Basic14\demo2.php on line 4</code>，修改的方法：</h3><h3 id="1-修改php-ini配置文件，将error-reporting-E-ALL修改为error-reporting-E-ALL-amp-E-NORICE-原理是减弱了PHP的敏感程度，再次遇到这种问题不会报错"><a href="#1-修改php-ini配置文件，将error-reporting-E-ALL修改为error-reporting-E-ALL-amp-E-NORICE-原理是减弱了PHP的敏感程度，再次遇到这种问题不会报错" class="headerlink" title="1. 修改php.ini配置文件，将error_reporting = E_ALL修改为error_reporting = E_ALL &amp;~E_NORICE,原理是减弱了PHP的敏感程度，再次遇到这种问题不会报错"></a>1. 修改php.ini配置文件，将<code>error_reporting = E_ALL</code>修改为<code>error_reporting = E_ALL &amp;~E_NORICE</code>,原理是减弱了PHP的敏感程度，再次遇到这种问题不会报错</h3><h3 id="2-在PHP头部加入代码：ini-set-quot-error-reporting-quot-quot-E-ALL-amp-E-NOTICE-quot-，也可以解决这类问题"><a href="#2-在PHP头部加入代码：ini-set-quot-error-reporting-quot-quot-E-ALL-amp-E-NOTICE-quot-，也可以解决这类问题" class="headerlink" title="2. 在PHP头部加入代码：ini_set(&quot;error_reporting&quot;, &quot;E_ALL &amp; ~E_NOTICE&quot;);，也可以解决这类问题"></a>2. 在PHP头部加入代码：<code>ini_set(&quot;error_reporting&quot;, &quot;E_ALL &amp; ~E_NOTICE&quot;);</code>，也可以解决这类问题</h3>
+
+public static void main(String[] args) {
+    int[] a = { 4, 34, 2, 56, 5, 9, 6, 45, 8 };
+    System.out.println(&quot;排序前数组为：&quot;);
+    for (int i = 0; i &lt; a.length; i++) {
+        System.out.print(a[i] + &quot; &quot;);
+        // System.out.println();
+
+    }
+    mergesort(a, 0, a.length - 1);
+    // System.out.println(a.length); 10
+
+    System.out.println(&quot;\n排序后数组为：&quot;);
+    for (int i = 0; i &lt; a.length; i++) {
+        System.out.print(a[i] + &quot; &quot;);
+    }
+}
+
+}
+</code></pre>
       
     </div>
     
@@ -284,18 +315,9 @@ imagedestroy($im);
     
 <nav id="article-nav">
   
-    <a href="/2016/11/19/算法/Java算法-阶乘函数/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
-        
-          Java算法学习--阶乘函数
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/11/16/php/php-处理图像/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">php学习--处理图像</div>
+    <a href="/2016/11/23/算法/java算法-分治法-二分搜索技术/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java算法--分治法--二分搜索技术</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
@@ -324,7 +346,7 @@ imagedestroy($im);
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="php/php-简单的随机图像验证码" data-title="php学习--简单的随机图像验证码" data-url="https://WaKaaaa.github.io/2016/11/16/php/php-简单的随机图像验证码/"></div>
+	<div class="ds-thread" data-thread-key="算法/java算法-分治法-合并排序" data-title="java算法学习--分治法--合并排序" data-url="https://WaKaaaa.github.io/2016/11/23/算法/java算法-分治法-合并排序/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

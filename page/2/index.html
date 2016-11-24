@@ -192,11 +192,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-php/php-正则" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-算法/Java算法-阶乘函数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/07/php/php-正则/" class="article-date">
-  	<time datetime="2016-11-07T14:20:36.000Z" itemprop="datePublished">2016-11-07</time>
+      <a href="/2016/11/19/算法/Java算法-阶乘函数/" class="article-date">
+  	<time datetime="2016-11-19T01:52:32.000Z" itemprop="datePublished">2016-11-19</time>
 </a>
     </div>
   
@@ -209,8 +209,8 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/07/php/php-正则/">
-        php学习--正则表达式
+      <a class="article-title" href="/2016/11/19/算法/Java算法-阶乘函数/">
+        Java算法学习--阶乘函数
         
       </a>
     </h1>
@@ -221,293 +221,41 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p></p><h1><center>php正则表达式</center></h1><br>&lt;?php <p></p>
-<pre><code>// 如果整个规则模式匹配通过而被匹配的字符串里还有字符，也是可以匹配成功的
+        <h2 id="阶乘的概念："><a href="#阶乘的概念：" class="headerlink" title="阶乘的概念："></a>阶乘的概念：</h2><h3 id="n-123···n-n-gt-0-emsp-0-1-n-0"><a href="#n-123···n-n-gt-0-emsp-0-1-n-0" class="headerlink" title="n! = 123···n (n&gt;0) &emsp; 0! =1(n=0)"></a>n! = 1<em>2</em>3<em>···</em>n (n&gt;0) &emsp; 0! =1(n=0)</h3><h3 id="非递归算法"><a href="#非递归算法" class="headerlink" title="非递归算法"></a>非递归算法</h3><pre><code>public class JieChengSum {
+    //阶乘的非递归算法
+    public static void main(String[] args){
+        long sum = 1;
+        long total = 0;
 
-// 只要模式规则全部通过，就可以匹配成功
-// 此实例中，只要有php三个字符相连出现，模式匹配就成功
-// 但是匹配和 == 是不相同的，匹配可以使三个字符对多个字符
-
-// $pattern = &apos;/php/&apos;;    // 规则模式
-// $subject = &apos;gggphpqqq&apos;;    // 被匹配的字符串
-
-
-// 前导的概念：就是他前面的一个字符
-// + * ？ {} . $ ^ |
-
-
-// 1. h+ 表示至少包含一个前导字符，也就是h大于等于1个
-// $pattern = &apos;/ph+p/&apos;;    // 规则模式
-
-
-// 2. h*表示包含0到无数个前导字符，也就是h的个数可以为任意个
-// $pattern = &apos;/ph?p/&apos;;    // 规则模式
-
-// 3. h?表示包含0个或者1个前导字符，也就是h的个数等于0个或者1个
-
-
-// 4. h.表示前导字符可以为任意字符，一个.是一个字符，将.号代替一个字符
-// 5. .* 表示前导任意多个任意字符，0到无数个都可以
-// $pattern = &apos;/ph.p/&apos;;    // 规则模式
-// $subject = &apos;phjp&apos;;    // 被匹配的字符串（匹配）
-
-
-// 5. $号加在字符串的末尾，只要末尾的几个字符匹配即可
-
-// 6. 相对的是^，通常在字符串的开始，只要开始的几个字符匹配即可
-
-// 7. | 是条件选择符号，如果其中有一个符合就返回1
-// $pattern = &apos;/php|jsp|asp/&apos;;    // 规则模式
-// $subject = &apos;phpe&apos;;    // 被匹配的字符串(匹配)，如果是这三个字符串之外的就不符合
-
-// 8. h{3} 表示前导有三个，不能多也不能少
-// h{3,5} 表示前导有3个到5都可以，多了少了都不行
-// h{5,} 如果后边没有数字，就表示从5个到大于5个的人一多个前导字符
-$pattern = &apos;/ph{3}p/&apos;;    // 规则模式
-$subject = &apos;phhhpe&apos;;    // 被匹配的字符串
-
-if(preg_match($pattern, $subject)){
-    echo &quot;匹配&quot;;
-}else{
-    echo &quot;不匹配&quot;;
-}
-</code></pre><p> ?&gt;</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP正则表达式-PHP-Perl/">PHP正则表达式 PHP_Perl</a></li></ul>
-	</div>
-
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/07/php/php-正则/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--正则表达式">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-laravel控制器" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/23/laravel控制器/" class="article-date">
-  	<time datetime="2016-10-23T10:58:05.000Z" itemprop="datePublished">2016-10-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/23/laravel控制器/">
-        laravel学习--控制器
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="控制器：数据和视图之间的桥梁，数据就是通过控制器将数据发送到视图页面的"><a href="#控制器：数据和视图之间的桥梁，数据就是通过控制器将数据发送到视图页面的" class="headerlink" title="控制器：数据和视图之间的桥梁，数据就是通过控制器将数据发送到视图页面的"></a>控制器：数据和视图之间的桥梁，数据就是通过控制器将数据发送到视图页面的</h3><h3 id="创建控制器的方法："><a href="#创建控制器的方法：" class="headerlink" title="创建控制器的方法："></a>创建控制器的方法：</h3><h2 id="1-手动创建"><a href="#1-手动创建" class="headerlink" title="1.手动创建"></a>1.手动创建</h2><h4 id="控制器的位置：app-gt-Http-gt-Controllers下，我们就是在那里创建有意义的控制器"><a href="#控制器的位置：app-gt-Http-gt-Controllers下，我们就是在那里创建有意义的控制器" class="headerlink" title="控制器的位置：app-&gt;Http-&gt;Controllers下，我们就是在那里创建有意义的控制器"></a>控制器的位置：app-&gt;Http-&gt;Controllers下，我们就是在那里创建有意义的控制器</h4><h4 id="第一步：在controller下新建一个文件，取一个有意义的名字，例如：InputController"><a href="#第一步：在controller下新建一个文件，取一个有意义的名字，例如：InputController" class="headerlink" title="第一步：在controller下新建一个文件，取一个有意义的名字，例如：InputController"></a>第一步：在controller下新建一个文件，取一个有意义的名字，例如：InputController</h4><h4 id="第二步：填写内容"><a href="#第二步：填写内容" class="headerlink" title="第二步：填写内容"></a>第二步：填写内容</h4><pre><code>&lt;?php 
-namespace App\Http\Controllers;    //指定命名空间，在它下边
-
-class InputController extends Controller
-{
-    public function input()    //创建一个函数
-    {
-        echo &quot;这是我手动创建的控制器&quot;;
-    }
-
-}
-// 注意：laravel里所有用浏览器访问的函数都需要到routes里配置路径
-// 所以要回到路由器配置一下路径app,http,routes
-</code></pre><h4 id="第三步：去routes里配置，用路由取访问控制器"><a href="#第三步：去routes里配置，用路由取访问控制器" class="headerlink" title="第三步：去routes里配置，用路由取访问控制器"></a>第三步：去routes里配置，用路由取访问控制器</h4><pre><code>// 定义指向控制器路由的动作，user/{id}是索要访问的页面，UserCotroller是你定义的控制器的名称，showProfile是UserCotroller里边的方法
-// Route::get(&apos;user/{id}&apos;, &apos;UserController@showProfile&apos;)
-Route::get(&apos;test&apos;,&apos;InputController@input&apos;);
-</code></pre><h4 id="第四步：输入localhost-8000-test，显示这是我手动创建的控制器"><a href="#第四步：输入localhost-8000-test，显示这是我手动创建的控制器" class="headerlink" title="第四步：输入localhost:8000/test，显示这是我手动创建的控制器"></a>第四步：输入localhost:8000/test，显示这是我手动创建的控制器</h4><h3 id="开启laravel的方法：cd到Laravel目录，命令行输入-php-artisan-serve"><a href="#开启laravel的方法：cd到Laravel目录，命令行输入-php-artisan-serve" class="headerlink" title="开启laravel的方法：cd到Laravel目录，命令行输入 php artisan serve"></a>开启laravel的方法：cd到Laravel目录，命令行输入 php artisan serve</h3><h4 id="PHP-Warning-Module-‘openssl’-already-loaded-in-Unknown-on-line-0的解决方法：php-ini中搜索openssl，有两个相同的-extension-php-openssl-dll，将其中一个的分号去掉，一个保留"><a href="#PHP-Warning-Module-‘openssl’-already-loaded-in-Unknown-on-line-0的解决方法：php-ini中搜索openssl，有两个相同的-extension-php-openssl-dll，将其中一个的分号去掉，一个保留" class="headerlink" title="PHP Warning:  Module ‘openssl’ already loaded in Unknown on line 0的解决方法：php.ini中搜索openssl，有两个相同的    ;extension=php_openssl.dll，将其中一个的分号去掉，一个保留"></a>PHP Warning:  Module ‘openssl’ already loaded in Unknown on line 0的解决方法：php.ini中搜索openssl，有两个相同的    <code>;extension=php_openssl.dll</code>，将其中一个的分号去掉，一个保留</h4><p>####<br>    ;;;;;;;;;;;;;;;;;;;<br>    ; Module Settings ;<br>    ;;;;;;;;;;;;;;;;;;;<br>    里的去掉分号，另一个保留    </p>
-<h4 id="php-artisan-make-composer不能找到命名空间。composer语法错误，有可能是conposer-json文件有注释修改等不合语法的操作"><a href="#php-artisan-make-composer不能找到命名空间。composer语法错误，有可能是conposer-json文件有注释修改等不合语法的操作" class="headerlink" title="php artisan make:composer不能找到命名空间。composer语法错误，有可能是conposer.json文件有注释修改等不合语法的操作"></a>php artisan make:composer不能找到命名空间。composer语法错误，有可能是conposer.json文件有注释修改等不合语法的操作</h4><h2 id="2-命令行创建"><a href="#2-命令行创建" class="headerlink" title="2.命令行创建"></a>2.命令行创建</h2><h3 id="第一步：在laravel的目录下打开命令行，快捷键是进入目录，shift-右键打开"><a href="#第一步：在laravel的目录下打开命令行，快捷键是进入目录，shift-右键打开" class="headerlink" title="第一步：在laravel的目录下打开命令行，快捷键是进入目录，shift+右键打开"></a>第一步：在laravel的目录下打开命令行，快捷键是进入目录，shift+右键打开</h3><h3 id="第二步：输入：php-artisan-make-controller-你的控制器名字，比如php-artisan-make-controller-HelloController-就可以创建一个HelloController的控制器，配置如下"><a href="#第二步：输入：php-artisan-make-controller-你的控制器名字，比如php-artisan-make-controller-HelloController-就可以创建一个HelloController的控制器，配置如下" class="headerlink" title="第二步：输入：php artisan make:controller 你的控制器名字，比如php artisan make:controller HelloController,就可以创建一个HelloController的控制器，配置如下"></a>第二步：输入：php artisan make:controller 你的控制器名字，比如php artisan make:controller HelloController,就可以创建一个HelloController的控制器，配置如下</h3><pre><code>&lt;?php
-
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-
-class HelloController extends Controller
-{
-
+        for(int i=1;i&lt;=20;i++){
+            sum *= i;
+            total += sum;    
+        }
+        System.out.println(&quot;前20阶乘的和是:&quot;+total);
+        System.out.println(&quot;20的阶乘是：&quot;+sum);
     }
 }
-</code></pre><h3 id="建议多用命令行，可以加快速度"><a href="#建议多用命令行，可以加快速度" class="headerlink" title="建议多用命令行，可以加快速度"></a>建议多用命令行，可以加快速度</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/laravel-route-PHP框架-路由/">laravel route PHP框架 路由</a></li></ul>
-	</div>
+</code></pre><h3 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h3><pre><code>前20阶乘的和是:2561327494111820313
+20的阶乘是：2432902008176640000
+</code></pre><h3 id="递归算法"><a href="#递归算法" class="headerlink" title="递归算法"></a>递归算法</h3><pre><code>import java.util.Scanner;
 
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/10/23/laravel控制器/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="laravel学习--控制器">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-php/php--数组排序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/19/php/php--数组排序/" class="article-date">
-  	<time datetime="2016-10-19T10:00:23.000Z" itemprop="datePublished">2016-10-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/19/php/php--数组排序/">
-        php学习--数组排序
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>&lt;?php 
-    $numbers = array(1,4,6,3,2,7,9,4,2,4,7);
-    //sort会改变原来数组而不是创建新的数组
-    //sort 对数字排序
-    sort($numbers);
-    print_r($numbers);
-
-    // //sort 会按照字母的顺序对字母排序
-    $letter = array(h,g,r,s,h,x,e,a,l,m,y,u,p);
-    sort($letter);
-    print_r($letter);
-
-    //sort 按照汉字拼音的先后顺序排序，utf8格式的文件不可以直接用，GBK和gb2312文件可用
-    $userAges = array(&apos;张三&apos;, &apos;李四&apos;, &apos;王五&apos;);
-    sort($userAges);
-    print_r($userAges);
-
-    //sort的第二个可选参数
-    $number = array(2,12);
-    sort($number,SORT_STRING);    //第二个参数为sort_string，说明要求数组元素按照字符串的顺序比较（无论数组元素是字符串还是数字，都会转化成字符串比较）
-    print_r($number);
-    sort($number,SORT_NUMERIC);    //转化成数字进行比较
-    print_r($number);
- ?&gt;
-</code></pre><h3 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h3><pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 2
-    [2] =&gt; 2
-    [3] =&gt; 3
-    [4] =&gt; 4
-    [5] =&gt; 4
-    [6] =&gt; 4
-    [7] =&gt; 6
-    [8] =&gt; 7
-    [9] =&gt; 7
-    [10] =&gt; 9
-)
-Array
-(
-    [0] =&gt; a
-    [1] =&gt; e
-    [2] =&gt; g
-    [3] =&gt; h
-    [4] =&gt; h
-    [5] =&gt; l
-    [6] =&gt; m
-    [7] =&gt; p
-    [8] =&gt; r
-    [9] =&gt; s
-    [10] =&gt; u
-    [11] =&gt; x
-    [12] =&gt; y
-)
-Array
-(
-    [0] =&gt; 李四
-    [1] =&gt; 王五
-    [2] =&gt; 张三
-)
-Array
-(
-    [0] =&gt; 12
-    [1] =&gt; 2
-)
-Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 12
-)
+public class jiecheng2 {
+    public static void main(String[] args){
+        // 从控制台输入一个整数
+        Scanner in = new Scanner(System.in);
+        long b = in.nextLong();
+        //声明一个jiecheng2对象，调用用cal获取结果 
+        jiecheng2 test = new jiecheng2();
+        long a = test.cal(b);
+        System.out.println(a);
+    }
+    public long cal(long number){
+        if(number == 0) return 1;
+        return number*cal(number-1);
+    }
+}
+</code></pre><h3 id="从控制台输入20的结果："><a href="#从控制台输入20的结果：" class="headerlink" title="从控制台输入20的结果："></a>从控制台输入20的结果：</h3><pre><code>20
+2432902008176640000
 </code></pre>
       
     </div>
@@ -520,8 +268,8 @@ Array
       
         
 <div class="counter-tag counter">
-    <span id="/2016/10/19/php/php--数组排序/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--数组排序">
+    <span id="/2016/11/19/算法/Java算法-阶乘函数/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="Java算法学习--阶乘函数">
          &nbsp;
         view
     </span>
@@ -543,11 +291,11 @@ Array
 
 
   
-    <article id="post-php/php--数组二维" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-php/php-简单的随机图像验证码" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/10/19/php/php--数组二维/" class="article-date">
-  	<time datetime="2016-10-19T06:56:23.000Z" itemprop="datePublished">2016-10-19</time>
+      <a href="/2016/11/16/php/php-简单的随机图像验证码/" class="article-date">
+  	<time datetime="2016-11-16T12:36:43.000Z" itemprop="datePublished">2016-11-16</time>
 </a>
     </div>
   
@@ -560,8 +308,8 @@ Array
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/19/php/php--数组二维/">
-        php学习--二维数组（数组中的数组）
+      <a class="article-title" href="/2016/11/16/php/php-简单的随机图像验证码/">
+        php学习--简单的随机图像验证码
         
       </a>
     </h1>
@@ -572,102 +320,25 @@ Array
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="php-二维数组"><a href="#php-二维数组" class="headerlink" title=" php 二维数组"></a><center> php 二维数组</center></h1><p>##1.定义    </p>
-<h3 id="数组的元素本身仍然是数组的数组成为二维数组，可以把二维数组当成一个矩阵，或者是一个具有宽度和高度或者行和列的网格。一维数组只在一行或者一列上显示，二维数组则像网格一样有好几行和好几列。"><a href="#数组的元素本身仍然是数组的数组成为二维数组，可以把二维数组当成一个矩阵，或者是一个具有宽度和高度或者行和列的网格。一维数组只在一行或者一列上显示，二维数组则像网格一样有好几行和好几列。" class="headerlink" title="数组的元素本身仍然是数组的数组成为二维数组，可以把二维数组当成一个矩阵，或者是一个具有宽度和高度或者行和列的网格。一维数组只在一行或者一列上显示，二维数组则像网格一样有好几行和好几列。"></a>数组的元素本身仍然是数组的数组成为二维数组，可以把二维数组当成一个矩阵，或者是一个具有宽度和高度或者行和列的网格。一维数组只在一行或者一列上显示，二维数组则像网格一样有好几行和好几列。</h3><h2 id="2-创建一个简单的二维数组"><a href="#2-创建一个简单的二维数组" class="headerlink" title="2.创建一个简单的二维数组"></a>2.创建一个简单的二维数组</h2><pre><code>&lt;?php 
-    $students = array(
-        array(&apos;aaa&apos;,18,&apos;man&apos;),
-        array(&apos;bbb&apos;,19,&apos;woman&apos;),
-        array(&apos;ccc&apos;,17,&apos;man&apos;)
-        );
-    print_r($students);
- ?&gt;
-打印结果：Array
-        (
-            [0] =&gt; Array
-                (
-                    [0] =&gt; aaa
-                    [1] =&gt; 18
-                    [2] =&gt; man
-                )
-
-            [1] =&gt; Array
-                (
-                    [0] =&gt; bbb
-                    [1] =&gt; 19
-                    [2] =&gt; woman
-                )
-
-            [2] =&gt; Array
-                (
-                    [0] =&gt; ccc
-                    [1] =&gt; 17
-                    [2] =&gt; man
-                )
-
-        )
-</code></pre><h2 id="3-打印内外数组长度的方法"><a href="#3-打印内外数组长度的方法" class="headerlink" title="3.打印内外数组长度的方法"></a>3.打印内外数组长度的方法</h2><pre><code>$students = array(
-    array(&apos;aaa&apos;,18,&apos;man&apos;), //第0行
-    array(&apos;bbb&apos;,19,&apos;woman&apos;), //第1行
-    array(&apos;ccc&apos;,17,&apos;man&apos;)    //第2行
-    );
-echo count($students);    //打印外数组长度的方法，即student的长度，是里边的三个数组，结果是3，这个是外层的数组student的个数。
-// count($students);通俗地讲是二维数组的行数
-echo count($students[1]);    //3
-echo count($students[2]);    //3
-echo count($students[0]);    //打印内数组的长度的方法，即student的第1个元素的长度，结果是3
-</code></pre><h2 id="4-打印数组元素的方法"><a href="#4-打印数组元素的方法" class="headerlink" title="4.打印数组元素的方法"></a>4.打印数组元素的方法</h2><h3 id="没有键的情况"><a href="#没有键的情况" class="headerlink" title="没有键的情况"></a>没有键的情况</h3><pre><code>$students = array(
-array(&apos;aaa&apos;,18,&apos;man&apos;,), //第0行
-array(&apos;bbb&apos;,19,&apos;woman&apos;,&apos;green&apos;), //第1行
-array(&apos;ccc&apos;,17,&apos;man&apos;,&apos;red&apos;)    //第二行
-);
-// 这两种方法适合下标为0,1,2...的情况
-//打印二维数组的第一种方法，此方法很麻烦
-echo $students[0][0].&quot;|&quot;.$students[0][1].&quot;|&quot;.$students[0][2].&quot;&lt;br&gt;&quot;;
-echo $students[1][0].&quot;|&quot;.$students[1][1].&quot;|&quot;.$students[1][2].&quot;&lt;br&gt;&quot;;
-echo $students[2][0].&quot;|&quot;.$students[2][1].&quot;|&quot;.$students[2][2].&quot;&lt;br&gt;&quot;;
-
-//打印数组的第二种方法：for循环,两重循环打印二维数组
-for ($i=0; $i &lt; count($students); $i++) { 
-    // echo $students;    //此时打印3个array，这是求student含有几个数组
-    for ($j=0; $j &lt; count($students[$i]); $j++) {     //这里用$i的原因：就算内层数组里元素的个数各不相同也可以打印的出来
-        echo $students[$i][$j].&quot;|&quot;;
-    }
-    echo &quot;&lt;br&gt;&quot;;    //外层循环3次，每次加1个换行
+        <h2 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h2><pre><code>ini_set(&quot;error_reporting&quot;, &quot;E_ALL &amp; ~E_NOTICE&quot;);
+for ($i=0;$i&lt;4;$i++) {
+    $nmsg .= dechex(mt_rand(0,15));
 }
-结果：
-    aaa|18|man
-    bbb|19|woman
-    ccc|17|man
-    aaa|18|man|
-    bbb|19|woman|green|
-    ccc|17|man|red|
-</code></pre><h3 id="有自定义键的情况"><a href="#有自定义键的情况" class="headerlink" title="有自定义键的情况"></a>有自定义键的情况</h3><pre><code>&lt;?php 
-    $students = array(
-    array(&apos;name&apos;=&gt;&apos;aaa&apos;, &apos;age&apos;=&gt;18, &apos;sex&apos;=&gt;&apos;man&apos;,), //第0行
-    array(&apos;name&apos;=&gt;&apos;bbb&apos;, &apos;age&apos;=&gt;19, &apos;sex&apos;=&gt;&apos;woman&apos;, &apos;color&apos;=&gt;&apos;green&apos;), //第1行
-    array(&apos;name&apos;=&gt;&apos;ccc&apos;, &apos;age&apos;=&gt;17, &apos;sex&apos;=&gt;&apos;man&apos;, &apos;color&apos;=&gt;&apos;red&apos;)    //第二行
-    );
-    // print_r($students);
 
-//第一种方法：foreach
-    for ($i=0; $i &lt;count($students); $i++) {  
-        foreach ($students[$i] as $key =&gt; $value) {        //输出第0,1,2行的键和值
-            echo $key.&quot;--&quot;.$value.&quot;|&quot;;    //每输出一次键值打印一个|
-        }
-        echo &quot;&lt;br&gt;&quot;;    //每输出一行打印一个换行
-    }
-
-//第二种方法：list和each
-    for ($i=0; $i &lt;count($students); $i++) { 
-        while (!!list($key,$value) = each($students[$i])){    //each表示取得第0行，1行，2行
-
-            echo $key.&apos;--&apos;.$value.&apos;|&apos;;
-        }
-        echo &quot;&lt;br&gt;&quot;;
-    }
-
- ?&gt;
-</code></pre><h3 id="关于list-each组合，foreach，情况上一篇"><a href="#关于list-each组合，foreach，情况上一篇" class="headerlink" title="关于list each组合，foreach，情况上一篇"></a>关于list each组合，foreach，情况上一篇</h3>
+header(&apos;Content-Type: image/png&apos;);
+$im = imagecreatetruecolor(75,25);
+$blue = imagecolorallocate($im,0,102,255);
+$white = imagecolorallocate($im,255,255,255);
+imagefill($im,0,0,$blue);
+imagestring($im,5,20,5,$nmsg,$white);    //将四位验证码加入到图片中去
+imagepng($im);
+imagedestroy($im);
+</code></pre><h2 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h2><h3 id="思路：首先生成四位随机的数字字母，这里可以用十六进制数字表示，然后将这四位随机数放在我们已经写好的图片里即可"><a href="#思路：首先生成四位随机的数字字母，这里可以用十六进制数字表示，然后将这四位随机数放在我们已经写好的图片里即可" class="headerlink" title="思路：首先生成四位随机的数字字母，这里可以用十六进制数字表示，然后将这四位随机数放在我们已经写好的图片里即可"></a>思路：首先生成四位随机的数字字母，这里可以用十六进制数字表示，然后将这四位随机数放在我们已经写好的图片里即可</h3><h3 id="生成四位数字"><a href="#生成四位数字" class="headerlink" title="生成四位数字"></a>生成四位数字</h3><pre><code>for ($i=0;$i&lt;4;$i++) {
+    $nmsg .= dechex(mt_rand(0,15));
+}
+// mt_rand(范围可选) 生成一个更好的随机数
+// dechex()将十进制的随机数转化成十六进制
+</code></pre><h3 id="在这里会产生一个报错：Notice-Undefined-variable-nmsg-in-D-xampp1-htdocs-PHP-Basic14-demo2-php-on-line-4，修改的方法："><a href="#在这里会产生一个报错：Notice-Undefined-variable-nmsg-in-D-xampp1-htdocs-PHP-Basic14-demo2-php-on-line-4，修改的方法：" class="headerlink" title="在这里会产生一个报错：Notice: Undefined variable: nmsg in D:\xampp1\htdocs\PHP\Basic14\demo2.php on line 4，修改的方法："></a>在这里会产生一个报错：<code>Notice: Undefined variable: nmsg in D:\xampp1\htdocs\PHP\Basic14\demo2.php on line 4</code>，修改的方法：</h3><h3 id="1-修改php-ini配置文件，将error-reporting-E-ALL修改为error-reporting-E-ALL-amp-E-NORICE-原理是减弱了PHP的敏感程度，再次遇到这种问题不会报错"><a href="#1-修改php-ini配置文件，将error-reporting-E-ALL修改为error-reporting-E-ALL-amp-E-NORICE-原理是减弱了PHP的敏感程度，再次遇到这种问题不会报错" class="headerlink" title="1. 修改php.ini配置文件，将error_reporting = E_ALL修改为error_reporting = E_ALL &amp;~E_NORICE,原理是减弱了PHP的敏感程度，再次遇到这种问题不会报错"></a>1. 修改php.ini配置文件，将<code>error_reporting = E_ALL</code>修改为<code>error_reporting = E_ALL &amp;~E_NORICE</code>,原理是减弱了PHP的敏感程度，再次遇到这种问题不会报错</h3><h3 id="2-在PHP头部加入代码：ini-set-quot-error-reporting-quot-quot-E-ALL-amp-E-NOTICE-quot-，也可以解决这类问题"><a href="#2-在PHP头部加入代码：ini-set-quot-error-reporting-quot-quot-E-ALL-amp-E-NOTICE-quot-，也可以解决这类问题" class="headerlink" title="2. 在PHP头部加入代码：ini_set(&quot;error_reporting&quot;, &quot;E_ALL &amp; ~E_NOTICE&quot;);，也可以解决这类问题"></a>2. 在PHP头部加入代码：<code>ini_set(&quot;error_reporting&quot;, &quot;E_ALL &amp; ~E_NOTICE&quot;);</code>，也可以解决这类问题</h3>
       
     </div>
     
@@ -679,8 +350,8 @@ for ($i=0; $i &lt; count($students); $i++) {
       
         
 <div class="counter-tag counter">
-    <span id="/2016/10/19/php/php--数组二维/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--二维数组（数组中的数组）">
+    <span id="/2016/11/16/php/php-简单的随机图像验证码/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--简单的随机图像验证码">
          &nbsp;
         view
     </span>
@@ -702,11 +373,11 @@ for ($i=0; $i &lt; count($students); $i++) {
 
 
   
-    <article id="post-php/php--输出" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-php/php-处理图像" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/10/18/php/php--输出/" class="article-date">
-  	<time datetime="2016-10-18T14:34:29.000Z" itemprop="datePublished">2016-10-18</time>
+      <a href="/2016/11/16/php/php-处理图像/" class="article-date">
+  	<time datetime="2016-11-16T10:54:33.000Z" itemprop="datePublished">2016-11-16</time>
 </a>
     </div>
   
@@ -719,8 +390,8 @@ for ($i=0; $i &lt; count($students); $i++) {
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/18/php/php--输出/">
-        php学习--echo print_r,printf,sprintf,print的比较
+      <a class="article-title" href="/2016/11/16/php/php-处理图像/">
+        php学习--处理图像
         
       </a>
     </h1>
@@ -731,217 +402,21 @@ for ($i=0; $i &lt; count($students); $i++) {
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="php几种输出方式比较"><a href="#php几种输出方式比较" class="headerlink" title=" php几种输出方式比较"></a><center> php几种输出方式比较</center></h1><ul>
-<li>&emsp; <code>echo</code>: 函数，无返回值（返回void），作用是打印字符串，还可以打印函数的类型和数组类型</li>
-<li>&emsp; <code>print</code>: 函数，返回整型，作用是打印字符串</li>
-<li>&emsp; <code>printf</code>: 函数，返回字符串的长度，作用是打印字符串</li>
-<li>&emsp; <code>sprintf</code>: 函数，返回字符串将字符串保存在内存中（不在浏览器下显示）</li>
-<li><p>&emsp; <code>print_r</code>: 函数，用来打印数组中的所有元素<br>###</p>
-<p> &lt;?php </p>
-<pre><code>echo &quot;hello php1&quot;;
-echo &quot;&lt;/br&gt;&quot;;
-print(&quot;hello php2&quot;);
-echo &quot;&lt;/br&gt;&quot;;
-echo print(&quot;hello php3&lt;/br&gt;&quot;); // 这句话的作用是先将print里的字符串打印出来，再打印一个字符串，然后echo出print的类型，返回真，在浏览器中显示为1
-echo &quot;&lt;/br&gt;&quot;;
-printf(&quot;hello php4&lt;/br&gt;&quot;);
-echo printf(&quot;hello php5&lt;/br&gt;&quot;); //返回字符串的长度
-echo &quot;&lt;/br&gt;&quot;;
-sprintf(&quot;hello php6&lt;br&gt;&quot;); // 字符串保存在内存中，不在浏览器界面显示
-echo sprintf(&quot;hello php7&quot;); // 返回字符串
-echo&quot;&lt;br&gt;&quot;;
-
-$userAges = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
-echo $userAges; //返回$userAges的类型 array
-</code></pre><p>  ?&gt;<br> 运行结果：<br> hello php1<br> hello php2<br> hello php3<br> 1<br> hello php4<br> hello php5<br> 15<br> hello php7<br> array</p>
-</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/10/18/php/php--输出/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--echo print_r,printf,sprintf,print的比较">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-php/php--数组遍历" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/18/php/php--数组遍历/" class="article-date">
-  	<time datetime="2016-10-18T12:11:38.000Z" itemprop="datePublished">2016-10-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/18/php/php--数组遍历/">
-        PHP学习--遍历数组
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="遍历数组"><a href="#遍历数组" class="headerlink" title=" 遍历数组"></a><center> 遍历数组</center></h1><h2 id="遍历数组的方式："><a href="#遍历数组的方式：" class="headerlink" title="遍历数组的方式："></a>遍历数组的方式：</h2><ul>
-<li>for 循环遍历数组</li>
-<li>foreach 遍历数组</li>
-<li>list 遍历数组</li>
-<li>each 遍历数组<h2 id="1-for循环遍历数组"><a href="#1-for循环遍历数组" class="headerlink" title="1.for循环遍历数组"></a>1.for循环遍历数组</h2>   // for循环访问数组<br>   //    数组下标从0开始可用<br>   for ($i=0; $i &lt; count($userName); $i++) { <pre><code># code...
-echo $i.&quot;---&quot;.$userName[$i].&quot;&lt;br&gt;&quot;;    //count方法取得数组的长度，sizeof是他的别名，一般用count
-</code></pre>   }<br>  结果是： 0—张三<pre><code>1---李四
-2---王五
-3---赵六
-4---嘻嘻嘻
-5---嘿嘿嘿
-</code></pre></li>
-</ul>
-<h2 id="2-foreach-遍历数组"><a href="#2-foreach-遍历数组" class="headerlink" title="2.foreach 遍历数组"></a>2.foreach 遍历数组</h2><pre><code>//这种方法好处是在数组的下标不是从0开始或者根本不是数字的时候可用
-foreach ($userName as $key =&gt; $value) { //此处的key和value可以替换成任意的变量名，只需要将下面输出统一即可，也可以单独打印下标或者值
-    # code...
-    echo $key.&quot;---&quot;.$value.&quot;&lt;br&gt;&quot;;
-}
-
-       0---张三
-       1---李四
-       2---王五
-       3---赵六
-       4---嘻嘻嘻
-       5---嘿嘿嘿
-</code></pre><h2 id="3-each-遍历数组"><a href="#3-each-遍历数组" class="headerlink" title="3.each 遍历数组"></a>3.each 遍历数组</h2><pre><code>&lt;?php 
-    $userAges = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
-    // print_r($userAges);
-    //each的使用
-    //each --  返回数组中当前的键／值对并将数组指针向前移动一步 
-    //这里有一个指针，默认情况下，指针是指向第一个键值对
-    //这里的第一个键值对是 ,张三=&gt;22
-    //如果each($userAges)，那么获取的就是第一个键值对 &apos;张三&apos;=&gt;22
-    //each这个函数返回的是一个数组，
-    //each将第一个键值对获取到，然后包装成一个新数组。
-
-    each($userAges); //这是第一步，将张三，22取出来，包装成一个新的数组
-    $a = each($userAges);    //这是第二步，将李四，21取出
-    print_r($a).&quot;&lt;br&gt;&quot;;
-    echo $a[0];
-    // 第一步的结果：Array ( [1] =&gt; 22 [value] =&gt; 22 [0] =&gt; 张三 [key] =&gt; 张三 ) 张三
-    // 第二步的结果：Array ( [1] =&gt; 21 [value] =&gt; 21 [0] =&gt; 李四 [key] =&gt; 李四 ) 李四
-
- ?&gt;
-</code></pre><h3 id="each循环打印"><a href="#each循环打印" class="headerlink" title="each循环打印"></a>each循环打印</h3><pre><code>while (!!$a = each($userAges)) { //当是真，即括号里的值是1的时候执行以下语
-    # code...
-    echo $a[&apos;key&apos;].&quot;---&quot;.$a[&apos;value&apos;].&quot;&lt;br&gt;&quot;;
-}
-</code></pre><h4 id="！！的作用：将真实存在的数值转换成布尔值，在这里each-userAges-返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1"><a href="#！！的作用：将真实存在的数值转换成布尔值，在这里each-userAges-返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1" class="headerlink" title="！！的作用：将真实存在的数值转换成布尔值，在这里each($userAges)返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1"></a>！！的作用：将真实存在的数值转换成布尔值，在这里each($userAges)返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1</h4><h2 id="4-list-遍历数组"><a href="#4-list-遍历数组" class="headerlink" title="4.list 遍历数组"></a>4.list 遍历数组</h2><pre><code>&lt;?php 
-    $userAges = array(&quot;张三&quot;,&quot;李四&quot;,&quot;王五&quot;);
-    // print_r($userAges);
-    // 把一个数组中的值赋给一个变量
-    list($a,$b) = $userAges;    //这里将数组userAges的第一个值赋给$a,第二个值赋给$b，其中$a,$b的值可以改编为任意的变量
-    echo $a.&quot;&lt;br&gt;&quot;;
-    echo $b.&quot;&lt;br&gt;&quot;;
-
-    // 注意：list只能识别下标是0,1,2等数字的数组，自定义的key不能识别的
-    // 如果一定要打印数组的键和值，就用each和list的组合
-    $userAge = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
-    list($c,$d) = each($userAge);    // each将张三，22取出来形成一个新的数组，0($c)表示key，也就是张三，1($d)表示value，也就是 22
-    echo $c;    // 打印张三
-    echo $d;    // 打印22
- ?&gt;
-</code></pre><h2 id="5-array相关函数"><a href="#5-array相关函数" class="headerlink" title="5.array相关函数"></a>5.array相关函数</h2><h3 id="5-1-reset-函数，将数组指针指向第一位"><a href="#5-1-reset-函数，将数组指针指向第一位" class="headerlink" title="5.1 reset()函数，将数组指针指向第一位"></a>5.1 reset()函数，将数组指针指向第一位</h3><pre><code>&lt;?php 
-    $userAges = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
-    $a = each($userAges);    // 指向第一位,$a是第一位张三22的新数组 ，而$userAges现在指向的是第二位
-
-    echo $a[&apos;key&apos;];
-    $b = each($userAges);
-    echo $b[&apos;key&apos;];
-
-    reset($userAges);    // 将数组指针指向数组第一位，无论刚开始在第几位
-    $c = each($userAges);
-    echo $c[&apos;value&apos;];
- ?&gt;
-</code></pre><h3 id="5-2-array-unique函数，去除数组中的重复项"><a href="#5-2-array-unique函数，去除数组中的重复项" class="headerlink" title="5.2 array_unique函数，去除数组中的重复项"></a>5.2 array_unique函数，去除数组中的重复项</h3><pre><code>&lt;?php 
-    $numbers = array(1,2,5,3,6,2,4,7,4,2,5,2,5,1,3,6,7);
-    print_r($numbers);
-
-    $new_numners = array_unique($numbers);    //数组去重
-    print_r($new_numners);
- ?&gt;
-结果是：
-Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 2
-    [2] =&gt; 5
-    [3] =&gt; 3
-    [4] =&gt; 6
-    [5] =&gt; 2
-    [6] =&gt; 4
-    [7] =&gt; 7
-    [8] =&gt; 4
-    [9] =&gt; 2
-    [10] =&gt; 5
-    [11] =&gt; 2
-    [12] =&gt; 5
-    [13] =&gt; 1
-    [14] =&gt; 3
-    [15] =&gt; 6
-    [16] =&gt; 7
-)
-Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 2
-    [2] =&gt; 5
-    [3] =&gt; 3
-    [4] =&gt; 6
-    [6] =&gt; 4
-    [7] =&gt; 7
-)
-</code></pre><h3 id="5-3-array-flip-函数，置换数组的键和值"><a href="#5-3-array-flip-函数，置换数组的键和值" class="headerlink" title="5.3 array_flip()函数，置换数组的键和值"></a>5.3 array_flip()函数，置换数组的键和值</h3><pre><code>$userAges = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
-$new_userAges = array_flip($userAges);
-print_r ($new_userAges);
-结果：Array
-(
-    [22] =&gt; 张三
-    [21] =&gt; 李四
-    [18] =&gt; 王五
-)
+        <h2 id="1-为什么用PHP处理图像："><a href="#1-为什么用PHP处理图像：" class="headerlink" title="1. 为什么用PHP处理图像："></a>1. 为什么用PHP处理图像：</h2><h3 id="传统的web开发在页面中加入图片一般用HTML-的标记来实现，在PHP中为了提高页面的传输速率，便于对数据统计，有时采用GD2库或者jpgraph类库来绘制"><a href="#传统的web开发在页面中加入图片一般用HTML-的标记来实现，在PHP中为了提高页面的传输速率，便于对数据统计，有时采用GD2库或者jpgraph类库来绘制" class="headerlink" title="传统的web开发在页面中加入图片一般用HTML 的标记来实现，在PHP中为了提高页面的传输速率，便于对数据统计，有时采用GD2库或者jpgraph类库来绘制"></a>传统的web开发在页面中加入图片一般用HTML 的<img>标记来实现，在PHP中为了提高页面的传输速率，便于对数据统计，有时采用GD2库或者jpgraph类库来绘制</h3><h2 id="2-什么是GB2库"><a href="#2-什么是GB2库" class="headerlink" title="2. 什么是GB2库"></a>2. 什么是GB2库</h2><h3 id="gd2函数库是一个公开源码的用于创建图形图像的函数库，该函数库由C语言编写，可以在Perl，PHP等多种语言中调试运用。PHP使用GD2库可以制作统计图，为图片添加水印及动态图表等"><a href="#gd2函数库是一个公开源码的用于创建图形图像的函数库，该函数库由C语言编写，可以在Perl，PHP等多种语言中调试运用。PHP使用GD2库可以制作统计图，为图片添加水印及动态图表等" class="headerlink" title="gd2函数库是一个公开源码的用于创建图形图像的函数库，该函数库由C语言编写，可以在Perl，PHP等多种语言中调试运用。PHP使用GD2库可以制作统计图，为图片添加水印及动态图表等"></a>gd2函数库是一个公开源码的用于创建图形图像的函数库，该函数库由C语言编写，可以在Perl，PHP等多种语言中调试运用。PHP使用GD2库可以制作统计图，为图片添加水印及动态图表等</h3><h2 id="3-GD2创建画布的步骤"><a href="#3-GD2创建画布的步骤" class="headerlink" title="3. GD2创建画布的步骤"></a>3. GD2创建画布的步骤</h2><h3 id="开发人员可以在已有的图像上绘制，也可以在没有任何素材的基础上绘制，在这种没有素材的情况下首先要创建画布，之后的所有操作都将依照所创建的画布运行"><a href="#开发人员可以在已有的图像上绘制，也可以在没有任何素材的基础上绘制，在这种没有素材的情况下首先要创建画布，之后的所有操作都将依照所创建的画布运行" class="headerlink" title="开发人员可以在已有的图像上绘制，也可以在没有任何素材的基础上绘制，在这种没有素材的情况下首先要创建画布，之后的所有操作都将依照所创建的画布运行"></a>开发人员可以在已有的图像上绘制，也可以在没有任何素材的基础上绘制，在这种没有素材的情况下首先要创建画布，之后的所有操作都将依照所创建的画布运行</h3><h3 id="第一步：设置文件的MIME类型"><a href="#第一步：设置文件的MIME类型" class="headerlink" title="第一步：设置文件的MIME类型"></a>第一步：设置文件的MIME类型</h3><pre><code>header(&apos;Content-Type: image/png;&apos;);
+</code></pre><h3 id="一般生成的图像类型有-png-jpg-jpeg-gif-bmg"><a href="#一般生成的图像类型有-png-jpg-jpeg-gif-bmg" class="headerlink" title="一般生成的图像类型有 png  jpg(jpeg)  gif  bmg"></a>一般生成的图像类型有 png  jpg(jpeg)  gif  bmg</h3><h3 id="这句话的意思是输出网页的内容是png格式的图片"><a href="#这句话的意思是输出网页的内容是png格式的图片" class="headerlink" title="这句话的意思是输出网页的内容是png格式的图片"></a>这句话的意思是输出网页的内容是png格式的图片</h3><h3 id="注-1：在网页制作中，默认的输出格式是：text-html，所以一般的网页不需要写输出格式"><a href="#注-1：在网页制作中，默认的输出格式是：text-html，所以一般的网页不需要写输出格式" class="headerlink" title="注:1：在网页制作中，默认的输出格式是：text/html，所以一般的网页不需要写输出格式"></a>注:1：在网页制作中，默认的输出格式是：text/html，所以一般的网页不需要写输出格式</h3><h3 id="注意2：header之前不能有任何形式的输出，空格也不行"><a href="#注意2：header之前不能有任何形式的输出，空格也不行" class="headerlink" title="注意2：header之前不能有任何形式的输出，空格也不行"></a>注意2：header之前不能有任何形式的输出，空格也不行</h3><h3 id="第二步：imagecreatetruecolor-新建一个新真彩色图像，返回一个图像标识，大小为x-y的黑色图像"><a href="#第二步：imagecreatetruecolor-新建一个新真彩色图像，返回一个图像标识，大小为x-y的黑色图像" class="headerlink" title="第二步：imagecreatetruecolor()新建一个新真彩色图像，返回一个图像标识，大小为x*y的黑色图像"></a>第二步：imagecreatetruecolor()新建一个新真彩色图像，返回一个图像标识，大小为x*y的黑色图像</h3><pre><code>$im = imagecreatetruecolor(200, 200);    // 传入两个参数：宽和高，单位是像素
+</code></pre><h3 id="第三步：imagecolorallocate-建好的图像，红，绿，蓝-为一个图像分配颜色-（其中红绿蓝的颜色取值为0到255）"><a href="#第三步：imagecolorallocate-建好的图像，红，绿，蓝-为一个图像分配颜色-（其中红绿蓝的颜色取值为0到255）" class="headerlink" title="第三步：imagecolorallocate(建好的图像，红，绿，蓝)为一个图像分配颜色 （其中红绿蓝的颜色取值为0到255）"></a>第三步：imagecolorallocate(建好的图像，红，绿，蓝)为一个图像分配颜色 （其中红绿蓝的颜色取值为0到255）</h3><pre><code>$blue = imagecolorallocate($im,0,102,255);    //这里创建一个蓝色背景
+</code></pre><h3 id="imagefill-图像，横坐标，纵坐标，颜色-：区域填充"><a href="#imagefill-图像，横坐标，纵坐标，颜色-：区域填充" class="headerlink" title="imagefill(图像，横坐标，纵坐标，颜色) ：区域填充"></a>imagefill(图像，横坐标，纵坐标，颜色) ：区域填充</h3><pre><code>imagefill($im,0,0,$blue);
+</code></pre><h3 id="第四步：在蓝色的背景上输入一些线条，文字等"><a href="#第四步：在蓝色的背景上输入一些线条，文字等" class="headerlink" title="第四步：在蓝色的背景上输入一些线条，文字等"></a>第四步：在蓝色的背景上输入一些线条，文字等</h3><pre><code>$white = imagecolorallocate($im,255,255,255);
+//imageline -- 画一条线段
+//imageline(图像，起始横坐标，起始纵坐标，终止横坐标，终止纵坐标，颜色)
+imageline($im,0,0,200,200,$white);
+imageline($im,200,0,0,200,$white);
+//imagestring -- 水平地画一行字符串
+imagestring($im,5,80,20,&apos;Hello World&apos;,$white);
+</code></pre><h3 id="第五步：输出最终图形"><a href="#第五步：输出最终图形" class="headerlink" title="第五步：输出最终图形"></a>第五步：输出最终图形</h3><pre><code>imagepng($im);
+//这一步是必须的，很重要的，不写的话会出现错误
+// 以 PNG 格式将图像输出到浏览器或文件
+</code></pre><h3 id="第六步：将所有的资源全部清空"><a href="#第六步：将所有的资源全部清空" class="headerlink" title="第六步：将所有的资源全部清空"></a>第六步：将所有的资源全部清空</h3><pre><code>imagedestroy($im);    
 </code></pre>
       
     </div>
@@ -954,8 +429,8 @@ print_r ($new_userAges);
       
         
 <div class="counter-tag counter">
-    <span id="/2016/10/18/php/php--数组遍历/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="PHP学习--遍历数组">
+    <span id="/2016/11/16/php/php-处理图像/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--处理图像">
          &nbsp;
         view
     </span>
@@ -977,11 +452,11 @@ print_r ($new_userAges);
 
 
   
-    <article id="post-php/php--数组1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-php/php-操作中文字符串" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/10/18/php/php--数组1/" class="article-date">
-  	<time datetime="2016-10-18T10:56:16.000Z" itemprop="datePublished">2016-10-18</time>
+      <a href="/2016/11/16/php/php-操作中文字符串/" class="article-date">
+  	<time datetime="2016-11-16T07:43:13.000Z" itemprop="datePublished">2016-11-16</time>
 </a>
     </div>
   
@@ -994,8 +469,8 @@ print_r ($new_userAges);
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/18/php/php--数组1/">
-        php学习--数组1
+      <a class="article-title" href="/2016/11/16/php/php-操作中文字符串/">
+        php学习--操作中文字符串
         
       </a>
     </h1>
@@ -1006,59 +481,23 @@ print_r ($new_userAges);
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="PHP数组"><a href="#PHP数组" class="headerlink" title="PHP数组"></a><center>PHP数组<center></center></center></h1><h2 id="1-数组命名规则"><a href="#1-数组命名规则" class="headerlink" title="1.数组命名规则"></a>1.数组命名规则</h2><h3 id="开头是-，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素"><a href="#开头是-，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素" class="headerlink" title="开头是$，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素"></a>开头是$，后面跟字母或者下划线，其后的为字母，数字，下划线，不可以有其他元素</h3><pre><code>$1fu = array(&apos;1&apos;,&apos;2&apos;);    //不可以数字开头
-$fu_&amp;hello = array(&quot;hello&quot;,&quot;world&quot;);    //含有特殊符号&amp;
-$userName = array(&apos;张三&apos;,&apos;李四&apos;,&apos;王五&apos;,&apos;赵六&apos;,&apos;嘻嘻嘻&apos;,&apos;嘿嘿嘿&apos;); //正确的命名
-</code></pre><h3 id="注意：在一个程序中，标量变量和数组变量不能同名，例如已经存在-userName的变量，再创建-userName的数组，后者会覆盖前者"><a href="#注意：在一个程序中，标量变量和数组变量不能同名，例如已经存在-userName的变量，再创建-userName的数组，后者会覆盖前者" class="headerlink" title="注意：在一个程序中，标量变量和数组变量不能同名，例如已经存在$userName的变量，再创建$userName的数组，后者会覆盖前者"></a>注意：在一个程序中，标量变量和数组变量不能同名，例如已经存在$userName的变量，再创建$userName的数组，后者会覆盖前者</h3><h3 id="数组变量的名称是区分大小写的，-user和-User是不同的两个变量数组类名"><a href="#数组变量的名称是区分大小写的，-user和-User是不同的两个变量数组类名" class="headerlink" title="数组变量的名称是区分大小写的，$user和$User是不同的两个变量数组类名"></a>数组变量的名称是区分大小写的，$user和$User是不同的两个变量数组类名</h3><h3 id="PHP常量和变量都区分大小写"><a href="#PHP常量和变量都区分大小写" class="headerlink" title="PHP常量和变量都区分大小写"></a>PHP常量和变量都区分大小写</h3><pre><code>&lt;?php 
-    $a = &quot;hello&quot;;
-    $A = &quot;world&quot;;
-    echo $a.&quot;&lt;br&gt;&quot;;
-    echo $A.&quot;&lt;br&gt;&quot;;
-    // 结果是 hello world，变量区分大小写，否则后者会覆盖前者
-
-    define(&quot;c&quot;, 123);
-    define(&quot;C&quot;, 456);
-    echo c.&quot;&lt;br&gt;&quot;;
-    echo C;
-    // 都打印，常量也区分大小写
-
- ?&gt;
-</code></pre><h3 id="PHP的类名和方法名甚至一些关键字都不区分大小写"><a href="#PHP的类名和方法名甚至一些关键字都不区分大小写" class="headerlink" title="PHP的类名和方法名甚至一些关键字都不区分大小写"></a>PHP的类名和方法名甚至一些关键字都不区分大小写</h3><h2 id="2-创建数组的几种方法"><a href="#2-创建数组的几种方法" class="headerlink" title="2.创建数组的几种方法"></a>2.创建数组的几种方法</h2><pre><code>// 创建数组的第一种方法：array函数创建
- $userName = array(&apos;张三&apos;,&apos;李四&apos;,&apos;王五&apos;,&apos;赵六&apos;,&apos;嘻嘻嘻&apos;,&apos;嘿嘿嘿&apos;);
- echo $userName.&quot;&lt;br&gt;&quot;;    // 用echo只能打印$userName的返回类型是array（数组）
- print_r($userName);    // 用print_r可以将数组打印出来
- echo &quot;&lt;br&gt;&quot;;
- echo $userName[2].&quot;&lt;br&gt;&quot;;    //在使用数据时，可以直接取他的下标，从0开始（0到n-1）
-
- // range自动创建一个数组，range(low,heigh)
- $number = range(0,10);    //自动创建0到10的数组
- print_r($number);
- echo &quot;&lt;br&gt;&quot;;
- $letter = range(a, z);    //创建a到z的数组
- print_r($letter);
- echo &quot;&lt;br&gt;&quot;;
- $reset = range(z, a);    //创建a到z的逆序数组
- print_r($reset);
- echo &quot;&lt;br&gt;&quot;;
-
- // 利用数组标识符[]声明数组
- // 开发时不知数组的大小或者数组会改变，用此方法
-// 用此种方法创建数组要求同一数组名相同，也可以添加数组
- $array[0] = &quot;hello&quot;;
- $array[1] = &quot;world&quot;;
- $array[2] = &quot;and&quot;;
- $array[3] = &quot;php&quot;;
- print_r($array);
-
-结果：Array
-Array ( [0] =&gt; 张三 [1] =&gt; 李四 [2] =&gt; 王五 [3] =&gt; 赵六 [4] =&gt; 嘻嘻嘻 [5] =&gt; 嘿嘿嘿 )
-王五
-Array ( [0] =&gt; 0 [1] =&gt; 1 [2] =&gt; 2 [3] =&gt; 3 [4] =&gt; 4 [5] =&gt; 5 [6] =&gt; 6 [7] =&gt; 7 [8] =&gt; 8 [9] =&gt; 9 [10] =&gt; 10 )
-Array ( [0] =&gt; a [1] =&gt; b [2] =&gt; c [3] =&gt; d [4] =&gt; e [5] =&gt; f [6] =&gt; g [7] =&gt; h [8] =&gt; i [9] =&gt; j [10] =&gt; k [11] =&gt; l [12] =&gt; m [13] =&gt; n [14] =&gt; o [15] =&gt; p [16] =&gt; q [17] =&gt; r [18] =&gt; s [19] =&gt; t [20] =&gt; u [21] =&gt; v [22] =&gt; w [23] =&gt; x [24] =&gt; y [25] =&gt; z )
-Array ( [0] =&gt; z [1] =&gt; y [2] =&gt; x [3] =&gt; w [4] =&gt; v [5] =&gt; u [6] =&gt; t [7] =&gt; s [8] =&gt; r [9] =&gt; q [10] =&gt; p [11] =&gt; o [12] =&gt; n [13] =&gt; m [14] =&gt; l [15] =&gt; k [16] =&gt; j [17] =&gt; i [18] =&gt; h [19] =&gt; g [20] =&gt; f [21] =&gt; e [22] =&gt; d [23] =&gt; c [24] =&gt; b [25] =&gt; a )
-Array ( [0] =&gt; hello [1] =&gt; world [2] =&gt; and [3] =&gt; php )
-</code></pre><p>###改变数组的某个值<br>    //将上面的代码修改一下：<br>     $userName[1] = “蓝瘦香菇”;    // 可以直接赋值<br>     print_r($userName).”<br>“;<br>    结果： Array ( [0] =&gt; 张三 [1] =&gt; 蓝瘦香菇 [2] =&gt; 王五 [3] =&gt; 赵六 [4] =&gt; 嘻嘻嘻 [5] =&gt; 嘿嘿嘿 )</p>
-
+        <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="必须使用mb-的是mb-strlen-mb-strpos-mb-substr"><a href="#必须使用mb-的是mb-strlen-mb-strpos-mb-substr" class="headerlink" title="必须使用mb_的是mb_strlen(),mb_strpos(),mb_substr()"></a>必须使用mb_的是<code>mb_strlen()</code>,<code>mb_strpos()</code>,<code>mb_substr()</code></h3><h3 id="strlen-求字符串的长度"><a href="#strlen-求字符串的长度" class="headerlink" title="strlen()求字符串的长度"></a>strlen()求字符串的长度</h3><h3 id="mb-strlen-求中文字符串的长度，一个汉字代表一个字符"><a href="#mb-strlen-求中文字符串的长度，一个汉字代表一个字符" class="headerlink" title="mb_strlen()求中文字符串的长度，一个汉字代表一个字符"></a>mb_strlen()求中文字符串的长度，一个汉字代表一个字符</h3><h3 id="这里：gbk和Utf8都说变长编码"><a href="#这里：gbk和Utf8都说变长编码" class="headerlink" title="这里：gbk和Utf8都说变长编码"></a>这里：gbk和Utf8都说变长编码</h3><h3 id="对于utf8，一个汉字可能是2-3个字节，不一定就是3个字节"><a href="#对于utf8，一个汉字可能是2-3个字节，不一定就是3个字节" class="headerlink" title="对于utf8，一个汉字可能是2-3个字节，不一定就是3个字节"></a>对于utf8，一个汉字可能是2-3个字节，不一定就是3个字节</h3><h3 id="一般在gbk下是两个字节，在Utf8下是3个字节"><a href="#一般在gbk下是两个字节，在Utf8下是3个字节" class="headerlink" title="一般在gbk下是两个字节，在Utf8下是3个字节"></a>一般在gbk下是两个字节，在Utf8下是3个字节</h3><pre><code>$str1 = &apos;我叫jewel&apos;;
+echo strlen($str1).&apos;&lt;br&gt;&apos;;    //11，一个汉字代表三个字符
+echo mb_strlen($str1,&apos;utf8&apos;);    //7
+// utf8可以省略，那么为内部编码方式
+</code></pre><h3 id="strstr-求某字符串到结尾的字符，返回在这个字符首次出现的位置开始到结尾组成的字符串"><a href="#strstr-求某字符串到结尾的字符，返回在这个字符首次出现的位置开始到结尾组成的字符串" class="headerlink" title="strstr()求某字符串到结尾的字符，返回在这个字符首次出现的位置开始到结尾组成的字符串"></a>strstr()求某字符串到结尾的字符，返回在这个字符首次出现的位置开始到结尾组成的字符串</h3><h3 id="这个函数区分大小写，用stristr-不区分大小写"><a href="#这个函数区分大小写，用stristr-不区分大小写" class="headerlink" title="这个函数区分大小写，用stristr()不区分大小写"></a>这个函数区分大小写，用stristr()不区分大小写</h3><h3 id="这个中文英文影响不大"><a href="#这个中文英文影响不大" class="headerlink" title="这个中文英文影响不大"></a>这个中文英文影响不大</h3><pre><code>$str2 = &apos;he is a good boy&apos;;
+echo strstr($str2, &apos;i&apos;);    //is a good boy
+$str3 = &apos;我爱我的家乡&apos;;
+echo mb_strstr($str3, &apos;的&apos;);
+echo strstr($str3, &apos;我&apos;);
+</code></pre><h3 id="相对应的是strpos-，查找字符首次出现的位置"><a href="#相对应的是strpos-，查找字符首次出现的位置" class="headerlink" title="相对应的是strpos()，查找字符首次出现的位置"></a>相对应的是strpos()，查找字符首次出现的位置</h3><pre><code>$str4 = &apos;我爱我的家乡&apos;;
+echo strpos($str4, &apos;的&apos;);    //这种情况只能出现在3的倍数的字符串，比如‘爱’在第三位，‘的’在地9位，这时候就需要用mb_strpos()了
+echo mb_strpos($str4,&apos;爱&apos;);    //1
+echo mb_strpos($str4,&apos;的&apos;);    //3 这时候将一个汉字转化为一个字符了
+</code></pre><h3 id="substr-字符串，开始位置，子串长度（可选）"><a href="#substr-字符串，开始位置，子串长度（可选）" class="headerlink" title="substr(字符串，开始位置，子串长度（可选）)"></a>substr(字符串，开始位置，子串长度（可选）)</h3><pre><code>$str5 = &apos;我爱我的家乡&apos;;
+echo substr($str5, 1,2);    //乱码，无法取
+echo mb_substr($str5, 1,2);    //爱我
+</code></pre>
       
     </div>
     
@@ -1070,8 +509,8 @@ Array ( [0] =&gt; hello [1] =&gt; world [2] =&gt; and [3] =&gt; php )
       
         
 <div class="counter-tag counter">
-    <span id="/2016/10/18/php/php--数组1/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--数组1">
+    <span id="/2016/11/16/php/php-操作中文字符串/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--操作中文字符串">
          &nbsp;
         view
     </span>
@@ -1093,11 +532,11 @@ Array ( [0] =&gt; hello [1] =&gt; world [2] =&gt; and [3] =&gt; php )
 
 
   
-    <article id="post-php/PHP--数学函数" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-php/php-字符串比较" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/10/17/php/PHP--数学函数/" class="article-date">
-  	<time datetime="2016-10-17T11:54:02.000Z" itemprop="datePublished">2016-10-17</time>
+      <a href="/2016/11/16/php/php-字符串比较/" class="article-date">
+  	<time datetime="2016-11-16T06:11:51.000Z" itemprop="datePublished">2016-11-16</time>
 </a>
     </div>
   
@@ -1110,8 +549,8 @@ Array ( [0] =&gt; hello [1] =&gt; world [2] =&gt; and [3] =&gt; php )
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/17/php/PHP--数学函数/">
-        PHP学习--数学函数
+      <a class="article-title" href="/2016/11/16/php/php-字符串比较/">
+        php学习--字符串比较
         
       </a>
     </h1>
@@ -1122,71 +561,36 @@ Array ( [0] =&gt; hello [1] =&gt; world [2] =&gt; and [3] =&gt; php )
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-数字相加"><a href="#1-数字相加" class="headerlink" title="1.数字相加"></a>1.数字相加</h1><h3 id="主要处理整型和浮点型，如果计算中包含数值和字符串，字符串会在完成计算之前转换为数值，而数值则会在与字符串连接之前转换为字符串。"><a href="#主要处理整型和浮点型，如果计算中包含数值和字符串，字符串会在完成计算之前转换为数值，而数值则会在与字符串连接之前转换为字符串。" class="headerlink" title="主要处理整型和浮点型，如果计算中包含数值和字符串，字符串会在完成计算之前转换为数值，而数值则会在与字符串连接之前转换为字符串。"></a>主要处理整型和浮点型，如果计算中包含数值和字符串，字符串会在完成计算之前转换为数值，而数值则会在与字符串连接之前转换为字符串。</h3><pre><code>$a = &apos;5&apos;; //完成计算之前转化为数字
-$b = $a+7;
-echo &quot;$b&quot;;
-结果：12
-
-$z = &apos;a&apos;;
-echo $z+7;    //因为字母没法办法转换成数字，所以输出7
-</code></pre><h3 id="PHP提供了大量函数来检查变量的数据类型"><a href="#PHP提供了大量函数来检查变量的数据类型" class="headerlink" title="PHP提供了大量函数来检查变量的数据类型"></a>PHP提供了大量函数来检查变量的数据类型</h3><blockquote>
-<p>is_numeric()检验是否为数字或者数字字符串，如果是返回1，如果不是，返回空</p>
-</blockquote>
-<pre><code>$a = &apos;5&apos;;    
-echo is_numeric($a);
-echo &quot;&lt;br&gt;&quot;;
-结果：1
-</code></pre><blockquote>
-<p>is_int()检测是否为整型,如果是返回1，如果不是，返回空</p>
-</blockquote>
-<pre><code>$e = 5;
-echo is_int($e);    //返回1
-</code></pre><blockquote>
-<p>is_float()检测是否为浮点型,如果是返回1，如果不是，返回空</p>
-</blockquote>
-<pre><code>$a = 6.1;
-$b = 6;
-echo is_float($a);    //返回1
-echo is_float($b);    //返回空
-</code></pre><h1 id="2-产生随机数"><a href="#2-产生随机数" class="headerlink" title="2.产生随机数"></a>2.产生随机数</h1><h3 id="rand-函数是libc-构建PHP所用编译器提供的基本库之一-中定义的随机函数的一个简单包装器。mt-rand-是一个很好的替代实现，提供了很多精心设计的特性，而且mt-rand-甚至比libc中的版本还要快"><a href="#rand-函数是libc-构建PHP所用编译器提供的基本库之一-中定义的随机函数的一个简单包装器。mt-rand-是一个很好的替代实现，提供了很多精心设计的特性，而且mt-rand-甚至比libc中的版本还要快" class="headerlink" title="rand()函数是libc(构建PHP所用编译器提供的基本库之一)中定义的随机函数的一个简单包装器。mt_rand()是一个很好的替代实现，提供了很多精心设计的特性，而且mt_rand()甚至比libc中的版本还要快"></a>rand()函数是libc(构建PHP所用编译器提供的基本库之一)中定义的随机函数的一个简单包装器。mt_rand()是一个很好的替代实现，提供了很多精心设计的特性，而且mt_rand()甚至比libc中的版本还要快</h3><pre><code>echo rand(1,100);    //产生随机数，第一个参数是最小值，第二个参数是最大值，自定义的，可改变可不写
-echo &quot;&lt;br&gt;&quot;;
-echo mt_rand(1,100);    //产生更好的随机数，速度比rand快
-
-echo getrandmax();    //获取rand的最大值 4132767
-echo &quot;&lt;br&gt;&quot;;
-echo mt_getrandmax();    //获取mt_rand的最大值 2147483647
-echo &quot;&lt;br&gt;&quot;;
-</code></pre><h1 id="3-格式化数据"><a href="#3-格式化数据" class="headerlink" title="3.格式化数据"></a>3.格式化数据</h1><h3 id="number-format-函数可以把整数和浮点数值转换为一种可读的字符串表示，格式化数字字符串，里边只能放浮点型"><a href="#number-format-函数可以把整数和浮点数值转换为一种可读的字符串表示，格式化数字字符串，里边只能放浮点型" class="headerlink" title="number_format()函数可以把整数和浮点数值转换为一种可读的字符串表示，格式化数字字符串，里边只能放浮点型"></a>number_format()函数可以把整数和浮点数值转换为一种可读的字符串表示，格式化数字字符串，里边只能放浮点型</h3><pre><code>//格式化字符串number_format
-$f = 123892.4567;
-echo number_format($f,3);        //第一位存放浮点数，第二位表示精确到小数点后n位
-echo &quot;&lt;br&gt;&quot;;
-echo number_format($f);    //只有浮点数默认会舍弃小数部分，整数部分按照外国人的习惯每三位用有个逗号隔开
-echo &quot;&lt;br&gt;&quot;;
-echo number_format($f,3,&apos;%&apos;,&quot;#&quot;);    //第三位将分隔符逗号改成%，第四位将小数点点号改为#号，一般情况下不用这两个
-echo &quot;&lt;br&gt;&quot;;
-结果：123,892.457   123,892   123#892%457
-</code></pre><h1 id="4-数学函数"><a href="#4-数学函数" class="headerlink" title="4.数学函数"></a>4.数学函数</h1><pre><code>echo abs(&apos;-6&apos;);        // abs() 绝对值
-echo round(&apos;1.631&apos;);    // round() 四舍五入
-echo floor(&apos;1.642&apos;);    // floor() 舍去法取整     
-</code></pre><h3 id="具体数学函数参照如下："><a href="#具体数学函数参照如下：" class="headerlink" title="具体数学函数参照如下："></a>具体数学函数参照如下：</h3><p>•abs — 绝对值<br>•acos — 反余弦 <br><br>•acosh — 反双曲余弦 <br><br>•asin — 反正弦 <br><br>•asinh — 反双曲正弦 <br><br>•atan2 — 两个参数的反正切 <br><br>•atan — 反正切 <br><br>•atanh — 反双曲正切 <br><br>•base_convert — 在任意进制之间转换数字 <br><br>•bindec — 二进制转换为十进制 <br><br>•ceil — 进一法取整 <br><br>•cos — 余弦 <br><br>•cosh — 双曲余弦 <br><br>•decbin — 十进制转换为二进制 <br><br>•dechex — 十进制转换为十六进制 <br><br>•decoct — 十进制转换为八进制 <br><br>•deg2rad — 将角度转换为弧度 <br><br>•exp — 计算 e 的指数 <br><br>•expm1 — 返回 exp(number) - 1，甚至当 number 的值接近零也能计算出准确结果 <br><br>•floor — 舍去法取整 <br><br>•fmod — 返回除法的浮点数余数 <br><br>•getrandmax — 显示随机数最大的可能值 <br><br>•hexdec — 十六进制转换为十进制 <br><br>•hypot — 计算一直角三角形的斜边长度 <br><br>•intdiv — 对除法结果取整 <br><br>•is_finite — 判断是否为有限值 <br><br>•is_infinite — 判断是否为无限值 <br><br>•is_nan — 判断是否为合法数值 <br><br>•lcg_value — 组合线性同余发生器 <br><br>•log10 — 以 10 为底的对数 <br><br>•log1p — 返回 log(1 + number)，甚至当 number 的值接近零也能计算出准确结果 <br><br>•log — 自然对数 <br><br>•max — 找出最大值 <br><br>•min — 找出最小值 <br><br>•mt_getrandmax — 显示随机数的最大可能值 <br><br>•mt_rand — 生成更好的随机数 <br><br>•mt_srand — 播下一个更好的随机数发生器种子 <br><br>•octdec — 八进制转换为十进制 <br><br>•pi — 得到圆周率值 <br><br>•pow — 指数表达式 <br><br>•rad2deg — 将弧度数转换为相应的角度数 <br><br>•rand — 产生一个随机整数 <br><br>•round — 对浮点数进行四舍五入 <br><br>•sin — 正弦 <br><br>•sinh — 双曲正弦 <br><br>•sqrt — 平方根 <br><br>•srand — 播下随机数发生器种子 <br><br>•tan — 正切 <br><br>•tanh — 双曲正切</p>
-
+        <h2 id="一：总结"><a href="#一：总结" class="headerlink" title="一：总结"></a>一：总结</h2><h3 id="1-strcmp-比较字符串的大小，区分大小写，对ascall码的比较"><a href="#1-strcmp-比较字符串的大小，区分大小写，对ascall码的比较" class="headerlink" title="1. strcmp()比较字符串的大小，区分大小写，对ascall码的比较"></a>1. strcmp()比较字符串的大小，<code>区分大小写</code>，对ascall码的比较</h3><h3 id="2-strcasecmp-比较字符串大小，不区分大小写，对ascall码的比较"><a href="#2-strcasecmp-比较字符串大小，不区分大小写，对ascall码的比较" class="headerlink" title="2. strcasecmp()比较字符串大小，不区分大小写，对ascall码的比较"></a>2. strcasecmp()比较字符串大小，<code>不区分大小写</code>，对ascall码的比较</h3><h3 id="3-strnatcmp-按照数字的顺序进行排序"><a href="#3-strnatcmp-按照数字的顺序进行排序" class="headerlink" title="3. strnatcmp()按照数字的顺序进行排序"></a>3. strnatcmp()按照数字的顺序进行排序</h3><h3 id="4-strnatcasecmp-不区分大小写的自然排序"><a href="#4-strnatcasecmp-不区分大小写的自然排序" class="headerlink" title="4. strnatcasecmp()不区分大小写的自然排序"></a>4. strnatcasecmp()不区分大小写的自然排序</h3><h3 id="5-strspn-计算字符串中全部字符都存在于指定字符集合中的第一段子串的长度"><a href="#5-strspn-计算字符串中全部字符都存在于指定字符集合中的第一段子串的长度" class="headerlink" title="5. strspn()计算字符串中全部字符都存在于指定字符集合中的第一段子串的长度"></a>5. strspn()计算字符串中全部字符都存在于指定字符集合中的第一段子串的长度</h3><h3 id="6-strlen-函数测试字符串的长度"><a href="#6-strlen-函数测试字符串的长度" class="headerlink" title="6. strlen()函数测试字符串的长度"></a>6. strlen()函数测试字符串的长度</h3><h3 id="7-substr-count-字符串，待检验的字符串-返回一个字符串在另一个字符串中出现的次数。"><a href="#7-substr-count-字符串，待检验的字符串-返回一个字符串在另一个字符串中出现的次数。" class="headerlink" title="7. substr_count(字符串，待检验的字符串)返回一个字符串在另一个字符串中出现的次数。"></a>7. substr_count(字符串，待检验的字符串)返回一个字符串在另一个字符串中出现的次数。</h3><h3 id="8-strstr-用于在一个较长的字符串专供查找匹配的字符串或字符"><a href="#8-strstr-用于在一个较长的字符串专供查找匹配的字符串或字符" class="headerlink" title="8. strstr()用于在一个较长的字符串专供查找匹配的字符串或字符"></a>8. strstr()用于在一个较长的字符串专供查找匹配的字符串或字符</h3><h3 id="9-stristr-是不区分大小写的"><a href="#9-stristr-是不区分大小写的" class="headerlink" title="9. stristr()是不区分大小写的"></a>9. stristr()是不区分大小写的</h3><h3 id="10-strpos-返回字符从大的字符串的第几个位置出现，从0开始"><a href="#10-strpos-返回字符从大的字符串的第几个位置出现，从0开始" class="headerlink" title="10. strpos()返回字符从大的字符串的第几个位置出现，从0开始"></a>10. strpos()返回字符从大的字符串的第几个位置出现，从0开始</h3><h3 id="11-strrpos-返回第一次出现字符的倒数第几个的位置"><a href="#11-strrpos-返回第一次出现字符的倒数第几个的位置" class="headerlink" title="11. strrpos()返回第一次出现字符的倒数第几个的位置"></a>11. strrpos()返回第一次出现字符的倒数第几个的位置</h3><h2 id="详解："><a href="#详解：" class="headerlink" title="详解："></a>详解：</h2><h3 id="1-strcmp-是对字符ASCALL码的比较，区分大小写"><a href="#1-strcmp-是对字符ASCALL码的比较，区分大小写" class="headerlink" title="1.strcmp()是对字符ASCALL码的比较，区分大小写"></a>1.strcmp()是对字符ASCALL码的比较，区分大小写</h3><h3 id="第一个字符小于第二个字符返回-1"><a href="#第一个字符小于第二个字符返回-1" class="headerlink" title="第一个字符小于第二个字符返回 -1"></a>第一个字符小于第二个字符返回 -1</h3><h3 id="第一个字符等于第二个字符返回-0"><a href="#第一个字符等于第二个字符返回-0" class="headerlink" title="第一个字符等于第二个字符返回 0"></a>第一个字符等于第二个字符返回 0</h3><h3 id="第一个字符大于第二个字符返回-1"><a href="#第一个字符大于第二个字符返回-1" class="headerlink" title="第一个字符大于第二个字符返回 1"></a>第一个字符大于第二个字符返回 1</h3><pre><code>echo strcmp(&apos;a&apos;, &apos;b&apos;);    //返回-1
+</code></pre><h3 id="2-strcasecmp-不区分大小写的比较，对ASCALL码比较"><a href="#2-strcasecmp-不区分大小写的比较，对ASCALL码比较" class="headerlink" title="2. strcasecmp()不区分大小写的比较，对ASCALL码比较"></a>2. strcasecmp()不区分大小写的比较，对ASCALL码比较</h3><pre><code>echo strcasecmp(&apos;a&apos;, &apos;A&apos;);    //不区分大小写，返回0
+echo strcmp(&apos;a&apos;, &apos;A&apos;);    //区分大小写，返回1
+</code></pre><h3 id="A的ascall码是65，a是97"><a href="#A的ascall码是65，a是97" class="headerlink" title="A的ascall码是65，a是97"></a>A的ascall码是65，a是97</h3><h3 id="3-strnatcmp-按照数字的顺序进行排序-1"><a href="#3-strnatcmp-按照数字的顺序进行排序-1" class="headerlink" title="3. strnatcmp()按照数字的顺序进行排序"></a>3. strnatcmp()按照数字的顺序进行排序</h3><h3 id="默认情况下是对ASCALL的排序，比如2和10比较时，2大于10"><a href="#默认情况下是对ASCALL的排序，比如2和10比较时，2大于10" class="headerlink" title="默认情况下是对ASCALL的排序，比如2和10比较时，2大于10"></a>默认情况下是对ASCALL的排序，比如2和10比较时，2大于10</h3><pre><code>echo strnatcmp(&apos;2&apos;, &apos;10&apos;);    //按照数字排序，返回-1
+echo strcmp(&apos;2&apos;, &apos;10&apos;);        //这个是按照ascall码排序，返回1
+</code></pre><h3 id="4-strnatcasecmp-是不区分大小写的自然排序"><a href="#4-strnatcasecmp-是不区分大小写的自然排序" class="headerlink" title="4. strnatcasecmp()是不区分大小写的自然排序"></a>4. strnatcasecmp()是不区分大小写的自然排序</h3><h3 id="5-strapn-待检查的字符串，检查字符列表，【待检查字符串开始的位置】，【待检查字符串检查的长度】"><a href="#5-strapn-待检查的字符串，检查字符列表，【待检查字符串开始的位置】，【待检查字符串检查的长度】" class="headerlink" title="5. strapn(待检查的字符串，检查字符列表，【待检查字符串开始的位置】，【待检查字符串检查的长度】)"></a>5. strapn(待检查的字符串，检查字符列表，【待检查字符串开始的位置】，【待检查字符串检查的长度】)</h3><h3 id="计算字符串中全部字符都存在于指定字符集合中的第一段子串的长度"><a href="#计算字符串中全部字符都存在于指定字符集合中的第一段子串的长度" class="headerlink" title="计算字符串中全部字符都存在于指定字符集合中的第一段子串的长度"></a>计算字符串中全部字符都存在于指定字符集合中的<code>第一段子串的长度</code></h3><h3 id="待检查的字符串：小字符串"><a href="#待检查的字符串：小字符串" class="headerlink" title="待检查的字符串：小字符串"></a>待检查的字符串：小字符串</h3><h3 id="检查字符串列表：大字符串，从这个里边搜索小串是否存在"><a href="#检查字符串列表：大字符串，从这个里边搜索小串是否存在" class="headerlink" title="检查字符串列表：大字符串，从这个里边搜索小串是否存在"></a>检查字符串列表：大字符串，从这个里边搜索小串是否存在</h3><h3 id="待检查字符串开始的位置，-待检查字符串检查的长度，-可选可不选"><a href="#待检查字符串开始的位置，-待检查字符串检查的长度，-可选可不选" class="headerlink" title="待检查字符串开始的位置， 待检查字符串检查的长度， 可选可不选"></a>待检查字符串开始的位置， 待检查字符串检查的长度， 可选可不选</h3><pre><code>echo strspn(&apos;boy&apos;,&apos;he is a good boy boy&apos;);    //返回3
+echo strspn(&apos;d&apos;,&apos;he is a good boy boy&apos;);    //返回1，第一段子串中有一个d
+echo strspn(&apos;yc60&apos;,&apos;yc60.com@gmail.com&apos;,1,2);    //从c6中检查出有两个字符符合，从第二个字符开始，查找两个长度的字符串，看看这一段有几个符合的字符
+</code></pre><h3 id="6-strlen-函数测试字符串的长度-1"><a href="#6-strlen-函数测试字符串的长度-1" class="headerlink" title="6. strlen()函数测试字符串的长度"></a>6. strlen()函数测试字符串的长度</h3><pre><code>echo strlen(&apos;hello world&apos;);    //11
+</code></pre><h3 id="7-substr-count-字符串，待检验的字符串-返回一个字符串在另一个字符串中出现的次数。-1"><a href="#7-substr-count-字符串，待检验的字符串-返回一个字符串在另一个字符串中出现的次数。-1" class="headerlink" title="7. substr_count(字符串，待检验的字符串)返回一个字符串在另一个字符串中出现的次数。"></a>7. substr_count(字符串，待检验的字符串)返回一个字符串在另一个字符串中出现的次数。</h3><pre><code>echo substr_count(&apos;hello world&apos;, &apos;o&apos;);    //o在字符串中出现两次
+echo substr_count(&apos;o&apos;,&apos;hello world&apos;);    //hello world在o中出现0次
+</code></pre><h2 id="查找和替换字符串"><a href="#查找和替换字符串" class="headerlink" title="查找和替换字符串"></a>查找和替换字符串</h2><h3 id="8-strstr-用于在一个较长的字符串专供查找匹配的字符串或字符，从第一次找到这个字符开始算起，返回的是从待检验的字符往后的子字符串，strchr-是他的别名"><a href="#8-strstr-用于在一个较长的字符串专供查找匹配的字符串或字符，从第一次找到这个字符开始算起，返回的是从待检验的字符往后的子字符串，strchr-是他的别名" class="headerlink" title="8. strstr()用于在一个较长的字符串专供查找匹配的字符串或字符，从第一次找到这个字符开始算起，返回的是从待检验的字符往后的子字符串，strchr()是他的别名"></a>8. strstr()用于在一个较长的字符串专供查找匹配的字符串或字符，从第一次找到这个字符开始算起，返回的是从待检验的字符往后的子字符串，strchr()是他的别名</h3><pre><code>echo strstr(&apos;hello world&apos;, &apos;o&apos;);    //o world
+echo strchr(&apos;hello world&apos;, &apos;o&apos;);    //o world
+</code></pre><h3 id="9-stristr-是不区分大小写的-1"><a href="#9-stristr-是不区分大小写的-1" class="headerlink" title="9. stristr()是不区分大小写的"></a>9. stristr()是不区分大小写的</h3><pre><code>echo strstr(&apos;hellO world&apos;, &apos;o&apos;);    //O world
+</code></pre><h3 id="10-strpos-返回字符从大的字符串的第几个位置出现，从0开始-1"><a href="#10-strpos-返回字符从大的字符串的第几个位置出现，从0开始-1" class="headerlink" title="10. strpos()返回字符从大的字符串的第几个位置出现，从0开始"></a>10. strpos()返回字符从大的字符串的第几个位置出现，从0开始</h3><pre><code>echo strpos(&apos;hello world&apos;, &apos;o&apos;);    //从第五个字符开始出现的，返回4
+</code></pre><h3 id="11-strrpos-返回第一次出现字符的倒数第几个的位置-1"><a href="#11-strrpos-返回第一次出现字符的倒数第几个的位置-1" class="headerlink" title="11. strrpos()返回第一次出现字符的倒数第几个的位置"></a>11. strrpos()返回第一次出现字符的倒数第几个的位置</h3><pre><code>echo strrpos(&apos;hello world&apos;, &apos;o&apos;);    //第一次出现o的时候位置的倒序，返回7
+</code></pre>
       
     </div>
     
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP数学函数/">PHP数学函数</a></li></ul>
-	</div>
-
       
 
       
         
 <div class="counter-tag counter">
-    <span id="/2016/10/17/php/PHP--数学函数/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="PHP学习--数学函数">
+    <span id="/2016/11/16/php/php-字符串比较/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--字符串比较">
          &nbsp;
         view
     </span>
@@ -1208,11 +612,11 @@ echo floor(&apos;1.642&apos;);    // floor() 舍去法取整
 
 
   
-    <article id="post-php/PHP--基础学习" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-php/php-操作子字符串" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/10/13/php/PHP--基础学习/" class="article-date">
-  	<time datetime="2016-10-13T01:37:02.000Z" itemprop="datePublished">2016-10-13</time>
+      <a href="/2016/11/15/php/php-操作子字符串/" class="article-date">
+  	<time datetime="2016-11-15T11:44:08.000Z" itemprop="datePublished">2016-11-15</time>
 </a>
     </div>
   
@@ -1225,8 +629,8 @@ echo floor(&apos;1.642&apos;);    // floor() 舍去法取整
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/13/php/PHP--基础学习/">
-        PHP basic
+      <a class="article-title" href="/2016/11/15/php/php-操作子字符串/">
+        php学习--操作子字符串
         
       </a>
     </h1>
@@ -1237,258 +641,375 @@ echo floor(&apos;1.642&apos;);    // floor() 舍去法取整
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="PHP的基本知识学习总结"><a href="#PHP的基本知识学习总结" class="headerlink" title=" PHP的基本知识学习总结 "></a><center> PHP的基本知识学习总结 </center></h1><h2 id="一：PHP概述"><a href="#一：PHP概述" class="headerlink" title="一：PHP概述"></a>一：PHP概述</h2><h3 id="PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以-php为后缀名，写动态网站，与数据库交互"><a href="#PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以-php为后缀名，写动态网站，与数据库交互" class="headerlink" title="PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以.php为后缀名，写动态网站，与数据库交互"></a>PHP：超文本预处理程序，通俗地讲是制作网页的脚本程序，是以.php为后缀名，写动态网站，与数据库交互</h3><h3 id="PHP运行环境：windows-apache-php-mysql-emsp-emsp-emsp-emsp-emsp-emsp-emsp-linux-apache-php-mysql"><a href="#PHP运行环境：windows-apache-php-mysql-emsp-emsp-emsp-emsp-emsp-emsp-emsp-linux-apache-php-mysql" class="headerlink" title="PHP运行环境：windows+apache+php+mysql      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;    linux+apache+php+mysql"></a>PHP运行环境：windows+apache+php+mysql <br>     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;    linux+apache+php+mysql</h3><h3 id="PHP文件构成：HTML-div-CSS-PHP-JavaScript-jQuery-ajax等"><a href="#PHP文件构成：HTML-div-CSS-PHP-JavaScript-jQuery-ajax等" class="headerlink" title="PHP文件构成：HTML div CSS PHP JavaScript jQuery ajax等"></a>PHP文件构成：HTML div CSS PHP JavaScript jQuery ajax等</h3><h3 id="PHP工作原理：请求-gt-Apache-gt-执行PHP代码-gt-响应"><a href="#PHP工作原理：请求-gt-Apache-gt-执行PHP代码-gt-响应" class="headerlink" title="PHP工作原理：请求-&gt;Apache-&gt;执行PHP代码-&gt;响应"></a>PHP工作原理：请求-&gt;Apache-&gt;执行PHP代码-&gt;响应</h3><h2 id="二：PHP环境搭建"><a href="#二：PHP环境搭建" class="headerlink" title="二：PHP环境搭建"></a>二：PHP环境搭建</h2><h3 id="用appServ集成环境或者独立搭建"><a href="#用appServ集成环境或者独立搭建" class="headerlink" title="用appServ集成环境或者独立搭建"></a>用appServ集成环境或者独立搭建</h3><h1 id="三：php基础知识"><a href="#三：php基础知识" class="headerlink" title="三：php基础知识"></a>三：php基础知识</h1><h2 id="emsp-01-基本语法"><a href="#emsp-01-基本语法" class="headerlink" title="&emsp; 01.基本语法"></a>&emsp; 01.基本语法</h2><pre><code>&lt;?php 
-    ......
- ?&gt;
-</code></pre><h2 id="emsp-02-输出的几种方式和比较"><a href="#emsp-02-输出的几种方式和比较" class="headerlink" title="&emsp; 02.输出的几种方式和比较"></a>&emsp; 02.输出的几种方式和比较</h2><ul>
-<li>&emsp; <code>echo</code>: 函数，无返回值（返回void），作用是打印字符串</li>
-<li>&emsp; <code>print</code>: 函数，返回整型，作用是打印字符串</li>
-<li>&emsp; <code>printf</code>: 函数，返回字符串的长度，作用是打印字符串</li>
-<li><p>&emsp; <code>sprintf</code>: 函数，返回字符串将字符串保存在内存中（不在浏览器下显示）<br>###</p>
-<p> &lt;?php </p>
-<pre><code>echo &quot;hello php1&quot;;
-echo &quot;&lt;/br&gt;&quot;;
-print(&quot;hello php2&quot;);
-echo &quot;&lt;/br&gt;&quot;;
-echo print(&quot;hello php3&lt;/br&gt;&quot;); // 这句话的作用是先将print里的字符串打印出来，再打印一个字符串，然后echo出print的类型，返回真，在浏览器中显示为1
-echo &quot;&lt;/br&gt;&quot;;
-printf(&quot;hello php4&lt;/br&gt;&quot;);
-echo printf(&quot;hello php5&lt;/br&gt;&quot;); //返回字符串的长度
-echo &quot;&lt;/br&gt;&quot;;
-sprintf(&quot;hello php6&lt;br&gt;&quot;); // 字符串保存在内存中，不在浏览器界面显示
-echo sprintf(&quot;hello php7&quot;); // 返回字符串
-</code></pre><p>  ?&gt;<br> 运行结果：<br> hello php1<br> hello php2<br> hello php3<br> 1<br> hello php4<br> hello php5<br> 15<br> hello php7</p>
-<h2 id="emsp-03-注释"><a href="#emsp-03-注释" class="headerlink" title="&emsp; 03.注释"></a>&emsp; 03.注释</h2><p> 单行//<br> 多行/**/<br> shell #</p>
-<h2 id="emsp-04-标识符"><a href="#emsp-04-标识符" class="headerlink" title="&emsp; 04.标识符"></a>&emsp; 04.标识符</h2><h3 id="emsp-标识符是变量的名称，关于标识符，PHP定义了一些简单的规则："><a href="#emsp-标识符是变量的名称，关于标识符，PHP定义了一些简单的规则：" class="headerlink" title="&emsp; 标识符是变量的名称，关于标识符，PHP定义了一些简单的规则："></a>&emsp; 标识符是变量的名称，关于标识符，PHP定义了一些简单的规则：</h3><h3 id="emsp-标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。"><a href="#emsp-标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。" class="headerlink" title="&emsp; 标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。"></a>&emsp; 标识符可以是任何长度，而且可以由任何字母、数字、下划线组成。</h3><h3 id="emsp-标识符不能以数字开始。"><a href="#emsp-标识符不能以数字开始。" class="headerlink" title="&emsp; 标识符不能以数字开始。"></a>&emsp; 标识符不能以数字开始。</h3><h3 id="emsp-在PHP中，标识符是区分大小写的。"><a href="#emsp-在PHP中，标识符是区分大小写的。" class="headerlink" title="&emsp; 在PHP中，标识符是区分大小写的。"></a>&emsp; 在PHP中，标识符是区分大小写的。</h3><h3 id="emsp-一个变量名称可以与一个函数名称相同。"><a href="#emsp-一个变量名称可以与一个函数名称相同。" class="headerlink" title="&emsp; 一个变量名称可以与一个函数名称相同。"></a>&emsp; 一个变量名称可以与一个函数名称相同。</h3><h2 id="emsp-05-变量的数据类型"><a href="#emsp-05-变量的数据类型" class="headerlink" title="&emsp; 05.变量的数据类型"></a>&emsp; 05.变量的数据类型</h2><p> Integer(整数)、Float(浮点数，也叫Double,双精度)、String(字符串)、Boolean(布尔)、Array(数组)、Object(对象).</p>
-<blockquote>
-<p>在PHP中无论是double还是float，在浏览器中显示的都是“double”<br>###</p>
-<h2 id="emsp-06-类型转换"><a href="#emsp-06-类型转换" class="headerlink" title="&emsp; 06.类型转换"></a>&emsp; 06.类型转换</h2><p> //    数据类型的转换：分为显示转化和隐式转换<br> echo “数据类型的转换方式：(integer)\$num<br>“;    //反斜杠表示转义字符<br> echo “转化成整数和浮点数的时候如果以数字开头，首先将数字部分转化成整数，再舍去后边的字符串，如果字符串中含有小数点，会保留到小数点前一位<br>“;<br> $str5 = “2.559656894E2”;<br> echo “转义前的string类型：”.$str5.”<br>“;        //“.”小圆点表示字符串的连接<br> //    此种方式的转换都是显示转换，也叫强制类型转换<br> echo “转化成整数：”.(integer)$str5.”<br>“;<br> echo “转化成布尔类型：”.(boolean)$str5.”<br>“;    //    0，null和未被赋值的变量将会转换成false<br> echo “转化成浮点数：”.(float)$str5.”<br>“;    // 字符串的连接用“.”<br> echo “转化成数组：”.(array)$str5.”<br>“;</p>
-</blockquote>
-<p> //    隐式转换<br> $sum = 123;<br> $total = 23.4;<br> $sum = $total;<br> echo gettype($sum);    //此时返回的是浮点型，显示的是double，浏览器显示的浮点型就是double<br> echo “<br>“;</p>
-<p> //    settype()函数也可以设置类型，此时将原本的变量类型改变<br> $a = 1234;<br> settype($a, string);<br> echo gettype($a).”<br>“;    //    将此变量设置成string类型，gettype()获取变量的类型<br> echo “$a<br>“;    //    $a是字符串a</p>
-<p> //    intval()函数，此函数不会改变变量的类型（此处还是浮点数），但是会将变量的值按照整型输出（此处输出的是整型），与之相应的还有floatval()  strval()<br> $b = 456.345;<br> echo gettype($b).”<br>“;<br> echo intval($b).”<br>“;<br> echo gettype($b);<br> echo “<hr>“;</p>
-<p> 运行结果：<br> 数据类型的转换方式：(integer)$num<br> 转化成整数和浮点数的时候如果以数字开头，首先将数字部分转化成整数，再舍去后边的字符串，如果字符串中含有小数点，会保留到小数点前一位<br> 转义前的string类型：2.559656894E2<br> 转化成整数：2<br> 转化成布尔类型：1<br> 转化成浮点数：255.9656894<br> 转化成数组：Array<br> double<br> string<br> 1234<br> double<br> 456<br> double</p>
-<h2 id="emsp-07-检测变量"><a href="#emsp-07-检测变量" class="headerlink" title="&emsp; 07.检测变量"></a>&emsp; 07.检测变量</h2><p> 大部分的可变函数都是用来测试一个函数的类型的。PHP中有两个最常见的函数，分别是gettype()和settype()。<br> 这两个函数返回的string类型，也就是变量的类型字符串。<br> 用法：gettypt($变量)</p>
-<pre><code>settype($变量，要转换的数据类型)
-</code></pre><p> isset()用来判断一个变量是否存在，返回的是布尔值true或false<br> unset()用来销毁一个变量（如果变量存在则销毁，如果不存在此函数不发挥作用）</p>
-</li>
-</ul>
-<pre><code>empty()用来判断一个变量的值是否为空，如果为空则为true否则为false。
-换句话说，&quot;&quot;、0、&quot;0&quot;、NULL、FALSE、array()、var $var; 以及没有任何属性的对象都将被认为是空的
-
-PHP还提供了一些特定类型的测试函数。每一个函数都使用一个变量座位其参数，并且返回true或false。
-is_array()、is_double()、is_float()、is_real()、is_long()、is_int()、is_integer()、is_string()、is_object()、is_resource()、is_null()、is_numeric() 
-
-可以通过调用一个函数来实现转换变量数据类型的目的。
-intval()、floatval()、strval();
-注意：在浏览器中如果是真（true），返回1，如果是假（false），返回空（什么都不返回）
-</code></pre><h2 id="emsp-08-php常量"><a href="#emsp-08-php常量" class="headerlink" title="&emsp; 08.php常量"></a>&emsp; 08.php常量</h2><h3 id="常量一旦被定义之后，就不能再次更改。"><a href="#常量一旦被定义之后，就不能再次更改。" class="headerlink" title="常量一旦被定义之后，就不能再次更改。"></a>常量一旦被定义之后，就不能再次更改。</h3><h3 id="语法：define（“常量名”，常量值）"><a href="#语法：define（“常量名”，常量值）" class="headerlink" title="语法：define（“常量名”，常量值）"></a>语法：define（“常量名”，常量值）</h3><p>###&emsp;&emsp;&emsp; define(“TOTAL”,199);</p>
-<h3 id="除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo-命令。"><a href="#除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo-命令。" class="headerlink" title="除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo()命令。"></a>除了自定义常量外，PHP还预定了许多常量。了解这些常量的简单方法就是运行phpinfo()命令。</h3><h3 id="变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。"><a href="#变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。" class="headerlink" title="变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。"></a>变量和常量的另一个差异在于常量只可以保存布尔值、整数、浮点数或字符串数据。这些类型都是标量数据。</h3><h2 id="emsp-09-php中单双引号的区别"><a href="#emsp-09-php中单双引号的区别" class="headerlink" title="&emsp; 09.php中单双引号的区别"></a>&emsp; 09.php中单双引号的区别</h2><h3 id="emsp-双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值"><a href="#emsp-双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值" class="headerlink" title="&emsp; 双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值"></a>&emsp; 双引号可以解析变量，即双引号中包含的变量会自动替换成实际的数值</h3><h3 id="emsp-双引号可以解析转义字符，如-n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）"><a href="#emsp-双引号可以解析转义字符，如-n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）" class="headerlink" title="&emsp; 双引号可以解析转义字符，如\n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）"></a>&emsp; 双引号可以解析转义字符，如\n等（这些字符在浏览器的显示中没有很大的区别，但是在页面元素即HTML中有变化）</h3><h3 id="emsp-单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号"><a href="#emsp-单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号" class="headerlink" title="&emsp; 单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号"></a>&emsp; 单引号按照普通字符串直接输出，他不会解析变量和转义字符，但是他速度快，用的多。无特殊说明推荐使用单引号</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP学习-基本知识/">PHP学习--基本知识</a></li></ul>
-	</div>
-
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/10/13/php/PHP--基础学习/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="PHP basic">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-js/js数组对象" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/09/26/js/js数组对象/" class="article-date">
-  	<time datetime="2016-09-26T08:00:12.000Z" itemprop="datePublished">2016-09-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/26/js/js数组对象/">
-        JavaScript学习--数组对象
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#javascript的核心对象：</p>
-<ul>
-<li>数组对象</li>
-<li>日期对象</li>
-<li>字符串对象</li>
-<li>数学对象<br>##一：数组对象<h3 id="1-介绍：Array可以存储一系列的数据，JavaScript的数组可以存储-不同类型的数据-元素索引的范围是-0-length-1，length为数组的长度。"><a href="#1-介绍：Array可以存储一系列的数据，JavaScript的数组可以存储-不同类型的数据-元素索引的范围是-0-length-1，length为数组的长度。" class="headerlink" title="1.介绍：Array可以存储一系列的数据，JavaScript的数组可以存储 不同类型的数据,元素索引的范围是 0~length-1，length为数组的长度。"></a>1.介绍：Array可以存储一系列的数据，JavaScript的数组可以存储 <code>不同类型的数据</code>,元素索引的范围是 0~length-1，length为数组的长度。</h3><h3 id="2-创建数组："><a href="#2-创建数组：" class="headerlink" title="2.创建数组："></a>2.创建数组：</h3></li>
-<li><code>new Array();</code>不带参数，返回空数组，length = 0。如： <code>var arr = new Array();</code></li>
-<li><code>Array(x);</code> x的取值可为任何数，返回大小是x的数组，length = x。如： <code>var arr = new Array(5);</code>表示此数组的长度是5</li>
-<li><code>new Array[x1,x2,x3...];</code>x1,x2,x3..指的是数组的元素，返回长度为参数个数的数组，length = 个数，如： <code>var arr = new Array[1,&#39;2&#39;,3,4,5,6.8,7];</code> 表示此数组的长度是6，数组中的参数类型可以不相同<h3 id="3-数组的方法及使用："><a href="#3-数组的方法及使用：" class="headerlink" title="3.数组的方法及使用："></a>3.数组的方法及使用：</h3></li>
-<li>concat()方法：连接两个或者更多的数组，并返回合并后的新数组<h6 id="用法：arrayObj-context-array-x-array-x…"><a href="#用法：arrayObj-context-array-x-array-x…" class="headerlink" title="用法：arrayObj.context(array x,array x….);"></a>用法：arrayObj.context(array x,array x….);</h6><h6 id="解释：arrayObj是自定义的一个数组，array-x是新添加的数组"><a href="#解释：arrayObj是自定义的一个数组，array-x是新添加的数组" class="headerlink" title="解释：arrayObj是自定义的一个数组，array x是新添加的数组"></a>解释：arrayObj是自定义的一个数组，array x是新添加的数组</h6><h6 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h6><h6 id="一个数组和其他元素相连"><a href="#一个数组和其他元素相连" class="headerlink" title="一个数组和其他元素相连"></a>一个数组和其他元素相连</h6><pre><code>&lt;script typt = &quot;text/javascript&quot;&gt;
-    var arr = [0,2,4];
-    document.write(arr.concat(4,7,8));
-&lt;/script&gt;
-</code></pre><h6 id="输出结果："><a href="#输出结果：" class="headerlink" title="输出结果："></a>输出结果：</h6><pre><code>0,2,4,4,7,8
-</code></pre><h6 id="可见concat-方法返回新数组，将元素添加到原来数组的末尾"><a href="#可见concat-方法返回新数组，将元素添加到原来数组的末尾" class="headerlink" title="可见concat()方法返回新数组，将元素添加到原来数组的末尾"></a>可见concat()方法返回新数组，将元素添加到原来数组的末尾</h6><h6 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h6><h6 id="两个数组相连"><a href="#两个数组相连" class="headerlink" title="两个数组相连"></a>两个数组相连</h6><pre><code>var arr1 = [1,2,3];
-var arr2 = [4,5,6];
-document.write(arr2.concat(arr1));
-</code></pre><h6 id="输出结果：-1"><a href="#输出结果：-1" class="headerlink" title="输出结果："></a>输出结果：</h6><pre><code>4,5,6,1,2,3
-</code></pre><h6 id="示例3："><a href="#示例3：" class="headerlink" title="示例3："></a>示例3：</h6><h6 id="三个数组相连"><a href="#三个数组相连" class="headerlink" title="三个数组相连"></a>三个数组相连</h6><pre><code>var arr1 = [1,2,3];
-var arr2 = [4,5,6];            
-var arr3 = [2,3,4];
-document.write(arr2.concat(arr1,arr3));
-</code></pre><h6 id="输出结果：-2"><a href="#输出结果：-2" class="headerlink" title="输出结果："></a>输出结果：</h6><pre><code>4,5,6,1,2,3,2,3,4
-</code></pre></li>
-<li>join()方法：把数组的所有元素放入一个字符串并返回此字符串，元素通过指定的分隔符进行分隔。即将数组转化为字符串，作用和toString()相同<h6 id="用法：arr-join-“”"><a href="#用法：arr-join-“”" class="headerlink" title="用法：arr.join(“”);"></a>用法：arr.join(“”);</h6><h6 id="解释：arr是任意数组"><a href="#解释：arr是任意数组" class="headerlink" title="解释：arr是任意数组"></a>解释：arr是任意数组</h6><h6 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h6><pre><code>&lt;script type = &quot;text/javascript&quot;&gt;
-var arr = [1,2,3,4];
-document.write(arr+&quot;&lt;/br&gt;&quot;);
-document.write(arr.join(&quot;,&quot;)+&quot;&lt;/br&gt;&quot;);
-document.write(arr.join(&quot; &quot;)+&quot;&lt;/br&gt;&quot;);
-document.write(arr.join(&quot;*&quot;)+&quot;&lt;/br&gt;&quot;);
-&lt;/script&gt;
-</code></pre><h6 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3,4
-1,2,3,4
-1 2 3 4
-1*2*3*4
-</code></pre>  ####### 由此可见，join()的真正用途是 <code>以某种符号分隔数组元素</code></li>
-<li>toString()方法：把数组转化为字符串并返回结果<h6 id="用法：arr-toString"><a href="#用法：arr-toString" class="headerlink" title="用法：arr.toString()"></a>用法：arr.toString()</h6><h6 id="返回值：转化后的字符串"><a href="#返回值：转化后的字符串" class="headerlink" title="返回值：转化后的字符串"></a>返回值：转化后的字符串</h6><h6 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h6><pre><code>var arr1 = [1,2,3]
-document.write(arr1.toString());
-</code></pre><h6 id="运行结果：-1"><a href="#运行结果：-1" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3
-</code></pre></li>
-<li>pop()方法：删除并返回数组的最后一个元素，数组长度-1，如果数组是空的，不改变数组，并返回undefined<h6 id="用法：arr-pop"><a href="#用法：arr-pop" class="headerlink" title="用法：arr.pop()"></a>用法：arr.pop()</h6><h6 id="返回值：arr的最后一个元素"><a href="#返回值：arr的最后一个元素" class="headerlink" title="返回值：arr的最后一个元素"></a>返回值：arr的最后一个元素</h6><h6 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h6><pre><code>var arr = [1,2,3,4];
-document.write(arr.pop());
-alert(arr);
-</code></pre><h6 id="运行结果：-2"><a href="#运行结果：-2" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>4
-1,2,3
-</code></pre><h6 id="注意！如果给pop-；赋一个参数，也只会pop出最后一个元素，任何参数都可以-比如arr这个数组，返回的也是4"><a href="#注意！如果给pop-；赋一个参数，也只会pop出最后一个元素，任何参数都可以-比如arr这个数组，返回的也是4" class="headerlink" title="注意！如果给pop()；赋一个参数，也只会pop出最后一个元素，任何参数都可以(比如arr这个数组，返回的也是4)"></a>注意！如果给pop()；赋一个参数，也只会pop出最后一个元素，任何参数都可以(比如arr这个数组，返回的也是4)</h6></li>
-<li>push()方法：向数组的末尾添加一个元素并返回数组的长度<h6 id="用法：arr-push-x-y-z…"><a href="#用法：arr-push-x-y-z…" class="headerlink" title="用法：arr.push(x,y,z…)"></a>用法：arr.push(x,y,z…)</h6><h6 id="返回值：新数组的长度"><a href="#返回值：新数组的长度" class="headerlink" title="返回值：新数组的长度"></a>返回值：新数组的长度</h6><h6 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h6><pre><code>var arr = [1,2,3,4];
-document.write(arr.push(1));
-alert(arr);
-</code></pre><h6 id="运行结果：-3"><a href="#运行结果：-3" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3,4,1
-5
-</code></pre><h6 id="如果添加的元素是arr，结果会是什么样的呢？"><a href="#如果添加的元素是arr，结果会是什么样的呢？" class="headerlink" title="如果添加的元素是arr，结果会是什么样的呢？"></a>如果添加的元素是arr，结果会是什么样的呢？</h6><pre><code>var arr = [1,2,3,4];
-document.write(arr.push(arr));
-alert(arr);
-</code></pre><h6 id="运行结果：-4"><a href="#运行结果：-4" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3,4，    （注意此处有个逗号）
-5
-</code></pre><h6 id="可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1"><a href="#可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1" class="headerlink" title="可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1"></a>可见，如果添加的是一个arr本身，添加上的是“，”，数组的长度还是会增加1</h6><h6 id="也可以添加多个元素"><a href="#也可以添加多个元素" class="headerlink" title="也可以添加多个元素"></a>也可以添加多个元素</h6><pre><code>var arr = [1,2];
-document.write(arr.push(2,3,4,5,6));
-alert(arr);
-</code></pre><h6 id="运行结果：-5"><a href="#运行结果：-5" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,2,3,4,5,6
-7
-</code></pre><h6 id="既然concat-可以添加一个新的数组，push-是否可以添加新的数组呢？运行一段代码"><a href="#既然concat-可以添加一个新的数组，push-是否可以添加新的数组呢？运行一段代码" class="headerlink" title="既然concat()可以添加一个新的数组，push()是否可以添加新的数组呢？运行一段代码"></a>既然concat()可以添加一个新的数组，push()是否可以添加新的数组呢？运行一段代码</h6><pre><code>var arr = [1,2,3,4,5];
-var arr1 = [1,2,3,4]
-document.write(arr.push(arr1));
-alert(arr);
-</code></pre><h6 id="运行结果：-6"><a href="#运行结果：-6" class="headerlink" title="运行结果："></a>运行结果：</h6><pre><code>1,2,3,4,5,1,2,3,4
-5（注意这里）
-</code></pre><h6 id="从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度-1"><a href="#从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度-1" class="headerlink" title="从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度+1"></a>从结果我们看到，新的元素都被添加进去了，可是数组的长度确是原来长度+1</h6></li>
-<li><p>sort()方法对数组进行排序，默认是升序排序</p>
-<h6 id="输入任意多个数，使用数组对象进行升序排序"><a href="#输入任意多个数，使用数组对象进行升序排序" class="headerlink" title="输入任意多个数，使用数组对象进行升序排序"></a>输入任意多个数，使用数组对象进行升序排序</h6><h6 id="示例：-3"><a href="#示例：-3" class="headerlink" title="示例："></a>示例：</h6><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
-var array = new Array();
-//调用初始化方法
-init();
-// 打印排序后的结果
-//所有单词代换：Ctrl+H，或者Ctrl+D选中下一个
-if (array.length == 0) {
-    document.write(&quot;数组中无合法数值&quot;+&quot;&lt;br/&gt;&quot;);
-    // document.write(&quot;输入的数字是：&quot;+array)
-}else {
-    document.write(&quot;排序前的结果为：&quot;+array+&quot;&lt;br/&gt;&quot;);
-    document.write(&quot;排序后的结果为：&quot;+array.sort(sortNumber));
+        <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="1-explode-以某个字符分割字符串，返回字串组成的数组"><a href="#1-explode-以某个字符分割字符串，返回字串组成的数组" class="headerlink" title="1. explode()以某个字符分割字符串，返回字串组成的数组"></a>1. explode()以某个字符分割字符串，返回字串组成的数组</h3><h3 id="2-join-将数组中的元素合并成字符串"><a href="#2-join-将数组中的元素合并成字符串" class="headerlink" title="2. join()将数组中的元素合并成字符串"></a>2. join()将数组中的元素合并成字符串</h3><h3 id="3-strtok-标记分割字符串"><a href="#3-strtok-标记分割字符串" class="headerlink" title="3. strtok()标记分割字符串"></a>3. strtok()标记分割字符串</h3><h3 id="4-substr-函数返回字符串的子串，不适合汉字"><a href="#4-substr-函数返回字符串的子串，不适合汉字" class="headerlink" title="4. substr()函数返回字符串的子串，不适合汉字"></a>4. substr()函数返回字符串的子串，<code>不适合汉字</code></h3><h3 id="5-str-aplit-函数将字符串转化为数组，分解成一小段一小段的子字符串，不适合汉字"><a href="#5-str-aplit-函数将字符串转化为数组，分解成一小段一小段的子字符串，不适合汉字" class="headerlink" title="5. str_aplit()函数将字符串转化为数组，分解成一小段一小段的子字符串，不适合汉字"></a>5. str_aplit()函数将字符串转化为数组，分解成一小段一小段的子字符串，<code>不适合汉字</code></h3><h3 id="6-strrev-函数将字符串逆反过来，不适合汉字"><a href="#6-strrev-函数将字符串逆反过来，不适合汉字" class="headerlink" title="6. strrev()函数将字符串逆反过来，不适合汉字"></a>6. strrev()函数将字符串逆反过来，<code>不适合汉字</code></h3><h2 id="详解："><a href="#详解：" class="headerlink" title="详解："></a>详解：</h2><h3 id="1-explode-分割的符号，被分割的字符串-以某个字符分割字符串，返回字串组成的数组"><a href="#1-explode-分割的符号，被分割的字符串-以某个字符分割字符串，返回字串组成的数组" class="headerlink" title="1. explode(分割的符号，被分割的字符串) 以某个字符分割字符串，返回字串组成的数组"></a>1. explode(分割的符号，被分割的字符串) 以某个字符分割字符串，返回字串组成的数组</h3><pre><code>$str = &apos;123456789@qq.com&apos;;
+print_r(explode(&apos;@&apos;, $str));
+</code></pre><h3 id="2-join-合并的符号，被合并的数组-将数组中的元素合并成字符串"><a href="#2-join-合并的符号，被合并的数组-将数组中的元素合并成字符串" class="headerlink" title="2. join(合并的符号，被合并的数组) 将数组中的元素合并成字符串"></a>2. join(合并的符号，被合并的数组) 将数组中的元素合并成字符串</h3><pre><code>$str2 = array(&apos;hello&apos; ,&apos;world&apos;,&apos;!&apos;);
+echo join(&apos; &apos;,$str2);
+</code></pre><h3 id="3-implode-是join的别名，他俩是一样的作用"><a href="#3-implode-是join的别名，他俩是一样的作用" class="headerlink" title="3. implode()是join的别名，他俩是一样的作用"></a>3. implode()是join的别名，他俩是一样的作用</h3><h3 id="4-strtok-标记分割字符串，这个函数的好处是可以使用多个参数来分割字符串"><a href="#4-strtok-标记分割字符串，这个函数的好处是可以使用多个参数来分割字符串" class="headerlink" title="4. strtok()标记分割字符串，这个函数的好处是可以使用多个参数来分割字符串"></a>4. strtok()标记分割字符串，这个函数的好处是可以使用多个参数来分割字符串</h3><pre><code>// 注意：符号的顺序是无所谓的
+// 仅第一次调用strtok的时候使用string参数，后来每次调用 strtok都只使用分隔符号参数（这里指的是,#%），因为他会记住他在字符串中的位置。
+// 如果重新分割新的字符串，就需要再次调用string和strtok函数，来完成初始化工作
+$str3 = &apos;hello, he is %a good # boy&apos;;
+$tok = strtok($str3, &apos;,#&apos;);
+while ($tok) {
+    echo $tok.&apos;&lt;br&gt;&apos;;
+    $tok = strtok(&apos;#,%&apos;);
 }
-
-// 比较函数：
-//     返回 -1，a在b 前边
-//     返回 0 ，位置不变
-//     返回 1 ，b 在a 前边
-// 如果是降序，-1和1相反即可
-//如果没有此函数，会按照ASCALL码的顺序对数组中的元素排序。
-//在此数字排序中是必须要添加的。
-function sortNumber(a,b){
-    if (a&lt;b) {
-        return -1;
-    }else if (a == b) {
-        return 0;
-    }else{
-        return 1;
-    }
-}
-function init(){
-    while (true){
-        var v = prompt(&quot;输入数字，end结束&quot;,&quot;&quot;);
-        if (v == &apos;end&apos;) {
-            break;
-        }
-        if (isNaN(v)) {
-            break;
-        }
-        //将输入的数字依次传入array数组中。
-        //每次传入的数字都是一个，会不断弹出对话框，遇到“end”之后停止弹出，并计算结果
-        array.push(parseFloat(v));
-    }
-}
-
-&lt;/script&gt;
-</code></pre></li>
-<li>reverse()：颠倒数组中的元素的顺序，该方法会改变原来的数组而不是创建新数组<h6 id="用法：arr-reverse"><a href="#用法：arr-reverse" class="headerlink" title="用法：arr.reverse()"></a>用法：arr.reverse()</h6><h6 id="示例：-4"><a href="#示例：-4" class="headerlink" title="示例："></a>示例：</h6><pre><code>var arr1 = [1,2,3]
-document.write(arr1.reverse());
-</code></pre><h6 id="运行结果：-7"><a href="#运行结果：-7" class="headerlink" title="运行结果："></a>运行结果：</h6>  3,2,1</li>
-</ul>
-
+</code></pre><h3 id="5-substr-字符串，子字符串开始的下标，子字符串的长度-返回字符串的子串"><a href="#5-substr-字符串，子字符串开始的下标，子字符串的长度-返回字符串的子串" class="headerlink" title="5. substr(字符串，子字符串开始的下标，子字符串的长度) 返回字符串的子串"></a>5. substr(字符串，子字符串开始的下标，子字符串的长度) 返回字符串的子串</h3><pre><code>// 第一个参数是字符串，第二个参数是子字符串开始的下标（从0开始），第三个参数是子字符串的长度（可选），默认是到最后一个字符
+// 注意这个函数不可以分割中文，因为中文是两个字节，这个函数分割的是一个字节
+$str4 = &apos;hello he is a good boy&apos;;
+echo substr($str4, 2, 5);
+</code></pre><h3 id="6-str-aplit-字符串，子字符串的长度-将字符串转化为数组，分解成一小段一小段的子字符串"><a href="#6-str-aplit-字符串，子字符串的长度-将字符串转化为数组，分解成一小段一小段的子字符串" class="headerlink" title="6. str_aplit(字符串，子字符串的长度) 将字符串转化为数组，分解成一小段一小段的子字符串"></a>6. str_aplit(字符串，子字符串的长度) 将字符串转化为数组，分解成一小段一小段的子字符串</h3><pre><code>// 第一个参数是要分解的字符串，第二个参数是每一个字符串的长度（可选），默认是分割成单个的字符数组
+$str5 = &apos;hello he is a good boy&apos;;
+print_r(str_split($str5,2));
+</code></pre><h3 id="7-strrev-函数将字符串逆反过来"><a href="#7-strrev-函数将字符串逆反过来" class="headerlink" title="7. strrev()函数将字符串逆反过来"></a>7. strrev()函数将字符串逆反过来</h3><pre><code>$str6 = &apos;hello he is a good boy&apos;;
+echo strrev($str6);
+</code></pre>
       
     </div>
     
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript数组-js-array/">javascript数组 ,js array</a></li></ul>
-	</div>
-
       
 
       
         
 <div class="counter-tag counter">
-    <span id="/2016/09/26/js/js数组对象/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="JavaScript学习--数组对象">
+    <span id="/2016/11/15/php/php-操作子字符串/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--操作子字符串">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-php/php-字符串" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/15/php/php-字符串/" class="article-date">
+  	<time datetime="2016-11-15T11:18:06.000Z" itemprop="datePublished">2016-11-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/15/php/php-字符串/">
+        php学习--字符串基本操作
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="1-trim-清除字符串左右两边的空格"><a href="#1-trim-清除字符串左右两边的空格" class="headerlink" title="1. trim()清除字符串左右两边的空格"></a>1. trim()清除字符串左右两边的空格</h3><h3 id="2-ltrim-清除左边的空格"><a href="#2-ltrim-清除左边的空格" class="headerlink" title="2. ltrim()清除左边的空格"></a>2. ltrim()清除左边的空格</h3><h3 id="3-rtrim-清除右边的空格"><a href="#3-rtrim-清除右边的空格" class="headerlink" title="3. rtrim()清除右边的空格"></a>3. rtrim()清除右边的空格</h3><h3 id="4-nl2br-在字符串所有新行之前插入HTML换行标记（）"><a href="#4-nl2br-在字符串所有新行之前插入HTML换行标记（）" class="headerlink" title="4. nl2br()在字符串所有新行之前插入HTML换行标记（）"></a>4. nl2br()在字符串所有新行之前插入HTML换行标记（<br>）</h3><h3 id="5-htmlspecialchars-将特殊的字符转化成HTML实体"><a href="#5-htmlspecialchars-将特殊的字符转化成HTML实体" class="headerlink" title="5. htmlspecialchars()将特殊的字符转化成HTML实体"></a>5. htmlspecialchars()将特殊的字符转化成HTML实体</h3><h3 id="6-addslaashes-使用反斜杠引用字符串"><a href="#6-addslaashes-使用反斜杠引用字符串" class="headerlink" title="6. addslaashes()使用反斜杠引用字符串"></a>6. addslaashes()使用反斜杠引用字符串</h3><h3 id="7-strtoupper-函数将字符串转换为大写"><a href="#7-strtoupper-函数将字符串转换为大写" class="headerlink" title="7. strtoupper()函数将字符串转换为大写"></a>7. strtoupper()函数将字符串转换为大写</h3><h3 id="8-strtolower-函数将字符串转换成小写"><a href="#8-strtolower-函数将字符串转换成小写" class="headerlink" title="8. strtolower()函数将字符串转换成小写"></a>8. strtolower()函数将字符串转换成小写</h3><h3 id="9-ucfirst-函数将第一个字母转换为大写"><a href="#9-ucfirst-函数将第一个字母转换为大写" class="headerlink" title="9. ucfirst()函数将第一个字母转换为大写"></a>9. ucfirst()函数将第一个字母转换为大写</h3><h3 id="10-ucwords-函数将每个单词第一个字母转换为大写"><a href="#10-ucwords-函数将每个单词第一个字母转换为大写" class="headerlink" title="10. ucwords()函数将每个单词第一个字母转换为大写"></a>10. ucwords()函数将每个单词第一个字母转换为大写</h3><h3 id="11-str-pad-使用另一个字符串填充字符串为指定长度"><a href="#11-str-pad-使用另一个字符串填充字符串为指定长度" class="headerlink" title="11. str_pad()使用另一个字符串填充字符串为指定长度"></a>11. str_pad()使用另一个字符串填充字符串为指定长度</h3><h2 id="一：trim-，ltrim-，rtrim"><a href="#一：trim-，ltrim-，rtrim" class="headerlink" title="一：trim()，ltrim()，rtrim()"></a>一：trim()，ltrim()，rtrim()</h2><pre><code>//  trim()清除字符串左右两边的空格
+$str = &apos;       jewel       &apos;;
+echo trim($str).&apos;&lt;br&gt;&apos;;
+// ltrim()清除左边的空格
+echo ltrim($str).&apos;&lt;br&gt;&apos;;
+// rtrim()清除右边的空格
+echo rtrim($str);
+</code></pre><h2 id="二：nl2br-在字符串所有新行之前插入HTML换行标记（）"><a href="#二：nl2br-在字符串所有新行之前插入HTML换行标记（）" class="headerlink" title="二：nl2br()在字符串所有新行之前插入HTML换行标记（）"></a>二：nl2br()在字符串所有新行之前插入HTML换行标记（<br>）</h2><h3 id="注意转义字符只能包裹在双引号里边，这一点非常重要"><a href="#注意转义字符只能包裹在双引号里边，这一点非常重要" class="headerlink" title="注意转义字符只能包裹在双引号里边，这一点非常重要"></a>注意<code>转义字符只能包裹在双引号里边</code>，这一点非常重要</h3><h3 id="转义字符包括：-t-n-r"><a href="#转义字符包括：-t-n-r" class="headerlink" title="转义字符包括：\t \n \r"></a>转义字符包括：\t \n \r</h3><pre><code>$str1 = &quot;I am Jewel\n hello world&quot;;
+echo nl2br($str1);
+// 打印出：I am Jewel&lt;br/&gt; hello world
+
+echo nl2br(&quot;foo isn&apos;t\n bar&quot;);
+
+$string = &quot;This\r\nis\n\ra\nstring\r&quot;;
+echo nl2br($string);
+</code></pre><h2 id="三：htmlspecialchars-将特殊的字符转化成HTML实体"><a href="#三：htmlspecialchars-将特殊的字符转化成HTML实体" class="headerlink" title="三：htmlspecialchars()将特殊的字符转化成HTML实体"></a>三：htmlspecialchars()将特殊的字符转化成HTML实体</h2><pre><code>$str2 = &apos;&lt;strong&gt;jewel&lt;/strong&gt;&apos;;
+echo htmlspecialchars($str2);
+// 
+// strip_tags从字符串中去掉HTML和PHP标记
+echo strip_tags($str2);
+</code></pre><h2 id="四：addslaashes-使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’-“-null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候"><a href="#四：addslaashes-使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’-“-null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候" class="headerlink" title="四：addslaashes()使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’ “ \ null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候"></a>四：addslaashes()使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’ “ \ null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候</h2><h3 id="对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（-）和NULL字符。"><a href="#对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（-）和NULL字符。" class="headerlink" title="对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（\）和NULL字符。"></a>对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（\）和NULL字符。</h3><h3 id="PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes-将它们重新格式化"><a href="#PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes-将它们重新格式化" class="headerlink" title="PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes()将它们重新格式化"></a>PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes()将它们重新格式化</h3><pre><code>$str3 = &apos;I am a good girl. &quot;this&quot; hello&apos;;
+echo addslashes($str3);
+</code></pre><h2 id="五"><a href="#五" class="headerlink" title="五:"></a>五:</h2><h3 id="strtoupper-函数将字符串转换为大写"><a href="#strtoupper-函数将字符串转换为大写" class="headerlink" title="strtoupper()函数将字符串转换为大写"></a>strtoupper()函数将字符串转换为大写</h3><h3 id="strtolower-函数将字符串转换成小写"><a href="#strtolower-函数将字符串转换成小写" class="headerlink" title="strtolower()函数将字符串转换成小写"></a>strtolower()函数将字符串转换成小写</h3><h3 id="ucfirst-函数将第一个字母转换为大写"><a href="#ucfirst-函数将第一个字母转换为大写" class="headerlink" title="ucfirst()函数将第一个字母转换为大写"></a>ucfirst()函数将第一个字母转换为大写</h3><h3 id="ucwords-函数将每个单词第一个字母转换为大写"><a href="#ucwords-函数将每个单词第一个字母转换为大写" class="headerlink" title="ucwords()函数将每个单词第一个字母转换为大写"></a>ucwords()函数将每个单词第一个字母转换为大写</h3><pre><code>echo strtoupper(&apos;hello wworld&apos;).&apos;&lt;br&gt;&apos;;
+echo strtolower(&apos;HELLO world&apos;);
+echo ucfirst(&apos;hello world&apos;);
+echo ucwords(&apos;hello world&apos;);
+</code></pre><h2 id="六-str-pad-使用另一个字符串填充字符串为指定长度"><a href="#六-str-pad-使用另一个字符串填充字符串为指定长度" class="headerlink" title="六: str_pad()使用另一个字符串填充字符串为指定长度"></a>六: str_pad()使用另一个字符串填充字符串为指定长度</h2><pre><code>// 第二个参数表示总共的位数
+echo str_pad(&quot;hello&quot;, 10).&apos;&lt;br&gt;&apos;;
+
+$input = &quot;Alien&quot;;
+echo str_pad($input, 10).&apos;&lt;br&gt;&apos;;                      // 输出 &quot;Alien     &quot;
+echo str_pad($input, 10, &quot;-=&quot;, STR_PAD_LEFT);  // 输出 &quot;-=-=-Alien&quot;
+echo str_pad($input, 10, &quot;_&quot;, STR_PAD_BOTH);   // 输出 &quot;__Alien___&quot;
+echo str_pad($input, 6 , &quot;___&quot;);               // 输出 &quot;Alien_&quot;
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/15/php/php-字符串/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--字符串基本操作">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-php/php-session" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/14/php/php-session/" class="article-date">
+  	<time datetime="2016-11-14T07:05:52.000Z" itemprop="datePublished">2016-11-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/14/php/php-session/">
+        php学习--session
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一：会话"><a href="#一：会话" class="headerlink" title="一：会话"></a>一：会话</h2><h3 id="会话是指用户访问web站点上的时期内存储的用户操作的一些动作。PHP提供了管理会话的机制，可以追踪到用户在这一时期的动作，显示用户喜欢什么，需要什么。"><a href="#会话是指用户访问web站点上的时期内存储的用户操作的一些动作。PHP提供了管理会话的机制，可以追踪到用户在这一时期的动作，显示用户喜欢什么，需要什么。" class="headerlink" title="会话是指用户访问web站点上的时期内存储的用户操作的一些动作。PHP提供了管理会话的机制，可以追踪到用户在这一时期的动作，显示用户喜欢什么，需要什么。"></a>会话是指用户<code>访问web站点上的时期内</code>存储的用户操作的一些动作。PHP提供了管理会话的机制，可以追踪到用户在这一时期的动作，显示用户喜欢什么，需要什么。</h3><h3 id="会话与cookie类似，但是功能更加强大，可以管理大量数据，而且可以将信息保存在服务器端，安全，存储长度也没有限制"><a href="#会话与cookie类似，但是功能更加强大，可以管理大量数据，而且可以将信息保存在服务器端，安全，存储长度也没有限制" class="headerlink" title="会话与cookie类似，但是功能更加强大，可以管理大量数据，而且可以将信息保存在服务器端，安全，存储长度也没有限制"></a>会话与cookie类似，但是功能更加强大，可以管理大量数据，而且可以将信息保存在服务器端，安全，存储长度也没有限制</h3><h2 id="二：session的概念"><a href="#二：session的概念" class="headerlink" title="二：session的概念"></a>二：session的概念</h2><h3 id="session生命周期：从用户访问页面开始到断开与网络连接为止，用户每一次连接，PHP都会自动生成一个唯一的sessionID来标识当前用户，从而与其他用户进行区分。session会话时，sessionID分别保存在客户端和服务器端两个位置。"><a href="#session生命周期：从用户访问页面开始到断开与网络连接为止，用户每一次连接，PHP都会自动生成一个唯一的sessionID来标识当前用户，从而与其他用户进行区分。session会话时，sessionID分别保存在客户端和服务器端两个位置。" class="headerlink" title="session生命周期：从用户访问页面开始到断开与网络连接为止，用户每一次连接，PHP都会自动生成一个唯一的sessionID来标识当前用户，从而与其他用户进行区分。session会话时，sessionID分别保存在客户端和服务器端两个位置。"></a>session生命周期：从用户访问页面开始到断开与网络连接为止，用户每一次连接，PHP都会自动生成一个唯一的sessionID来标识当前用户，从而与其他用户进行区分。session会话时，sessionID分别保存在客户端和服务器端两个位置。</h3><h3 id="在客户端，使用临时的cookie保存在浏览器的指定目录中，称为session-cookie"><a href="#在客户端，使用临时的cookie保存在浏览器的指定目录中，称为session-cookie" class="headerlink" title="在客户端，使用临时的cookie保存在浏览器的指定目录中，称为session cookie"></a>在客户端，使用临时的cookie保存在浏览器的指定目录中，称为session cookie</h3><h3 id="在服务器端，以文本文件的形式保存在指定的session目录中"><a href="#在服务器端，以文本文件的形式保存在指定的session目录中" class="headerlink" title="在服务器端，以文本文件的形式保存在指定的session目录中"></a>在服务器端，以文本文件的形式保存在指定的session目录中</h3><h3 id="网页是无状态的连接程序，无法记录用户的状态信息，所以用session记录用户的有关信息。"><a href="#网页是无状态的连接程序，无法记录用户的状态信息，所以用session记录用户的有关信息。" class="headerlink" title="网页是无状态的连接程序，无法记录用户的状态信息，所以用session记录用户的有关信息。"></a>网页是无状态的连接程序，无法记录用户的状态信息，所以用session记录用户的有关信息。</h3><h2 id="三：启动session"><a href="#三：启动session" class="headerlink" title="三：启动session"></a>三：启动session</h2><h3 id="1-session-start-函数启动session，在使用session-start-之前浏览器不能有任何输出。"><a href="#1-session-start-函数启动session，在使用session-start-之前浏览器不能有任何输出。" class="headerlink" title="1.session_start()函数启动session，在使用session_start()之前浏览器不能有任何输出。"></a>1.session_start()函数启动session，在使用session_start()之前浏览器<code>不能有任何输出</code>。</h3><h3 id="2-session-register-函数为会话登录一个变量来隐含的启动会话。设置php-ini文件里的register-globals-设为On"><a href="#2-session-register-函数为会话登录一个变量来隐含的启动会话。设置php-ini文件里的register-globals-设为On" class="headerlink" title="2.session_register()函数为会话登录一个变量来隐含的启动会话。设置php.ini文件里的register_globals 设为On"></a>2.session_register()函数为会话登录一个变量来隐含的启动会话。设置php.ini文件里的register_globals 设为On</h3><h3 id="四：使用session"><a href="#四：使用session" class="headerlink" title="四：使用session"></a>四：使用session</h3><h3 id="session有一个功能是保存当前用户的特定数据和相关信息，包括字符串，数组，对象等。使用超级全局变量-SESSION-将各种类型的数据添加到session中。"><a href="#session有一个功能是保存当前用户的特定数据和相关信息，包括字符串，数组，对象等。使用超级全局变量-SESSION-将各种类型的数据添加到session中。" class="headerlink" title="session有一个功能是保存当前用户的特定数据和相关信息，包括字符串，数组，对象等。使用超级全局变量$_SESSION[]将各种类型的数据添加到session中。"></a>session有一个功能是保存当前用户的特定数据和相关信息，包括字符串，数组，对象等。使用超级全局变量$_SESSION[]将各种类型的数据添加到session中。</h3><pre><code>session_start();
+$_SESSION[&apos;name&apos;] = &apos;jewel&apos;;    //创建一个session
+</code></pre><h2 id="五：删除session"><a href="#五：删除session" class="headerlink" title="五：删除session"></a>五：删除session</h2><h3 id="1-unset-删除单个会话"><a href="#1-unset-删除单个会话" class="headerlink" title="1.unset()删除单个会话"></a>1.unset()删除单个会话</h3><pre><code>unset($_SESSION[&apos;name&apos;]);
+</code></pre><h3 id="注意：在使用unset-时，-SESSION-‘name’-里的元素（这个里边是name）不能省略，也就是不能一次注销整个数组，这样会禁止整个会话的功能。unset-SESSION-会将超级全局变量-SESSION销毁，而且不能恢复，用户不可以再次注册-SESSION变量"><a href="#注意：在使用unset-时，-SESSION-‘name’-里的元素（这个里边是name）不能省略，也就是不能一次注销整个数组，这样会禁止整个会话的功能。unset-SESSION-会将超级全局变量-SESSION销毁，而且不能恢复，用户不可以再次注册-SESSION变量" class="headerlink" title="注意：在使用unset()时，$_SESSION[‘name’]里的元素（这个里边是name）不能省略，也就是不能一次注销整个数组，这样会禁止整个会话的功能。unset($_SESSION)会将超级全局变量$_SESSION销毁，而且不能恢复，用户不可以再次注册$_SESSION变量"></a>注意：在使用unset()时，$_SESSION[‘name’]里的元素（这个里边是name）不能省略，也就是不能一次注销整个数组，<code>这样会禁止整个会话的功能</code>。unset($_SESSION)会将超级全局变量$_SESSION销毁，而且不能恢复，用户不可以再次注册$_SESSION变量</h3><h3 id="2-将空值赋给-SESSION来删除所有会话"><a href="#2-将空值赋给-SESSION来删除所有会话" class="headerlink" title="2.将空值赋给$_SESSION来删除所有会话"></a>2.将空值赋给$_SESSION来删除所有会话</h3><pre><code>$_SESSION = array();
+</code></pre><h3 id="3-session-destory-结束当前会话"><a href="#3-session-destory-结束当前会话" class="headerlink" title="3.session_destory()结束当前会话"></a>3.session_destory()结束当前会话</h3><h3 id="session-destory-函数清除结束当前的会话，并清除会话中的所有资源，彻底销毁session"><a href="#session-destory-函数清除结束当前的会话，并清除会话中的所有资源，彻底销毁session" class="headerlink" title="session_destory()函数清除结束当前的会话，并清除会话中的所有资源，彻底销毁session"></a>session_destory()函数清除结束当前的会话，并清除会话中的所有资源，彻底销毁session</h3>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/14/php/php-session/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--session">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-php/php-cookie" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/14/php/php-cookie/" class="article-date">
+  	<time datetime="2016-11-14T05:59:56.000Z" itemprop="datePublished">2016-11-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/14/php/php-cookie/">
+        php学习--cookie
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一：cookie的概念"><a href="#一：cookie的概念" class="headerlink" title="一：cookie的概念"></a>一：cookie的概念</h2><h3 id="cookie是在http协议下（http是一种无状态的协议，每次请求的处理都与之前或者之后的请求无关），将服务器传递给浏览器少量的数据保存到用户浏览器的一种方式。通过这种方式，即使在浏览器被关闭和连接中断的情况下，用户仍然可以维护状态数据"><a href="#cookie是在http协议下（http是一种无状态的协议，每次请求的处理都与之前或者之后的请求无关），将服务器传递给浏览器少量的数据保存到用户浏览器的一种方式。通过这种方式，即使在浏览器被关闭和连接中断的情况下，用户仍然可以维护状态数据" class="headerlink" title="cookie是在http协议下（http是一种无状态的协议，每次请求的处理都与之前或者之后的请求无关），将服务器传递给浏览器少量的数据保存到用户浏览器的一种方式。通过这种方式，即使在浏览器被关闭和连接中断的情况下，用户仍然可以维护状态数据"></a>cookie是在http协议下（http是一种无状态的协议，每次请求的处理都与之前或者之后的请求无关），将服务器传递给浏览器少量的数据保存到用户浏览器的一种方式。通过这种方式，即使在浏览器被关闭和连接中断的情况下，用户仍然可以维护状态数据</h3><h3 id="通俗的将，cookie是保存在你的客户机上的一个小文件，它是经过加密的文件，保存着你的登录信息等"><a href="#通俗的将，cookie是保存在你的客户机上的一个小文件，它是经过加密的文件，保存着你的登录信息等" class="headerlink" title="通俗的将，cookie是保存在你的客户机上的一个小文件，它是经过加密的文件，保存着你的登录信息等"></a>通俗的将，cookie是保存在你的客户机上的一个小文件，它是经过加密的文件，保存着你的登录信息等</h3><h2 id="二：cookie作用域"><a href="#二：cookie作用域" class="headerlink" title="二：cookie作用域"></a>二：cookie作用域</h2><h3 id="1-记录访客的某些信息，如登录的用户名，访问网站的次数等"><a href="#1-记录访客的某些信息，如登录的用户名，访问网站的次数等" class="headerlink" title="1.记录访客的某些信息，如登录的用户名，访问网站的次数等"></a>1.记录访客的某些信息，如登录的用户名，访问网站的次数等</h3><h3 id="2-在页面之间传递变量。浏览器不会保存当前页面的任何变量信息，当浏览器被关闭之后，页面上的变量信息就会随之消失。这时候就可以把变量以cookie的形式保存下来，然后在下一页通过读取该cookie来获取变量的值"><a href="#2-在页面之间传递变量。浏览器不会保存当前页面的任何变量信息，当浏览器被关闭之后，页面上的变量信息就会随之消失。这时候就可以把变量以cookie的形式保存下来，然后在下一页通过读取该cookie来获取变量的值" class="headerlink" title="2.在页面之间传递变量。浏览器不会保存当前页面的任何变量信息，当浏览器被关闭之后，页面上的变量信息就会随之消失。这时候就可以把变量以cookie的形式保存下来，然后在下一页通过读取该cookie来获取变量的值"></a>2.在页面之间传递变量。浏览器不会保存当前页面的任何变量信息，当浏览器被关闭之后，页面上的变量信息就会随之消失。这时候就可以把变量以cookie的形式保存下来，然后在下一页通过读取该cookie来获取变量的值</h3><h3 id="3-将查看的Internet页存储在cookies临时文件夹内，能提高以后的访问速度"><a href="#3-将查看的Internet页存储在cookies临时文件夹内，能提高以后的访问速度" class="headerlink" title="3.将查看的Internet页存储在cookies临时文件夹内，能提高以后的访问速度"></a>3.将查看的Internet页存储在cookies临时文件夹内，能提高以后的访问速度</h3><h2 id="三：setcookie-创建cookie"><a href="#三：setcookie-创建cookie" class="headerlink" title="三：setcookie()创建cookie"></a>三：setcookie()创建cookie</h2><pre><code>setcookie(&apos;name&apos;,&apos;jewel&apos;);    //至少传递一个参数&apos;name&apos;，这里有两个参数，&apos;name&apos;和name对应的值jewel
+</code></pre><h3 id="创建一个包含过期时间的cookie（当前时间戳加上一个时间-，以秒为单位）"><a href="#创建一个包含过期时间的cookie（当前时间戳加上一个时间-，以秒为单位）" class="headerlink" title="创建一个包含过期时间的cookie（当前时间戳加上一个时间 ，以秒为单位）"></a>创建一个包含过期时间的cookie（当前时间戳加上一个时间 ，以秒为单位）</h3><pre><code>setcookie(&apos;name&apos;,&apos;jewel&apos;,time()+(10));    //这里设置cookie的过期时间为创建该cookie文件之后的10秒钟
+</code></pre><h3 id="cookie过期时间：如果不设置的话，浏览器关闭之后会自动删除这个cookie文件，如果设置了过期时间，在这个时间之内就算是重启计算机也不会删除该文件。不设置过期时间的cookie的生命周期为浏览器的会话时间，成为会话cookie，一般不保存在硬盘中，而是在内存中。设置了"><a href="#cookie过期时间：如果不设置的话，浏览器关闭之后会自动删除这个cookie文件，如果设置了过期时间，在这个时间之内就算是重启计算机也不会删除该文件。不设置过期时间的cookie的生命周期为浏览器的会话时间，成为会话cookie，一般不保存在硬盘中，而是在内存中。设置了" class="headerlink" title="cookie过期时间：如果不设置的话，浏览器关闭之后会自动删除这个cookie文件，如果设置了过期时间，在这个时间之内就算是重启计算机也不会删除该文件。不设置过期时间的cookie的生命周期为浏览器的会话时间，成为会话cookie，一般不保存在硬盘中，而是在内存中。设置了"></a>cookie过期时间：如果不设置的话，浏览器关闭之后会自动删除这个cookie文件，如果设置了过期时间，在这个时间之内就算是重启计算机也不会删除该文件。不设置过期时间的cookie的生命周期为浏览器的会话时间，成为会话cookie，一般不保存在硬盘中，而是在内存中。设置了</h3><h2 id="四：超级全局变量-COOKIE-读取浏览器端的cookie值"><a href="#四：超级全局变量-COOKIE-读取浏览器端的cookie值" class="headerlink" title="四：超级全局变量$_COOKIE[]读取浏览器端的cookie值"></a>四：超级全局变量<code>$_COOKIE[]</code>读取浏览器端的cookie值</h2><h2 id="五；isset-函数检测cookie是否存在"><a href="#五；isset-函数检测cookie是否存在" class="headerlink" title="五；isset()函数检测cookie是否存在"></a>五；isset()函数检测cookie是否存在</h2><h2 id="六：删除cookie"><a href="#六：删除cookie" class="headerlink" title="六：删除cookie"></a>六：删除cookie</h2><h3 id="1-setcookie-函数删除cookie，只需将第二个参数设为空，第三个参数设为当前时间之前的时间，如现在的前一秒"><a href="#1-setcookie-函数删除cookie，只需将第二个参数设为空，第三个参数设为当前时间之前的时间，如现在的前一秒" class="headerlink" title="1.setcookie()函数删除cookie，只需将第二个参数设为空，第三个参数设为当前时间之前的时间，如现在的前一秒"></a>1.setcookie()函数删除cookie，只需将第二个参数设为空，第三个参数设为当前时间之前的时间，如现在的前一秒</h3><pre><code>setcookie(&apos;name&apos;,&apos;&apos;,time()-1);    //得到过去的时间，删除cookie
+</code></pre><h3 id="2-用浏览器手动删除"><a href="#2-用浏览器手动删除" class="headerlink" title="2.用浏览器手动删除"></a>2.用浏览器手动删除</h3><h2 id="七：注意事项"><a href="#七：注意事项" class="headerlink" title="七：注意事项"></a>七：注意事项</h2><h3 id="1-在应用setcookie-函数创建cookie之前，不能有任何的HTML输出，即使是空格，空行也不行。因为cookie是经由服务器的程序通过http请求和响应发送到浏览器的，是http头标的组成部分，而头标必须在页面的其他内容发送之前发送"><a href="#1-在应用setcookie-函数创建cookie之前，不能有任何的HTML输出，即使是空格，空行也不行。因为cookie是经由服务器的程序通过http请求和响应发送到浏览器的，是http头标的组成部分，而头标必须在页面的其他内容发送之前发送" class="headerlink" title="1.在应用setcookie()函数创建cookie之前，不能有任何的HTML输出，即使是空格，空行也不行。因为cookie是经由服务器的程序通过http请求和响应发送到浏览器的，是http头标的组成部分，而头标必须在页面的其他内容发送之前发送"></a>1.在应用setcookie()函数创建cookie之前，不能有任何的HTML输出，即使是空格，空行也不行。因为cookie是经由服务器的程序通过http请求和响应发送到浏览器的，是http<code>头标</code>的组成部分，而头标必须在页面的其他内容发送之前发送</h3><h3 id="2-不要用cookie保存数据集或者其他大量的数据，也不是所有浏览器都支持cookie，也不要保存很隐私的数据。"><a href="#2-不要用cookie保存数据集或者其他大量的数据，也不是所有浏览器都支持cookie，也不要保存很隐私的数据。" class="headerlink" title="2.不要用cookie保存数据集或者其他大量的数据，也不是所有浏览器都支持cookie，也不要保存很隐私的数据。"></a>2.不要用cookie保存数据集或者其他大量的数据，也不是所有浏览器都支持cookie，也不要保存很隐私的数据。</h3><h3 id="3-cookie的值改变之后要刷新两遍才能显示新内容，也可以说他慢半拍。因为setcookie-函数执行之后，会向客户端发送一个cookie，如果不刷新或者浏览下一个页面，客户端不能将cookie送回"><a href="#3-cookie的值改变之后要刷新两遍才能显示新内容，也可以说他慢半拍。因为setcookie-函数执行之后，会向客户端发送一个cookie，如果不刷新或者浏览下一个页面，客户端不能将cookie送回" class="headerlink" title="3.cookie的值改变之后要刷新两遍才能显示新内容，也可以说他慢半拍。因为setcookie()函数执行之后，会向客户端发送一个cookie，如果不刷新或者浏览下一个页面，客户端不能将cookie送回"></a>3.cookie的值改变之后要刷新两遍才能显示新内容，也可以说他慢半拍。因为setcookie()函数执行之后，会向客户端发送一个cookie，如果不刷新或者浏览下一个页面，客户端不能将cookie送回</h3><h3 id="4-一个浏览器创建的cookie为30个，每个小于4kb，每个web站点的cookie个数最多20个"><a href="#4-一个浏览器创建的cookie为30个，每个小于4kb，每个web站点的cookie个数最多20个" class="headerlink" title="4.一个浏览器创建的cookie为30个，每个小于4kb，每个web站点的cookie个数最多20个"></a>4.一个浏览器创建的cookie为30个，每个小于4kb，每个web站点的cookie个数最多20个</h3>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/14/php/php-cookie/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--cookie">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-php/php-日期与时间2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/13/php/php-日期与时间2/" class="article-date">
+  	<time datetime="2016-11-13T13:10:01.000Z" itemprop="datePublished">2016-11-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/13/php/php-日期与时间2/">
+        php学习--日期与时间2
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="五：-time-返回当前的Unix时间戳，可以设置过去和未来的时间"><a href="#五：-time-返回当前的Unix时间戳，可以设置过去和未来的时间" class="headerlink" title="五： time()返回当前的Unix时间戳，可以设置过去和未来的时间"></a>五： time()返回当前的Unix时间戳，可以设置过去和未来的时间</h2><pre><code>echo time();
+</code></pre><h3 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h3><pre><code>1479028890
+</code></pre><h3 id="time-函数的作用非常大"><a href="#time-函数的作用非常大" class="headerlink" title="time()函数的作用非常大"></a>time()函数的作用非常大</h3><h2 id="六：mktime-返回指定日期的时间戳"><a href="#六：mktime-返回指定日期的时间戳" class="headerlink" title="六：mktime()返回指定日期的时间戳"></a>六：mktime()返回指定日期的时间戳</h2><h3 id="格式：mktime-时，分，秒，月，日，年"><a href="#格式：mktime-时，分，秒，月，日，年" class="headerlink" title="格式：mktime(时，分，秒，月，日，年);"></a>格式：mktime(时，分，秒，月，日，年);</h3><pre><code>$time = mktime(8,8,8,8,8,2008);
+echo date(&apos;Y-m-d H:i:s&apos;,$time);
+</code></pre><h3 id="结果：2008-08-08-08-08：08"><a href="#结果：2008-08-08-08-08：08" class="headerlink" title="结果：2008-08-08 08:08：08"></a>结果：2008-08-08 08:08：08</h3><h2 id="七：strtotime-将人们可读的日期转化为时间戳（和getdate-相反），用这个函数的频率高"><a href="#七：strtotime-将人们可读的日期转化为时间戳（和getdate-相反），用这个函数的频率高" class="headerlink" title="七：strtotime()将人们可读的日期转化为时间戳（和getdate()相反），用这个函数的频率高"></a>七：strtotime()将人们可读的日期转化为时间戳（和getdate()相反），用这个函数的频率高</h2><h3 id="用它可计算时间差"><a href="#用它可计算时间差" class="headerlink" title="用它可计算时间差"></a>用它可计算时间差</h3><pre><code>$time = strtotime(&apos;2016-11-13 20:20:20&apos;);
+$now = time();
+// echo time();
+
+// 计算时间差，返回的是秒
+echo $time-$now;
+</code></pre><h2 id="八：getlastmod-返回当前文件的最后修改时间的时间戳"><a href="#八：getlastmod-返回当前文件的最后修改时间的时间戳" class="headerlink" title="八：getlastmod()返回当前文件的最后修改时间的时间戳"></a>八：getlastmod()返回当前文件的最后修改时间的时间戳</h2><pre><code>echo getlastmod();    //返回时间戳
+echo date(&apos;Y-m-d H:i:s&apos;,getlastmod());    //转化为可读的时间
+</code></pre><h3 id="扩展：获取文件最后修改时间的另一个函数是：filemtime"><a href="#扩展：获取文件最后修改时间的另一个函数是：filemtime" class="headerlink" title="扩展：获取文件最后修改时间的另一个函数是：filemtime()"></a>扩展：获取文件最后修改时间的另一个函数是：filemtime()</h3><h2 id="九：localtime-取得本地时间数据，返回一个数组（此函数不常用，月份有问题）"><a href="#九：localtime-取得本地时间数据，返回一个数组（此函数不常用，月份有问题）" class="headerlink" title="九：localtime()取得本地时间数据，返回一个数组（此函数不常用，月份有问题）"></a>九：localtime()取得本地时间数据，返回一个数组（此函数不常用，月份有问题）</h2><pre><code>date_default_timezone_set(&apos;Asia/shanghai&apos;);
+print_r(localtime(time(),true));
+</code></pre><h3 id="结果：-1"><a href="#结果：-1" class="headerlink" title="结果："></a>结果：</h3><pre><code>Array
+(
+    [tm_sec] =&gt; 41
+    [tm_min] =&gt; 10
+    [tm_hour] =&gt; 20
+    [tm_mday] =&gt; 13
+    [tm_mon] =&gt; 10    //月份是从0开始的，也就是一月是0,11月是10（所以此函数不常用）
+    [tm_year] =&gt; 116
+    [tm_wday] =&gt; 0
+    [tm_yday] =&gt; 317    //已经过去的天数
+    [tm_isdst] =&gt; 0
+)
+</code></pre><h2 id="十-设置时区"><a href="#十-设置时区" class="headerlink" title="十:设置时区"></a>十:设置时区</h2><h3 id="时区的概念：全球有24个时区。在国际中，使用一个统一的时间，叫通用协调时间（UTC），它与格林威治标准时间（GMT）相同，采用的是0时区"><a href="#时区的概念：全球有24个时区。在国际中，使用一个统一的时间，叫通用协调时间（UTC），它与格林威治标准时间（GMT）相同，采用的是0时区" class="headerlink" title="时区的概念：全球有24个时区。在国际中，使用一个统一的时间，叫通用协调时间（UTC），它与格林威治标准时间（GMT）相同，采用的是0时区"></a>时区的概念：全球有24个时区。在国际中，使用一个统一的时间，叫通用协调时间（UTC），它与格林威治标准时间（GMT）相同，采用的是0时区</h3><h3 id="1-修改php-ini文件date-timezone"><a href="#1-修改php-ini文件date-timezone" class="headerlink" title="1.修改php.ini文件date.timezone="></a>1.修改php.ini文件date.timezone=</h3><pre><code>echo date_default_timezone_get();    //获取当前时区
+echo &quot;&lt;br&gt;&quot;;
+echo date(&apos;Y-m-d H:i:s&apos;);
+
+echo &quot;&lt;br&gt;&quot;;
+date_default_timezone_set(&apos;Asia/shanghai&apos;);        //设置时区为上海时区
+echo date(&apos;Y-m-d H:i:s&apos;);
+</code></pre><h3 id="结果：-2"><a href="#结果：-2" class="headerlink" title="结果："></a>结果：</h3><pre><code>Europe/Berlin
+2016-11-13 13:01:25
+2016-11-13 20:01:25
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/13/php/php-日期与时间2/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--日期与时间2">
          &nbsp;
         view
     </span>
@@ -1512,7 +1033,7 @@ document.write(arr1.reverse());
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>

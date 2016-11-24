@@ -3,40 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>php学习--简单的随机图像验证码 | WaKaaaa猪的博客</title>
+  <title>java算法学习--递归与分治策略 | WaKaaaa猪的博客</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="完整代码：ini_set(&amp;quot;error_reporting&amp;quot;, &amp;quot;E_ALL &amp;amp; ~E_NOTICE&amp;quot;);
-for ($i=0;$i&amp;lt;4;$i++) {
-    $nmsg .= dechex(mt_rand(0,15));
-}
-
-header(&amp;apos;Content-Type: image/png&amp;apos;);
-$im = imagec">
+  <meta name="description" content="1. 分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题相互独立且与原问题规模相同。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。在用分治法设计算法时，最好使子问题的规模大致相同，即将">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php学习--简单的随机图像验证码">
-<meta property="og:url" content="https://WaKaaaa.github.io/2016/11/16/php/php-简单的随机图像验证码/index.html">
+<meta property="og:title" content="java算法学习--递归与分治策略">
+<meta property="og:url" content="https://WaKaaaa.github.io/2016/11/23/算法/java算法-递归与分治策略/index.html">
 <meta property="og:site_name" content="WaKaaaa猪的博客">
-<meta property="og:description" content="完整代码：ini_set(&amp;quot;error_reporting&amp;quot;, &amp;quot;E_ALL &amp;amp; ~E_NOTICE&amp;quot;);
-for ($i=0;$i&amp;lt;4;$i++) {
-    $nmsg .= dechex(mt_rand(0,15));
-}
-
-header(&amp;apos;Content-Type: image/png&amp;apos;);
-$im = imagec">
-<meta property="og:updated_time" content="2016-11-16T12:48:50.622Z">
+<meta property="og:description" content="1. 分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题相互独立且与原问题规模相同。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。在用分治法设计算法时，最好使子问题的规模大致相同，即将">
+<meta property="og:updated_time" content="2016-11-23T06:55:01.259Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php学习--简单的随机图像验证码">
-<meta name="twitter:description" content="完整代码：ini_set(&amp;quot;error_reporting&amp;quot;, &amp;quot;E_ALL &amp;amp; ~E_NOTICE&amp;quot;);
-for ($i=0;$i&amp;lt;4;$i++) {
-    $nmsg .= dechex(mt_rand(0,15));
-}
-
-header(&amp;apos;Content-Type: image/png&amp;apos;);
-$im = imagec">
+<meta name="twitter:title" content="java算法学习--递归与分治策略">
+<meta name="twitter:description" content="1. 分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题相互独立且与原问题规模相同。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。在用分治法设计算法时，最好使子问题的规模大致相同，即将">
   
     <link rel="alternative" href="/atom.xml" title="WaKaaaa猪的博客" type="application/atom+xml">
   
@@ -212,11 +194,11 @@ $im = imagec">
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-php/php-简单的随机图像验证码" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-算法/java算法-递归与分治策略" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/16/php/php-简单的随机图像验证码/" class="article-date">
-  	<time datetime="2016-11-16T12:36:43.000Z" itemprop="datePublished">2016-11-16</time>
+      <a href="/2016/11/23/算法/java算法-递归与分治策略/" class="article-date">
+  	<time datetime="2016-11-23T06:48:57.000Z" itemprop="datePublished">2016-11-23</time>
 </a>
     </div>
   
@@ -229,7 +211,7 @@ $im = imagec">
         
   
     <h1 class="article-title" itemprop="name">
-      php学习--简单的随机图像验证码
+      java算法学习--递归与分治策略
       
     </h1>
   
@@ -243,8 +225,8 @@ $im = imagec">
         
           
 <div class="counter-tag counter">
-    <span id="/2016/11/16/php/php-简单的随机图像验证码/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--简单的随机图像验证码">
+    <span id="/2016/11/23/算法/java算法-递归与分治策略/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="java算法学习--递归与分治策略">
          &nbsp;
         view
     </span>
@@ -257,25 +239,14 @@ $im = imagec">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h2><pre><code>ini_set(&quot;error_reporting&quot;, &quot;E_ALL &amp; ~E_NOTICE&quot;);
-for ($i=0;$i&lt;4;$i++) {
-    $nmsg .= dechex(mt_rand(0,15));
-}
-
-header(&apos;Content-Type: image/png&apos;);
-$im = imagecreatetruecolor(75,25);
-$blue = imagecolorallocate($im,0,102,255);
-$white = imagecolorallocate($im,255,255,255);
-imagefill($im,0,0,$blue);
-imagestring($im,5,20,5,$nmsg,$white);    //将四位验证码加入到图片中去
-imagepng($im);
-imagedestroy($im);
-</code></pre><h2 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h2><h3 id="思路：首先生成四位随机的数字字母，这里可以用十六进制数字表示，然后将这四位随机数放在我们已经写好的图片里即可"><a href="#思路：首先生成四位随机的数字字母，这里可以用十六进制数字表示，然后将这四位随机数放在我们已经写好的图片里即可" class="headerlink" title="思路：首先生成四位随机的数字字母，这里可以用十六进制数字表示，然后将这四位随机数放在我们已经写好的图片里即可"></a>思路：首先生成四位随机的数字字母，这里可以用十六进制数字表示，然后将这四位随机数放在我们已经写好的图片里即可</h3><h3 id="生成四位数字"><a href="#生成四位数字" class="headerlink" title="生成四位数字"></a>生成四位数字</h3><pre><code>for ($i=0;$i&lt;4;$i++) {
-    $nmsg .= dechex(mt_rand(0,15));
-}
-// mt_rand(范围可选) 生成一个更好的随机数
-// dechex()将十进制的随机数转化成十六进制
-</code></pre><h3 id="在这里会产生一个报错：Notice-Undefined-variable-nmsg-in-D-xampp1-htdocs-PHP-Basic14-demo2-php-on-line-4，修改的方法："><a href="#在这里会产生一个报错：Notice-Undefined-variable-nmsg-in-D-xampp1-htdocs-PHP-Basic14-demo2-php-on-line-4，修改的方法：" class="headerlink" title="在这里会产生一个报错：Notice: Undefined variable: nmsg in D:\xampp1\htdocs\PHP\Basic14\demo2.php on line 4，修改的方法："></a>在这里会产生一个报错：<code>Notice: Undefined variable: nmsg in D:\xampp1\htdocs\PHP\Basic14\demo2.php on line 4</code>，修改的方法：</h3><h3 id="1-修改php-ini配置文件，将error-reporting-E-ALL修改为error-reporting-E-ALL-amp-E-NORICE-原理是减弱了PHP的敏感程度，再次遇到这种问题不会报错"><a href="#1-修改php-ini配置文件，将error-reporting-E-ALL修改为error-reporting-E-ALL-amp-E-NORICE-原理是减弱了PHP的敏感程度，再次遇到这种问题不会报错" class="headerlink" title="1. 修改php.ini配置文件，将error_reporting = E_ALL修改为error_reporting = E_ALL &amp;~E_NORICE,原理是减弱了PHP的敏感程度，再次遇到这种问题不会报错"></a>1. 修改php.ini配置文件，将<code>error_reporting = E_ALL</code>修改为<code>error_reporting = E_ALL &amp;~E_NORICE</code>,原理是减弱了PHP的敏感程度，再次遇到这种问题不会报错</h3><h3 id="2-在PHP头部加入代码：ini-set-quot-error-reporting-quot-quot-E-ALL-amp-E-NOTICE-quot-，也可以解决这类问题"><a href="#2-在PHP头部加入代码：ini-set-quot-error-reporting-quot-quot-E-ALL-amp-E-NOTICE-quot-，也可以解决这类问题" class="headerlink" title="2. 在PHP头部加入代码：ini_set(&quot;error_reporting&quot;, &quot;E_ALL &amp; ~E_NOTICE&quot;);，也可以解决这类问题"></a>2. 在PHP头部加入代码：<code>ini_set(&quot;error_reporting&quot;, &quot;E_ALL &amp; ~E_NOTICE&quot;);</code>，也可以解决这类问题</h3>
+        <h3 id="1-分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题相互独立且与原问题规模相同。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。"><a href="#1-分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题相互独立且与原问题规模相同。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。" class="headerlink" title="1. 分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题相互独立且与原问题规模相同。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。"></a>1. 分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题<code>相互独立</code>且<code>与原问题规模相同</code>。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。</h3><h3 id="由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。"><a href="#由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。" class="headerlink" title="由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。"></a>由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。</h3><h3 id="在用分治法设计算法时，最好使子问题的规模大致相同，即将一个问题分成大小相等的k个子问题的处理方法是行之有效的。一般设计出的算法是递归算法"><a href="#在用分治法设计算法时，最好使子问题的规模大致相同，即将一个问题分成大小相等的k个子问题的处理方法是行之有效的。一般设计出的算法是递归算法" class="headerlink" title="在用分治法设计算法时，最好使子问题的规模大致相同，即将一个问题分成大小相等的k个子问题的处理方法是行之有效的。一般设计出的算法是递归算法"></a>在用分治法设计算法时，最好<code>使子问题的规模大致相同</code>，即将一个问题分成大小相等的k个子问题的处理方法是行之有效的。一般设计出的算法是递归算法</h3><h3 id="3-递归的概念：直接或者间接地调用自身的算法称为递归算法。"><a href="#3-递归的概念：直接或者间接地调用自身的算法称为递归算法。" class="headerlink" title="3.递归的概念：直接或者间接地调用自身的算法称为递归算法。"></a>3.递归的概念：直接或者间接地调用自身的算法称为递归算法。</h3><h3 id="4-递归函数：用函数自身给出定义的函数称为递归函数。如阶乘函数，斐波那契数列，排列问题，整数划分问题，汉诺塔问题"><a href="#4-递归函数：用函数自身给出定义的函数称为递归函数。如阶乘函数，斐波那契数列，排列问题，整数划分问题，汉诺塔问题" class="headerlink" title="4.递归函数：用函数自身给出定义的函数称为递归函数。如阶乘函数，斐波那契数列，排列问题，整数划分问题，汉诺塔问题"></a>4.递归函数：用函数自身给出定义的函数称为递归函数。如阶乘函数，斐波那契数列，排列问题，整数划分问题，汉诺塔问题</h3><h3 id="算法的设计模式如下："><a href="#算法的设计模式如下：" class="headerlink" title="算法的设计模式如下："></a>算法的设计模式如下：</h3><pre><code>public class Divide_aand_conquer（P） {
+    if(|p| &lt;= n0) adhoc(p);         // |p|表示问题P的规模，n0是一个阈值，表示当P的规模小于N0的时候，就可以很容易得求出，就不必再进行分解了.adhoc(p)是该分治法中的基本子算法，用于直接求解小规模的问题P
+    divide P into smallers subinstances P1,P2,P3...Pk;
+    for(i=1; i&lt;=k; i++){
+        yi = divide-and-conquer(Pi);
+    return merge(y1,y2,y3....yk);    //分治法中的合并子算法，将P的子问题P1，P2...的解y1,y2,y3...合并成P的解
+    }
+</code></pre>
       
     </div>
     
@@ -284,18 +255,18 @@ imagedestroy($im);
     
 <nav id="article-nav">
   
-    <a href="/2016/11/19/算法/Java算法-阶乘函数/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/11/23/算法/java算法-分治法-二分搜索技术/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">&lt;</strong>
       <div class="article-nav-title">
         
-          Java算法学习--阶乘函数
+          java算法--分治法--二分搜索技术
         
       </div>
     </a>
   
   
-    <a href="/2016/11/16/php/php-处理图像/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">php学习--处理图像</div>
+    <a href="/2016/11/22/php/php-上传文件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">php学习--上传文件</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   
@@ -324,7 +295,7 @@ imagedestroy($im);
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="php/php-简单的随机图像验证码" data-title="php学习--简单的随机图像验证码" data-url="https://WaKaaaa.github.io/2016/11/16/php/php-简单的随机图像验证码/"></div>
+	<div class="ds-thread" data-thread-key="算法/java算法-递归与分治策略" data-title="java算法学习--递归与分治策略" data-url="https://WaKaaaa.github.io/2016/11/23/算法/java算法-递归与分治策略/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
