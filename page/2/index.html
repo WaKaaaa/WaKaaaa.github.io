@@ -138,7 +138,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a>
+						<a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a> <a href="/tags/回溯法-n后问题/" style="font-size: 10px;">回溯法 n后问题</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,112 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-算法/java算法-合并排序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/19/算法/java算法-合并排序/" class="article-date">
+  	<time datetime="2016-11-19T05:41:15.000Z" itemprop="datePublished">2016-11-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/19/算法/java算法-合并排序/">
+        java算法学习--分治法 合并排序
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="合并排序：用分治策略实现对n个元素进行排序的算法。"><a href="#合并排序：用分治策略实现对n个元素进行排序的算法。" class="headerlink" title="合并排序：用分治策略实现对n个元素进行排序的算法。"></a>合并排序：用分治策略实现对n个元素进行排序的算法。</h3><h3 id="基本思想：将待排序列元素分成大小大致相同的两个子序列，分别对两个子序列进行排序，最终将排好序的子集合合并成为所要求的排好序的集合。"><a href="#基本思想：将待排序列元素分成大小大致相同的两个子序列，分别对两个子序列进行排序，最终将排好序的子集合合并成为所要求的排好序的集合。" class="headerlink" title="基本思想：将待排序列元素分成大小大致相同的两个子序列，分别对两个子序列进行排序，最终将排好序的子集合合并成为所要求的排好序的集合。"></a>基本思想：将待排序列元素分成大小大致相同的两个子序列，分别对两个子序列进行排序，最终将排好序的子集合合并成为所要求的排好序的集合。</h3><pre><code>public class Mergesort {
+
+    public static void merge(int[]a,int low,int mid,int high){//对两组已经排序的数组进行合并
+        int[]b=new int[high-low+1]; //临时数组，存储个数为high - low + 1个数据       
+        int s=low;
+        int t=mid+1;
+        int k=0;
+        while(s&lt;=mid&amp;&amp;t&lt;=high){   //直至前半部或后半部数据完全录入暂存
+            if(a[s]&lt;=a[t])        //如果前半部的数据小于后半部的，前半部数据暂存
+                b[k++]=a[s++];
+            else                   //否则后半部数据暂存，并下标自加                
+                b[k++]=a[t++];
+        }
+        while(s&lt;=mid)
+            b[k++]=a[s++];
+        while(t&lt;=high)
+            b[k++]=a[t++];
+        for(int i=0;i&lt;b.length;i++){     //将暂存的数据重新填充至array[low]--array[high]中
+            a[low+i]=b[i];
+        }
+    }
+    public static void mergesort(int a[],int low,int high){//对数组进行递归排序        
+        int mid;
+        if(low&lt;high){
+            mid=(low+high)/2;
+            mergesort(a,low,mid);
+            mergesort(a,mid+1,high);
+            merge(a,low,mid,high);
+        }
+    }
+    public static void main(String[]args){
+        int[]a={4,34,2,56,5,9,6,45,8,3};
+        System.out.println(&quot;排序前数组为：&quot;);
+        for(int i=0;i&lt;a.length;i++){
+            System.out.print(a[i]+&quot; &quot;); }
+        mergesort(a,0,a.length-1);
+        System.out.println(&quot;\n排序后数组为：&quot;);
+        for(int i=0;i&lt;a.length;i++){
+            System.out.print(a[i]+&quot; &quot;);}    
+    }
+
+}
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/19/算法/java算法-合并排序/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="java算法学习--分治法 合并排序">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-算法/java算法-棋盘覆盖" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -1001,104 +1107,6 @@ echo strrev($str6);
 <div class="counter-tag counter">
     <span id="/2016/11/15/php/php-操作子字符串/" class="leancloud_visitors post-title-link"
           style="font-size: 12px" data-flag-title="php学习--操作子字符串">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-php/php-字符串" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/15/php/php-字符串/" class="article-date">
-  	<time datetime="2016-11-15T11:18:06.000Z" itemprop="datePublished">2016-11-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/15/php/php-字符串/">
-        php学习--字符串基本操作
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="1-trim-清除字符串左右两边的空格"><a href="#1-trim-清除字符串左右两边的空格" class="headerlink" title="1. trim()清除字符串左右两边的空格"></a>1. trim()清除字符串左右两边的空格</h3><h3 id="2-ltrim-清除左边的空格"><a href="#2-ltrim-清除左边的空格" class="headerlink" title="2. ltrim()清除左边的空格"></a>2. ltrim()清除左边的空格</h3><h3 id="3-rtrim-清除右边的空格"><a href="#3-rtrim-清除右边的空格" class="headerlink" title="3. rtrim()清除右边的空格"></a>3. rtrim()清除右边的空格</h3><h3 id="4-nl2br-在字符串所有新行之前插入HTML换行标记（）"><a href="#4-nl2br-在字符串所有新行之前插入HTML换行标记（）" class="headerlink" title="4. nl2br()在字符串所有新行之前插入HTML换行标记（）"></a>4. nl2br()在字符串所有新行之前插入HTML换行标记（<br>）</h3><h3 id="5-htmlspecialchars-将特殊的字符转化成HTML实体"><a href="#5-htmlspecialchars-将特殊的字符转化成HTML实体" class="headerlink" title="5. htmlspecialchars()将特殊的字符转化成HTML实体"></a>5. htmlspecialchars()将特殊的字符转化成HTML实体</h3><h3 id="6-addslaashes-使用反斜杠引用字符串"><a href="#6-addslaashes-使用反斜杠引用字符串" class="headerlink" title="6. addslaashes()使用反斜杠引用字符串"></a>6. addslaashes()使用反斜杠引用字符串</h3><h3 id="7-strtoupper-函数将字符串转换为大写"><a href="#7-strtoupper-函数将字符串转换为大写" class="headerlink" title="7. strtoupper()函数将字符串转换为大写"></a>7. strtoupper()函数将字符串转换为大写</h3><h3 id="8-strtolower-函数将字符串转换成小写"><a href="#8-strtolower-函数将字符串转换成小写" class="headerlink" title="8. strtolower()函数将字符串转换成小写"></a>8. strtolower()函数将字符串转换成小写</h3><h3 id="9-ucfirst-函数将第一个字母转换为大写"><a href="#9-ucfirst-函数将第一个字母转换为大写" class="headerlink" title="9. ucfirst()函数将第一个字母转换为大写"></a>9. ucfirst()函数将第一个字母转换为大写</h3><h3 id="10-ucwords-函数将每个单词第一个字母转换为大写"><a href="#10-ucwords-函数将每个单词第一个字母转换为大写" class="headerlink" title="10. ucwords()函数将每个单词第一个字母转换为大写"></a>10. ucwords()函数将每个单词第一个字母转换为大写</h3><h3 id="11-str-pad-使用另一个字符串填充字符串为指定长度"><a href="#11-str-pad-使用另一个字符串填充字符串为指定长度" class="headerlink" title="11. str_pad()使用另一个字符串填充字符串为指定长度"></a>11. str_pad()使用另一个字符串填充字符串为指定长度</h3><h2 id="一：trim-，ltrim-，rtrim"><a href="#一：trim-，ltrim-，rtrim" class="headerlink" title="一：trim()，ltrim()，rtrim()"></a>一：trim()，ltrim()，rtrim()</h2><pre><code>//  trim()清除字符串左右两边的空格
-$str = &apos;       jewel       &apos;;
-echo trim($str).&apos;&lt;br&gt;&apos;;
-// ltrim()清除左边的空格
-echo ltrim($str).&apos;&lt;br&gt;&apos;;
-// rtrim()清除右边的空格
-echo rtrim($str);
-</code></pre><h2 id="二：nl2br-在字符串所有新行之前插入HTML换行标记（）"><a href="#二：nl2br-在字符串所有新行之前插入HTML换行标记（）" class="headerlink" title="二：nl2br()在字符串所有新行之前插入HTML换行标记（）"></a>二：nl2br()在字符串所有新行之前插入HTML换行标记（<br>）</h2><h3 id="注意转义字符只能包裹在双引号里边，这一点非常重要"><a href="#注意转义字符只能包裹在双引号里边，这一点非常重要" class="headerlink" title="注意转义字符只能包裹在双引号里边，这一点非常重要"></a>注意<code>转义字符只能包裹在双引号里边</code>，这一点非常重要</h3><h3 id="转义字符包括：-t-n-r"><a href="#转义字符包括：-t-n-r" class="headerlink" title="转义字符包括：\t \n \r"></a>转义字符包括：\t \n \r</h3><pre><code>$str1 = &quot;I am Jewel\n hello world&quot;;
-echo nl2br($str1);
-// 打印出：I am Jewel&lt;br/&gt; hello world
-
-echo nl2br(&quot;foo isn&apos;t\n bar&quot;);
-
-$string = &quot;This\r\nis\n\ra\nstring\r&quot;;
-echo nl2br($string);
-</code></pre><h2 id="三：htmlspecialchars-将特殊的字符转化成HTML实体"><a href="#三：htmlspecialchars-将特殊的字符转化成HTML实体" class="headerlink" title="三：htmlspecialchars()将特殊的字符转化成HTML实体"></a>三：htmlspecialchars()将特殊的字符转化成HTML实体</h2><pre><code>$str2 = &apos;&lt;strong&gt;jewel&lt;/strong&gt;&apos;;
-echo htmlspecialchars($str2);
-// 
-// strip_tags从字符串中去掉HTML和PHP标记
-echo strip_tags($str2);
-</code></pre><h2 id="四：addslaashes-使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’-“-null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候"><a href="#四：addslaashes-使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’-“-null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候" class="headerlink" title="四：addslaashes()使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’ “ \ null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候"></a>四：addslaashes()使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’ “ \ null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候</h2><h3 id="对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（-）和NULL字符。"><a href="#对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（-）和NULL字符。" class="headerlink" title="对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（\）和NULL字符。"></a>对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（\）和NULL字符。</h3><h3 id="PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes-将它们重新格式化"><a href="#PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes-将它们重新格式化" class="headerlink" title="PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes()将它们重新格式化"></a>PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes()将它们重新格式化</h3><pre><code>$str3 = &apos;I am a good girl. &quot;this&quot; hello&apos;;
-echo addslashes($str3);
-</code></pre><h2 id="五"><a href="#五" class="headerlink" title="五:"></a>五:</h2><h3 id="strtoupper-函数将字符串转换为大写"><a href="#strtoupper-函数将字符串转换为大写" class="headerlink" title="strtoupper()函数将字符串转换为大写"></a>strtoupper()函数将字符串转换为大写</h3><h3 id="strtolower-函数将字符串转换成小写"><a href="#strtolower-函数将字符串转换成小写" class="headerlink" title="strtolower()函数将字符串转换成小写"></a>strtolower()函数将字符串转换成小写</h3><h3 id="ucfirst-函数将第一个字母转换为大写"><a href="#ucfirst-函数将第一个字母转换为大写" class="headerlink" title="ucfirst()函数将第一个字母转换为大写"></a>ucfirst()函数将第一个字母转换为大写</h3><h3 id="ucwords-函数将每个单词第一个字母转换为大写"><a href="#ucwords-函数将每个单词第一个字母转换为大写" class="headerlink" title="ucwords()函数将每个单词第一个字母转换为大写"></a>ucwords()函数将每个单词第一个字母转换为大写</h3><pre><code>echo strtoupper(&apos;hello wworld&apos;).&apos;&lt;br&gt;&apos;;
-echo strtolower(&apos;HELLO world&apos;);
-echo ucfirst(&apos;hello world&apos;);
-echo ucwords(&apos;hello world&apos;);
-</code></pre><h2 id="六-str-pad-使用另一个字符串填充字符串为指定长度"><a href="#六-str-pad-使用另一个字符串填充字符串为指定长度" class="headerlink" title="六: str_pad()使用另一个字符串填充字符串为指定长度"></a>六: str_pad()使用另一个字符串填充字符串为指定长度</h2><pre><code>// 第二个参数表示总共的位数
-echo str_pad(&quot;hello&quot;, 10).&apos;&lt;br&gt;&apos;;
-
-$input = &quot;Alien&quot;;
-echo str_pad($input, 10).&apos;&lt;br&gt;&apos;;                      // 输出 &quot;Alien     &quot;
-echo str_pad($input, 10, &quot;-=&quot;, STR_PAD_LEFT);  // 输出 &quot;-=-=-Alien&quot;
-echo str_pad($input, 10, &quot;_&quot;, STR_PAD_BOTH);   // 输出 &quot;__Alien___&quot;
-echo str_pad($input, 6 , &quot;___&quot;);               // 输出 &quot;Alien_&quot;
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/15/php/php-字符串/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--字符串基本操作">
          &nbsp;
         view
     </span>

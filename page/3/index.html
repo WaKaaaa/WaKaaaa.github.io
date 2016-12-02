@@ -138,7 +138,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a>
+						<a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a> <a href="/tags/回溯法-n后问题/" style="font-size: 10px;">回溯法 n后问题</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,104 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-php/php-字符串" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/15/php/php-字符串/" class="article-date">
+  	<time datetime="2016-11-15T11:18:06.000Z" itemprop="datePublished">2016-11-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/15/php/php-字符串/">
+        php学习--字符串基本操作
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="1-trim-清除字符串左右两边的空格"><a href="#1-trim-清除字符串左右两边的空格" class="headerlink" title="1. trim()清除字符串左右两边的空格"></a>1. trim()清除字符串左右两边的空格</h3><h3 id="2-ltrim-清除左边的空格"><a href="#2-ltrim-清除左边的空格" class="headerlink" title="2. ltrim()清除左边的空格"></a>2. ltrim()清除左边的空格</h3><h3 id="3-rtrim-清除右边的空格"><a href="#3-rtrim-清除右边的空格" class="headerlink" title="3. rtrim()清除右边的空格"></a>3. rtrim()清除右边的空格</h3><h3 id="4-nl2br-在字符串所有新行之前插入HTML换行标记（）"><a href="#4-nl2br-在字符串所有新行之前插入HTML换行标记（）" class="headerlink" title="4. nl2br()在字符串所有新行之前插入HTML换行标记（）"></a>4. nl2br()在字符串所有新行之前插入HTML换行标记（<br>）</h3><h3 id="5-htmlspecialchars-将特殊的字符转化成HTML实体"><a href="#5-htmlspecialchars-将特殊的字符转化成HTML实体" class="headerlink" title="5. htmlspecialchars()将特殊的字符转化成HTML实体"></a>5. htmlspecialchars()将特殊的字符转化成HTML实体</h3><h3 id="6-addslaashes-使用反斜杠引用字符串"><a href="#6-addslaashes-使用反斜杠引用字符串" class="headerlink" title="6. addslaashes()使用反斜杠引用字符串"></a>6. addslaashes()使用反斜杠引用字符串</h3><h3 id="7-strtoupper-函数将字符串转换为大写"><a href="#7-strtoupper-函数将字符串转换为大写" class="headerlink" title="7. strtoupper()函数将字符串转换为大写"></a>7. strtoupper()函数将字符串转换为大写</h3><h3 id="8-strtolower-函数将字符串转换成小写"><a href="#8-strtolower-函数将字符串转换成小写" class="headerlink" title="8. strtolower()函数将字符串转换成小写"></a>8. strtolower()函数将字符串转换成小写</h3><h3 id="9-ucfirst-函数将第一个字母转换为大写"><a href="#9-ucfirst-函数将第一个字母转换为大写" class="headerlink" title="9. ucfirst()函数将第一个字母转换为大写"></a>9. ucfirst()函数将第一个字母转换为大写</h3><h3 id="10-ucwords-函数将每个单词第一个字母转换为大写"><a href="#10-ucwords-函数将每个单词第一个字母转换为大写" class="headerlink" title="10. ucwords()函数将每个单词第一个字母转换为大写"></a>10. ucwords()函数将每个单词第一个字母转换为大写</h3><h3 id="11-str-pad-使用另一个字符串填充字符串为指定长度"><a href="#11-str-pad-使用另一个字符串填充字符串为指定长度" class="headerlink" title="11. str_pad()使用另一个字符串填充字符串为指定长度"></a>11. str_pad()使用另一个字符串填充字符串为指定长度</h3><h2 id="一：trim-，ltrim-，rtrim"><a href="#一：trim-，ltrim-，rtrim" class="headerlink" title="一：trim()，ltrim()，rtrim()"></a>一：trim()，ltrim()，rtrim()</h2><pre><code>//  trim()清除字符串左右两边的空格
+$str = &apos;       jewel       &apos;;
+echo trim($str).&apos;&lt;br&gt;&apos;;
+// ltrim()清除左边的空格
+echo ltrim($str).&apos;&lt;br&gt;&apos;;
+// rtrim()清除右边的空格
+echo rtrim($str);
+</code></pre><h2 id="二：nl2br-在字符串所有新行之前插入HTML换行标记（）"><a href="#二：nl2br-在字符串所有新行之前插入HTML换行标记（）" class="headerlink" title="二：nl2br()在字符串所有新行之前插入HTML换行标记（）"></a>二：nl2br()在字符串所有新行之前插入HTML换行标记（<br>）</h2><h3 id="注意转义字符只能包裹在双引号里边，这一点非常重要"><a href="#注意转义字符只能包裹在双引号里边，这一点非常重要" class="headerlink" title="注意转义字符只能包裹在双引号里边，这一点非常重要"></a>注意<code>转义字符只能包裹在双引号里边</code>，这一点非常重要</h3><h3 id="转义字符包括：-t-n-r"><a href="#转义字符包括：-t-n-r" class="headerlink" title="转义字符包括：\t \n \r"></a>转义字符包括：\t \n \r</h3><pre><code>$str1 = &quot;I am Jewel\n hello world&quot;;
+echo nl2br($str1);
+// 打印出：I am Jewel&lt;br/&gt; hello world
+
+echo nl2br(&quot;foo isn&apos;t\n bar&quot;);
+
+$string = &quot;This\r\nis\n\ra\nstring\r&quot;;
+echo nl2br($string);
+</code></pre><h2 id="三：htmlspecialchars-将特殊的字符转化成HTML实体"><a href="#三：htmlspecialchars-将特殊的字符转化成HTML实体" class="headerlink" title="三：htmlspecialchars()将特殊的字符转化成HTML实体"></a>三：htmlspecialchars()将特殊的字符转化成HTML实体</h2><pre><code>$str2 = &apos;&lt;strong&gt;jewel&lt;/strong&gt;&apos;;
+echo htmlspecialchars($str2);
+// 
+// strip_tags从字符串中去掉HTML和PHP标记
+echo strip_tags($str2);
+</code></pre><h2 id="四：addslaashes-使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’-“-null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候"><a href="#四：addslaashes-使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’-“-null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候" class="headerlink" title="四：addslaashes()使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’ “ \ null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候"></a>四：addslaashes()使用反斜杠引用字符串，为了数据可以查询语句等的需要在某些字符（’ “ \ null等）前加上了反斜杠。一般用在你想要向数据库中输入数据的时候</h2><h3 id="对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（-）和NULL字符。"><a href="#对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（-）和NULL字符。" class="headerlink" title="对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（\）和NULL字符。"></a>对于字符串来说，某些字符肯定是有效的，但是当将数据插入到数据库中的时候可能会引起一些问题，因为数据库会将这些字符解释成控制符。这些有问题的字符就是引号（单引号和双引）、反斜杠（\）和NULL字符。</h3><h3 id="PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes-将它们重新格式化"><a href="#PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes-将它们重新格式化" class="headerlink" title="PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes()将它们重新格式化"></a>PHP提供了两个专门用于转义字符串的函数。在将任何字符串写到数据库之前，应该使用addslashes()将它们重新格式化</h3><pre><code>$str3 = &apos;I am a good girl. &quot;this&quot; hello&apos;;
+echo addslashes($str3);
+</code></pre><h2 id="五"><a href="#五" class="headerlink" title="五:"></a>五:</h2><h3 id="strtoupper-函数将字符串转换为大写"><a href="#strtoupper-函数将字符串转换为大写" class="headerlink" title="strtoupper()函数将字符串转换为大写"></a>strtoupper()函数将字符串转换为大写</h3><h3 id="strtolower-函数将字符串转换成小写"><a href="#strtolower-函数将字符串转换成小写" class="headerlink" title="strtolower()函数将字符串转换成小写"></a>strtolower()函数将字符串转换成小写</h3><h3 id="ucfirst-函数将第一个字母转换为大写"><a href="#ucfirst-函数将第一个字母转换为大写" class="headerlink" title="ucfirst()函数将第一个字母转换为大写"></a>ucfirst()函数将第一个字母转换为大写</h3><h3 id="ucwords-函数将每个单词第一个字母转换为大写"><a href="#ucwords-函数将每个单词第一个字母转换为大写" class="headerlink" title="ucwords()函数将每个单词第一个字母转换为大写"></a>ucwords()函数将每个单词第一个字母转换为大写</h3><pre><code>echo strtoupper(&apos;hello wworld&apos;).&apos;&lt;br&gt;&apos;;
+echo strtolower(&apos;HELLO world&apos;);
+echo ucfirst(&apos;hello world&apos;);
+echo ucwords(&apos;hello world&apos;);
+</code></pre><h2 id="六-str-pad-使用另一个字符串填充字符串为指定长度"><a href="#六-str-pad-使用另一个字符串填充字符串为指定长度" class="headerlink" title="六: str_pad()使用另一个字符串填充字符串为指定长度"></a>六: str_pad()使用另一个字符串填充字符串为指定长度</h2><pre><code>// 第二个参数表示总共的位数
+echo str_pad(&quot;hello&quot;, 10).&apos;&lt;br&gt;&apos;;
+
+$input = &quot;Alien&quot;;
+echo str_pad($input, 10).&apos;&lt;br&gt;&apos;;                      // 输出 &quot;Alien     &quot;
+echo str_pad($input, 10, &quot;-=&quot;, STR_PAD_LEFT);  // 输出 &quot;-=-=-Alien&quot;
+echo str_pad($input, 10, &quot;_&quot;, STR_PAD_BOTH);   // 输出 &quot;__Alien___&quot;
+echo str_pad($input, 6 , &quot;___&quot;);               // 输出 &quot;Alien_&quot;
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/15/php/php-字符串/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--字符串基本操作">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-php/php-session" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -1133,192 +1231,6 @@ echo $userAges; //返回$userAges的类型 array
 <div class="counter-tag counter">
     <span id="/2016/10/18/php/php--输出/" class="leancloud_visitors post-title-link"
           style="font-size: 12px" data-flag-title="php学习--echo print_r,printf,sprintf,print的比较">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-php/php--数组遍历" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/18/php/php--数组遍历/" class="article-date">
-  	<time datetime="2016-10-18T12:11:38.000Z" itemprop="datePublished">2016-10-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/18/php/php--数组遍历/">
-        PHP学习--遍历数组
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="遍历数组"><a href="#遍历数组" class="headerlink" title=" 遍历数组"></a><center> 遍历数组</center></h1><h2 id="遍历数组的方式："><a href="#遍历数组的方式：" class="headerlink" title="遍历数组的方式："></a>遍历数组的方式：</h2><ul>
-<li>for 循环遍历数组</li>
-<li>foreach 遍历数组</li>
-<li>list 遍历数组</li>
-<li>each 遍历数组<h2 id="1-for循环遍历数组"><a href="#1-for循环遍历数组" class="headerlink" title="1.for循环遍历数组"></a>1.for循环遍历数组</h2>   // for循环访问数组<br>   //    数组下标从0开始可用<br>   for ($i=0; $i &lt; count($userName); $i++) { <pre><code># code...
-echo $i.&quot;---&quot;.$userName[$i].&quot;&lt;br&gt;&quot;;    //count方法取得数组的长度，sizeof是他的别名，一般用count
-</code></pre>   }<br>  结果是： 0—张三<pre><code>1---李四
-2---王五
-3---赵六
-4---嘻嘻嘻
-5---嘿嘿嘿
-</code></pre></li>
-</ul>
-<h2 id="2-foreach-遍历数组"><a href="#2-foreach-遍历数组" class="headerlink" title="2.foreach 遍历数组"></a>2.foreach 遍历数组</h2><pre><code>//这种方法好处是在数组的下标不是从0开始或者根本不是数字的时候可用
-foreach ($userName as $key =&gt; $value) { //此处的key和value可以替换成任意的变量名，只需要将下面输出统一即可，也可以单独打印下标或者值
-    # code...
-    echo $key.&quot;---&quot;.$value.&quot;&lt;br&gt;&quot;;
-}
-
-       0---张三
-       1---李四
-       2---王五
-       3---赵六
-       4---嘻嘻嘻
-       5---嘿嘿嘿
-</code></pre><h2 id="3-each-遍历数组"><a href="#3-each-遍历数组" class="headerlink" title="3.each 遍历数组"></a>3.each 遍历数组</h2><pre><code>&lt;?php 
-    $userAges = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
-    // print_r($userAges);
-    //each的使用
-    //each --  返回数组中当前的键／值对并将数组指针向前移动一步 
-    //这里有一个指针，默认情况下，指针是指向第一个键值对
-    //这里的第一个键值对是 ,张三=&gt;22
-    //如果each($userAges)，那么获取的就是第一个键值对 &apos;张三&apos;=&gt;22
-    //each这个函数返回的是一个数组，
-    //each将第一个键值对获取到，然后包装成一个新数组。
-
-    each($userAges); //这是第一步，将张三，22取出来，包装成一个新的数组
-    $a = each($userAges);    //这是第二步，将李四，21取出
-    print_r($a).&quot;&lt;br&gt;&quot;;
-    echo $a[0];
-    // 第一步的结果：Array ( [1] =&gt; 22 [value] =&gt; 22 [0] =&gt; 张三 [key] =&gt; 张三 ) 张三
-    // 第二步的结果：Array ( [1] =&gt; 21 [value] =&gt; 21 [0] =&gt; 李四 [key] =&gt; 李四 ) 李四
-
- ?&gt;
-</code></pre><h3 id="each循环打印"><a href="#each循环打印" class="headerlink" title="each循环打印"></a>each循环打印</h3><pre><code>while (!!$a = each($userAges)) { //当是真，即括号里的值是1的时候执行以下语
-    # code...
-    echo $a[&apos;key&apos;].&quot;---&quot;.$a[&apos;value&apos;].&quot;&lt;br&gt;&quot;;
-}
-</code></pre><h4 id="！！的作用：将真实存在的数值转换成布尔值，在这里each-userAges-返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1"><a href="#！！的作用：将真实存在的数值转换成布尔值，在这里each-userAges-返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1" class="headerlink" title="！！的作用：将真实存在的数值转换成布尔值，在这里each($userAges)返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1"></a>！！的作用：将真实存在的数值转换成布尔值，在这里each($userAges)返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1</h4><h2 id="4-list-遍历数组"><a href="#4-list-遍历数组" class="headerlink" title="4.list 遍历数组"></a>4.list 遍历数组</h2><pre><code>&lt;?php 
-    $userAges = array(&quot;张三&quot;,&quot;李四&quot;,&quot;王五&quot;);
-    // print_r($userAges);
-    // 把一个数组中的值赋给一个变量
-    list($a,$b) = $userAges;    //这里将数组userAges的第一个值赋给$a,第二个值赋给$b，其中$a,$b的值可以改编为任意的变量
-    echo $a.&quot;&lt;br&gt;&quot;;
-    echo $b.&quot;&lt;br&gt;&quot;;
-
-    // 注意：list只能识别下标是0,1,2等数字的数组，自定义的key不能识别的
-    // 如果一定要打印数组的键和值，就用each和list的组合
-    $userAge = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
-    list($c,$d) = each($userAge);    // each将张三，22取出来形成一个新的数组，0($c)表示key，也就是张三，1($d)表示value，也就是 22
-    echo $c;    // 打印张三
-    echo $d;    // 打印22
- ?&gt;
-</code></pre><h2 id="5-array相关函数"><a href="#5-array相关函数" class="headerlink" title="5.array相关函数"></a>5.array相关函数</h2><h3 id="5-1-reset-函数，将数组指针指向第一位"><a href="#5-1-reset-函数，将数组指针指向第一位" class="headerlink" title="5.1 reset()函数，将数组指针指向第一位"></a>5.1 reset()函数，将数组指针指向第一位</h3><pre><code>&lt;?php 
-    $userAges = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
-    $a = each($userAges);    // 指向第一位,$a是第一位张三22的新数组 ，而$userAges现在指向的是第二位
-
-    echo $a[&apos;key&apos;];
-    $b = each($userAges);
-    echo $b[&apos;key&apos;];
-
-    reset($userAges);    // 将数组指针指向数组第一位，无论刚开始在第几位
-    $c = each($userAges);
-    echo $c[&apos;value&apos;];
- ?&gt;
-</code></pre><h3 id="5-2-array-unique函数，去除数组中的重复项"><a href="#5-2-array-unique函数，去除数组中的重复项" class="headerlink" title="5.2 array_unique函数，去除数组中的重复项"></a>5.2 array_unique函数，去除数组中的重复项</h3><pre><code>&lt;?php 
-    $numbers = array(1,2,5,3,6,2,4,7,4,2,5,2,5,1,3,6,7);
-    print_r($numbers);
-
-    $new_numners = array_unique($numbers);    //数组去重
-    print_r($new_numners);
- ?&gt;
-结果是：
-Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 2
-    [2] =&gt; 5
-    [3] =&gt; 3
-    [4] =&gt; 6
-    [5] =&gt; 2
-    [6] =&gt; 4
-    [7] =&gt; 7
-    [8] =&gt; 4
-    [9] =&gt; 2
-    [10] =&gt; 5
-    [11] =&gt; 2
-    [12] =&gt; 5
-    [13] =&gt; 1
-    [14] =&gt; 3
-    [15] =&gt; 6
-    [16] =&gt; 7
-)
-Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 2
-    [2] =&gt; 5
-    [3] =&gt; 3
-    [4] =&gt; 6
-    [6] =&gt; 4
-    [7] =&gt; 7
-)
-</code></pre><h3 id="5-3-array-flip-函数，置换数组的键和值"><a href="#5-3-array-flip-函数，置换数组的键和值" class="headerlink" title="5.3 array_flip()函数，置换数组的键和值"></a>5.3 array_flip()函数，置换数组的键和值</h3><pre><code>$userAges = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
-$new_userAges = array_flip($userAges);
-print_r ($new_userAges);
-结果：Array
-(
-    [22] =&gt; 张三
-    [21] =&gt; 李四
-    [18] =&gt; 王五
-)
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/10/18/php/php--数组遍历/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="PHP学习--遍历数组">
          &nbsp;
         view
     </span>

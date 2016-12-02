@@ -138,7 +138,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a>
+						<a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a> <a href="/tags/回溯法-n后问题/" style="font-size: 10px;">回溯法 n后问题</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,173 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-算法/Java算法-回溯法-n后问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/02/算法/Java算法-回溯法-n后问题/" class="article-date">
+  	<time datetime="2016-12-02T07:50:32.000Z" itemprop="datePublished">2016-12-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/02/算法/Java算法-回溯法-n后问题/">
+        Java算法学习--回溯法--n后问题
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一：问题描述"><a href="#一：问题描述" class="headerlink" title="一：问题描述"></a>一：问题描述</h2><h3 id="在nn格的棋盘上放着彼此不受攻击的n个皇后，按照国际象棋规定，皇后可以攻击与之处在同一行，同一列，对角线上的皇后。n后问题等价于：在nn的棋盘上，任意两个皇后不在同一行，同一列，同一斜线，当n的值一定时（比如8），有多少种摆放的方法。"><a href="#在nn格的棋盘上放着彼此不受攻击的n个皇后，按照国际象棋规定，皇后可以攻击与之处在同一行，同一列，对角线上的皇后。n后问题等价于：在nn的棋盘上，任意两个皇后不在同一行，同一列，同一斜线，当n的值一定时（比如8），有多少种摆放的方法。" class="headerlink" title="在nn格的棋盘上放着彼此不受攻击的n个皇后，按照国际象棋规定，皇后可以攻击与之处在同一行，同一列，对角线上的皇后。n后问题等价于：在nn的棋盘上，任意两个皇后不在同一行，同一列，同一斜线，当n的值一定时（比如8），有多少种摆放的方法。"></a>在n<em>n格的棋盘上放着彼此不受攻击的n个皇后，按照国际象棋规定，皇后可以攻击与之处在<code>同一行</code>，<code>同一列</code>，<code>对角线</code>上的皇后。n后问题等价于：在n</em>n的棋盘上，任意两个皇后不在同一行，同一列，同一斜线，当n的值一定时（比如8），有多少种摆放的方法。</h3><h2 id="算法："><a href="#算法：" class="headerlink" title="算法："></a>算法：</h2><h3 id="1-递归回溯："><a href="#1-递归回溯：" class="headerlink" title="1.递归回溯："></a>1.递归回溯：</h3><pre><code>package suanfasheji;
+
+import java.util.Scanner;
+
+public class NQueen1 {
+    static int n; // 皇后个数
+    static int[] x; // 当前解
+    static long sum; //当前已经找到的可行解的方案个数
+
+    public static long nQueen(int nn){
+        n = nn;
+        sum = 0;
+        x = new int[n+1];
+        for(int i=0; i&lt;=n; i++) x[i]=0;
+        backtrack(1);    //从第一层开始搜索
+        return sum;
+    }
+
+    private static boolean palce(int k){
+        for(int j=1; j&lt;k; j++)
+            if(Math.abs(k-j) == Math.abs(x[j]-x[k]) || (x[j]==x[k])) return false;
+        return true;
+    }
+
+    private static void backtrack(int t){
+        if(t&gt;n) sum++;
+        else
+            for(int i=1; i&lt;=n; i++){
+                x[t] = i;
+                if(palce(t)) backtrack(t+1);
+            }
+    }
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Scanner in = new Scanner(System.in);
+        System.out.println(&quot;请输入皇后数：&quot;);
+        int n = in.nextInt();
+        NQueen1 qun = new NQueen1();
+        long sum = qun.nQueen(n);
+        System.out.print(n+&quot;皇后的可行解是：&quot;+sum);
+    }
+
+}
+</code></pre><h3 id="2-非递归回溯："><a href="#2-非递归回溯：" class="headerlink" title="2.非递归回溯："></a>2.非递归回溯：</h3><pre><code>package suanfasheji;
+
+import java.util.Scanner;
+
+public class NQueen2 {
+    static int n; // 皇后个数
+    static int[] x; // 当前解
+    static long sum; // 当前已经找到的可行解的方案个数
+
+    public static long nQueen(int nn) {
+        n = nn;
+        sum = 0;
+        x = new int[n + 1];
+        for (int i = 0; i &lt;= n; i++)
+            x[i] = 0;
+        backtrack(); 
+        return sum;
+    }
+
+    private static boolean palce(int k) {
+        for (int j = 1; j &lt; k; j++)
+            if (Math.abs(k - j) == Math.abs(x[j] - x[k]) || (x[j] == x[k]))
+                return false;
+        return true;
+    }
+
+    private static void backtrack(){
+        x[1] = 0;
+        int k=1;
+        while(k&gt;0){
+            x[k]+=1;
+            while((x[k]&lt;=n) &amp;&amp; !(palce(k))) x[k]+=1;
+            if(x[k]&lt;=n)
+                if(k==n) sum++;
+                else{
+                    k++;
+                    x[k]=0;
+                }
+            else k--;
+        }
+    }
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Scanner in = new Scanner(System.in);
+        System.out.println(&quot;请输入皇后数：&quot;);
+        int n = in.nextInt();
+        NQueen1 qun = new NQueen1();
+        long sum = qun.nQueen(n);
+        System.out.print(n+&quot;皇后的可行解是：&quot;+sum);
+    }
+
+}
+</code></pre><h3 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h3><pre><code>请输入皇后数：
+8
+8皇后的可行解是：92
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/回溯法-n后问题/">回溯法 n后问题</a></li></ul>
+	</div>
+
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/12/02/算法/Java算法-回溯法-n后问题/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="Java算法学习--回溯法--n后问题">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-php/php-mysql常用函数" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -979,112 +1146,6 @@ echo &quot;&lt;script&gt;alert(&apos;文件上传成功&apos;); location.href = 
 <div class="counter-tag counter">
     <span id="/2016/11/19/算法/java算法-动态规划法/" class="leancloud_visitors post-title-link"
           style="font-size: 12px" data-flag-title="java算法学习--动态规划法">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-算法/java算法-合并排序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/19/算法/java算法-合并排序/" class="article-date">
-  	<time datetime="2016-11-19T05:41:15.000Z" itemprop="datePublished">2016-11-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/19/算法/java算法-合并排序/">
-        java算法学习--分治法 合并排序
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="合并排序：用分治策略实现对n个元素进行排序的算法。"><a href="#合并排序：用分治策略实现对n个元素进行排序的算法。" class="headerlink" title="合并排序：用分治策略实现对n个元素进行排序的算法。"></a>合并排序：用分治策略实现对n个元素进行排序的算法。</h3><h3 id="基本思想：将待排序列元素分成大小大致相同的两个子序列，分别对两个子序列进行排序，最终将排好序的子集合合并成为所要求的排好序的集合。"><a href="#基本思想：将待排序列元素分成大小大致相同的两个子序列，分别对两个子序列进行排序，最终将排好序的子集合合并成为所要求的排好序的集合。" class="headerlink" title="基本思想：将待排序列元素分成大小大致相同的两个子序列，分别对两个子序列进行排序，最终将排好序的子集合合并成为所要求的排好序的集合。"></a>基本思想：将待排序列元素分成大小大致相同的两个子序列，分别对两个子序列进行排序，最终将排好序的子集合合并成为所要求的排好序的集合。</h3><pre><code>public class Mergesort {
-
-    public static void merge(int[]a,int low,int mid,int high){//对两组已经排序的数组进行合并
-        int[]b=new int[high-low+1]; //临时数组，存储个数为high - low + 1个数据       
-        int s=low;
-        int t=mid+1;
-        int k=0;
-        while(s&lt;=mid&amp;&amp;t&lt;=high){   //直至前半部或后半部数据完全录入暂存
-            if(a[s]&lt;=a[t])        //如果前半部的数据小于后半部的，前半部数据暂存
-                b[k++]=a[s++];
-            else                   //否则后半部数据暂存，并下标自加                
-                b[k++]=a[t++];
-        }
-        while(s&lt;=mid)
-            b[k++]=a[s++];
-        while(t&lt;=high)
-            b[k++]=a[t++];
-        for(int i=0;i&lt;b.length;i++){     //将暂存的数据重新填充至array[low]--array[high]中
-            a[low+i]=b[i];
-        }
-    }
-    public static void mergesort(int a[],int low,int high){//对数组进行递归排序        
-        int mid;
-        if(low&lt;high){
-            mid=(low+high)/2;
-            mergesort(a,low,mid);
-            mergesort(a,mid+1,high);
-            merge(a,low,mid,high);
-        }
-    }
-    public static void main(String[]args){
-        int[]a={4,34,2,56,5,9,6,45,8,3};
-        System.out.println(&quot;排序前数组为：&quot;);
-        for(int i=0;i&lt;a.length;i++){
-            System.out.print(a[i]+&quot; &quot;); }
-        mergesort(a,0,a.length-1);
-        System.out.println(&quot;\n排序后数组为：&quot;);
-        for(int i=0;i&lt;a.length;i++){
-            System.out.print(a[i]+&quot; &quot;);}    
-    }
-
-}
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/19/算法/java算法-合并排序/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="java算法学习--分治法 合并排序">
          &nbsp;
         view
     </span>

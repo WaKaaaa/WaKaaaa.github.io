@@ -138,7 +138,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a>
+						<a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a> <a href="/tags/回溯法-n后问题/" style="font-size: 10px;">回溯法 n后问题</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,192 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-php/php--数组遍历" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/18/php/php--数组遍历/" class="article-date">
+  	<time datetime="2016-10-18T12:11:38.000Z" itemprop="datePublished">2016-10-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/18/php/php--数组遍历/">
+        PHP学习--遍历数组
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="遍历数组"><a href="#遍历数组" class="headerlink" title=" 遍历数组"></a><center> 遍历数组</center></h1><h2 id="遍历数组的方式："><a href="#遍历数组的方式：" class="headerlink" title="遍历数组的方式："></a>遍历数组的方式：</h2><ul>
+<li>for 循环遍历数组</li>
+<li>foreach 遍历数组</li>
+<li>list 遍历数组</li>
+<li>each 遍历数组<h2 id="1-for循环遍历数组"><a href="#1-for循环遍历数组" class="headerlink" title="1.for循环遍历数组"></a>1.for循环遍历数组</h2>   // for循环访问数组<br>   //    数组下标从0开始可用<br>   for ($i=0; $i &lt; count($userName); $i++) { <pre><code># code...
+echo $i.&quot;---&quot;.$userName[$i].&quot;&lt;br&gt;&quot;;    //count方法取得数组的长度，sizeof是他的别名，一般用count
+</code></pre>   }<br>  结果是： 0—张三<pre><code>1---李四
+2---王五
+3---赵六
+4---嘻嘻嘻
+5---嘿嘿嘿
+</code></pre></li>
+</ul>
+<h2 id="2-foreach-遍历数组"><a href="#2-foreach-遍历数组" class="headerlink" title="2.foreach 遍历数组"></a>2.foreach 遍历数组</h2><pre><code>//这种方法好处是在数组的下标不是从0开始或者根本不是数字的时候可用
+foreach ($userName as $key =&gt; $value) { //此处的key和value可以替换成任意的变量名，只需要将下面输出统一即可，也可以单独打印下标或者值
+    # code...
+    echo $key.&quot;---&quot;.$value.&quot;&lt;br&gt;&quot;;
+}
+
+       0---张三
+       1---李四
+       2---王五
+       3---赵六
+       4---嘻嘻嘻
+       5---嘿嘿嘿
+</code></pre><h2 id="3-each-遍历数组"><a href="#3-each-遍历数组" class="headerlink" title="3.each 遍历数组"></a>3.each 遍历数组</h2><pre><code>&lt;?php 
+    $userAges = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
+    // print_r($userAges);
+    //each的使用
+    //each --  返回数组中当前的键／值对并将数组指针向前移动一步 
+    //这里有一个指针，默认情况下，指针是指向第一个键值对
+    //这里的第一个键值对是 ,张三=&gt;22
+    //如果each($userAges)，那么获取的就是第一个键值对 &apos;张三&apos;=&gt;22
+    //each这个函数返回的是一个数组，
+    //each将第一个键值对获取到，然后包装成一个新数组。
+
+    each($userAges); //这是第一步，将张三，22取出来，包装成一个新的数组
+    $a = each($userAges);    //这是第二步，将李四，21取出
+    print_r($a).&quot;&lt;br&gt;&quot;;
+    echo $a[0];
+    // 第一步的结果：Array ( [1] =&gt; 22 [value] =&gt; 22 [0] =&gt; 张三 [key] =&gt; 张三 ) 张三
+    // 第二步的结果：Array ( [1] =&gt; 21 [value] =&gt; 21 [0] =&gt; 李四 [key] =&gt; 李四 ) 李四
+
+ ?&gt;
+</code></pre><h3 id="each循环打印"><a href="#each循环打印" class="headerlink" title="each循环打印"></a>each循环打印</h3><pre><code>while (!!$a = each($userAges)) { //当是真，即括号里的值是1的时候执行以下语
+    # code...
+    echo $a[&apos;key&apos;].&quot;---&quot;.$a[&apos;value&apos;].&quot;&lt;br&gt;&quot;;
+}
+</code></pre><h4 id="！！的作用：将真实存在的数值转换成布尔值，在这里each-userAges-返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1"><a href="#！！的作用：将真实存在的数值转换成布尔值，在这里each-userAges-返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1" class="headerlink" title="！！的作用：将真实存在的数值转换成布尔值，在这里each($userAges)返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1"></a>！！的作用：将真实存在的数值转换成布尔值，在这里each($userAges)返回的是array，即数组里有数据，有数据，用！！可以将这个array转化成1</h4><h2 id="4-list-遍历数组"><a href="#4-list-遍历数组" class="headerlink" title="4.list 遍历数组"></a>4.list 遍历数组</h2><pre><code>&lt;?php 
+    $userAges = array(&quot;张三&quot;,&quot;李四&quot;,&quot;王五&quot;);
+    // print_r($userAges);
+    // 把一个数组中的值赋给一个变量
+    list($a,$b) = $userAges;    //这里将数组userAges的第一个值赋给$a,第二个值赋给$b，其中$a,$b的值可以改编为任意的变量
+    echo $a.&quot;&lt;br&gt;&quot;;
+    echo $b.&quot;&lt;br&gt;&quot;;
+
+    // 注意：list只能识别下标是0,1,2等数字的数组，自定义的key不能识别的
+    // 如果一定要打印数组的键和值，就用each和list的组合
+    $userAge = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
+    list($c,$d) = each($userAge);    // each将张三，22取出来形成一个新的数组，0($c)表示key，也就是张三，1($d)表示value，也就是 22
+    echo $c;    // 打印张三
+    echo $d;    // 打印22
+ ?&gt;
+</code></pre><h2 id="5-array相关函数"><a href="#5-array相关函数" class="headerlink" title="5.array相关函数"></a>5.array相关函数</h2><h3 id="5-1-reset-函数，将数组指针指向第一位"><a href="#5-1-reset-函数，将数组指针指向第一位" class="headerlink" title="5.1 reset()函数，将数组指针指向第一位"></a>5.1 reset()函数，将数组指针指向第一位</h3><pre><code>&lt;?php 
+    $userAges = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
+    $a = each($userAges);    // 指向第一位,$a是第一位张三22的新数组 ，而$userAges现在指向的是第二位
+
+    echo $a[&apos;key&apos;];
+    $b = each($userAges);
+    echo $b[&apos;key&apos;];
+
+    reset($userAges);    // 将数组指针指向数组第一位，无论刚开始在第几位
+    $c = each($userAges);
+    echo $c[&apos;value&apos;];
+ ?&gt;
+</code></pre><h3 id="5-2-array-unique函数，去除数组中的重复项"><a href="#5-2-array-unique函数，去除数组中的重复项" class="headerlink" title="5.2 array_unique函数，去除数组中的重复项"></a>5.2 array_unique函数，去除数组中的重复项</h3><pre><code>&lt;?php 
+    $numbers = array(1,2,5,3,6,2,4,7,4,2,5,2,5,1,3,6,7);
+    print_r($numbers);
+
+    $new_numners = array_unique($numbers);    //数组去重
+    print_r($new_numners);
+ ?&gt;
+结果是：
+Array
+(
+    [0] =&gt; 1
+    [1] =&gt; 2
+    [2] =&gt; 5
+    [3] =&gt; 3
+    [4] =&gt; 6
+    [5] =&gt; 2
+    [6] =&gt; 4
+    [7] =&gt; 7
+    [8] =&gt; 4
+    [9] =&gt; 2
+    [10] =&gt; 5
+    [11] =&gt; 2
+    [12] =&gt; 5
+    [13] =&gt; 1
+    [14] =&gt; 3
+    [15] =&gt; 6
+    [16] =&gt; 7
+)
+Array
+(
+    [0] =&gt; 1
+    [1] =&gt; 2
+    [2] =&gt; 5
+    [3] =&gt; 3
+    [4] =&gt; 6
+    [6] =&gt; 4
+    [7] =&gt; 7
+)
+</code></pre><h3 id="5-3-array-flip-函数，置换数组的键和值"><a href="#5-3-array-flip-函数，置换数组的键和值" class="headerlink" title="5.3 array_flip()函数，置换数组的键和值"></a>5.3 array_flip()函数，置换数组的键和值</h3><pre><code>$userAges = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
+$new_userAges = array_flip($userAges);
+print_r ($new_userAges);
+结果：Array
+(
+    [22] =&gt; 张三
+    [21] =&gt; 李四
+    [18] =&gt; 王五
+)
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/10/18/php/php--数组遍历/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="PHP学习--遍历数组">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-php/php--数组1" class="article article-type-post" itemscope itemprop="blogPost">
   
