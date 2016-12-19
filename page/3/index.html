@@ -192,6 +192,92 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-php/php-操作子字符串" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/15/php/php-操作子字符串/" class="article-date">
+  	<time datetime="2016-11-15T11:44:08.000Z" itemprop="datePublished">2016-11-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/15/php/php-操作子字符串/">
+        php学习--操作子字符串
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="1-explode-以某个字符分割字符串，返回字串组成的数组"><a href="#1-explode-以某个字符分割字符串，返回字串组成的数组" class="headerlink" title="1. explode()以某个字符分割字符串，返回字串组成的数组"></a>1. explode()以某个字符分割字符串，返回字串组成的数组</h3><h3 id="2-join-将数组中的元素合并成字符串"><a href="#2-join-将数组中的元素合并成字符串" class="headerlink" title="2. join()将数组中的元素合并成字符串"></a>2. join()将数组中的元素合并成字符串</h3><h3 id="3-strtok-标记分割字符串"><a href="#3-strtok-标记分割字符串" class="headerlink" title="3. strtok()标记分割字符串"></a>3. strtok()标记分割字符串</h3><h3 id="4-substr-函数返回字符串的子串，不适合汉字"><a href="#4-substr-函数返回字符串的子串，不适合汉字" class="headerlink" title="4. substr()函数返回字符串的子串，不适合汉字"></a>4. substr()函数返回字符串的子串，<code>不适合汉字</code></h3><h3 id="5-str-aplit-函数将字符串转化为数组，分解成一小段一小段的子字符串，不适合汉字"><a href="#5-str-aplit-函数将字符串转化为数组，分解成一小段一小段的子字符串，不适合汉字" class="headerlink" title="5. str_aplit()函数将字符串转化为数组，分解成一小段一小段的子字符串，不适合汉字"></a>5. str_aplit()函数将字符串转化为数组，分解成一小段一小段的子字符串，<code>不适合汉字</code></h3><h3 id="6-strrev-函数将字符串逆反过来，不适合汉字"><a href="#6-strrev-函数将字符串逆反过来，不适合汉字" class="headerlink" title="6. strrev()函数将字符串逆反过来，不适合汉字"></a>6. strrev()函数将字符串逆反过来，<code>不适合汉字</code></h3><h2 id="详解："><a href="#详解：" class="headerlink" title="详解："></a>详解：</h2><h3 id="1-explode-分割的符号，被分割的字符串-以某个字符分割字符串，返回字串组成的数组"><a href="#1-explode-分割的符号，被分割的字符串-以某个字符分割字符串，返回字串组成的数组" class="headerlink" title="1. explode(分割的符号，被分割的字符串) 以某个字符分割字符串，返回字串组成的数组"></a>1. explode(分割的符号，被分割的字符串) 以某个字符分割字符串，返回字串组成的数组</h3><pre><code>$str = &apos;123456789@qq.com&apos;;
+print_r(explode(&apos;@&apos;, $str));
+</code></pre><h3 id="2-join-合并的符号，被合并的数组-将数组中的元素合并成字符串"><a href="#2-join-合并的符号，被合并的数组-将数组中的元素合并成字符串" class="headerlink" title="2. join(合并的符号，被合并的数组) 将数组中的元素合并成字符串"></a>2. join(合并的符号，被合并的数组) 将数组中的元素合并成字符串</h3><pre><code>$str2 = array(&apos;hello&apos; ,&apos;world&apos;,&apos;!&apos;);
+echo join(&apos; &apos;,$str2);
+</code></pre><h3 id="3-implode-是join的别名，他俩是一样的作用"><a href="#3-implode-是join的别名，他俩是一样的作用" class="headerlink" title="3. implode()是join的别名，他俩是一样的作用"></a>3. implode()是join的别名，他俩是一样的作用</h3><h3 id="4-strtok-标记分割字符串，这个函数的好处是可以使用多个参数来分割字符串"><a href="#4-strtok-标记分割字符串，这个函数的好处是可以使用多个参数来分割字符串" class="headerlink" title="4. strtok()标记分割字符串，这个函数的好处是可以使用多个参数来分割字符串"></a>4. strtok()标记分割字符串，这个函数的好处是可以使用多个参数来分割字符串</h3><pre><code>// 注意：符号的顺序是无所谓的
+// 仅第一次调用strtok的时候使用string参数，后来每次调用 strtok都只使用分隔符号参数（这里指的是,#%），因为他会记住他在字符串中的位置。
+// 如果重新分割新的字符串，就需要再次调用string和strtok函数，来完成初始化工作
+$str3 = &apos;hello, he is %a good # boy&apos;;
+$tok = strtok($str3, &apos;,#&apos;);
+while ($tok) {
+    echo $tok.&apos;&lt;br&gt;&apos;;
+    $tok = strtok(&apos;#,%&apos;);
+}
+</code></pre><h3 id="5-substr-字符串，子字符串开始的下标，子字符串的长度-返回字符串的子串"><a href="#5-substr-字符串，子字符串开始的下标，子字符串的长度-返回字符串的子串" class="headerlink" title="5. substr(字符串，子字符串开始的下标，子字符串的长度) 返回字符串的子串"></a>5. substr(字符串，子字符串开始的下标，子字符串的长度) 返回字符串的子串</h3><pre><code>// 第一个参数是字符串，第二个参数是子字符串开始的下标（从0开始），第三个参数是子字符串的长度（可选），默认是到最后一个字符
+// 注意这个函数不可以分割中文，因为中文是两个字节，这个函数分割的是一个字节
+$str4 = &apos;hello he is a good boy&apos;;
+echo substr($str4, 2, 5);
+</code></pre><h3 id="6-str-aplit-字符串，子字符串的长度-将字符串转化为数组，分解成一小段一小段的子字符串"><a href="#6-str-aplit-字符串，子字符串的长度-将字符串转化为数组，分解成一小段一小段的子字符串" class="headerlink" title="6. str_aplit(字符串，子字符串的长度) 将字符串转化为数组，分解成一小段一小段的子字符串"></a>6. str_aplit(字符串，子字符串的长度) 将字符串转化为数组，分解成一小段一小段的子字符串</h3><pre><code>// 第一个参数是要分解的字符串，第二个参数是每一个字符串的长度（可选），默认是分割成单个的字符数组
+$str5 = &apos;hello he is a good boy&apos;;
+print_r(str_split($str5,2));
+</code></pre><h3 id="7-strrev-函数将字符串逆反过来"><a href="#7-strrev-函数将字符串逆反过来" class="headerlink" title="7. strrev()函数将字符串逆反过来"></a>7. strrev()函数将字符串逆反过来</h3><pre><code>$str6 = &apos;hello he is a good boy&apos;;
+echo strrev($str6);
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/15/php/php-操作子字符串/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--操作子字符串">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-php/php-字符串" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1142,95 +1228,6 @@ for ($i=0; $i &lt; count($students); $i++) {
 <div class="counter-tag counter">
     <span id="/2016/10/19/php/php--数组二维/" class="leancloud_visitors post-title-link"
           style="font-size: 12px" data-flag-title="php学习--二维数组（数组中的数组）">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-php/php--输出" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/18/php/php--输出/" class="article-date">
-  	<time datetime="2016-10-18T14:34:29.000Z" itemprop="datePublished">2016-10-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/18/php/php--输出/">
-        php学习--echo print_r,printf,sprintf,print的比较
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="php几种输出方式比较"><a href="#php几种输出方式比较" class="headerlink" title=" php几种输出方式比较"></a><center> php几种输出方式比较</center></h1><ul>
-<li>&emsp; <code>echo</code>: 函数，无返回值（返回void），作用是打印字符串，还可以打印函数的类型和数组类型</li>
-<li>&emsp; <code>print</code>: 函数，返回整型，作用是打印字符串</li>
-<li>&emsp; <code>printf</code>: 函数，返回字符串的长度，作用是打印字符串</li>
-<li>&emsp; <code>sprintf</code>: 函数，返回字符串将字符串保存在内存中（不在浏览器下显示）</li>
-<li><p>&emsp; <code>print_r</code>: 函数，用来打印数组中的所有元素<br>###</p>
-<p> &lt;?php </p>
-<pre><code>echo &quot;hello php1&quot;;
-echo &quot;&lt;/br&gt;&quot;;
-print(&quot;hello php2&quot;);
-echo &quot;&lt;/br&gt;&quot;;
-echo print(&quot;hello php3&lt;/br&gt;&quot;); // 这句话的作用是先将print里的字符串打印出来，再打印一个字符串，然后echo出print的类型，返回真，在浏览器中显示为1
-echo &quot;&lt;/br&gt;&quot;;
-printf(&quot;hello php4&lt;/br&gt;&quot;);
-echo printf(&quot;hello php5&lt;/br&gt;&quot;); //返回字符串的长度
-echo &quot;&lt;/br&gt;&quot;;
-sprintf(&quot;hello php6&lt;br&gt;&quot;); // 字符串保存在内存中，不在浏览器界面显示
-echo sprintf(&quot;hello php7&quot;); // 返回字符串
-echo&quot;&lt;br&gt;&quot;;
-
-$userAges = array(&apos;张三&apos; =&gt; 22, &apos;李四&apos; =&gt; 21, &apos;王五&apos;=&gt;18);
-echo $userAges; //返回$userAges的类型 array
-</code></pre><p>  ?&gt;<br> 运行结果：<br> hello php1<br> hello php2<br> hello php3<br> 1<br> hello php4<br> hello php5<br> 15<br> hello php7<br> array</p>
-</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/10/18/php/php--输出/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--echo print_r,printf,sprintf,print的比较">
          &nbsp;
         view
     </span>
