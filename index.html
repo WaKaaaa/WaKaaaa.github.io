@@ -192,70 +192,6 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-js/JavaScript高级程序设计第三版笔记一-基础知识" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/12/19/js/JavaScript高级程序设计第三版笔记一-基础知识/" class="article-date">
-  	<time datetime="2016-12-19T11:34:10.000Z" itemprop="datePublished">2016-12-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/19/js/JavaScript高级程序设计第三版笔记一-基础知识/">
-        JavaScript高级程序设计第三版笔记一--基础知识
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一：JavaScript的实现"><a href="#一：JavaScript的实现" class="headerlink" title="一：JavaScript的实现"></a>一：JavaScript的实现</h2><h3 id="1-一个完整的javascript实现由ECMAScript，DOM，BOM三部分组成。其中"><a href="#1-一个完整的javascript实现由ECMAScript，DOM，BOM三部分组成。其中" class="headerlink" title="1. 一个完整的javascript实现由ECMAScript，DOM，BOM三部分组成。其中"></a>1. 一个完整的javascript实现由ECMAScript，DOM，BOM三部分组成。其中</h3><h4 id="ECMAScript提供核心语言功能"><a href="#ECMAScript提供核心语言功能" class="headerlink" title="ECMAScript提供核心语言功能"></a>ECMAScript提供核心语言功能</h4><h4 id="DOM提供访问和操作网页内容的方法和接口"><a href="#DOM提供访问和操作网页内容的方法和接口" class="headerlink" title="DOM提供访问和操作网页内容的方法和接口"></a>DOM提供访问和操作网页内容的方法和接口</h4><h4 id="BOM提供与浏览器交互的方法和接口"><a href="#BOM提供与浏览器交互的方法和接口" class="headerlink" title="BOM提供与浏览器交互的方法和接口"></a>BOM提供与浏览器交互的方法和接口</h4><h2 id="二：在HTML中使用JavaScript"><a href="#二：在HTML中使用JavaScript" class="headerlink" title="二：在HTML中使用JavaScript"></a>二：在HTML中使用JavaScript</h2><h3 id="1-注意：带有src属性的-lt-script-gt-元素不应该在其-lt-script-gt-和-lt-script-gt-标签之间再包含额外的JavaScript代码。如果包含了嵌入的代码，则只会下载并执行外部脚本文件，嵌入的代码会被忽略。简言之：js代码要么全部写在HTML文件里，要么全部写在单独的文件中"><a href="#1-注意：带有src属性的-lt-script-gt-元素不应该在其-lt-script-gt-和-lt-script-gt-标签之间再包含额外的JavaScript代码。如果包含了嵌入的代码，则只会下载并执行外部脚本文件，嵌入的代码会被忽略。简言之：js代码要么全部写在HTML文件里，要么全部写在单独的文件中" class="headerlink" title="1. 注意：带有src属性的&lt;script&gt;元素不应该在其&lt;script&gt;和&lt;/script&gt;标签之间再包含额外的JavaScript代码。如果包含了嵌入的代码，则只会下载并执行外部脚本文件，嵌入的代码会被忽略。简言之：js代码要么全部写在HTML文件里，要么全部写在单独的文件中"></a>1. 注意：带有src属性的<code>&lt;script&gt;</code>元素不应该在其<code>&lt;script&gt;和&lt;/script&gt;</code>标签之间再包含额外的JavaScript代码。如果包含了嵌入的代码，则只会下载并执行外部脚本文件，嵌入的代码会被忽略。简言之：<code>js代码要么全部写在HTML文件里，要么全部写在单独的文件中</code></h3><h3 id="2-通过src属性可以引入包含外部域的JavaScript文件，但这样做要万分小心，注意程序员对那个文件的恶意修改。如果你想包含来自不同域的代码，要么你是那个域的所有者，要么那个域的所有者值得信赖。"><a href="#2-通过src属性可以引入包含外部域的JavaScript文件，但这样做要万分小心，注意程序员对那个文件的恶意修改。如果你想包含来自不同域的代码，要么你是那个域的所有者，要么那个域的所有者值得信赖。" class="headerlink" title="2. 通过src属性可以引入包含外部域的JavaScript文件，但这样做要万分小心，注意程序员对那个文件的恶意修改。如果你想包含来自不同域的代码，要么你是那个域的所有者，要么那个域的所有者值得信赖。"></a>2. 通过src属性可以引入包含外部域的JavaScript文件，但这样做要万分小心，注意程序员对那个文件的恶意修改。如果你想包含来自不同域的代码，要么你是那个域的所有者，要么那个域的所有者值得信赖。</h3><h3 id="3-无论如何包含代码，只要不存在defer和async属性，浏览器都会按照-lt-script-gt-元素在页面中出现的先后顺序对他们依次进行解析，也就是说，在第一个script元素包含的代码解析完成之后，第二个script包含的代码才会被解析，然后睡第三个，第四个······"><a href="#3-无论如何包含代码，只要不存在defer和async属性，浏览器都会按照-lt-script-gt-元素在页面中出现的先后顺序对他们依次进行解析，也就是说，在第一个script元素包含的代码解析完成之后，第二个script包含的代码才会被解析，然后睡第三个，第四个······" class="headerlink" title="3. 无论如何包含代码，只要不存在defer和async属性，浏览器都会按照&lt;script&gt;元素在页面中出现的先后顺序对他们依次进行解析，也就是说，在第一个script元素包含的代码解析完成之后，第二个script包含的代码才会被解析，然后睡第三个，第四个······"></a>3. 无论如何包含代码，只要不存在defer和async属性，浏览器都会按照<code>&lt;script&gt;元素在页面中出现的先后顺序对他们依次进行解析</code>，也就是说，在第一个script元素包含的代码解析完成之后，第二个script包含的代码才会被解析，然后睡第三个，第四个······</h3><h3 id="4-何谓defer和asyn？-defer和async的区别-和defer-async的原理及应用"><a href="#4-何谓defer和asyn？-defer和async的区别-和defer-async的原理及应用" class="headerlink" title="4. 何谓defer和asyn？ defer和async的区别 和defer async的原理及应用"></a>4. 何谓defer和asyn？ <a scr="https://segmentfault.com/q/1010000000640869">defer和async的区别</a> 和<a src="http://blog.csdn.net/liuhe688/article/details/51247484">defer async的原理及应用</a></h3><h3 id="5-我原先不知道的：在传统的做法中，所有的-lt-script-gt-都应该放在页面的头文件中，这种做法的目的就是将所有的外部文件（CSS和js文件）的引用都放在相同的地方，但这意味着必须等到全部的js代码全部被下载，解析，执行完成之后，才能开始执行页面内容（浏览器遇到body才开始呈现页面内容）。对于那些包含很多js文件的网页来说，这会导致在浏览器呈现页面的时候出现明显的延迟，而延迟期间的浏览器串口是一片空白。为了避免这个问题，现代web应用程序一般都把全部的js引用放在body页面元素中页面的后面。这样，在解析包含的js代码之前，页面的内容将完全的呈现在浏览器中，而用户也会因为浏览器窗口显示空白页面的时间缩短而感到打开页面的速度加快了。"><a href="#5-我原先不知道的：在传统的做法中，所有的-lt-script-gt-都应该放在页面的头文件中，这种做法的目的就是将所有的外部文件（CSS和js文件）的引用都放在相同的地方，但这意味着必须等到全部的js代码全部被下载，解析，执行完成之后，才能开始执行页面内容（浏览器遇到body才开始呈现页面内容）。对于那些包含很多js文件的网页来说，这会导致在浏览器呈现页面的时候出现明显的延迟，而延迟期间的浏览器串口是一片空白。为了避免这个问题，现代web应用程序一般都把全部的js引用放在body页面元素中页面的后面。这样，在解析包含的js代码之前，页面的内容将完全的呈现在浏览器中，而用户也会因为浏览器窗口显示空白页面的时间缩短而感到打开页面的速度加快了。" class="headerlink" title="5. 我原先不知道的：在传统的做法中，所有的&lt;script&gt;都应该放在页面的头文件中，这种做法的目的就是将所有的外部文件（CSS和js文件）的引用都放在相同的地方，但这意味着必须等到全部的js代码全部被下载，解析，执行完成之后，才能开始执行页面内容（浏览器遇到body才开始呈现页面内容）。对于那些包含很多js文件的网页来说，这会导致在浏览器呈现页面的时候出现明显的延迟，而延迟期间的浏览器串口是一片空白。为了避免这个问题，现代web应用程序一般都把全部的js引用放在body页面元素中页面的后面。这样，在解析包含的js代码之前，页面的内容将完全的呈现在浏览器中，而用户也会因为浏览器窗口显示空白页面的时间缩短而感到打开页面的速度加快了。"></a>5. 我原先不知道的：在传统的做法中，所有的<code>&lt;script&gt;</code>都应该放在页面的头文件中，这种做法的目的就是将所有的外部文件（CSS和js文件）的引用都放在相同的地方，但这意味着<code>必须等到全部的js代码全部被下载，解析，执行完成之后，才能开始执行页面内容</code>（浏览器遇到body才开始呈现页面内容）。对于那些包含很多js文件的网页来说，这会导致在浏览器呈现页面的时候出现明显的延迟，而延迟期间的浏览器串口是一片空白。为了避免这个问题，现代web应用程序一般<code>都把全部的js引用放在body页面元素中页面的后面</code>。这样，在解析包含的js代码之前，页面的内容将完全的呈现在浏览器中，而用户也会因为浏览器窗口显示空白页面的时间缩短而感到打开页面的速度加快了。</h3><h3 id="6-不支持JavaScript的浏览器会将-lt-script-gt-元素的浏览器能够隐藏嵌入的JavaScript代码。解决的方法是把包含JavaScript代码包含在一个HTML注释中。这样，不支持的浏览器就会忽略注释中的代码，支持的浏览器就会进一步确认其中是否包含所需要解析的JavaScript代码"><a href="#6-不支持JavaScript的浏览器会将-lt-script-gt-元素的浏览器能够隐藏嵌入的JavaScript代码。解决的方法是把包含JavaScript代码包含在一个HTML注释中。这样，不支持的浏览器就会忽略注释中的代码，支持的浏览器就会进一步确认其中是否包含所需要解析的JavaScript代码" class="headerlink" title="6. 不支持JavaScript的浏览器会将&lt;script&gt;元素的浏览器能够隐藏嵌入的JavaScript代码。解决的方法是把包含JavaScript代码包含在一个HTML注释中。这样，不支持的浏览器就会忽略注释中的代码，支持的浏览器就会进一步确认其中是否包含所需要解析的JavaScript代码"></a>6. 不支持JavaScript的浏览器会将<code>&lt;script&gt;</code>元素的浏览器能够隐藏嵌入的JavaScript代码。解决的方法是把包含JavaScript代码包含在一个HTML注释中。这样，不支持的浏览器就会忽略注释中的代码，支持的浏览器就会进一步确认其中是否包含所需要解析的JavaScript代码</h3><h3 id="7-lt-noscript-gt-元素可以指定在不支持脚本的浏览器中显示的替代内容，但是启用了脚本的情况下，浏览器不会显示-lt-noscript-gt-中的任何内容。这个元素支持所有-lt-body-gt-支持的元素，-lt-script-gt-元素除外。"><a href="#7-lt-noscript-gt-元素可以指定在不支持脚本的浏览器中显示的替代内容，但是启用了脚本的情况下，浏览器不会显示-lt-noscript-gt-中的任何内容。这个元素支持所有-lt-body-gt-支持的元素，-lt-script-gt-元素除外。" class="headerlink" title="7. &lt;noscript&gt;元素可以指定在不支持脚本的浏览器中显示的替代内容，但是启用了脚本的情况下，浏览器不会显示&lt;noscript&gt;中的任何内容。这个元素支持所有&lt;body&gt;支持的元素，&lt;script&gt;元素除外。"></a>7. <code>&lt;noscript&gt;</code>元素可以指定在不支持脚本的浏览器中显示的替代内容，但是启用了脚本的情况下，浏览器不会显示<code>&lt;noscript&gt;</code>中的任何内容。这个元素<code>支持所有&lt;body&gt;支持的元素，&lt;script&gt;元素除外</code>。</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/12/19/js/JavaScript高级程序设计第三版笔记一-基础知识/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="JavaScript高级程序设计第三版笔记一--基础知识">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
     <article id="post-算法/Java算法-回溯法-n后问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1146,6 +1082,70 @@ echo &quot;&lt;script&gt;alert(&apos;文件上传成功&apos;); location.href = 
 <div class="counter-tag counter">
     <span id="/2016/11/19/算法/java算法-最长公共子序列/" class="leancloud_visitors post-title-link"
           style="font-size: 12px" data-flag-title="java算法学习--最长公共子序列">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-算法/java算法-动态规划法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/19/算法/java算法-动态规划法/" class="article-date">
+  	<time datetime="2016-11-19T08:02:52.000Z" itemprop="datePublished">2016-11-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/19/算法/java算法-动态规划法/">
+        java算法学习--动态规划法
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-动态规划法与分治法类似，基本思想也是将待求解的问题分解成若干个子问题，先求解子问题，然后从子问题中找到原问题的解。"><a href="#1-动态规划法与分治法类似，基本思想也是将待求解的问题分解成若干个子问题，先求解子问题，然后从子问题中找到原问题的解。" class="headerlink" title="1. 动态规划法与分治法类似，基本思想也是将待求解的问题分解成若干个子问题，先求解子问题，然后从子问题中找到原问题的解。"></a>1. 动态规划法与分治法类似，基本思想也是将待求解的问题分解成若干个子问题，先求解子问题，然后从子问题中找到原问题的解。</h3><h3 id="2-不同之处：适用于动态规划求解的问题，经过分解之后得到的子问题往往是不相互独立的。"><a href="#2-不同之处：适用于动态规划求解的问题，经过分解之后得到的子问题往往是不相互独立的。" class="headerlink" title="2. 不同之处：适用于动态规划求解的问题，经过分解之后得到的子问题往往是不相互独立的。"></a>2. 不同之处：适用于动态规划求解的问题，经过分解之后得到的子问题往往是<code>不相互独立</code>的。</h3><h3 id="3-如果能够保存已经解决的子问题的答案，在需要的时候再找出已经得到的答案，就可以避免大量重复的计算，从而得到多项式时间算法。"><a href="#3-如果能够保存已经解决的子问题的答案，在需要的时候再找出已经得到的答案，就可以避免大量重复的计算，从而得到多项式时间算法。" class="headerlink" title="3. 如果能够保存已经解决的子问题的答案，在需要的时候再找出已经得到的答案，就可以避免大量重复的计算，从而得到多项式时间算法。"></a>3. 如果能够保存已经解决的子问题的答案，在需要的时候再找出已经得到的答案，就可以避免大量重复的计算，从而得到多项式时间算法。</h3><h3 id="4-基本思想：为了达到这个目的，可以用一个表记录所有已经解决的子问题的答案-不管是否能用得到，只要他被计算过，就将他填入表中，这就是动态规划的基本思想。"><a href="#4-基本思想：为了达到这个目的，可以用一个表记录所有已经解决的子问题的答案-不管是否能用得到，只要他被计算过，就将他填入表中，这就是动态规划的基本思想。" class="headerlink" title="4. 基本思想：为了达到这个目的，可以用一个表记录所有已经解决的子问题的答案.不管是否能用得到，只要他被计算过，就将他填入表中，这就是动态规划的基本思想。"></a>4. 基本思想：为了达到这个目的，可以<code>用一个表</code>记录所有已经解决的子问题的答案.不管是否能用得到，只要他被计算过，就将他填入表中，这就是动态规划的基本思想。</h3><h3 id="5-设计动态规划算法的步骤："><a href="#5-设计动态规划算法的步骤：" class="headerlink" title="5. 设计动态规划算法的步骤："></a>5. 设计动态规划算法的步骤：</h3><h3 id="emsp-1-找出最优解的性质，并刻画其结构特性"><a href="#emsp-1-找出最优解的性质，并刻画其结构特性" class="headerlink" title="&emsp; 1. 找出最优解的性质，并刻画其结构特性"></a>&emsp; 1. 找出最优解的性质，并刻画其结构特性</h3><h3 id="emsp-2-递归的定义最优解"><a href="#emsp-2-递归的定义最优解" class="headerlink" title="&emsp; 2. 递归的定义最优解"></a>&emsp; 2. 递归的定义最优解</h3><h3 id="emsp-3-以自底向上的方式计算出最优解"><a href="#emsp-3-以自底向上的方式计算出最优解" class="headerlink" title="&emsp; 3. 以自底向上的方式计算出最优解"></a>&emsp; 3. 以自底向上的方式计算出最优解</h3><h3 id="emsp-4-根据计算最优时得到的信息，构造最优解"><a href="#emsp-4-根据计算最优时得到的信息，构造最优解" class="headerlink" title="&emsp; 4. 根据计算最优时得到的信息，构造最优解"></a>&emsp; 4. 根据计算最优时得到的信息，构造最优解</h3>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/19/算法/java算法-动态规划法/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="java算法学习--动态规划法">
          &nbsp;
         view
     </span>
