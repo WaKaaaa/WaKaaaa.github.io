@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript高级程序设计第三版笔记一--基础知识 | WaKaaaa猪的博客</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一：JavaScript的实现1. 一个完整的javascript实现由ECMAScript，DOM，BOM三部分组成。其中ECMAScript提供核心语言功能DOM提供访问和操作网页内容的方法和接口BOM提供与浏览器交互的方法和接口二：在HTML中使用JavaScript1. 注意：带有src属性的&amp;lt;script&amp;gt;元素不应该在其&amp;lt;script&amp;gt;和&amp;lt;/script&amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript高级程序设计第三版笔记一--基础知识">
+<meta property="og:url" content="https://WaKaaaa.github.io/2016/12/19/js/JavaScript高级程序设计第三版笔记一-基础知识/index.html">
+<meta property="og:site_name" content="WaKaaaa猪的博客">
+<meta property="og:description" content="一：JavaScript的实现1. 一个完整的javascript实现由ECMAScript，DOM，BOM三部分组成。其中ECMAScript提供核心语言功能DOM提供访问和操作网页内容的方法和接口BOM提供与浏览器交互的方法和接口二：在HTML中使用JavaScript1. 注意：带有src属性的&amp;lt;script&amp;gt;元素不应该在其&amp;lt;script&amp;gt;和&amp;lt;/script&amp;g">
+<meta property="og:updated_time" content="2016-12-19T13:06:56.075Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript高级程序设计第三版笔记一--基础知识">
+<meta name="twitter:description" content="一：JavaScript的实现1. 一个完整的javascript实现由ECMAScript，DOM，BOM三部分组成。其中ECMAScript提供核心语言功能DOM提供访问和操作网页内容的方法和接口BOM提供与浏览器交互的方法和接口二：在HTML中使用JavaScript1. 注意：带有src属性的&amp;lt;script&amp;gt;元素不应该在其&amp;lt;script&amp;gt;和&amp;lt;/script&amp;g">
+  
+    <link rel="alternative" href="/atom.xml" title="WaKaaaa猪的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+      <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("your_app_id", "your_app_key");</script>
+<script src="/js/Counter.js"></script>
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.duoziwang.com/uploads/c160416/1460N50534F-13150.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">WaKaaaa猪</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/JavaScript基础/" style="font-size: 10px;">JavaScript基础</a> <a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a> <a href="/tags/回溯法-n后问题/" style="font-size: 10px;">回溯法 n后问题</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">没关系，虽然你资历平平，但如果你一直这么努力，最坏的结果，也不过是大器晚成。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">WaKaaaa猪</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.duoziwang.com/uploads/c160416/1460N50534F-13150.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">WaKaaaa猪</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-js/JavaScript高级程序设计第三版笔记一-基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/19/js/JavaScript高级程序设计第三版笔记一-基础知识/" class="article-date">
+  	<time datetime="2016-12-19T11:34:10.000Z" itemprop="datePublished">2016-12-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript高级程序设计第三版笔记一--基础知识
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript基础/">JavaScript基础</a></li></ul>
+	</div>
+
+        
+
+        
+          
+<div class="counter-tag counter">
+    <span id="/2016/12/19/js/JavaScript高级程序设计第三版笔记一-基础知识/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="JavaScript高级程序设计第三版笔记一--基础知识">
+         &nbsp;
+        view
+    </span>
+</div>
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一：JavaScript的实现"><a href="#一：JavaScript的实现" class="headerlink" title="一：JavaScript的实现"></a>一：JavaScript的实现</h2><h3 id="1-一个完整的javascript实现由ECMAScript，DOM，BOM三部分组成。其中"><a href="#1-一个完整的javascript实现由ECMAScript，DOM，BOM三部分组成。其中" class="headerlink" title="1. 一个完整的javascript实现由ECMAScript，DOM，BOM三部分组成。其中"></a>1. 一个完整的javascript实现由ECMAScript，DOM，BOM三部分组成。其中</h3><h4 id="ECMAScript提供核心语言功能"><a href="#ECMAScript提供核心语言功能" class="headerlink" title="ECMAScript提供核心语言功能"></a>ECMAScript提供核心语言功能</h4><h4 id="DOM提供访问和操作网页内容的方法和接口"><a href="#DOM提供访问和操作网页内容的方法和接口" class="headerlink" title="DOM提供访问和操作网页内容的方法和接口"></a>DOM提供访问和操作网页内容的方法和接口</h4><h4 id="BOM提供与浏览器交互的方法和接口"><a href="#BOM提供与浏览器交互的方法和接口" class="headerlink" title="BOM提供与浏览器交互的方法和接口"></a>BOM提供与浏览器交互的方法和接口</h4><h2 id="二：在HTML中使用JavaScript"><a href="#二：在HTML中使用JavaScript" class="headerlink" title="二：在HTML中使用JavaScript"></a>二：在HTML中使用JavaScript</h2><h3 id="1-注意：带有src属性的-lt-script-gt-元素不应该在其-lt-script-gt-和-lt-script-gt-标签之间再包含额外的JavaScript代码。如果包含了嵌入的代码，则只会下载并执行外部脚本文件，嵌入的代码会被忽略。简言之：js代码要么全部写在HTML文件里，要么全部写在单独的文件中"><a href="#1-注意：带有src属性的-lt-script-gt-元素不应该在其-lt-script-gt-和-lt-script-gt-标签之间再包含额外的JavaScript代码。如果包含了嵌入的代码，则只会下载并执行外部脚本文件，嵌入的代码会被忽略。简言之：js代码要么全部写在HTML文件里，要么全部写在单独的文件中" class="headerlink" title="1. 注意：带有src属性的&lt;script&gt;元素不应该在其&lt;script&gt;和&lt;/script&gt;标签之间再包含额外的JavaScript代码。如果包含了嵌入的代码，则只会下载并执行外部脚本文件，嵌入的代码会被忽略。简言之：js代码要么全部写在HTML文件里，要么全部写在单独的文件中"></a>1. 注意：带有src属性的<code>&lt;script&gt;</code>元素不应该在其<code>&lt;script&gt;和&lt;/script&gt;</code>标签之间再包含额外的JavaScript代码。如果包含了嵌入的代码，则只会下载并执行外部脚本文件，嵌入的代码会被忽略。简言之：<code>js代码要么全部写在HTML文件里，要么全部写在单独的文件中</code></h3><h3 id="2-通过src属性可以引入包含外部域的JavaScript文件，但这样做要万分小心，注意程序员对那个文件的恶意修改。如果你想包含来自不同域的代码，要么你是那个域的所有者，要么那个域的所有者值得信赖。"><a href="#2-通过src属性可以引入包含外部域的JavaScript文件，但这样做要万分小心，注意程序员对那个文件的恶意修改。如果你想包含来自不同域的代码，要么你是那个域的所有者，要么那个域的所有者值得信赖。" class="headerlink" title="2. 通过src属性可以引入包含外部域的JavaScript文件，但这样做要万分小心，注意程序员对那个文件的恶意修改。如果你想包含来自不同域的代码，要么你是那个域的所有者，要么那个域的所有者值得信赖。"></a>2. 通过src属性可以引入包含外部域的JavaScript文件，但这样做要万分小心，注意程序员对那个文件的恶意修改。如果你想包含来自不同域的代码，要么你是那个域的所有者，要么那个域的所有者值得信赖。</h3><h3 id="3-无论如何包含代码，只要不存在defer和async属性，浏览器都会按照-lt-script-gt-元素在页面中出现的先后顺序对他们依次进行解析，也就是说，在第一个script元素包含的代码解析完成之后，第二个script包含的代码才会被解析，然后睡第三个，第四个······"><a href="#3-无论如何包含代码，只要不存在defer和async属性，浏览器都会按照-lt-script-gt-元素在页面中出现的先后顺序对他们依次进行解析，也就是说，在第一个script元素包含的代码解析完成之后，第二个script包含的代码才会被解析，然后睡第三个，第四个······" class="headerlink" title="3. 无论如何包含代码，只要不存在defer和async属性，浏览器都会按照&lt;script&gt;元素在页面中出现的先后顺序对他们依次进行解析，也就是说，在第一个script元素包含的代码解析完成之后，第二个script包含的代码才会被解析，然后睡第三个，第四个······"></a>3. 无论如何包含代码，只要不存在defer和async属性，浏览器都会按照<code>&lt;script&gt;元素在页面中出现的先后顺序对他们依次进行解析</code>，也就是说，在第一个script元素包含的代码解析完成之后，第二个script包含的代码才会被解析，然后睡第三个，第四个······</h3><h3 id="4-何谓defer和asyn？-defer和async的区别-和defer-async的原理及应用"><a href="#4-何谓defer和asyn？-defer和async的区别-和defer-async的原理及应用" class="headerlink" title="4. 何谓defer和asyn？ defer和async的区别 和defer async的原理及应用"></a>4. 何谓defer和asyn？ <a scr="https://segmentfault.com/q/1010000000640869">defer和async的区别</a> 和<a src="http://blog.csdn.net/liuhe688/article/details/51247484">defer async的原理及应用</a></h3><h3 id="5-我原先不知道的：在传统的做法中，所有的-lt-script-gt-都应该放在页面的头文件中，这种做法的目的就是将所有的外部文件（CSS和js文件）的引用都放在相同的地方，但这意味着必须等到全部的js代码全部被下载，解析，执行完成之后，才能开始执行页面内容（浏览器遇到body才开始呈现页面内容）。对于那些包含很多js文件的网页来说，这会导致在浏览器呈现页面的时候出现明显的延迟，而延迟期间的浏览器串口是一片空白。为了避免这个问题，现代web应用程序一般都把全部的js引用放在body页面元素中页面的后面。这样，在解析包含的js代码之前，页面的内容将完全的呈现在浏览器中，而用户也会因为浏览器窗口显示空白页面的时间缩短而感到打开页面的速度加快了。"><a href="#5-我原先不知道的：在传统的做法中，所有的-lt-script-gt-都应该放在页面的头文件中，这种做法的目的就是将所有的外部文件（CSS和js文件）的引用都放在相同的地方，但这意味着必须等到全部的js代码全部被下载，解析，执行完成之后，才能开始执行页面内容（浏览器遇到body才开始呈现页面内容）。对于那些包含很多js文件的网页来说，这会导致在浏览器呈现页面的时候出现明显的延迟，而延迟期间的浏览器串口是一片空白。为了避免这个问题，现代web应用程序一般都把全部的js引用放在body页面元素中页面的后面。这样，在解析包含的js代码之前，页面的内容将完全的呈现在浏览器中，而用户也会因为浏览器窗口显示空白页面的时间缩短而感到打开页面的速度加快了。" class="headerlink" title="5. 我原先不知道的：在传统的做法中，所有的&lt;script&gt;都应该放在页面的头文件中，这种做法的目的就是将所有的外部文件（CSS和js文件）的引用都放在相同的地方，但这意味着必须等到全部的js代码全部被下载，解析，执行完成之后，才能开始执行页面内容（浏览器遇到body才开始呈现页面内容）。对于那些包含很多js文件的网页来说，这会导致在浏览器呈现页面的时候出现明显的延迟，而延迟期间的浏览器串口是一片空白。为了避免这个问题，现代web应用程序一般都把全部的js引用放在body页面元素中页面的后面。这样，在解析包含的js代码之前，页面的内容将完全的呈现在浏览器中，而用户也会因为浏览器窗口显示空白页面的时间缩短而感到打开页面的速度加快了。"></a>5. 我原先不知道的：在传统的做法中，所有的<code>&lt;script&gt;</code>都应该放在页面的头文件中，这种做法的目的就是将所有的外部文件（CSS和js文件）的引用都放在相同的地方，但这意味着<code>必须等到全部的js代码全部被下载，解析，执行完成之后，才能开始执行页面内容</code>（浏览器遇到body才开始呈现页面内容）。对于那些包含很多js文件的网页来说，这会导致在浏览器呈现页面的时候出现明显的延迟，而延迟期间的浏览器串口是一片空白。为了避免这个问题，现代web应用程序一般<code>都把全部的js引用放在body页面元素中页面的后面</code>。这样，在解析包含的js代码之前，页面的内容将完全的呈现在浏览器中，而用户也会因为浏览器窗口显示空白页面的时间缩短而感到打开页面的速度加快了。</h3><h3 id="6-不支持JavaScript的浏览器会将-lt-script-gt-元素的浏览器能够隐藏嵌入的JavaScript代码。解决的方法是把包含JavaScript代码包含在一个HTML注释中。这样，不支持的浏览器就会忽略注释中的代码，支持的浏览器就会进一步确认其中是否包含所需要解析的JavaScript代码"><a href="#6-不支持JavaScript的浏览器会将-lt-script-gt-元素的浏览器能够隐藏嵌入的JavaScript代码。解决的方法是把包含JavaScript代码包含在一个HTML注释中。这样，不支持的浏览器就会忽略注释中的代码，支持的浏览器就会进一步确认其中是否包含所需要解析的JavaScript代码" class="headerlink" title="6. 不支持JavaScript的浏览器会将&lt;script&gt;元素的浏览器能够隐藏嵌入的JavaScript代码。解决的方法是把包含JavaScript代码包含在一个HTML注释中。这样，不支持的浏览器就会忽略注释中的代码，支持的浏览器就会进一步确认其中是否包含所需要解析的JavaScript代码"></a>6. 不支持JavaScript的浏览器会将<code>&lt;script&gt;</code>元素的浏览器能够隐藏嵌入的JavaScript代码。解决的方法是把包含JavaScript代码包含在一个HTML注释中。这样，不支持的浏览器就会忽略注释中的代码，支持的浏览器就会进一步确认其中是否包含所需要解析的JavaScript代码</h3><h3 id="7-lt-noscript-gt-元素可以指定在不支持脚本的浏览器中显示的替代内容，但是启用了脚本的情况下，浏览器不会显示-lt-noscript-gt-中的任何内容。这个元素支持所有-lt-body-gt-支持的元素，-lt-script-gt-元素除外。"><a href="#7-lt-noscript-gt-元素可以指定在不支持脚本的浏览器中显示的替代内容，但是启用了脚本的情况下，浏览器不会显示-lt-noscript-gt-中的任何内容。这个元素支持所有-lt-body-gt-支持的元素，-lt-script-gt-元素除外。" class="headerlink" title="7. &lt;noscript&gt;元素可以指定在不支持脚本的浏览器中显示的替代内容，但是启用了脚本的情况下，浏览器不会显示&lt;noscript&gt;中的任何内容。这个元素支持所有&lt;body&gt;支持的元素，&lt;script&gt;元素除外。"></a>7. <code>&lt;noscript&gt;</code>元素可以指定在不支持脚本的浏览器中显示的替代内容，但是启用了脚本的情况下，浏览器不会显示<code>&lt;noscript&gt;</code>中的任何内容。这个元素<code>支持所有&lt;body&gt;支持的元素，&lt;script&gt;元素除外</code>。</h3>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/02/算法/Java算法-回溯法-n后问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java算法学习--回溯法--n后问题</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="js/JavaScript高级程序设计第三版笔记一-基础知识" data-title="JavaScript高级程序设计第三版笔记一--基础知识" data-url="https://WaKaaaa.github.io/2016/12/19/js/JavaScript高级程序设计第三版笔记一-基础知识/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"your duoshuo id"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 WaKaaaa猪
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/winnerweb/hexo-Yilia-Smackdown" target="_blank">Yilia(Smackdown)</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
