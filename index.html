@@ -192,6 +192,79 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-js/JavaScript高级程序设计第三版笔记二-基本概念" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/19/js/JavaScript高级程序设计第三版笔记二-基本概念/" class="article-date">
+  	<time datetime="2016-12-19T13:22:45.000Z" itemprop="datePublished">2016-12-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/19/js/JavaScript高级程序设计第三版笔记二-基本概念/">
+        JavaScript高级程序设计第三版笔记二--基本概念
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-标识符：是指变量，函数，属性的名称，或者函数的参数。不能把关键字，保留字，true，false和null用作标识符"><a href="#1-标识符：是指变量，函数，属性的名称，或者函数的参数。不能把关键字，保留字，true，false和null用作标识符" class="headerlink" title="1. 标识符：是指变量，函数，属性的名称，或者函数的参数。不能把关键字，保留字，true，false和null用作标识符"></a>1. 标识符：是指变量，函数，属性的名称，或者函数的参数。不能把关键字，保留字，true，false和null用作标识符</h2><h2 id="2-多行注释"><a href="#2-多行注释" class="headerlink" title="2. 多行注释"></a>2. 多行注释</h2><pre><code>/*    
+ *    这是多行注释，但是第二行和第三行的*不是必须的，为了提高注释的可读性，要写上*
+ *
+ */
+</code></pre><h2 id="3-严格模式：在这种模式下一些不确定的行为将得到处理，而且对某些不安全的操作也会抛出异常。"><a href="#3-严格模式：在这种模式下一些不确定的行为将得到处理，而且对某些不安全的操作也会抛出异常。" class="headerlink" title="3. 严格模式：在这种模式下一些不确定的行为将得到处理，而且对某些不安全的操作也会抛出异常。"></a>3. 严格模式：在这种模式下一些不确定的行为将得到处理，而且对某些不安全的操作也会抛出异常。</h2><h4 id="在整个脚本中启用严格模式的方法：在顶部添加一下代码"><a href="#在整个脚本中启用严格模式的方法：在顶部添加一下代码" class="headerlink" title="在整个脚本中启用严格模式的方法：在顶部添加一下代码"></a>在整个脚本中启用严格模式的方法：在顶部添加一下代码</h4><pre><code>&quot;use strict&quot;;
+</code></pre><h4 id="也可以指定函数在严格模式下执行"><a href="#也可以指定函数在严格模式下执行" class="headerlink" title="也可以指定函数在严格模式下执行"></a>也可以指定函数在严格模式下执行</h4><pre><code>function do(){
+    &quot;use strict&quot;;
+    //函数体
+}
+</code></pre><h2 id="4-语句：虽然语句末尾的分号不是必须的，但是建议在任何时候都不要省略他"><a href="#4-语句：虽然语句末尾的分号不是必须的，但是建议在任何时候都不要省略他" class="headerlink" title="4. 语句：虽然语句末尾的分号不是必须的，但是建议在任何时候都不要省略他"></a>4. 语句：虽然语句末尾的分号不是必须的，但是<code>建议在任何时候都不要省略他</code></h2><h2 id="5-关键字和保留字-http-m-jb51-net-article-56359-htm"><a href="#5-关键字和保留字-http-m-jb51-net-article-56359-htm" class="headerlink" title="5. 关键字和保留字 http://m.jb51.net/article/56359.htm"></a>5. 关键字和保留字 <a src="http://m.jb51.net/article/56359.htm">http://m.jb51.net/article/56359.htm</a></h2><h2 id="6-变量"><a href="#6-变量" class="headerlink" title="6. 变量"></a>6. 变量</h2><h4 id="6-1-ECMAScript的变量是松散类型的。松散类型指变量可以用来保存任何类型的数据"><a href="#6-1-ECMAScript的变量是松散类型的。松散类型指变量可以用来保存任何类型的数据" class="headerlink" title="6.1 ECMAScript的变量是松散类型的。松散类型指变量可以用来保存任何类型的数据"></a>6.1 ECMAScript的变量是<code>松散类型</code>的。松散类型指<code>变量可以用来保存任何类型的数据</code></h4><h4 id="6-2未经初始化的变量会保存一个特殊的值：undefined"><a href="#6-2未经初始化的变量会保存一个特殊的值：undefined" class="headerlink" title="6.2未经初始化的变量会保存一个特殊的值：undefined"></a>6.2未经初始化的变量会保存一个特殊的值：undefined</h4><h4 id="局部变量和全局变量：如果在函数中使用var定义一个变量，那么这个变量在函数退出后会被销毁，也就是有个局部变量。省略var操作符，从而创建一个全局变量，但是这种做法是不推荐的，因为会导致混乱而且全局变量很难维护"><a href="#局部变量和全局变量：如果在函数中使用var定义一个变量，那么这个变量在函数退出后会被销毁，也就是有个局部变量。省略var操作符，从而创建一个全局变量，但是这种做法是不推荐的，因为会导致混乱而且全局变量很难维护" class="headerlink" title="局部变量和全局变量：如果在函数中使用var定义一个变量，那么这个变量在函数退出后会被销毁，也就是有个局部变量。省略var操作符，从而创建一个全局变量，但是这种做法是不推荐的，因为会导致混乱而且全局变量很难维护"></a>局部变量和全局变量：如果在函数中使用var定义一个变量，那么这个变量在函数退出后会被销毁，也就是有个局部变量。省略var操作符，从而创建一个全局变量，但是这种做法是不推荐的，因为会导致混乱而且全局变量很难维护</h4>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/12/19/js/JavaScript高级程序设计第三版笔记二-基本概念/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="JavaScript高级程序设计第三版笔记二--基本概念">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-js/JavaScript高级程序设计第三版笔记一-基础知识" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1082,70 +1155,6 @@ echo &quot;&lt;script&gt;alert(&apos;文件上传成功&apos;); location.href = 
 <div class="counter-tag counter">
     <span id="/2016/11/22/php/php-上传文件/" class="leancloud_visitors post-title-link"
           style="font-size: 12px" data-flag-title="php学习--上传文件">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-算法/java算法-最长公共子序列" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/19/算法/java算法-最长公共子序列/" class="article-date">
-  	<time datetime="2016-11-19T12:29:58.000Z" itemprop="datePublished">2016-11-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/19/算法/java算法-最长公共子序列/">
-        java算法学习--最长公共子序列
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-公共子序列：给定两个序列X和Y，如果另一个序列Z既是X的子序列，又是Y的子序列，那么就称Z是X，Y的公共子序列"><a href="#1-公共子序列：给定两个序列X和Y，如果另一个序列Z既是X的子序列，又是Y的子序列，那么就称Z是X，Y的公共子序列" class="headerlink" title="1. 公共子序列：给定两个序列X和Y，如果另一个序列Z既是X的子序列，又是Y的子序列，那么就称Z是X，Y的公共子序列"></a>1. 公共子序列：给定两个序列X和Y，如果另一个序列Z既是X的子序列，又是Y的子序列，那么就称Z是X，Y的公共子序列</h3><h3 id="2-子序列：在给定的一个序列-X-删除掉若干个元素之后组成的序列-Z-是序列-X-的子序列。这个子序列是严格按照原来X序列下标递增的序列。简单的例子：Z-B-C-D-B-是序列X-A-B-C-B-D-A-B-的子序列，递增下标序列是-2-3-5-7"><a href="#2-子序列：在给定的一个序列-X-删除掉若干个元素之后组成的序列-Z-是序列-X-的子序列。这个子序列是严格按照原来X序列下标递增的序列。简单的例子：Z-B-C-D-B-是序列X-A-B-C-B-D-A-B-的子序列，递增下标序列是-2-3-5-7" class="headerlink" title="2. 子序列：在给定的一个序列 X 删除掉若干个元素之后组成的序列 Z 是序列 X 的子序列。这个子序列是严格按照原来X序列下标递增的序列。简单的例子：Z = {B,C,D,B}是序列X = {A,B,C,B,D,A,B}的子序列，递增下标序列是{2,3,5,7}"></a>2. 子序列：在给定的一个序列 X 删除掉若干个元素之后组成的序列 Z 是序列 X 的子序列。这个子序列是严格按照原来X序列下标递增的序列。简单的例子：Z = {B,C,D,B}是序列X = {A,B,C,B,D,A,B}的子序列，递增下标序列是{2,3,5,7}</h3><h3 id="3-最长公共子序列：两个序列中最长的子序列。"><a href="#3-最长公共子序列：两个序列中最长的子序列。" class="headerlink" title="3. 最长公共子序列：两个序列中最长的子序列。"></a>3. 最长公共子序列：两个序列中最长的子序列。</h3><h3 id="4-最长公共子序列有最优子结构性质"><a href="#4-最长公共子序列有最优子结构性质" class="headerlink" title="4. 最长公共子序列有最优子结构性质"></a>4. 最长公共子序列有最优子结构性质</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/19/算法/java算法-最长公共子序列/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="java算法学习--最长公共子序列">
          &nbsp;
         view
     </span>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript高级程序设计第三版笔记二--基本概念 | WaKaaaa猪的博客</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 标识符：是指变量，函数，属性的名称，或者函数的参数。不能把关键字，保留字，true，false和null用作标识符2. 多行注释/*    
+ *    这是多行注释，但是第二行和第三行的*不是必须的，为了提高注释的可读性，要写上*
+ *
+ */
+3. 严格模式：在这种模式下一些不确定的行为将得到处理，而且对某些不安全的操作也会抛出异常。在整个脚本中启用严格模式的方法：在顶部添加一下代码&amp;q">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript高级程序设计第三版笔记二--基本概念">
+<meta property="og:url" content="https://WaKaaaa.github.io/2016/12/19/js/JavaScript高级程序设计第三版笔记二-基本概念/index.html">
+<meta property="og:site_name" content="WaKaaaa猪的博客">
+<meta property="og:description" content="1. 标识符：是指变量，函数，属性的名称，或者函数的参数。不能把关键字，保留字，true，false和null用作标识符2. 多行注释/*    
+ *    这是多行注释，但是第二行和第三行的*不是必须的，为了提高注释的可读性，要写上*
+ *
+ */
+3. 严格模式：在这种模式下一些不确定的行为将得到处理，而且对某些不安全的操作也会抛出异常。在整个脚本中启用严格模式的方法：在顶部添加一下代码&amp;q">
+<meta property="og:updated_time" content="2016-12-19T13:48:34.327Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript高级程序设计第三版笔记二--基本概念">
+<meta name="twitter:description" content="1. 标识符：是指变量，函数，属性的名称，或者函数的参数。不能把关键字，保留字，true，false和null用作标识符2. 多行注释/*    
+ *    这是多行注释，但是第二行和第三行的*不是必须的，为了提高注释的可读性，要写上*
+ *
+ */
+3. 严格模式：在这种模式下一些不确定的行为将得到处理，而且对某些不安全的操作也会抛出异常。在整个脚本中启用严格模式的方法：在顶部添加一下代码&amp;q">
+  
+    <link rel="alternative" href="/atom.xml" title="WaKaaaa猪的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+      <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("your_app_id", "your_app_key");</script>
+<script src="/js/Counter.js"></script>
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.duoziwang.com/uploads/c160416/1460N50534F-13150.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">WaKaaaa猪</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a> <a href="/tags/回溯法-n后问题/" style="font-size: 10px;">回溯法 n后问题</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">没关系，虽然你资历平平，但如果你一直这么努力，最坏的结果，也不过是大器晚成。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">WaKaaaa猪</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.duoziwang.com/uploads/c160416/1460N50534F-13150.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">WaKaaaa猪</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-js/JavaScript高级程序设计第三版笔记二-基本概念" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/19/js/JavaScript高级程序设计第三版笔记二-基本概念/" class="article-date">
+  	<time datetime="2016-12-19T13:22:45.000Z" itemprop="datePublished">2016-12-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript高级程序设计第三版笔记二--基本概念
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+          
+<div class="counter-tag counter">
+    <span id="/2016/12/19/js/JavaScript高级程序设计第三版笔记二-基本概念/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="JavaScript高级程序设计第三版笔记二--基本概念">
+         &nbsp;
+        view
+    </span>
+</div>
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-标识符：是指变量，函数，属性的名称，或者函数的参数。不能把关键字，保留字，true，false和null用作标识符"><a href="#1-标识符：是指变量，函数，属性的名称，或者函数的参数。不能把关键字，保留字，true，false和null用作标识符" class="headerlink" title="1. 标识符：是指变量，函数，属性的名称，或者函数的参数。不能把关键字，保留字，true，false和null用作标识符"></a>1. 标识符：是指变量，函数，属性的名称，或者函数的参数。不能把关键字，保留字，true，false和null用作标识符</h2><h2 id="2-多行注释"><a href="#2-多行注释" class="headerlink" title="2. 多行注释"></a>2. 多行注释</h2><pre><code>/*    
+ *    这是多行注释，但是第二行和第三行的*不是必须的，为了提高注释的可读性，要写上*
+ *
+ */
+</code></pre><h2 id="3-严格模式：在这种模式下一些不确定的行为将得到处理，而且对某些不安全的操作也会抛出异常。"><a href="#3-严格模式：在这种模式下一些不确定的行为将得到处理，而且对某些不安全的操作也会抛出异常。" class="headerlink" title="3. 严格模式：在这种模式下一些不确定的行为将得到处理，而且对某些不安全的操作也会抛出异常。"></a>3. 严格模式：在这种模式下一些不确定的行为将得到处理，而且对某些不安全的操作也会抛出异常。</h2><h4 id="在整个脚本中启用严格模式的方法：在顶部添加一下代码"><a href="#在整个脚本中启用严格模式的方法：在顶部添加一下代码" class="headerlink" title="在整个脚本中启用严格模式的方法：在顶部添加一下代码"></a>在整个脚本中启用严格模式的方法：在顶部添加一下代码</h4><pre><code>&quot;use strict&quot;;
+</code></pre><h4 id="也可以指定函数在严格模式下执行"><a href="#也可以指定函数在严格模式下执行" class="headerlink" title="也可以指定函数在严格模式下执行"></a>也可以指定函数在严格模式下执行</h4><pre><code>function do(){
+    &quot;use strict&quot;;
+    //函数体
+}
+</code></pre><h2 id="4-语句：虽然语句末尾的分号不是必须的，但是建议在任何时候都不要省略他"><a href="#4-语句：虽然语句末尾的分号不是必须的，但是建议在任何时候都不要省略他" class="headerlink" title="4. 语句：虽然语句末尾的分号不是必须的，但是建议在任何时候都不要省略他"></a>4. 语句：虽然语句末尾的分号不是必须的，但是<code>建议在任何时候都不要省略他</code></h2><h2 id="5-关键字和保留字-http-m-jb51-net-article-56359-htm"><a href="#5-关键字和保留字-http-m-jb51-net-article-56359-htm" class="headerlink" title="5. 关键字和保留字 http://m.jb51.net/article/56359.htm"></a>5. 关键字和保留字 <a src="http://m.jb51.net/article/56359.htm">http://m.jb51.net/article/56359.htm</a></h2><h2 id="6-变量"><a href="#6-变量" class="headerlink" title="6. 变量"></a>6. 变量</h2><h4 id="6-1-ECMAScript的变量是松散类型的。松散类型指变量可以用来保存任何类型的数据"><a href="#6-1-ECMAScript的变量是松散类型的。松散类型指变量可以用来保存任何类型的数据" class="headerlink" title="6.1 ECMAScript的变量是松散类型的。松散类型指变量可以用来保存任何类型的数据"></a>6.1 ECMAScript的变量是<code>松散类型</code>的。松散类型指<code>变量可以用来保存任何类型的数据</code></h4><h4 id="6-2未经初始化的变量会保存一个特殊的值：undefined"><a href="#6-2未经初始化的变量会保存一个特殊的值：undefined" class="headerlink" title="6.2未经初始化的变量会保存一个特殊的值：undefined"></a>6.2未经初始化的变量会保存一个特殊的值：undefined</h4><h4 id="局部变量和全局变量：如果在函数中使用var定义一个变量，那么这个变量在函数退出后会被销毁，也就是有个局部变量。省略var操作符，从而创建一个全局变量，但是这种做法是不推荐的，因为会导致混乱而且全局变量很难维护"><a href="#局部变量和全局变量：如果在函数中使用var定义一个变量，那么这个变量在函数退出后会被销毁，也就是有个局部变量。省略var操作符，从而创建一个全局变量，但是这种做法是不推荐的，因为会导致混乱而且全局变量很难维护" class="headerlink" title="局部变量和全局变量：如果在函数中使用var定义一个变量，那么这个变量在函数退出后会被销毁，也就是有个局部变量。省略var操作符，从而创建一个全局变量，但是这种做法是不推荐的，因为会导致混乱而且全局变量很难维护"></a>局部变量和全局变量：如果在函数中使用var定义一个变量，那么这个变量在函数退出后会被销毁，也就是有个局部变量。省略var操作符，从而创建一个全局变量，但是这种做法是不推荐的，因为会导致混乱而且全局变量很难维护</h4>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/19/js/JavaScript高级程序设计第三版笔记一-基础知识/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript高级程序设计第三版笔记一--基础知识</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="js/JavaScript高级程序设计第三版笔记二-基本概念" data-title="JavaScript高级程序设计第三版笔记二--基本概念" data-url="https://WaKaaaa.github.io/2016/12/19/js/JavaScript高级程序设计第三版笔记二-基本概念/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"your duoshuo id"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 WaKaaaa猪
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/winnerweb/hexo-Yilia-Smackdown" target="_blank">Yilia(Smackdown)</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>

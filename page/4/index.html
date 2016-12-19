@@ -192,6 +192,165 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-php/php--数组二维" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/19/php/php--数组二维/" class="article-date">
+  	<time datetime="2016-10-19T06:56:23.000Z" itemprop="datePublished">2016-10-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/19/php/php--数组二维/">
+        php学习--二维数组（数组中的数组）
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="php-二维数组"><a href="#php-二维数组" class="headerlink" title=" php 二维数组"></a><center> php 二维数组</center></h1><p>##1.定义    </p>
+<h3 id="数组的元素本身仍然是数组的数组成为二维数组，可以把二维数组当成一个矩阵，或者是一个具有宽度和高度或者行和列的网格。一维数组只在一行或者一列上显示，二维数组则像网格一样有好几行和好几列。"><a href="#数组的元素本身仍然是数组的数组成为二维数组，可以把二维数组当成一个矩阵，或者是一个具有宽度和高度或者行和列的网格。一维数组只在一行或者一列上显示，二维数组则像网格一样有好几行和好几列。" class="headerlink" title="数组的元素本身仍然是数组的数组成为二维数组，可以把二维数组当成一个矩阵，或者是一个具有宽度和高度或者行和列的网格。一维数组只在一行或者一列上显示，二维数组则像网格一样有好几行和好几列。"></a>数组的元素本身仍然是数组的数组成为二维数组，可以把二维数组当成一个矩阵，或者是一个具有宽度和高度或者行和列的网格。一维数组只在一行或者一列上显示，二维数组则像网格一样有好几行和好几列。</h3><h2 id="2-创建一个简单的二维数组"><a href="#2-创建一个简单的二维数组" class="headerlink" title="2.创建一个简单的二维数组"></a>2.创建一个简单的二维数组</h2><pre><code>&lt;?php 
+    $students = array(
+        array(&apos;aaa&apos;,18,&apos;man&apos;),
+        array(&apos;bbb&apos;,19,&apos;woman&apos;),
+        array(&apos;ccc&apos;,17,&apos;man&apos;)
+        );
+    print_r($students);
+ ?&gt;
+打印结果：Array
+        (
+            [0] =&gt; Array
+                (
+                    [0] =&gt; aaa
+                    [1] =&gt; 18
+                    [2] =&gt; man
+                )
+
+            [1] =&gt; Array
+                (
+                    [0] =&gt; bbb
+                    [1] =&gt; 19
+                    [2] =&gt; woman
+                )
+
+            [2] =&gt; Array
+                (
+                    [0] =&gt; ccc
+                    [1] =&gt; 17
+                    [2] =&gt; man
+                )
+
+        )
+</code></pre><h2 id="3-打印内外数组长度的方法"><a href="#3-打印内外数组长度的方法" class="headerlink" title="3.打印内外数组长度的方法"></a>3.打印内外数组长度的方法</h2><pre><code>$students = array(
+    array(&apos;aaa&apos;,18,&apos;man&apos;), //第0行
+    array(&apos;bbb&apos;,19,&apos;woman&apos;), //第1行
+    array(&apos;ccc&apos;,17,&apos;man&apos;)    //第2行
+    );
+echo count($students);    //打印外数组长度的方法，即student的长度，是里边的三个数组，结果是3，这个是外层的数组student的个数。
+// count($students);通俗地讲是二维数组的行数
+echo count($students[1]);    //3
+echo count($students[2]);    //3
+echo count($students[0]);    //打印内数组的长度的方法，即student的第1个元素的长度，结果是3
+</code></pre><h2 id="4-打印数组元素的方法"><a href="#4-打印数组元素的方法" class="headerlink" title="4.打印数组元素的方法"></a>4.打印数组元素的方法</h2><h3 id="没有键的情况"><a href="#没有键的情况" class="headerlink" title="没有键的情况"></a>没有键的情况</h3><pre><code>$students = array(
+array(&apos;aaa&apos;,18,&apos;man&apos;,), //第0行
+array(&apos;bbb&apos;,19,&apos;woman&apos;,&apos;green&apos;), //第1行
+array(&apos;ccc&apos;,17,&apos;man&apos;,&apos;red&apos;)    //第二行
+);
+// 这两种方法适合下标为0,1,2...的情况
+//打印二维数组的第一种方法，此方法很麻烦
+echo $students[0][0].&quot;|&quot;.$students[0][1].&quot;|&quot;.$students[0][2].&quot;&lt;br&gt;&quot;;
+echo $students[1][0].&quot;|&quot;.$students[1][1].&quot;|&quot;.$students[1][2].&quot;&lt;br&gt;&quot;;
+echo $students[2][0].&quot;|&quot;.$students[2][1].&quot;|&quot;.$students[2][2].&quot;&lt;br&gt;&quot;;
+
+//打印数组的第二种方法：for循环,两重循环打印二维数组
+for ($i=0; $i &lt; count($students); $i++) { 
+    // echo $students;    //此时打印3个array，这是求student含有几个数组
+    for ($j=0; $j &lt; count($students[$i]); $j++) {     //这里用$i的原因：就算内层数组里元素的个数各不相同也可以打印的出来
+        echo $students[$i][$j].&quot;|&quot;;
+    }
+    echo &quot;&lt;br&gt;&quot;;    //外层循环3次，每次加1个换行
+}
+结果：
+    aaa|18|man
+    bbb|19|woman
+    ccc|17|man
+    aaa|18|man|
+    bbb|19|woman|green|
+    ccc|17|man|red|
+</code></pre><h3 id="有自定义键的情况"><a href="#有自定义键的情况" class="headerlink" title="有自定义键的情况"></a>有自定义键的情况</h3><pre><code>&lt;?php 
+    $students = array(
+    array(&apos;name&apos;=&gt;&apos;aaa&apos;, &apos;age&apos;=&gt;18, &apos;sex&apos;=&gt;&apos;man&apos;,), //第0行
+    array(&apos;name&apos;=&gt;&apos;bbb&apos;, &apos;age&apos;=&gt;19, &apos;sex&apos;=&gt;&apos;woman&apos;, &apos;color&apos;=&gt;&apos;green&apos;), //第1行
+    array(&apos;name&apos;=&gt;&apos;ccc&apos;, &apos;age&apos;=&gt;17, &apos;sex&apos;=&gt;&apos;man&apos;, &apos;color&apos;=&gt;&apos;red&apos;)    //第二行
+    );
+    // print_r($students);
+
+//第一种方法：foreach
+    for ($i=0; $i &lt;count($students); $i++) {  
+        foreach ($students[$i] as $key =&gt; $value) {        //输出第0,1,2行的键和值
+            echo $key.&quot;--&quot;.$value.&quot;|&quot;;    //每输出一次键值打印一个|
+        }
+        echo &quot;&lt;br&gt;&quot;;    //每输出一行打印一个换行
+    }
+
+//第二种方法：list和each
+    for ($i=0; $i &lt;count($students); $i++) { 
+        while (!!list($key,$value) = each($students[$i])){    //each表示取得第0行，1行，2行
+
+            echo $key.&apos;--&apos;.$value.&apos;|&apos;;
+        }
+        echo &quot;&lt;br&gt;&quot;;
+    }
+
+ ?&gt;
+</code></pre><h3 id="关于list-each组合，foreach，情况上一篇"><a href="#关于list-each组合，foreach，情况上一篇" class="headerlink" title="关于list each组合，foreach，情况上一篇"></a>关于list each组合，foreach，情况上一篇</h3>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/10/19/php/php--数组二维/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--二维数组（数组中的数组）">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-php/php--输出" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
