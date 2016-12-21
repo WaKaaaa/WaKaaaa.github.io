@@ -138,7 +138,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a> <a href="/tags/回溯法-n后问题/" style="font-size: 10px;">回溯法 n后问题</a>
+						<a href="/tags/Boolean-转型函数-typeof-isFinite/" style="font-size: 10px;">Boolean()转型函数 typeof() isFinite()</a> <a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a> <a href="/tags/回溯法-n后问题/" style="font-size: 10px;">回溯法 n后问题</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,205 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-算法/java算法-递归与分治策略" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/23/算法/java算法-递归与分治策略/" class="article-date">
+  	<time datetime="2016-11-23T06:48:57.000Z" itemprop="datePublished">2016-11-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/23/算法/java算法-递归与分治策略/">
+        java算法学习--递归与分治策略
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题相互独立且与原问题规模相同。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。"><a href="#1-分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题相互独立且与原问题规模相同。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。" class="headerlink" title="1. 分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题相互独立且与原问题规模相同。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。"></a>1. 分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题<code>相互独立</code>且<code>与原问题规模相同</code>。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。</h3><h3 id="由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。"><a href="#由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。" class="headerlink" title="由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。"></a>由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。</h3><h3 id="在用分治法设计算法时，最好使子问题的规模大致相同，即将一个问题分成大小相等的k个子问题的处理方法是行之有效的。一般设计出的算法是递归算法"><a href="#在用分治法设计算法时，最好使子问题的规模大致相同，即将一个问题分成大小相等的k个子问题的处理方法是行之有效的。一般设计出的算法是递归算法" class="headerlink" title="在用分治法设计算法时，最好使子问题的规模大致相同，即将一个问题分成大小相等的k个子问题的处理方法是行之有效的。一般设计出的算法是递归算法"></a>在用分治法设计算法时，最好<code>使子问题的规模大致相同</code>，即将一个问题分成大小相等的k个子问题的处理方法是行之有效的。一般设计出的算法是递归算法</h3><h3 id="3-递归的概念：直接或者间接地调用自身的算法称为递归算法。"><a href="#3-递归的概念：直接或者间接地调用自身的算法称为递归算法。" class="headerlink" title="3.递归的概念：直接或者间接地调用自身的算法称为递归算法。"></a>3.递归的概念：直接或者间接地调用自身的算法称为递归算法。</h3><h3 id="4-递归函数：用函数自身给出定义的函数称为递归函数。如阶乘函数，斐波那契数列，排列问题，整数划分问题，汉诺塔问题"><a href="#4-递归函数：用函数自身给出定义的函数称为递归函数。如阶乘函数，斐波那契数列，排列问题，整数划分问题，汉诺塔问题" class="headerlink" title="4.递归函数：用函数自身给出定义的函数称为递归函数。如阶乘函数，斐波那契数列，排列问题，整数划分问题，汉诺塔问题"></a>4.递归函数：用函数自身给出定义的函数称为递归函数。如阶乘函数，斐波那契数列，排列问题，整数划分问题，汉诺塔问题</h3><h3 id="算法的设计模式如下："><a href="#算法的设计模式如下：" class="headerlink" title="算法的设计模式如下："></a>算法的设计模式如下：</h3><pre><code>public class Divide_aand_conquer（P） {
+    if(|p| &lt;= n0) adhoc(p);         // |p|表示问题P的规模，n0是一个阈值，表示当P的规模小于N0的时候，就可以很容易得求出，就不必再进行分解了.adhoc(p)是该分治法中的基本子算法，用于直接求解小规模的问题P
+    divide P into smallers subinstances P1,P2,P3...Pk;
+    for(i=1; i&lt;=k; i++){
+        yi = divide-and-conquer(Pi);
+    return merge(y1,y2,y3....yk);    //分治法中的合并子算法，将P的子问题P1，P2...的解y1,y2,y3...合并成P的解
+    }
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/23/算法/java算法-递归与分治策略/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="java算法学习--递归与分治策略">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-php/php-上传文件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/22/php/php-上传文件/" class="article-date">
+  	<time datetime="2016-11-22T12:22:48.000Z" itemprop="datePublished">2016-11-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/22/php/php-上传文件/">
+        php学习--上传文件
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="1-enctype-“multipart-form-data”-这句话写在form元素中，是固定写法，没有的话将无法上传文件"><a href="#1-enctype-“multipart-form-data”-这句话写在form元素中，是固定写法，没有的话将无法上传文件" class="headerlink" title="1. enctype = “multipart/form-data” 这句话写在form元素中，是固定写法，没有的话将无法上传文件"></a>1. enctype = “multipart/form-data” 这句话写在form元素中，是固定写法，没有的话将无法上传文件</h3><h3 id="2-FILES-接受上传的文件，返回一个数组"><a href="#2-FILES-接受上传的文件，返回一个数组" class="headerlink" title="2. $_FILES 接受上传的文件，返回一个数组"></a>2. $_FILES 接受上传的文件，返回一个数组</h3><h3 id="3-FILE是魔法常量，将绝对地址打印出来"><a href="#3-FILE是魔法常量，将绝对地址打印出来" class="headerlink" title="3. FILE是魔法常量，将绝对地址打印出来"></a>3. <strong>FILE</strong>是魔法常量，将绝对地址打印出来</h3><h3 id="4-dirname-FILE-将文件名的上一级路径打印出来（也就是不打印文件名）"><a href="#4-dirname-FILE-将文件名的上一级路径打印出来（也就是不打印文件名）" class="headerlink" title="4. dirname(FILE)将文件名的上一级路径打印出来（也就是不打印文件名）"></a>4. dirname(<strong>FILE</strong>)将文件名的上一级路径打印出来（也就是不打印文件名）</h3><h3 id="5-is-dir判断给定的目录是否存在"><a href="#5-is-dir判断给定的目录是否存在" class="headerlink" title="5. // is_dir判断给定的目录是否存在"></a>5. // is_dir判断给定的目录是否存在</h3><h3 id="6-mkdir-name-0777-自动创建一个目录"><a href="#6-mkdir-name-0777-自动创建一个目录" class="headerlink" title="6. mkdir(name,0777)自动创建一个目录"></a>6. mkdir(name,0777)自动创建一个目录</h3><h3 id="7-is-uploaded-file-判断文件是否通过http-post-上传的"><a href="#7-is-uploaded-file-判断文件是否通过http-post-上传的" class="headerlink" title="7. is_uploaded_file()判断文件是否通过http post 上传的"></a>7. is_uploaded_file()判断文件是否通过http post 上传的</h3><h3 id="8-move-uploaded-file-文件临时路径，新路径-将上传的文件移动到新位置"><a href="#8-move-uploaded-file-文件临时路径，新路径-将上传的文件移动到新位置" class="headerlink" title="8. move_uploaded_file(文件临时路径，新路径)将上传的文件移动到新位置"></a>8. move_uploaded_file(文件临时路径，新路径)将上传的文件移动到新位置</h3><h2 id="详解："><a href="#详解：" class="headerlink" title="详解："></a>详解：</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><h3 id="basic1-php"><a href="#basic1-php" class="headerlink" title="basic1.php"></a><code>basic1.php</code></h3><pre><code>&lt;form action=&quot;basic2.php&quot; method = &quot;post&quot; enctype = &quot;multipart/form-data&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name = &quot;MAX_FILE_SIZE&quot; value = &quot;1000000&quot;/&gt;
+    ......    
+&lt;/form&gt;
+</code></pre><h3 id="enctype-“multipart-form-data”-这句话写在form元素中，是固定写法，没有的话将无法上传文件"><a href="#enctype-“multipart-form-data”-这句话写在form元素中，是固定写法，没有的话将无法上传文件" class="headerlink" title="enctype = “multipart/form-data” 这句话写在form元素中，是固定写法，没有的话将无法上传文件"></a>enctype = “multipart/form-data” 这句话写在form元素中，是固定写法，没有的话将无法上传文件</h3><h3 id="隐藏域定义了一个问价件大小的限制，必须放在上传域之前，对浏览器的建议，不能超过PHP-ini中的值"><a href="#隐藏域定义了一个问价件大小的限制，必须放在上传域之前，对浏览器的建议，不能超过PHP-ini中的值" class="headerlink" title="隐藏域定义了一个问价件大小的限制，必须放在上传域之前，对浏览器的建议，不能超过PHP_ini中的值"></a>隐藏域定义了一个问价件大小的限制，必须放在上传域之前，对浏览器的建议，不能超过PHP_ini中的值</h3><h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><h3 id="basic2-php"><a href="#basic2-php" class="headerlink" title="basic2.php"></a><code>basic2.php</code></h3><pre><code>print_r($_FILES);
+</code></pre><h3 id="这个函数接受到一个上传的文件，返回内容如下："><a href="#这个函数接受到一个上传的文件，返回内容如下：" class="headerlink" title="这个函数接受到一个上传的文件，返回内容如下："></a>这个函数接受到一个上传的文件，返回内容如下：</h3><pre><code>Array
+(
+    [userfile] =&gt; Array
+        (
+            [name] =&gt; 4.jpg          //上传文件的文件名
+            [type] =&gt; image/jpeg        //文件类型
+            [tmp_name] =&gt;D:\xampp1\tmp\php26AB.tmp             
+                                        //上传的文件临时的存放位置
+            [error] =&gt; 0                //2是文件超出了HTML设置的大小，
+                                       4是空文件 
+                                        3是上传了一半 
+                                       1是超过了配置文件的大小
+            [size] =&gt; 7960            //上传文件的大小
+ )
+</code></pre><h3 id="3-限制上传文件的格式为png-jpeg-gif"><a href="#3-限制上传文件的格式为png-jpeg-gif" class="headerlink" title="3. 限制上传文件的格式为png,jpeg,gif"></a>3. 限制上传文件的格式为png,jpeg,gif</h3><pre><code>$Max = array(&apos;image/png&apos;,&apos;image/jpeg&apos;,&apos;image/gif&apos;);
+if (is_array($Max)) {
+    if(!in_array($_FILES[&apos;userfile&apos;][&apos;type&apos;], $Max)){
+        echo &quot;&lt;script&gt; alert(&apos;只允许上传jpg，png格式的文件！&apos;); history.back();&lt;/script&gt;&quot;;
+    }
+}
+</code></pre><h3 id="4-上传错误的提示信息"><a href="#4-上传错误的提示信息" class="headerlink" title="4. 上传错误的提示信息"></a>4. 上传错误的提示信息</h3><pre><code>if($_FILES[&apos;userfile&apos;][&apos;error&apos;] &gt; 0){
+    switch ($_FILES[&apos;userfile&apos;][&apos;error&apos;]) {
+        case 1: echo &quot;&lt;script&gt;alert(&apos;上传文件超过约定值&apos;); history.back();&lt;/script&gt;&quot;;
+            break;
+        case 2: echo &quot;&lt;script&gt;alert(&apos;上传文件超过约定值&apos;); history.back();&lt;/script&gt;&quot;;
+            break;
+        case 3: echo &quot;&lt;script&gt;alert(&apos;文件未全部上传&apos;); history.back();&lt;/script&gt;&quot;;
+            break;
+        case 4: echo &quot;&lt;script&gt;alert(&apos;请选择上传的文件&apos;); history.back();&lt;/script&gt;&quot;;
+            break;
+
+        default: echo &quot;&lt;script&gt;alert(&apos;未知错误，请重新上传&apos;); histor.back();&lt;/script&gt;&quot;;
+            break;
+    }
+    exit;
+}
+</code></pre><h3 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h3><pre><code>if (is_uploaded_file($_FILES[&apos;userfile&apos;][&apos;tmp_name&apos;])) {
+    // 如果文件已经上传了，就在这移动
+    // 第一个参数，临时文件的地址
+    // 第二个参数，要移动的地址
+    if(!move_uploaded_file($_FILES[&apos;userfile&apos;][&apos;tmp_name&apos;], URL.&quot;/&quot;.$_FILES[&apos;userfile&apos;][&apos;name&apos;])){
+        echo &quot;&lt;script&gt;alert(&apos;移动失败&apos;); history.back();&lt;/script&gt;&quot;;
+        exit;
+    }
+}else{
+    echo &quot;&lt;script&gt;alert(&apos;临时文件夹找不到文件&apos;); history.back();&lt;/script&gt;&quot;;
+    exit;
+}
+
+
+// 如果全部通过就上传成功了
+// 将文件交给一个上传地址
+echo &quot;&lt;script&gt;alert(&apos;文件上传成功&apos;); location.href = &apos;basic3.php?url = &quot;.$_FILES[&apos;userfile&apos;][&apos;name&apos;].&quot;&apos;;&lt;/script&gt;&quot;;
+</code></pre><h3 id="basic3-php"><a href="#basic3-php" class="headerlink" title="basic3.php"></a><code>basic3.php</code></h3><pre><code>&lt;?php 
+    ini_set(&quot;error_reporting&quot;, &quot;E_ALL  &amp; ~E_NOTICE&quot;);    //阻止undefiend出现
+
+    $url = $_GET[&apos;url&apos;];
+    echo &apos;&lt;img src = &quot;url.&quot;/&quot;.&apos;.$url.&apos;&quot;/&gt;&apos;;
+ ?&gt;
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/11/22/php/php-上传文件/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--上传文件">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-算法/java算法-最长公共子序列" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -910,165 +1109,6 @@ imagedestroy($im);
 <div class="counter-tag counter">
     <span id="/2016/11/16/php/php-简单的随机图像验证码/" class="leancloud_visitors post-title-link"
           style="font-size: 12px" data-flag-title="php学习--简单的随机图像验证码">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-php/php-处理图像" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/16/php/php-处理图像/" class="article-date">
-  	<time datetime="2016-11-16T10:54:33.000Z" itemprop="datePublished">2016-11-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/16/php/php-处理图像/">
-        php学习--处理图像
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-为什么用PHP处理图像："><a href="#1-为什么用PHP处理图像：" class="headerlink" title="1. 为什么用PHP处理图像："></a>1. 为什么用PHP处理图像：</h2><h3 id="传统的web开发在页面中加入图片一般用HTML-的标记来实现，在PHP中为了提高页面的传输速率，便于对数据统计，有时采用GD2库或者jpgraph类库来绘制"><a href="#传统的web开发在页面中加入图片一般用HTML-的标记来实现，在PHP中为了提高页面的传输速率，便于对数据统计，有时采用GD2库或者jpgraph类库来绘制" class="headerlink" title="传统的web开发在页面中加入图片一般用HTML 的标记来实现，在PHP中为了提高页面的传输速率，便于对数据统计，有时采用GD2库或者jpgraph类库来绘制"></a>传统的web开发在页面中加入图片一般用HTML 的<img>标记来实现，在PHP中为了提高页面的传输速率，便于对数据统计，有时采用GD2库或者jpgraph类库来绘制</h3><h2 id="2-什么是GB2库"><a href="#2-什么是GB2库" class="headerlink" title="2. 什么是GB2库"></a>2. 什么是GB2库</h2><h3 id="gd2函数库是一个公开源码的用于创建图形图像的函数库，该函数库由C语言编写，可以在Perl，PHP等多种语言中调试运用。PHP使用GD2库可以制作统计图，为图片添加水印及动态图表等"><a href="#gd2函数库是一个公开源码的用于创建图形图像的函数库，该函数库由C语言编写，可以在Perl，PHP等多种语言中调试运用。PHP使用GD2库可以制作统计图，为图片添加水印及动态图表等" class="headerlink" title="gd2函数库是一个公开源码的用于创建图形图像的函数库，该函数库由C语言编写，可以在Perl，PHP等多种语言中调试运用。PHP使用GD2库可以制作统计图，为图片添加水印及动态图表等"></a>gd2函数库是一个公开源码的用于创建图形图像的函数库，该函数库由C语言编写，可以在Perl，PHP等多种语言中调试运用。PHP使用GD2库可以制作统计图，为图片添加水印及动态图表等</h3><h2 id="3-GD2创建画布的步骤"><a href="#3-GD2创建画布的步骤" class="headerlink" title="3. GD2创建画布的步骤"></a>3. GD2创建画布的步骤</h2><h3 id="开发人员可以在已有的图像上绘制，也可以在没有任何素材的基础上绘制，在这种没有素材的情况下首先要创建画布，之后的所有操作都将依照所创建的画布运行"><a href="#开发人员可以在已有的图像上绘制，也可以在没有任何素材的基础上绘制，在这种没有素材的情况下首先要创建画布，之后的所有操作都将依照所创建的画布运行" class="headerlink" title="开发人员可以在已有的图像上绘制，也可以在没有任何素材的基础上绘制，在这种没有素材的情况下首先要创建画布，之后的所有操作都将依照所创建的画布运行"></a>开发人员可以在已有的图像上绘制，也可以在没有任何素材的基础上绘制，在这种没有素材的情况下首先要创建画布，之后的所有操作都将依照所创建的画布运行</h3><h3 id="第一步：设置文件的MIME类型"><a href="#第一步：设置文件的MIME类型" class="headerlink" title="第一步：设置文件的MIME类型"></a>第一步：设置文件的MIME类型</h3><pre><code>header(&apos;Content-Type: image/png;&apos;);
-</code></pre><h3 id="一般生成的图像类型有-png-jpg-jpeg-gif-bmg"><a href="#一般生成的图像类型有-png-jpg-jpeg-gif-bmg" class="headerlink" title="一般生成的图像类型有 png  jpg(jpeg)  gif  bmg"></a>一般生成的图像类型有 png  jpg(jpeg)  gif  bmg</h3><h3 id="这句话的意思是输出网页的内容是png格式的图片"><a href="#这句话的意思是输出网页的内容是png格式的图片" class="headerlink" title="这句话的意思是输出网页的内容是png格式的图片"></a>这句话的意思是输出网页的内容是png格式的图片</h3><h3 id="注-1：在网页制作中，默认的输出格式是：text-html，所以一般的网页不需要写输出格式"><a href="#注-1：在网页制作中，默认的输出格式是：text-html，所以一般的网页不需要写输出格式" class="headerlink" title="注:1：在网页制作中，默认的输出格式是：text/html，所以一般的网页不需要写输出格式"></a>注:1：在网页制作中，默认的输出格式是：text/html，所以一般的网页不需要写输出格式</h3><h3 id="注意2：header之前不能有任何形式的输出，空格也不行"><a href="#注意2：header之前不能有任何形式的输出，空格也不行" class="headerlink" title="注意2：header之前不能有任何形式的输出，空格也不行"></a>注意2：header之前不能有任何形式的输出，空格也不行</h3><h3 id="第二步：imagecreatetruecolor-新建一个新真彩色图像，返回一个图像标识，大小为x-y的黑色图像"><a href="#第二步：imagecreatetruecolor-新建一个新真彩色图像，返回一个图像标识，大小为x-y的黑色图像" class="headerlink" title="第二步：imagecreatetruecolor()新建一个新真彩色图像，返回一个图像标识，大小为x*y的黑色图像"></a>第二步：imagecreatetruecolor()新建一个新真彩色图像，返回一个图像标识，大小为x*y的黑色图像</h3><pre><code>$im = imagecreatetruecolor(200, 200);    // 传入两个参数：宽和高，单位是像素
-</code></pre><h3 id="第三步：imagecolorallocate-建好的图像，红，绿，蓝-为一个图像分配颜色-（其中红绿蓝的颜色取值为0到255）"><a href="#第三步：imagecolorallocate-建好的图像，红，绿，蓝-为一个图像分配颜色-（其中红绿蓝的颜色取值为0到255）" class="headerlink" title="第三步：imagecolorallocate(建好的图像，红，绿，蓝)为一个图像分配颜色 （其中红绿蓝的颜色取值为0到255）"></a>第三步：imagecolorallocate(建好的图像，红，绿，蓝)为一个图像分配颜色 （其中红绿蓝的颜色取值为0到255）</h3><pre><code>$blue = imagecolorallocate($im,0,102,255);    //这里创建一个蓝色背景
-</code></pre><h3 id="imagefill-图像，横坐标，纵坐标，颜色-：区域填充"><a href="#imagefill-图像，横坐标，纵坐标，颜色-：区域填充" class="headerlink" title="imagefill(图像，横坐标，纵坐标，颜色) ：区域填充"></a>imagefill(图像，横坐标，纵坐标，颜色) ：区域填充</h3><pre><code>imagefill($im,0,0,$blue);
-</code></pre><h3 id="第四步：在蓝色的背景上输入一些线条，文字等"><a href="#第四步：在蓝色的背景上输入一些线条，文字等" class="headerlink" title="第四步：在蓝色的背景上输入一些线条，文字等"></a>第四步：在蓝色的背景上输入一些线条，文字等</h3><pre><code>$white = imagecolorallocate($im,255,255,255);
-//imageline -- 画一条线段
-//imageline(图像，起始横坐标，起始纵坐标，终止横坐标，终止纵坐标，颜色)
-imageline($im,0,0,200,200,$white);
-imageline($im,200,0,0,200,$white);
-//imagestring -- 水平地画一行字符串
-imagestring($im,5,80,20,&apos;Hello World&apos;,$white);
-</code></pre><h3 id="第五步：输出最终图形"><a href="#第五步：输出最终图形" class="headerlink" title="第五步：输出最终图形"></a>第五步：输出最终图形</h3><pre><code>imagepng($im);
-//这一步是必须的，很重要的，不写的话会出现错误
-// 以 PNG 格式将图像输出到浏览器或文件
-</code></pre><h3 id="第六步：将所有的资源全部清空"><a href="#第六步：将所有的资源全部清空" class="headerlink" title="第六步：将所有的资源全部清空"></a>第六步：将所有的资源全部清空</h3><pre><code>imagedestroy($im);    
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/16/php/php-处理图像/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--处理图像">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-php/php-操作中文字符串" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/16/php/php-操作中文字符串/" class="article-date">
-  	<time datetime="2016-11-16T07:43:13.000Z" itemprop="datePublished">2016-11-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/16/php/php-操作中文字符串/">
-        php学习--操作中文字符串
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="必须使用mb-的是mb-strlen-mb-strpos-mb-substr"><a href="#必须使用mb-的是mb-strlen-mb-strpos-mb-substr" class="headerlink" title="必须使用mb_的是mb_strlen(),mb_strpos(),mb_substr()"></a>必须使用mb_的是<code>mb_strlen()</code>,<code>mb_strpos()</code>,<code>mb_substr()</code></h3><h3 id="strlen-求字符串的长度"><a href="#strlen-求字符串的长度" class="headerlink" title="strlen()求字符串的长度"></a>strlen()求字符串的长度</h3><h3 id="mb-strlen-求中文字符串的长度，一个汉字代表一个字符"><a href="#mb-strlen-求中文字符串的长度，一个汉字代表一个字符" class="headerlink" title="mb_strlen()求中文字符串的长度，一个汉字代表一个字符"></a>mb_strlen()求中文字符串的长度，一个汉字代表一个字符</h3><h3 id="这里：gbk和Utf8都说变长编码"><a href="#这里：gbk和Utf8都说变长编码" class="headerlink" title="这里：gbk和Utf8都说变长编码"></a>这里：gbk和Utf8都说变长编码</h3><h3 id="对于utf8，一个汉字可能是2-3个字节，不一定就是3个字节"><a href="#对于utf8，一个汉字可能是2-3个字节，不一定就是3个字节" class="headerlink" title="对于utf8，一个汉字可能是2-3个字节，不一定就是3个字节"></a>对于utf8，一个汉字可能是2-3个字节，不一定就是3个字节</h3><h3 id="一般在gbk下是两个字节，在Utf8下是3个字节"><a href="#一般在gbk下是两个字节，在Utf8下是3个字节" class="headerlink" title="一般在gbk下是两个字节，在Utf8下是3个字节"></a>一般在gbk下是两个字节，在Utf8下是3个字节</h3><pre><code>$str1 = &apos;我叫jewel&apos;;
-echo strlen($str1).&apos;&lt;br&gt;&apos;;    //11，一个汉字代表三个字符
-echo mb_strlen($str1,&apos;utf8&apos;);    //7
-// utf8可以省略，那么为内部编码方式
-</code></pre><h3 id="strstr-求某字符串到结尾的字符，返回在这个字符首次出现的位置开始到结尾组成的字符串"><a href="#strstr-求某字符串到结尾的字符，返回在这个字符首次出现的位置开始到结尾组成的字符串" class="headerlink" title="strstr()求某字符串到结尾的字符，返回在这个字符首次出现的位置开始到结尾组成的字符串"></a>strstr()求某字符串到结尾的字符，返回在这个字符首次出现的位置开始到结尾组成的字符串</h3><h3 id="这个函数区分大小写，用stristr-不区分大小写"><a href="#这个函数区分大小写，用stristr-不区分大小写" class="headerlink" title="这个函数区分大小写，用stristr()不区分大小写"></a>这个函数区分大小写，用stristr()不区分大小写</h3><h3 id="这个中文英文影响不大"><a href="#这个中文英文影响不大" class="headerlink" title="这个中文英文影响不大"></a>这个中文英文影响不大</h3><pre><code>$str2 = &apos;he is a good boy&apos;;
-echo strstr($str2, &apos;i&apos;);    //is a good boy
-$str3 = &apos;我爱我的家乡&apos;;
-echo mb_strstr($str3, &apos;的&apos;);
-echo strstr($str3, &apos;我&apos;);
-</code></pre><h3 id="相对应的是strpos-，查找字符首次出现的位置"><a href="#相对应的是strpos-，查找字符首次出现的位置" class="headerlink" title="相对应的是strpos()，查找字符首次出现的位置"></a>相对应的是strpos()，查找字符首次出现的位置</h3><pre><code>$str4 = &apos;我爱我的家乡&apos;;
-echo strpos($str4, &apos;的&apos;);    //这种情况只能出现在3的倍数的字符串，比如‘爱’在第三位，‘的’在地9位，这时候就需要用mb_strpos()了
-echo mb_strpos($str4,&apos;爱&apos;);    //1
-echo mb_strpos($str4,&apos;的&apos;);    //3 这时候将一个汉字转化为一个字符了
-</code></pre><h3 id="substr-字符串，开始位置，子串长度（可选）"><a href="#substr-字符串，开始位置，子串长度（可选）" class="headerlink" title="substr(字符串，开始位置，子串长度（可选）)"></a>substr(字符串，开始位置，子串长度（可选）)</h3><pre><code>$str5 = &apos;我爱我的家乡&apos;;
-echo substr($str5, 1,2);    //乱码，无法取
-echo mb_substr($str5, 1,2);    //爱我
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/16/php/php-操作中文字符串/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--操作中文字符串">
          &nbsp;
         view
     </span>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript高级程序设计第三版笔记三--数据类型 | WaKaaaa猪的博客</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="基本数据类型 Undefined Null Boolean Number String 和复杂数据类型 Object，因为ECMAScript数据类型具有动态性，所以这些数据类型就足够了。一： typeof()检测给定变量的数据类型
+undefined：如果这个值未定义
+boolean： 如果这个值是布尔值
+string： 如果这个值是字符串
+number： 如果这个值是数值
+object： 如果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript高级程序设计第三版笔记三--数据类型">
+<meta property="og:url" content="https://WaKaaaa.github.io/2016/12/20/js/JavaScript高级程序设计第三版笔记三-数据类型/index.html">
+<meta property="og:site_name" content="WaKaaaa猪的博客">
+<meta property="og:description" content="基本数据类型 Undefined Null Boolean Number String 和复杂数据类型 Object，因为ECMAScript数据类型具有动态性，所以这些数据类型就足够了。一： typeof()检测给定变量的数据类型
+undefined：如果这个值未定义
+boolean： 如果这个值是布尔值
+string： 如果这个值是字符串
+number： 如果这个值是数值
+object： 如果">
+<meta property="og:updated_time" content="2016-12-20T12:41:04.207Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript高级程序设计第三版笔记三--数据类型">
+<meta name="twitter:description" content="基本数据类型 Undefined Null Boolean Number String 和复杂数据类型 Object，因为ECMAScript数据类型具有动态性，所以这些数据类型就足够了。一： typeof()检测给定变量的数据类型
+undefined：如果这个值未定义
+boolean： 如果这个值是布尔值
+string： 如果这个值是字符串
+number： 如果这个值是数值
+object： 如果">
+  
+    <link rel="alternative" href="/atom.xml" title="WaKaaaa猪的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+      <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("your_app_id", "your_app_key");</script>
+<script src="/js/Counter.js"></script>
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.duoziwang.com/uploads/c160416/1460N50534F-13150.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">WaKaaaa猪</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Boolean-转型函数-typeof-isFinite/" style="font-size: 10px;">Boolean()转型函数 typeof() isFinite()</a> <a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a> <a href="/tags/回溯法-n后问题/" style="font-size: 10px;">回溯法 n后问题</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">没关系，虽然你资历平平，但如果你一直这么努力，最坏的结果，也不过是大器晚成。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">WaKaaaa猪</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.duoziwang.com/uploads/c160416/1460N50534F-13150.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">WaKaaaa猪</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-js/JavaScript高级程序设计第三版笔记三-数据类型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/20/js/JavaScript高级程序设计第三版笔记三-数据类型/" class="article-date">
+  	<time datetime="2016-12-20T02:53:28.000Z" itemprop="datePublished">2016-12-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript高级程序设计第三版笔记三--数据类型
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Boolean-转型函数-typeof-isFinite/">Boolean()转型函数 typeof() isFinite()</a></li></ul>
+	</div>
+
+        
+
+        
+          
+<div class="counter-tag counter">
+    <span id="/2016/12/20/js/JavaScript高级程序设计第三版笔记三-数据类型/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="JavaScript高级程序设计第三版笔记三--数据类型">
+         &nbsp;
+        view
+    </span>
+</div>
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基本数据类型-Undefined-Null-Boolean-Number-String-和复杂数据类型-Object，因为ECMAScript数据类型具有动态性，所以这些数据类型就足够了。"><a href="#基本数据类型-Undefined-Null-Boolean-Number-String-和复杂数据类型-Object，因为ECMAScript数据类型具有动态性，所以这些数据类型就足够了。" class="headerlink" title="基本数据类型 Undefined Null Boolean Number String 和复杂数据类型 Object，因为ECMAScript数据类型具有动态性，所以这些数据类型就足够了。"></a>基本数据类型 <code>Undefined</code> <code>Null</code> <code>Boolean</code> <code>Number</code> <code>String</code> 和复杂数据类型 <code>Object</code>，因为ECMAScript数据类型具有动态性，所以这些数据类型就足够了。</h3><h2 id="一：-typeof-检测给定变量的数据类型"><a href="#一：-typeof-检测给定变量的数据类型" class="headerlink" title="一： typeof()检测给定变量的数据类型"></a><code>一： typeof()检测给定变量的数据类型</code></h2><ul>
+<li>undefined：如果这个值未定义</li>
+<li>boolean： 如果这个值是布尔值</li>
+<li>string： 如果这个值是字符串</li>
+<li>number： 如果这个值是数值</li>
+<li>object： 如果这个值是<code>对象或者null</code></li>
+<li>function： 如果这个值是函数<h6 id=""><a href="#" class="headerlink" title=" "></a> </h6>  var a = 2;12/20/2016 5:29:31 PM 12/20/2016 5:29:33 PM 12/20/2016 5:29:35 PM<br>  var d = “”;<br>  alert(typeof(a));    //number<br>  alert(typeof null);    //object,这里，无论是object还是null，都会返回object类型<br>  alert(typeof(c));    //undefined<br>  alert(typeof(d));    //string<h4 id="注意1：-typeof是一个操作符而不是函数，所以-可以省略也可以写上"><a href="#注意1：-typeof是一个操作符而不是函数，所以-可以省略也可以写上" class="headerlink" title="注意1： typeof是一个操作符而不是函数，所以()可以省略也可以写上"></a>注意1： typeof是一个操作符而不是函数，所以()可以省略也可以写上</h4><h4 id="注意2：-null被认为是一种空的对象引用，所以返回的是object"><a href="#注意2：-null被认为是一种空的对象引用，所以返回的是object" class="headerlink" title="注意2： null被认为是一种空的对象引用，所以返回的是object"></a>注意2： null被认为是一种空的对象引用，所以返回的是object</h4><h4 id="注意3：-在技术层面上讲，函数在ECMAScript中是对象，不是数据类型，然而，函数也确实有一些特殊的属性，因此可以通过typeof操作符来区分函数和其他对象是很有必要的。"><a href="#注意3：-在技术层面上讲，函数在ECMAScript中是对象，不是数据类型，然而，函数也确实有一些特殊的属性，因此可以通过typeof操作符来区分函数和其他对象是很有必要的。" class="headerlink" title="注意3： 在技术层面上讲，函数在ECMAScript中是对象，不是数据类型，然而，函数也确实有一些特殊的属性，因此可以通过typeof操作符来区分函数和其他对象是很有必要的。"></a>注意3： 在技术层面上讲，函数在ECMAScript中是对象，不是数据类型，然而，函数也确实有一些特殊的属性，因此可以通过typeof操作符来区分函数和其他对象是很有必要的。</h4><h2 id="二：-undefined类型"><a href="#二：-undefined类型" class="headerlink" title="二： undefined类型"></a><code>二： undefined类型</code></h2><h3 id="undefined类型只有一个值，就是特殊的undefined。使用var声明变量但没有对其初始化的时候，这个变量的值就是undefined"><a href="#undefined类型只有一个值，就是特殊的undefined。使用var声明变量但没有对其初始化的时候，这个变量的值就是undefined" class="headerlink" title="undefined类型只有一个值，就是特殊的undefined。使用var声明变量但没有对其初始化的时候，这个变量的值就是undefined"></a>undefined类型只有一个值，就是特殊的undefined。<code>使用var声明变量但没有对其初始化的时候，这个变量的值就是undefined</code></h3><h4 id="注意：-包含undefined的值的变量与尚未定义的变量是不一样的"><a href="#注意：-包含undefined的值的变量与尚未定义的变量是不一样的" class="headerlink" title="注意： 包含undefined的值的变量与尚未定义的变量是不一样的"></a>注意： 包含undefined的值的变量与尚未定义的变量是不一样的</h4>  var massage;<br>  alert(massage);    //undfined<br>  alert(a);     //产生错误<br>  alert(typeof massage);    //undefined<br>  alert(typeof a);    //undefined<h2 id="三：-null类型"><a href="#三：-null类型" class="headerlink" title="三： null类型"></a><code>三： null类型</code></h2><h4 id="null类型只有一个值，null。null值表示一个空指针对象"><a href="#null类型只有一个值，null。null值表示一个空指针对象" class="headerlink" title="null类型只有一个值，null。null值表示一个空指针对象"></a>null类型只有一个值，null。null值表示一个<code>空指针对象</code></h4>  var a = null;<br>  alert(typeof(a));<h4 id="undefined和null的区别与联系："><a href="#undefined和null的区别与联系：" class="headerlink" title="undefined和null的区别与联系："></a>undefined和null的区别与联系：</h4></li>
+<li>undefined 是派生自null的<br>######<br>  alert(undefined == null);    //true</li>
+<li>不必把一个undefined的值设置为显示的，但是null就不行</li>
+<li>只要你想将某个变量保存对象，但还没有真正的保存任何东西，就应该显示的将该变量值保存为null<br>######<h2 id="四：-Boolean类型"><a href="#四：-Boolean类型" class="headerlink" title="四： Boolean类型"></a><code>四： Boolean类型</code></h2><h4 id="Boolean类型的字面值只有true和false两个，但是在ECMAScript中所有类型的值都有与这两个Boolean值等价的值"><a href="#Boolean类型的字面值只有true和false两个，但是在ECMAScript中所有类型的值都有与这两个Boolean值等价的值" class="headerlink" title="Boolean类型的字面值只有true和false两个，但是在ECMAScript中所有类型的值都有与这两个Boolean值等价的值"></a>Boolean类型的字面值只有true和false两个，但是<code>在ECMAScript中所有类型的值都有与这两个Boolean值等价的值</code></h4><h4 id="Boolean-转型函数可以将一个值转换为对应的Boolean值，可以对任何数据类型调用这个函数Boolean-，而且总会返回一个布尔值（true-false）"><a href="#Boolean-转型函数可以将一个值转换为对应的Boolean值，可以对任何数据类型调用这个函数Boolean-，而且总会返回一个布尔值（true-false）" class="headerlink" title="Boolean()转型函数可以将一个值转换为对应的Boolean值，可以对任何数据类型调用这个函数Boolean()，而且总会返回一个布尔值（true/false）"></a>Boolean()转型函数可以将一个值转换为对应的Boolean值，可以对任何数据类型调用这个函数Boolean()，而且总会返回一个布尔值（true/false）</h4>  alert(Boolean(true)); //true<br>  alert(Boolean(false)); //false<br>  alert(Boolean(“1234”)); //true<br>  alert(Boolean(“”)); //false<br>  alert(Boolean(1234)); //true<br>  alert(Boolean(0));    //false<br>  alert(Boolean(Infinity)); //true<br>  alert(Boolean(Array)); //true<br>  alert(Boolean(null)); //false<br>  alert(Boolean(undefined));    //false<h2 id="五：-Number类型"><a href="#五：-Number类型" class="headerlink" title="五： Number类型"></a><code>五： Number类型</code></h2><h3 id="Number类型存在十进制，八进制，十六进制，在严格模式下是无效的"><a href="#Number类型存在十进制，八进制，十六进制，在严格模式下是无效的" class="headerlink" title="Number类型存在十进制，八进制，十六进制，在严格模式下是无效的"></a>Number类型存在十进制，八进制，十六进制，在严格模式下是无效的</h3><h3 id="ECMAScript可以保存-0和-0，正0和负0被认为相等"><a href="#ECMAScript可以保存-0和-0，正0和负0被认为相等" class="headerlink" title="ECMAScript可以保存+0和-0，正0和负0被认为相等"></a>ECMAScript可以保存+0和-0，正0和负0被认为相等</h3><h3 id="浮点数在计算的时候精确度远远不如整数，所以永远不要测试某个特定的浮点数值，而关于浮点数计算会产生舍入误差的问题是基于IEEE754数值的浮点计算的通病，ECMAScript不是特有的"><a href="#浮点数在计算的时候精确度远远不如整数，所以永远不要测试某个特定的浮点数值，而关于浮点数计算会产生舍入误差的问题是基于IEEE754数值的浮点计算的通病，ECMAScript不是特有的" class="headerlink" title="浮点数在计算的时候精确度远远不如整数，所以永远不要测试某个特定的浮点数值，而关于浮点数计算会产生舍入误差的问题是基于IEEE754数值的浮点计算的通病，ECMAScript不是特有的"></a>浮点数在计算的时候精确度远远不如整数，所以<code>永远不要测试某个特定的浮点数值</code>，而关于浮点数计算会产生舍入误差的问题是基于IEEE754数值的浮点计算的通病，ECMAScript不是特有的</h3><h3 id="数值范围：Infinity-Infinity表示正负无穷"><a href="#数值范围：Infinity-Infinity表示正负无穷" class="headerlink" title="数值范围：Infinity  -Infinity表示正负无穷"></a>数值范围：Infinity  -Infinity表示正负无穷</h3><h3 id="Number-MIN-VALUE-Number-MAX-VALUE是数值的可取范围，超出之后利用isFinite-可以检测为false"><a href="#Number-MIN-VALUE-Number-MAX-VALUE是数值的可取范围，超出之后利用isFinite-可以检测为false" class="headerlink" title="Number.MIN_VALUE~Number.MAX_VALUE是数值的可取范围，超出之后利用isFinite()可以检测为false"></a>Number.MIN_VALUE~Number.MAX_VALUE是数值的可取范围，超出之后利用isFinite()可以检测为false</h3>  alert(Number.MAX_VALUE);<br>  alert(Number.MIN_VALUE);<br>  var result1 = Number.MAX_VALUE+1;<br>  var result2 = Number.MIN_VALUE+1;<br>  alert(isFinite(result1));    //true<br>  alert(isFinite(result2));    //true<h3 id="NaN（not-a-number），非数值，是一个特殊的数值，用来表示一个本来要返回数值的操作数未返回数值的情况（这样就不会抛出异常了）"><a href="#NaN（not-a-number），非数值，是一个特殊的数值，用来表示一个本来要返回数值的操作数未返回数值的情况（这样就不会抛出异常了）" class="headerlink" title="NaN（not a number），非数值，是一个特殊的数值，用来表示一个本来要返回数值的操作数未返回数值的情况（这样就不会抛出异常了）"></a>NaN（not a number），非数值，是一个特殊的数值，用来表示<code>一个本来要返回数值的操作数未返回数值的情况</code>（这样就不会抛出异常了）</h3><h3 id="NaN的两个特点"><a href="#NaN的两个特点" class="headerlink" title="NaN的两个特点"></a>NaN的两个特点</h3></li>
+<li><ol>
+<li>任何涉及NaN的操作都会返回NaN </li>
+</ol>
+</li>
+<li><ol>
+<li><p>NaN与任何数都不相等，包括它本身</p>
+<h4 id="isNaN-函数接受一个任何类型的参数，这个函数会帮助我们确定这个函数是否“不是数值”，这个函数接收一个值后会尝试将这个值转换为数值，使某些不是数值的值会直接转换为数值，而任何不能转换为数值的值都会导致这个函数返回true"><a href="#isNaN-函数接受一个任何类型的参数，这个函数会帮助我们确定这个函数是否“不是数值”，这个函数接收一个值后会尝试将这个值转换为数值，使某些不是数值的值会直接转换为数值，而任何不能转换为数值的值都会导致这个函数返回true" class="headerlink" title="isNaN()函数接受一个任何类型的参数，这个函数会帮助我们确定这个函数是否“不是数值”，这个函数接收一个值后会尝试将这个值转换为数值，使某些不是数值的值会直接转换为数值，而任何不能转换为数值的值都会导致这个函数返回true"></a>isNaN()函数接受一个任何类型的参数，这个函数会帮助我们确定这个函数是否“不是数值”，这个函数接收一个值后会尝试将这个值转换为数值，使某些不是数值的值会直接转换为数值，而任何不能转换为数值的值都会导致这个函数返回true</h4><p>alert(NaN == NaN);     //false</p>
+<p>alert(isNaN(‘color’)); //true，不可以转化成数值<br>alert(isNaN(false));    //false，会被转化成数值0<br>alert(isNaN(true));    //false，会被转化成数值1<br>alert(isNaN(NaN));    //true</p>
+<h4 id="注意：isNaN-也适用于对象，在基于对象调用isNaN-函数时，会首先调用对象的valueof-方法，然后确定该方法的值是否可以转换成数值，如果不能，则这个返回值再调用toString-方法，再测试返回值"><a href="#注意：isNaN-也适用于对象，在基于对象调用isNaN-函数时，会首先调用对象的valueof-方法，然后确定该方法的值是否可以转换成数值，如果不能，则这个返回值再调用toString-方法，再测试返回值" class="headerlink" title="注意：isNaN()也适用于对象，在基于对象调用isNaN()函数时，会首先调用对象的valueof()方法，然后确定该方法的值是否可以转换成数值，如果不能，则这个返回值再调用toString()方法，再测试返回值"></a>注意：<code>isNaN()也适用于对象</code>，在基于对象调用isNaN()函数时，会首先调用对象的<code>valueof()</code>方法，然后确定该方法的值是否可以转换成数值，如果不能，则这个返回值再调用<code>toString()</code>方法，再测试返回值</h4><h3 id="数值转换：Number-perseInt-perseFloat-这三个函数可以将非数值转换为数值"><a href="#数值转换：Number-perseInt-perseFloat-这三个函数可以将非数值转换为数值" class="headerlink" title="数值转换：Number(),perseInt(),perseFloat()这三个函数可以将非数值转换为数值"></a>数值转换：Number(),perseInt(),perseFloat()这三个函数可以将非数值转换为数值</h3><h4 id="number-的转换规则："><a href="#number-的转换规则：" class="headerlink" title="number()的转换规则："></a>number()的转换规则：</h4></li>
+</ol>
+</li>
+<li>null — 0</li>
+<li>undefined — NaN</li>
+<li>true — 1</li>
+<li>false — 0</li>
+<li>字符串 规则很多 </li>
+<li><ol>
+<li>空字符串 — 0</li>
+</ol>
+</li>
+<li><ol>
+<li>只包含数字 — 十进制数字，忽略前导0</li>
+</ol>
+</li>
+<li><ol>
+<li>包含有效的浮点数格式 — 对应的浮点数，忽略前导0</li>
+</ol>
+</li>
+<li><ol>
+<li>如果包含有效的十六进制 — 相同大小的十进制</li>
+</ol>
+</li>
+<li><ol>
+<li>其他的 — NaN</li>
+</ol>
+</li>
+<li><p>对象 — 会首先调用对象的<code>valueof()</code>方法，然后确定该方法的值是否可以转换成数值，如果不能，则这个返回值再调用<code>toString()</code>方法，再测试返回值<br>######</p>
+<h4 id="parseInt-：会忽略字符串前边的空格，直到找到第一个非空格字符"><a href="#parseInt-：会忽略字符串前边的空格，直到找到第一个非空格字符" class="headerlink" title="parseInt()：会忽略字符串前边的空格，直到找到第一个非空格字符"></a>parseInt()：会忽略字符串前边的空格，直到找到第一个非空格字符</h4></li>
+<li><p>如果第一个非空格不是数字或者负号 — NaN</p>
+</li>
+<li>空字符串 — NaN(number()是0，这是这两点的区别    )</li>
+<li>如果第一个非空格是数字，再解析第二个，直到解析完毕或者遇到非字符 — 显示数字字符</li>
+<li>parseInt()可以识别各种整数格式（八进制，十进制，十六进制）<br>######<br>  alert(parseInt(“070”));    //70,这里ECMAScript3和5是不一样的，前者认为是八进制，后者认为是十进制<br>  // 为了避免出现矛盾，可以给函数添加一个参数，后边的参数代表进制数<br>  alert(parseInt(“070”,10));    //70<br>  alert(parseInt(“070”,8));    //56<h4 id="注意：-为了避免错误，建议在任何情况下都要将后边的基数写上。"><a href="#注意：-为了避免错误，建议在任何情况下都要将后边的基数写上。" class="headerlink" title="注意： 为了避免错误，建议在任何情况下都要将后边的基数写上。"></a>注意： 为了避免错误，建议<code>在任何情况下都要将后边的基数写上</code>。</h4><h4 id="我认为这里还可以利用parseInt-对浮点数取整，截取小数点之前的部分。原理是parseInt-遇到非数字的-会截断"><a href="#我认为这里还可以利用parseInt-对浮点数取整，截取小数点之前的部分。原理是parseInt-遇到非数字的-会截断" class="headerlink" title="我认为这里还可以利用parseInt()对浮点数取整，截取小数点之前的部分。原理是parseInt()遇到非数字的.会截断"></a>我认为这里还可以<code>利用parseInt()对浮点数取整</code>，截取小数点之前的部分。原理是parseInt()遇到非数字的.会截断</h4><h4 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat()"></a>parseFloat()</h4></li>
+<li>字符串中的第一个小数点有效，第二个小数点无效</li>
+<li>parseFloat()始终会忽略前导0，也就是他只有一个参数，只能解析十进制<br>######<h2 id="六：-String类型"><a href="#六：-String类型" class="headerlink" title="六： String类型"></a><code>六： String类型</code></h2><h4 id="1-ECMAScript中单双引号不会影响字符串的解析方式，php中单双引号有影响"><a href="#1-ECMAScript中单双引号不会影响字符串的解析方式，php中单双引号有影响" class="headerlink" title="1. ECMAScript中单双引号不会影响字符串的解析方式，php中单双引号有影响"></a>1. ECMAScript中单双引号不会影响字符串的解析方式，php中单双引号有影响</h4><h4 id="2-字符串是不可变的，如果要改变某个变量保存的字符串，首先要销毁原来的字符串，然后再用另一个包含新值的字符串填充该变量"><a href="#2-字符串是不可变的，如果要改变某个变量保存的字符串，首先要销毁原来的字符串，然后再用另一个包含新值的字符串填充该变量" class="headerlink" title="2. 字符串是不可变的，如果要改变某个变量保存的字符串，首先要销毁原来的字符串，然后再用另一个包含新值的字符串填充该变量"></a>2. 字符串是不可变的，如果要改变某个变量保存的字符串，首先要销毁原来的字符串，然后再用另一个包含新值的字符串填充该变量</h4><h4 id="3-将值转换为字符串的两种方式"><a href="#3-将值转换为字符串的两种方式" class="headerlink" title="3. 将值转换为字符串的两种方式"></a>3. 将值转换为字符串的两种方式</h4><h4 id="tostring-方法"><a href="#tostring-方法" class="headerlink" title="tostring()方法"></a>tostring()方法</h4></li>
+<li>tostring()方法，除了null和undefined没有tostring()方法，其余的字符串都有</li>
+<li><p>一般情况下不传值，如果是数值，可以传2,8,10,16来改变输出字符串的格式<br>######<br>  var a = 10;<br>  alert(a.toString());    //10<br>  alert(a.toString(2));    //1010<br>  alert(a.toString(8));    //12<br>  alert(a.toString(16));    //a</p>
+<p>  var b;<br>  alert(toString(b));    //object window</p>
+<p>  var c = null;<br>  alert(toString(c));    //object window</p>
+<h4 id="String-转型函数，用在不知道要转换的值是不是null和undefined的时候"><a href="#String-转型函数，用在不知道要转换的值是不是null和undefined的时候" class="headerlink" title="String()转型函数，用在不知道要转换的值是不是null和undefined的时候"></a>String()转型函数，用在不知道要转换的值是不是null和undefined的时候</h4></li>
+<li>如果值有tostring()方法，则调用该方法并返回相应的结果</li>
+<li>值是null — null</li>
+<li><p>值是undefined — undefined<br>###<br>  var d;<br>  alert(String(d));    //undefined</p>
+<p>  var e = null;<br>  alert(String(e));    //null</p>
+<h2 id="七：-Object类型"><a href="#七：-Object类型" class="headerlink" title="七： Object类型"></a><code>七： Object类型</code></h2><h3 id="对象就是一组数据和功能的集合"><a href="#对象就是一组数据和功能的集合" class="headerlink" title="对象就是一组数据和功能的集合"></a>对象就是一组数据和功能的集合</h3></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/20/js/JavaScript高级程序设计第三版笔记四-操作符/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          JavaScript高级程序设计第三版笔记四--操作符
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/19/js/JavaScript高级程序设计第三版笔记二-基本概念/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript高级程序设计第三版笔记二--基本概念</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="js/JavaScript高级程序设计第三版笔记三-数据类型" data-title="JavaScript高级程序设计第三版笔记三--数据类型" data-url="https://WaKaaaa.github.io/2016/12/20/js/JavaScript高级程序设计第三版笔记三-数据类型/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"your duoshuo id"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 WaKaaaa猪
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/winnerweb/hexo-Yilia-Smackdown" target="_blank">Yilia(Smackdown)</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>

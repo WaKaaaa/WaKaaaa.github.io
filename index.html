@@ -138,7 +138,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a> <a href="/tags/回溯法-n后问题/" style="font-size: 10px;">回溯法 n后问题</a>
+						<a href="/tags/Boolean-转型函数-typeof-isFinite/" style="font-size: 10px;">Boolean()转型函数 typeof() isFinite()</a> <a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a> <a href="/tags/回溯法-n后问题/" style="font-size: 10px;">回溯法 n后问题</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,210 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-js/JavaScript高级程序设计第三版笔记四-操作符" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/20/js/JavaScript高级程序设计第三版笔记四-操作符/" class="article-date">
+  	<time datetime="2016-12-20T12:42:20.000Z" itemprop="datePublished">2016-12-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/20/js/JavaScript高级程序设计第三版笔记四-操作符/">
+        JavaScript高级程序设计第三版笔记四--操作符
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一：-一元操作符"><a href="#一：-一元操作符" class="headerlink" title="一： 一元操作符"></a>一： 一元操作符</h2><h3 id="只操作一个值得操作符叫一元操作符（自增，自减，一元加，一元减）"><a href="#只操作一个值得操作符叫一元操作符（自增，自减，一元加，一元减）" class="headerlink" title="只操作一个值得操作符叫一元操作符（自增，自减，一元加，一元减）"></a>只操作一个值得操作符叫一元操作符（自增，自减，一元加，一元减）</h3><h3 id="对于非数值的数，-会自动转换类型"><a href="#对于非数值的数，-会自动转换类型" class="headerlink" title="对于非数值的数，++ == 会自动转换类型"></a>对于非数值的数，++ == 会自动转换类型</h3><ul>
+<li>执行前置自增和自减，变量的值都是在语句被求值以前改变的</li>
+<li><p>执行后置自增和自减，变量的值都是在语句被求值之后改变的<br>###<br>  var a = 2;<br>  var b = ++a;<br>  alert(a);    //3<br>  alert(b);    //3</p>
+<p>  var c = 1;<br>  var d = c++;<br>  alert(c);    //2<br>  alert(d);    //1</p>
+<h2 id="二：-位操作符"><a href="#二：-位操作符" class="headerlink" title="二： 位操作符"></a>二： 位操作符</h2><h3 id="位操作符是按内存中表示的数值的位来操作数值。在ECMAScript中所有数值都是以IEEE-754-的64位格式存储，但是位操作符操作的是32位的数值，所以先将64位转换成32位操作，完成之后再转换回64位"><a href="#位操作符是按内存中表示的数值的位来操作数值。在ECMAScript中所有数值都是以IEEE-754-的64位格式存储，但是位操作符操作的是32位的数值，所以先将64位转换成32位操作，完成之后再转换回64位" class="headerlink" title="位操作符是按内存中表示的数值的位来操作数值。在ECMAScript中所有数值都是以IEEE-754 的64位格式存储，但是位操作符操作的是32位的数值，所以先将64位转换成32位操作，完成之后再转换回64位"></a>位操作符是按内存中表示的数值的位来操作数值。在ECMAScript中所有数值都是以IEEE-754 的<code>64位格式存储</code>，但是位操作符操作的是32位的数值，所以先将64位转换成32位操作，完成之后再转换回64位</h3></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/12/20/js/JavaScript高级程序设计第三版笔记四-操作符/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="JavaScript高级程序设计第三版笔记四--操作符">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-js/JavaScript高级程序设计第三版笔记三-数据类型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/20/js/JavaScript高级程序设计第三版笔记三-数据类型/" class="article-date">
+  	<time datetime="2016-12-20T02:53:28.000Z" itemprop="datePublished">2016-12-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/20/js/JavaScript高级程序设计第三版笔记三-数据类型/">
+        JavaScript高级程序设计第三版笔记三--数据类型
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基本数据类型-Undefined-Null-Boolean-Number-String-和复杂数据类型-Object，因为ECMAScript数据类型具有动态性，所以这些数据类型就足够了。"><a href="#基本数据类型-Undefined-Null-Boolean-Number-String-和复杂数据类型-Object，因为ECMAScript数据类型具有动态性，所以这些数据类型就足够了。" class="headerlink" title="基本数据类型 Undefined Null Boolean Number String 和复杂数据类型 Object，因为ECMAScript数据类型具有动态性，所以这些数据类型就足够了。"></a>基本数据类型 <code>Undefined</code> <code>Null</code> <code>Boolean</code> <code>Number</code> <code>String</code> 和复杂数据类型 <code>Object</code>，因为ECMAScript数据类型具有动态性，所以这些数据类型就足够了。</h3><h2 id="一：-typeof-检测给定变量的数据类型"><a href="#一：-typeof-检测给定变量的数据类型" class="headerlink" title="一： typeof()检测给定变量的数据类型"></a><code>一： typeof()检测给定变量的数据类型</code></h2><ul>
+<li>undefined：如果这个值未定义</li>
+<li>boolean： 如果这个值是布尔值</li>
+<li>string： 如果这个值是字符串</li>
+<li>number： 如果这个值是数值</li>
+<li>object： 如果这个值是<code>对象或者null</code></li>
+<li>function： 如果这个值是函数<h6 id=""><a href="#" class="headerlink" title=" "></a> </h6>  var a = 2;12/20/2016 5:29:31 PM 12/20/2016 5:29:33 PM 12/20/2016 5:29:35 PM<br>  var d = “”;<br>  alert(typeof(a));    //number<br>  alert(typeof null);    //object,这里，无论是object还是null，都会返回object类型<br>  alert(typeof(c));    //undefined<br>  alert(typeof(d));    //string<h4 id="注意1：-typeof是一个操作符而不是函数，所以-可以省略也可以写上"><a href="#注意1：-typeof是一个操作符而不是函数，所以-可以省略也可以写上" class="headerlink" title="注意1： typeof是一个操作符而不是函数，所以()可以省略也可以写上"></a>注意1： typeof是一个操作符而不是函数，所以()可以省略也可以写上</h4><h4 id="注意2：-null被认为是一种空的对象引用，所以返回的是object"><a href="#注意2：-null被认为是一种空的对象引用，所以返回的是object" class="headerlink" title="注意2： null被认为是一种空的对象引用，所以返回的是object"></a>注意2： null被认为是一种空的对象引用，所以返回的是object</h4><h4 id="注意3：-在技术层面上讲，函数在ECMAScript中是对象，不是数据类型，然而，函数也确实有一些特殊的属性，因此可以通过typeof操作符来区分函数和其他对象是很有必要的。"><a href="#注意3：-在技术层面上讲，函数在ECMAScript中是对象，不是数据类型，然而，函数也确实有一些特殊的属性，因此可以通过typeof操作符来区分函数和其他对象是很有必要的。" class="headerlink" title="注意3： 在技术层面上讲，函数在ECMAScript中是对象，不是数据类型，然而，函数也确实有一些特殊的属性，因此可以通过typeof操作符来区分函数和其他对象是很有必要的。"></a>注意3： 在技术层面上讲，函数在ECMAScript中是对象，不是数据类型，然而，函数也确实有一些特殊的属性，因此可以通过typeof操作符来区分函数和其他对象是很有必要的。</h4><h2 id="二：-undefined类型"><a href="#二：-undefined类型" class="headerlink" title="二： undefined类型"></a><code>二： undefined类型</code></h2><h3 id="undefined类型只有一个值，就是特殊的undefined。使用var声明变量但没有对其初始化的时候，这个变量的值就是undefined"><a href="#undefined类型只有一个值，就是特殊的undefined。使用var声明变量但没有对其初始化的时候，这个变量的值就是undefined" class="headerlink" title="undefined类型只有一个值，就是特殊的undefined。使用var声明变量但没有对其初始化的时候，这个变量的值就是undefined"></a>undefined类型只有一个值，就是特殊的undefined。<code>使用var声明变量但没有对其初始化的时候，这个变量的值就是undefined</code></h3><h4 id="注意：-包含undefined的值的变量与尚未定义的变量是不一样的"><a href="#注意：-包含undefined的值的变量与尚未定义的变量是不一样的" class="headerlink" title="注意： 包含undefined的值的变量与尚未定义的变量是不一样的"></a>注意： 包含undefined的值的变量与尚未定义的变量是不一样的</h4>  var massage;<br>  alert(massage);    //undfined<br>  alert(a);     //产生错误<br>  alert(typeof massage);    //undefined<br>  alert(typeof a);    //undefined<h2 id="三：-null类型"><a href="#三：-null类型" class="headerlink" title="三： null类型"></a><code>三： null类型</code></h2><h4 id="null类型只有一个值，null。null值表示一个空指针对象"><a href="#null类型只有一个值，null。null值表示一个空指针对象" class="headerlink" title="null类型只有一个值，null。null值表示一个空指针对象"></a>null类型只有一个值，null。null值表示一个<code>空指针对象</code></h4>  var a = null;<br>  alert(typeof(a));<h4 id="undefined和null的区别与联系："><a href="#undefined和null的区别与联系：" class="headerlink" title="undefined和null的区别与联系："></a>undefined和null的区别与联系：</h4></li>
+<li>undefined 是派生自null的<br>######<br>  alert(undefined == null);    //true</li>
+<li>不必把一个undefined的值设置为显示的，但是null就不行</li>
+<li>只要你想将某个变量保存对象，但还没有真正的保存任何东西，就应该显示的将该变量值保存为null<br>######<h2 id="四：-Boolean类型"><a href="#四：-Boolean类型" class="headerlink" title="四： Boolean类型"></a><code>四： Boolean类型</code></h2><h4 id="Boolean类型的字面值只有true和false两个，但是在ECMAScript中所有类型的值都有与这两个Boolean值等价的值"><a href="#Boolean类型的字面值只有true和false两个，但是在ECMAScript中所有类型的值都有与这两个Boolean值等价的值" class="headerlink" title="Boolean类型的字面值只有true和false两个，但是在ECMAScript中所有类型的值都有与这两个Boolean值等价的值"></a>Boolean类型的字面值只有true和false两个，但是<code>在ECMAScript中所有类型的值都有与这两个Boolean值等价的值</code></h4><h4 id="Boolean-转型函数可以将一个值转换为对应的Boolean值，可以对任何数据类型调用这个函数Boolean-，而且总会返回一个布尔值（true-false）"><a href="#Boolean-转型函数可以将一个值转换为对应的Boolean值，可以对任何数据类型调用这个函数Boolean-，而且总会返回一个布尔值（true-false）" class="headerlink" title="Boolean()转型函数可以将一个值转换为对应的Boolean值，可以对任何数据类型调用这个函数Boolean()，而且总会返回一个布尔值（true/false）"></a>Boolean()转型函数可以将一个值转换为对应的Boolean值，可以对任何数据类型调用这个函数Boolean()，而且总会返回一个布尔值（true/false）</h4>  alert(Boolean(true)); //true<br>  alert(Boolean(false)); //false<br>  alert(Boolean(“1234”)); //true<br>  alert(Boolean(“”)); //false<br>  alert(Boolean(1234)); //true<br>  alert(Boolean(0));    //false<br>  alert(Boolean(Infinity)); //true<br>  alert(Boolean(Array)); //true<br>  alert(Boolean(null)); //false<br>  alert(Boolean(undefined));    //false<h2 id="五：-Number类型"><a href="#五：-Number类型" class="headerlink" title="五： Number类型"></a><code>五： Number类型</code></h2><h3 id="Number类型存在十进制，八进制，十六进制，在严格模式下是无效的"><a href="#Number类型存在十进制，八进制，十六进制，在严格模式下是无效的" class="headerlink" title="Number类型存在十进制，八进制，十六进制，在严格模式下是无效的"></a>Number类型存在十进制，八进制，十六进制，在严格模式下是无效的</h3><h3 id="ECMAScript可以保存-0和-0，正0和负0被认为相等"><a href="#ECMAScript可以保存-0和-0，正0和负0被认为相等" class="headerlink" title="ECMAScript可以保存+0和-0，正0和负0被认为相等"></a>ECMAScript可以保存+0和-0，正0和负0被认为相等</h3><h3 id="浮点数在计算的时候精确度远远不如整数，所以永远不要测试某个特定的浮点数值，而关于浮点数计算会产生舍入误差的问题是基于IEEE754数值的浮点计算的通病，ECMAScript不是特有的"><a href="#浮点数在计算的时候精确度远远不如整数，所以永远不要测试某个特定的浮点数值，而关于浮点数计算会产生舍入误差的问题是基于IEEE754数值的浮点计算的通病，ECMAScript不是特有的" class="headerlink" title="浮点数在计算的时候精确度远远不如整数，所以永远不要测试某个特定的浮点数值，而关于浮点数计算会产生舍入误差的问题是基于IEEE754数值的浮点计算的通病，ECMAScript不是特有的"></a>浮点数在计算的时候精确度远远不如整数，所以<code>永远不要测试某个特定的浮点数值</code>，而关于浮点数计算会产生舍入误差的问题是基于IEEE754数值的浮点计算的通病，ECMAScript不是特有的</h3><h3 id="数值范围：Infinity-Infinity表示正负无穷"><a href="#数值范围：Infinity-Infinity表示正负无穷" class="headerlink" title="数值范围：Infinity  -Infinity表示正负无穷"></a>数值范围：Infinity  -Infinity表示正负无穷</h3><h3 id="Number-MIN-VALUE-Number-MAX-VALUE是数值的可取范围，超出之后利用isFinite-可以检测为false"><a href="#Number-MIN-VALUE-Number-MAX-VALUE是数值的可取范围，超出之后利用isFinite-可以检测为false" class="headerlink" title="Number.MIN_VALUE~Number.MAX_VALUE是数值的可取范围，超出之后利用isFinite()可以检测为false"></a>Number.MIN_VALUE~Number.MAX_VALUE是数值的可取范围，超出之后利用isFinite()可以检测为false</h3>  alert(Number.MAX_VALUE);<br>  alert(Number.MIN_VALUE);<br>  var result1 = Number.MAX_VALUE+1;<br>  var result2 = Number.MIN_VALUE+1;<br>  alert(isFinite(result1));    //true<br>  alert(isFinite(result2));    //true<h3 id="NaN（not-a-number），非数值，是一个特殊的数值，用来表示一个本来要返回数值的操作数未返回数值的情况（这样就不会抛出异常了）"><a href="#NaN（not-a-number），非数值，是一个特殊的数值，用来表示一个本来要返回数值的操作数未返回数值的情况（这样就不会抛出异常了）" class="headerlink" title="NaN（not a number），非数值，是一个特殊的数值，用来表示一个本来要返回数值的操作数未返回数值的情况（这样就不会抛出异常了）"></a>NaN（not a number），非数值，是一个特殊的数值，用来表示<code>一个本来要返回数值的操作数未返回数值的情况</code>（这样就不会抛出异常了）</h3><h3 id="NaN的两个特点"><a href="#NaN的两个特点" class="headerlink" title="NaN的两个特点"></a>NaN的两个特点</h3></li>
+<li><ol>
+<li>任何涉及NaN的操作都会返回NaN </li>
+</ol>
+</li>
+<li><ol>
+<li><p>NaN与任何数都不相等，包括它本身</p>
+<h4 id="isNaN-函数接受一个任何类型的参数，这个函数会帮助我们确定这个函数是否“不是数值”，这个函数接收一个值后会尝试将这个值转换为数值，使某些不是数值的值会直接转换为数值，而任何不能转换为数值的值都会导致这个函数返回true"><a href="#isNaN-函数接受一个任何类型的参数，这个函数会帮助我们确定这个函数是否“不是数值”，这个函数接收一个值后会尝试将这个值转换为数值，使某些不是数值的值会直接转换为数值，而任何不能转换为数值的值都会导致这个函数返回true" class="headerlink" title="isNaN()函数接受一个任何类型的参数，这个函数会帮助我们确定这个函数是否“不是数值”，这个函数接收一个值后会尝试将这个值转换为数值，使某些不是数值的值会直接转换为数值，而任何不能转换为数值的值都会导致这个函数返回true"></a>isNaN()函数接受一个任何类型的参数，这个函数会帮助我们确定这个函数是否“不是数值”，这个函数接收一个值后会尝试将这个值转换为数值，使某些不是数值的值会直接转换为数值，而任何不能转换为数值的值都会导致这个函数返回true</h4><p>alert(NaN == NaN);     //false</p>
+<p>alert(isNaN(‘color’)); //true，不可以转化成数值<br>alert(isNaN(false));    //false，会被转化成数值0<br>alert(isNaN(true));    //false，会被转化成数值1<br>alert(isNaN(NaN));    //true</p>
+<h4 id="注意：isNaN-也适用于对象，在基于对象调用isNaN-函数时，会首先调用对象的valueof-方法，然后确定该方法的值是否可以转换成数值，如果不能，则这个返回值再调用toString-方法，再测试返回值"><a href="#注意：isNaN-也适用于对象，在基于对象调用isNaN-函数时，会首先调用对象的valueof-方法，然后确定该方法的值是否可以转换成数值，如果不能，则这个返回值再调用toString-方法，再测试返回值" class="headerlink" title="注意：isNaN()也适用于对象，在基于对象调用isNaN()函数时，会首先调用对象的valueof()方法，然后确定该方法的值是否可以转换成数值，如果不能，则这个返回值再调用toString()方法，再测试返回值"></a>注意：<code>isNaN()也适用于对象</code>，在基于对象调用isNaN()函数时，会首先调用对象的<code>valueof()</code>方法，然后确定该方法的值是否可以转换成数值，如果不能，则这个返回值再调用<code>toString()</code>方法，再测试返回值</h4><h3 id="数值转换：Number-perseInt-perseFloat-这三个函数可以将非数值转换为数值"><a href="#数值转换：Number-perseInt-perseFloat-这三个函数可以将非数值转换为数值" class="headerlink" title="数值转换：Number(),perseInt(),perseFloat()这三个函数可以将非数值转换为数值"></a>数值转换：Number(),perseInt(),perseFloat()这三个函数可以将非数值转换为数值</h3><h4 id="number-的转换规则："><a href="#number-的转换规则：" class="headerlink" title="number()的转换规则："></a>number()的转换规则：</h4></li>
+</ol>
+</li>
+<li>null — 0</li>
+<li>undefined — NaN</li>
+<li>true — 1</li>
+<li>false — 0</li>
+<li>字符串 规则很多 </li>
+<li><ol>
+<li>空字符串 — 0</li>
+</ol>
+</li>
+<li><ol>
+<li>只包含数字 — 十进制数字，忽略前导0</li>
+</ol>
+</li>
+<li><ol>
+<li>包含有效的浮点数格式 — 对应的浮点数，忽略前导0</li>
+</ol>
+</li>
+<li><ol>
+<li>如果包含有效的十六进制 — 相同大小的十进制</li>
+</ol>
+</li>
+<li><ol>
+<li>其他的 — NaN</li>
+</ol>
+</li>
+<li><p>对象 — 会首先调用对象的<code>valueof()</code>方法，然后确定该方法的值是否可以转换成数值，如果不能，则这个返回值再调用<code>toString()</code>方法，再测试返回值<br>######</p>
+<h4 id="parseInt-：会忽略字符串前边的空格，直到找到第一个非空格字符"><a href="#parseInt-：会忽略字符串前边的空格，直到找到第一个非空格字符" class="headerlink" title="parseInt()：会忽略字符串前边的空格，直到找到第一个非空格字符"></a>parseInt()：会忽略字符串前边的空格，直到找到第一个非空格字符</h4></li>
+<li><p>如果第一个非空格不是数字或者负号 — NaN</p>
+</li>
+<li>空字符串 — NaN(number()是0，这是这两点的区别    )</li>
+<li>如果第一个非空格是数字，再解析第二个，直到解析完毕或者遇到非字符 — 显示数字字符</li>
+<li>parseInt()可以识别各种整数格式（八进制，十进制，十六进制）<br>######<br>  alert(parseInt(“070”));    //70,这里ECMAScript3和5是不一样的，前者认为是八进制，后者认为是十进制<br>  // 为了避免出现矛盾，可以给函数添加一个参数，后边的参数代表进制数<br>  alert(parseInt(“070”,10));    //70<br>  alert(parseInt(“070”,8));    //56<h4 id="注意：-为了避免错误，建议在任何情况下都要将后边的基数写上。"><a href="#注意：-为了避免错误，建议在任何情况下都要将后边的基数写上。" class="headerlink" title="注意： 为了避免错误，建议在任何情况下都要将后边的基数写上。"></a>注意： 为了避免错误，建议<code>在任何情况下都要将后边的基数写上</code>。</h4><h4 id="我认为这里还可以利用parseInt-对浮点数取整，截取小数点之前的部分。原理是parseInt-遇到非数字的-会截断"><a href="#我认为这里还可以利用parseInt-对浮点数取整，截取小数点之前的部分。原理是parseInt-遇到非数字的-会截断" class="headerlink" title="我认为这里还可以利用parseInt()对浮点数取整，截取小数点之前的部分。原理是parseInt()遇到非数字的.会截断"></a>我认为这里还可以<code>利用parseInt()对浮点数取整</code>，截取小数点之前的部分。原理是parseInt()遇到非数字的.会截断</h4><h4 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat()"></a>parseFloat()</h4></li>
+<li>字符串中的第一个小数点有效，第二个小数点无效</li>
+<li>parseFloat()始终会忽略前导0，也就是他只有一个参数，只能解析十进制<br>######<h2 id="六：-String类型"><a href="#六：-String类型" class="headerlink" title="六： String类型"></a><code>六： String类型</code></h2><h4 id="1-ECMAScript中单双引号不会影响字符串的解析方式，php中单双引号有影响"><a href="#1-ECMAScript中单双引号不会影响字符串的解析方式，php中单双引号有影响" class="headerlink" title="1. ECMAScript中单双引号不会影响字符串的解析方式，php中单双引号有影响"></a>1. ECMAScript中单双引号不会影响字符串的解析方式，php中单双引号有影响</h4><h4 id="2-字符串是不可变的，如果要改变某个变量保存的字符串，首先要销毁原来的字符串，然后再用另一个包含新值的字符串填充该变量"><a href="#2-字符串是不可变的，如果要改变某个变量保存的字符串，首先要销毁原来的字符串，然后再用另一个包含新值的字符串填充该变量" class="headerlink" title="2. 字符串是不可变的，如果要改变某个变量保存的字符串，首先要销毁原来的字符串，然后再用另一个包含新值的字符串填充该变量"></a>2. 字符串是不可变的，如果要改变某个变量保存的字符串，首先要销毁原来的字符串，然后再用另一个包含新值的字符串填充该变量</h4><h4 id="3-将值转换为字符串的两种方式"><a href="#3-将值转换为字符串的两种方式" class="headerlink" title="3. 将值转换为字符串的两种方式"></a>3. 将值转换为字符串的两种方式</h4><h4 id="tostring-方法"><a href="#tostring-方法" class="headerlink" title="tostring()方法"></a>tostring()方法</h4></li>
+<li>tostring()方法，除了null和undefined没有tostring()方法，其余的字符串都有</li>
+<li><p>一般情况下不传值，如果是数值，可以传2,8,10,16来改变输出字符串的格式<br>######<br>  var a = 10;<br>  alert(a.toString());    //10<br>  alert(a.toString(2));    //1010<br>  alert(a.toString(8));    //12<br>  alert(a.toString(16));    //a</p>
+<p>  var b;<br>  alert(toString(b));    //object window</p>
+<p>  var c = null;<br>  alert(toString(c));    //object window</p>
+<h4 id="String-转型函数，用在不知道要转换的值是不是null和undefined的时候"><a href="#String-转型函数，用在不知道要转换的值是不是null和undefined的时候" class="headerlink" title="String()转型函数，用在不知道要转换的值是不是null和undefined的时候"></a>String()转型函数，用在不知道要转换的值是不是null和undefined的时候</h4></li>
+<li>如果值有tostring()方法，则调用该方法并返回相应的结果</li>
+<li>值是null — null</li>
+<li><p>值是undefined — undefined<br>###<br>  var d;<br>  alert(String(d));    //undefined</p>
+<p>  var e = null;<br>  alert(String(e));    //null</p>
+<h2 id="七：-Object类型"><a href="#七：-Object类型" class="headerlink" title="七： Object类型"></a><code>七： Object类型</code></h2><h3 id="对象就是一组数据和功能的集合"><a href="#对象就是一组数据和功能的集合" class="headerlink" title="对象就是一组数据和功能的集合"></a>对象就是一组数据和功能的集合</h3></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Boolean-转型函数-typeof-isFinite/">Boolean()转型函数 typeof() isFinite()</a></li></ul>
+	</div>
+
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/12/20/js/JavaScript高级程序设计第三版笔记三-数据类型/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="JavaScript高级程序设计第三版笔记三--数据类型">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-js/JavaScript高级程序设计第三版笔记二-基本概念" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -956,205 +1160,6 @@ public static void main(String[] args) {
 <div class="counter-tag counter">
     <span id="/2016/11/23/算法/java算法-分治法-二分搜索技术/" class="leancloud_visitors post-title-link"
           style="font-size: 12px" data-flag-title="java算法--分治法--二分搜索技术">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-算法/java算法-递归与分治策略" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/23/算法/java算法-递归与分治策略/" class="article-date">
-  	<time datetime="2016-11-23T06:48:57.000Z" itemprop="datePublished">2016-11-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/23/算法/java算法-递归与分治策略/">
-        java算法学习--递归与分治策略
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题相互独立且与原问题规模相同。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。"><a href="#1-分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题相互独立且与原问题规模相同。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。" class="headerlink" title="1. 分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题相互独立且与原问题规模相同。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。"></a>1. 分治法的基本思想：将一个规模为n的问题分解成K个规模较小的子问题，这些子问题<code>相互独立</code>且<code>与原问题规模相同</code>。递归地解这些子问题，然后将各个子问题的解合并到原问题的解。</h3><h3 id="由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。"><a href="#由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。" class="headerlink" title="由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。"></a>由分治法产生的子问题往往是原问题的较小规模，这就为使用递归技术提供了方便，在这种情况下，反复应用分治手段，可以使子问题与原问题类型一致而其规模不断缩小，最终缩到问题很小可以求解。</h3><h3 id="在用分治法设计算法时，最好使子问题的规模大致相同，即将一个问题分成大小相等的k个子问题的处理方法是行之有效的。一般设计出的算法是递归算法"><a href="#在用分治法设计算法时，最好使子问题的规模大致相同，即将一个问题分成大小相等的k个子问题的处理方法是行之有效的。一般设计出的算法是递归算法" class="headerlink" title="在用分治法设计算法时，最好使子问题的规模大致相同，即将一个问题分成大小相等的k个子问题的处理方法是行之有效的。一般设计出的算法是递归算法"></a>在用分治法设计算法时，最好<code>使子问题的规模大致相同</code>，即将一个问题分成大小相等的k个子问题的处理方法是行之有效的。一般设计出的算法是递归算法</h3><h3 id="3-递归的概念：直接或者间接地调用自身的算法称为递归算法。"><a href="#3-递归的概念：直接或者间接地调用自身的算法称为递归算法。" class="headerlink" title="3.递归的概念：直接或者间接地调用自身的算法称为递归算法。"></a>3.递归的概念：直接或者间接地调用自身的算法称为递归算法。</h3><h3 id="4-递归函数：用函数自身给出定义的函数称为递归函数。如阶乘函数，斐波那契数列，排列问题，整数划分问题，汉诺塔问题"><a href="#4-递归函数：用函数自身给出定义的函数称为递归函数。如阶乘函数，斐波那契数列，排列问题，整数划分问题，汉诺塔问题" class="headerlink" title="4.递归函数：用函数自身给出定义的函数称为递归函数。如阶乘函数，斐波那契数列，排列问题，整数划分问题，汉诺塔问题"></a>4.递归函数：用函数自身给出定义的函数称为递归函数。如阶乘函数，斐波那契数列，排列问题，整数划分问题，汉诺塔问题</h3><h3 id="算法的设计模式如下："><a href="#算法的设计模式如下：" class="headerlink" title="算法的设计模式如下："></a>算法的设计模式如下：</h3><pre><code>public class Divide_aand_conquer（P） {
-    if(|p| &lt;= n0) adhoc(p);         // |p|表示问题P的规模，n0是一个阈值，表示当P的规模小于N0的时候，就可以很容易得求出，就不必再进行分解了.adhoc(p)是该分治法中的基本子算法，用于直接求解小规模的问题P
-    divide P into smallers subinstances P1,P2,P3...Pk;
-    for(i=1; i&lt;=k; i++){
-        yi = divide-and-conquer(Pi);
-    return merge(y1,y2,y3....yk);    //分治法中的合并子算法，将P的子问题P1，P2...的解y1,y2,y3...合并成P的解
-    }
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/23/算法/java算法-递归与分治策略/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="java算法学习--递归与分治策略">
-         &nbsp;
-        view
-    </span>
-</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-php/php-上传文件" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/22/php/php-上传文件/" class="article-date">
-  	<time datetime="2016-11-22T12:22:48.000Z" itemprop="datePublished">2016-11-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/22/php/php-上传文件/">
-        php学习--上传文件
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="1-enctype-“multipart-form-data”-这句话写在form元素中，是固定写法，没有的话将无法上传文件"><a href="#1-enctype-“multipart-form-data”-这句话写在form元素中，是固定写法，没有的话将无法上传文件" class="headerlink" title="1. enctype = “multipart/form-data” 这句话写在form元素中，是固定写法，没有的话将无法上传文件"></a>1. enctype = “multipart/form-data” 这句话写在form元素中，是固定写法，没有的话将无法上传文件</h3><h3 id="2-FILES-接受上传的文件，返回一个数组"><a href="#2-FILES-接受上传的文件，返回一个数组" class="headerlink" title="2. $_FILES 接受上传的文件，返回一个数组"></a>2. $_FILES 接受上传的文件，返回一个数组</h3><h3 id="3-FILE是魔法常量，将绝对地址打印出来"><a href="#3-FILE是魔法常量，将绝对地址打印出来" class="headerlink" title="3. FILE是魔法常量，将绝对地址打印出来"></a>3. <strong>FILE</strong>是魔法常量，将绝对地址打印出来</h3><h3 id="4-dirname-FILE-将文件名的上一级路径打印出来（也就是不打印文件名）"><a href="#4-dirname-FILE-将文件名的上一级路径打印出来（也就是不打印文件名）" class="headerlink" title="4. dirname(FILE)将文件名的上一级路径打印出来（也就是不打印文件名）"></a>4. dirname(<strong>FILE</strong>)将文件名的上一级路径打印出来（也就是不打印文件名）</h3><h3 id="5-is-dir判断给定的目录是否存在"><a href="#5-is-dir判断给定的目录是否存在" class="headerlink" title="5. // is_dir判断给定的目录是否存在"></a>5. // is_dir判断给定的目录是否存在</h3><h3 id="6-mkdir-name-0777-自动创建一个目录"><a href="#6-mkdir-name-0777-自动创建一个目录" class="headerlink" title="6. mkdir(name,0777)自动创建一个目录"></a>6. mkdir(name,0777)自动创建一个目录</h3><h3 id="7-is-uploaded-file-判断文件是否通过http-post-上传的"><a href="#7-is-uploaded-file-判断文件是否通过http-post-上传的" class="headerlink" title="7. is_uploaded_file()判断文件是否通过http post 上传的"></a>7. is_uploaded_file()判断文件是否通过http post 上传的</h3><h3 id="8-move-uploaded-file-文件临时路径，新路径-将上传的文件移动到新位置"><a href="#8-move-uploaded-file-文件临时路径，新路径-将上传的文件移动到新位置" class="headerlink" title="8. move_uploaded_file(文件临时路径，新路径)将上传的文件移动到新位置"></a>8. move_uploaded_file(文件临时路径，新路径)将上传的文件移动到新位置</h3><h2 id="详解："><a href="#详解：" class="headerlink" title="详解："></a>详解：</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><h3 id="basic1-php"><a href="#basic1-php" class="headerlink" title="basic1.php"></a><code>basic1.php</code></h3><pre><code>&lt;form action=&quot;basic2.php&quot; method = &quot;post&quot; enctype = &quot;multipart/form-data&quot;&gt;
-    &lt;input type=&quot;hidden&quot; name = &quot;MAX_FILE_SIZE&quot; value = &quot;1000000&quot;/&gt;
-    ......    
-&lt;/form&gt;
-</code></pre><h3 id="enctype-“multipart-form-data”-这句话写在form元素中，是固定写法，没有的话将无法上传文件"><a href="#enctype-“multipart-form-data”-这句话写在form元素中，是固定写法，没有的话将无法上传文件" class="headerlink" title="enctype = “multipart/form-data” 这句话写在form元素中，是固定写法，没有的话将无法上传文件"></a>enctype = “multipart/form-data” 这句话写在form元素中，是固定写法，没有的话将无法上传文件</h3><h3 id="隐藏域定义了一个问价件大小的限制，必须放在上传域之前，对浏览器的建议，不能超过PHP-ini中的值"><a href="#隐藏域定义了一个问价件大小的限制，必须放在上传域之前，对浏览器的建议，不能超过PHP-ini中的值" class="headerlink" title="隐藏域定义了一个问价件大小的限制，必须放在上传域之前，对浏览器的建议，不能超过PHP_ini中的值"></a>隐藏域定义了一个问价件大小的限制，必须放在上传域之前，对浏览器的建议，不能超过PHP_ini中的值</h3><h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><h3 id="basic2-php"><a href="#basic2-php" class="headerlink" title="basic2.php"></a><code>basic2.php</code></h3><pre><code>print_r($_FILES);
-</code></pre><h3 id="这个函数接受到一个上传的文件，返回内容如下："><a href="#这个函数接受到一个上传的文件，返回内容如下：" class="headerlink" title="这个函数接受到一个上传的文件，返回内容如下："></a>这个函数接受到一个上传的文件，返回内容如下：</h3><pre><code>Array
-(
-    [userfile] =&gt; Array
-        (
-            [name] =&gt; 4.jpg          //上传文件的文件名
-            [type] =&gt; image/jpeg        //文件类型
-            [tmp_name] =&gt;D:\xampp1\tmp\php26AB.tmp             
-                                        //上传的文件临时的存放位置
-            [error] =&gt; 0                //2是文件超出了HTML设置的大小，
-                                       4是空文件 
-                                        3是上传了一半 
-                                       1是超过了配置文件的大小
-            [size] =&gt; 7960            //上传文件的大小
- )
-</code></pre><h3 id="3-限制上传文件的格式为png-jpeg-gif"><a href="#3-限制上传文件的格式为png-jpeg-gif" class="headerlink" title="3. 限制上传文件的格式为png,jpeg,gif"></a>3. 限制上传文件的格式为png,jpeg,gif</h3><pre><code>$Max = array(&apos;image/png&apos;,&apos;image/jpeg&apos;,&apos;image/gif&apos;);
-if (is_array($Max)) {
-    if(!in_array($_FILES[&apos;userfile&apos;][&apos;type&apos;], $Max)){
-        echo &quot;&lt;script&gt; alert(&apos;只允许上传jpg，png格式的文件！&apos;); history.back();&lt;/script&gt;&quot;;
-    }
-}
-</code></pre><h3 id="4-上传错误的提示信息"><a href="#4-上传错误的提示信息" class="headerlink" title="4. 上传错误的提示信息"></a>4. 上传错误的提示信息</h3><pre><code>if($_FILES[&apos;userfile&apos;][&apos;error&apos;] &gt; 0){
-    switch ($_FILES[&apos;userfile&apos;][&apos;error&apos;]) {
-        case 1: echo &quot;&lt;script&gt;alert(&apos;上传文件超过约定值&apos;); history.back();&lt;/script&gt;&quot;;
-            break;
-        case 2: echo &quot;&lt;script&gt;alert(&apos;上传文件超过约定值&apos;); history.back();&lt;/script&gt;&quot;;
-            break;
-        case 3: echo &quot;&lt;script&gt;alert(&apos;文件未全部上传&apos;); history.back();&lt;/script&gt;&quot;;
-            break;
-        case 4: echo &quot;&lt;script&gt;alert(&apos;请选择上传的文件&apos;); history.back();&lt;/script&gt;&quot;;
-            break;
-
-        default: echo &quot;&lt;script&gt;alert(&apos;未知错误，请重新上传&apos;); histor.back();&lt;/script&gt;&quot;;
-            break;
-    }
-    exit;
-}
-</code></pre><h3 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h3><pre><code>if (is_uploaded_file($_FILES[&apos;userfile&apos;][&apos;tmp_name&apos;])) {
-    // 如果文件已经上传了，就在这移动
-    // 第一个参数，临时文件的地址
-    // 第二个参数，要移动的地址
-    if(!move_uploaded_file($_FILES[&apos;userfile&apos;][&apos;tmp_name&apos;], URL.&quot;/&quot;.$_FILES[&apos;userfile&apos;][&apos;name&apos;])){
-        echo &quot;&lt;script&gt;alert(&apos;移动失败&apos;); history.back();&lt;/script&gt;&quot;;
-        exit;
-    }
-}else{
-    echo &quot;&lt;script&gt;alert(&apos;临时文件夹找不到文件&apos;); history.back();&lt;/script&gt;&quot;;
-    exit;
-}
-
-
-// 如果全部通过就上传成功了
-// 将文件交给一个上传地址
-echo &quot;&lt;script&gt;alert(&apos;文件上传成功&apos;); location.href = &apos;basic3.php?url = &quot;.$_FILES[&apos;userfile&apos;][&apos;name&apos;].&quot;&apos;;&lt;/script&gt;&quot;;
-</code></pre><h3 id="basic3-php"><a href="#basic3-php" class="headerlink" title="basic3.php"></a><code>basic3.php</code></h3><pre><code>&lt;?php 
-    ini_set(&quot;error_reporting&quot;, &quot;E_ALL  &amp; ~E_NOTICE&quot;);    //阻止undefiend出现
-
-    $url = $_GET[&apos;url&apos;];
-    echo &apos;&lt;img src = &quot;url.&quot;/&quot;.&apos;.$url.&apos;&quot;/&gt;&apos;;
- ?&gt;
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        
-<div class="counter-tag counter">
-    <span id="/2016/11/22/php/php-上传文件/" class="leancloud_visitors post-title-link"
-          style="font-size: 12px" data-flag-title="php学习--上传文件">
          &nbsp;
         view
     </span>

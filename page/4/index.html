@@ -138,7 +138,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a> <a href="/tags/回溯法-n后问题/" style="font-size: 10px;">回溯法 n后问题</a>
+						<a href="/tags/Boolean-转型函数-typeof-isFinite/" style="font-size: 10px;">Boolean()转型函数 typeof() isFinite()</a> <a href="/tags/JavaScript的random-函数/" style="font-size: 10px;">JavaScript的random()函数</a> <a href="/tags/PHP学习-基本知识/" style="font-size: 10px;">PHP学习--基本知识</a> <a href="/tags/PHP数学函数/" style="font-size: 10px;">PHP数学函数</a> <a href="/tags/PHP正则表达式-PHP-Perl/" style="font-size: 10px;">PHP正则表达式 PHP_Perl</a> <a href="/tags/javascript数组-js-array/" style="font-size: 10px;">javascript数组 ,js array</a> <a href="/tags/laravel-route-PHP框架-路由/" style="font-size: 10px;">laravel route PHP框架 路由</a> <a href="/tags/回溯法-n后问题/" style="font-size: 10px;">回溯法 n后问题</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,238 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-laravel控制器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/23/laravel控制器/" class="article-date">
+  	<time datetime="2016-10-23T10:58:05.000Z" itemprop="datePublished">2016-10-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/23/laravel控制器/">
+        laravel学习--控制器
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="控制器：数据和视图之间的桥梁，数据就是通过控制器将数据发送到视图页面的"><a href="#控制器：数据和视图之间的桥梁，数据就是通过控制器将数据发送到视图页面的" class="headerlink" title="控制器：数据和视图之间的桥梁，数据就是通过控制器将数据发送到视图页面的"></a>控制器：数据和视图之间的桥梁，数据就是通过控制器将数据发送到视图页面的</h3><h3 id="创建控制器的方法："><a href="#创建控制器的方法：" class="headerlink" title="创建控制器的方法："></a>创建控制器的方法：</h3><h2 id="1-手动创建"><a href="#1-手动创建" class="headerlink" title="1.手动创建"></a>1.手动创建</h2><h4 id="控制器的位置：app-gt-Http-gt-Controllers下，我们就是在那里创建有意义的控制器"><a href="#控制器的位置：app-gt-Http-gt-Controllers下，我们就是在那里创建有意义的控制器" class="headerlink" title="控制器的位置：app-&gt;Http-&gt;Controllers下，我们就是在那里创建有意义的控制器"></a>控制器的位置：app-&gt;Http-&gt;Controllers下，我们就是在那里创建有意义的控制器</h4><h4 id="第一步：在controller下新建一个文件，取一个有意义的名字，例如：InputController"><a href="#第一步：在controller下新建一个文件，取一个有意义的名字，例如：InputController" class="headerlink" title="第一步：在controller下新建一个文件，取一个有意义的名字，例如：InputController"></a>第一步：在controller下新建一个文件，取一个有意义的名字，例如：InputController</h4><h4 id="第二步：填写内容"><a href="#第二步：填写内容" class="headerlink" title="第二步：填写内容"></a>第二步：填写内容</h4><pre><code>&lt;?php 
+namespace App\Http\Controllers;    //指定命名空间，在它下边
+
+class InputController extends Controller
+{
+    public function input()    //创建一个函数
+    {
+        echo &quot;这是我手动创建的控制器&quot;;
+    }
+
+}
+// 注意：laravel里所有用浏览器访问的函数都需要到routes里配置路径
+// 所以要回到路由器配置一下路径app,http,routes
+</code></pre><h4 id="第三步：去routes里配置，用路由取访问控制器"><a href="#第三步：去routes里配置，用路由取访问控制器" class="headerlink" title="第三步：去routes里配置，用路由取访问控制器"></a>第三步：去routes里配置，用路由取访问控制器</h4><pre><code>// 定义指向控制器路由的动作，user/{id}是索要访问的页面，UserCotroller是你定义的控制器的名称，showProfile是UserCotroller里边的方法
+// Route::get(&apos;user/{id}&apos;, &apos;UserController@showProfile&apos;)
+Route::get(&apos;test&apos;,&apos;InputController@input&apos;);
+</code></pre><h4 id="第四步：输入localhost-8000-test，显示这是我手动创建的控制器"><a href="#第四步：输入localhost-8000-test，显示这是我手动创建的控制器" class="headerlink" title="第四步：输入localhost:8000/test，显示这是我手动创建的控制器"></a>第四步：输入localhost:8000/test，显示这是我手动创建的控制器</h4><h3 id="开启laravel的方法：cd到Laravel目录，命令行输入-php-artisan-serve"><a href="#开启laravel的方法：cd到Laravel目录，命令行输入-php-artisan-serve" class="headerlink" title="开启laravel的方法：cd到Laravel目录，命令行输入 php artisan serve"></a>开启laravel的方法：cd到Laravel目录，命令行输入 php artisan serve</h3><h4 id="PHP-Warning-Module-‘openssl’-already-loaded-in-Unknown-on-line-0的解决方法：php-ini中搜索openssl，有两个相同的-extension-php-openssl-dll，将其中一个的分号去掉，一个保留"><a href="#PHP-Warning-Module-‘openssl’-already-loaded-in-Unknown-on-line-0的解决方法：php-ini中搜索openssl，有两个相同的-extension-php-openssl-dll，将其中一个的分号去掉，一个保留" class="headerlink" title="PHP Warning:  Module ‘openssl’ already loaded in Unknown on line 0的解决方法：php.ini中搜索openssl，有两个相同的    ;extension=php_openssl.dll，将其中一个的分号去掉，一个保留"></a>PHP Warning:  Module ‘openssl’ already loaded in Unknown on line 0的解决方法：php.ini中搜索openssl，有两个相同的    <code>;extension=php_openssl.dll</code>，将其中一个的分号去掉，一个保留</h4><p>####<br>    ;;;;;;;;;;;;;;;;;;;<br>    ; Module Settings ;<br>    ;;;;;;;;;;;;;;;;;;;<br>    里的去掉分号，另一个保留    </p>
+<h4 id="php-artisan-make-composer不能找到命名空间。composer语法错误，有可能是conposer-json文件有注释修改等不合语法的操作"><a href="#php-artisan-make-composer不能找到命名空间。composer语法错误，有可能是conposer-json文件有注释修改等不合语法的操作" class="headerlink" title="php artisan make:composer不能找到命名空间。composer语法错误，有可能是conposer.json文件有注释修改等不合语法的操作"></a>php artisan make:composer不能找到命名空间。composer语法错误，有可能是conposer.json文件有注释修改等不合语法的操作</h4><h2 id="2-命令行创建"><a href="#2-命令行创建" class="headerlink" title="2.命令行创建"></a>2.命令行创建</h2><h3 id="第一步：在laravel的目录下打开命令行，快捷键是进入目录，shift-右键打开"><a href="#第一步：在laravel的目录下打开命令行，快捷键是进入目录，shift-右键打开" class="headerlink" title="第一步：在laravel的目录下打开命令行，快捷键是进入目录，shift+右键打开"></a>第一步：在laravel的目录下打开命令行，快捷键是进入目录，shift+右键打开</h3><h3 id="第二步：输入：php-artisan-make-controller-你的控制器名字，比如php-artisan-make-controller-HelloController-就可以创建一个HelloController的控制器，配置如下"><a href="#第二步：输入：php-artisan-make-controller-你的控制器名字，比如php-artisan-make-controller-HelloController-就可以创建一个HelloController的控制器，配置如下" class="headerlink" title="第二步：输入：php artisan make:controller 你的控制器名字，比如php artisan make:controller HelloController,就可以创建一个HelloController的控制器，配置如下"></a>第二步：输入：php artisan make:controller 你的控制器名字，比如php artisan make:controller HelloController,就可以创建一个HelloController的控制器，配置如下</h3><pre><code>&lt;?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+
+class HelloController extends Controller
+{
+
+    }
+}
+</code></pre><h3 id="建议多用命令行，可以加快速度"><a href="#建议多用命令行，可以加快速度" class="headerlink" title="建议多用命令行，可以加快速度"></a>建议多用命令行，可以加快速度</h3>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/laravel-route-PHP框架-路由/">laravel route PHP框架 路由</a></li></ul>
+	</div>
+
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/10/23/laravel控制器/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="laravel学习--控制器">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-php/php--数组排序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/19/php/php--数组排序/" class="article-date">
+  	<time datetime="2016-10-19T10:00:23.000Z" itemprop="datePublished">2016-10-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/19/php/php--数组排序/">
+        php学习--数组排序
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>&lt;?php 
+    $numbers = array(1,4,6,3,2,7,9,4,2,4,7);
+    //sort会改变原来数组而不是创建新的数组
+    //sort 对数字排序
+    sort($numbers);
+    print_r($numbers);
+
+    // //sort 会按照字母的顺序对字母排序
+    $letter = array(h,g,r,s,h,x,e,a,l,m,y,u,p);
+    sort($letter);
+    print_r($letter);
+
+    //sort 按照汉字拼音的先后顺序排序，utf8格式的文件不可以直接用，GBK和gb2312文件可用
+    $userAges = array(&apos;张三&apos;, &apos;李四&apos;, &apos;王五&apos;);
+    sort($userAges);
+    print_r($userAges);
+
+    //sort的第二个可选参数
+    $number = array(2,12);
+    sort($number,SORT_STRING);    //第二个参数为sort_string，说明要求数组元素按照字符串的顺序比较（无论数组元素是字符串还是数字，都会转化成字符串比较）
+    print_r($number);
+    sort($number,SORT_NUMERIC);    //转化成数字进行比较
+    print_r($number);
+ ?&gt;
+</code></pre><h3 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h3><pre><code>Array
+(
+    [0] =&gt; 1
+    [1] =&gt; 2
+    [2] =&gt; 2
+    [3] =&gt; 3
+    [4] =&gt; 4
+    [5] =&gt; 4
+    [6] =&gt; 4
+    [7] =&gt; 6
+    [8] =&gt; 7
+    [9] =&gt; 7
+    [10] =&gt; 9
+)
+Array
+(
+    [0] =&gt; a
+    [1] =&gt; e
+    [2] =&gt; g
+    [3] =&gt; h
+    [4] =&gt; h
+    [5] =&gt; l
+    [6] =&gt; m
+    [7] =&gt; p
+    [8] =&gt; r
+    [9] =&gt; s
+    [10] =&gt; u
+    [11] =&gt; x
+    [12] =&gt; y
+)
+Array
+(
+    [0] =&gt; 李四
+    [1] =&gt; 王五
+    [2] =&gt; 张三
+)
+Array
+(
+    [0] =&gt; 12
+    [1] =&gt; 2
+)
+Array
+(
+    [0] =&gt; 2
+    [1] =&gt; 12
+)
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        
+<div class="counter-tag counter">
+    <span id="/2016/10/19/php/php--数组排序/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="php学习--数组排序">
+         &nbsp;
+        view
+    </span>
+</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-php/php--数组二维" class="article article-type-post" itemscope itemprop="blogPost">
   
